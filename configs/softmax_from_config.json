@@ -1,0 +1,44 @@
+{
+  "exp": {
+    "name": "softmax_from_config"
+  },
+  "data_loader": {
+    "name": "default_generator",
+    "data_dir_train": "data_loader/data/site_period_200_cls/train",
+    "data_dir_valid": "data_loader/data/site_period_200_cls/valid",
+    "horizontal_flip": true,
+    "fill_mode": "nearest",
+    "zoom_range": 0.15,
+    "width_shift_range": 0.15,
+    "height_shift_range": 0.15,
+    "rotation_range": 30,
+    "is_use_cutOut": false,
+    "class_mode": "categorical"
+
+  },
+  "model":{
+    "name": "softmax_model.SoftMaxModel",
+    "learning_rate": 0.001,
+    "optimizer": "adam",
+    "img_width": 299,
+    "img_height": 299
+  },
+  "trainer":{
+    "name": "simple_mnist_trainer.SimpleMnistModelTrainer",
+    "num_epochs": 20,
+    "batch_size": 24,
+    "learning_rate_values": [0.0001, 0.00001, 0.00001],
+    "learning_rate_epoch_change": [3,9],
+    "validation_split":0.25,
+    "verbose_training": true
+  },
+  "callbacks":{
+    "checkpoint_monitor": "val_loss",
+    "checkpoint_mode": "min",
+    "checkpoint_save_best_only": true,
+   "checkpoint_save_weights_only": true,
+    "checkpoint_verbose": true,
+    "tensorboard_write_graph": true
+  }
+}
+

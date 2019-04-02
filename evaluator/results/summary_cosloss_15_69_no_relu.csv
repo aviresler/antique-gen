@@ -1,0 +1,1227 @@
+true_id, 0, true_site, Maresha_ T., true_period, Hellenistic
+pred_id, 0, pred_site, Maresha_ T., pred_period, Hellenistic, pred_score, 0.451
+pred_id, 20, pred_site, Maresha_ T., pred_period, Persian-Hellenistic, pred_score, 0.078
+pred_id, 123, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Iron II, pred_score, 0.059
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.059
+pred_id, 29, pred_site, Megiddo_ T., pred_period, Late Bronze II, pred_score, 0.039
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.039
+pred_id, 43, pred_site, `En Gedi, pred_period, Byzantine, pred_score, 0.039
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.039
+pred_id, 31, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Early Roman (period), pred_score, 0.020
+pred_id, 73, pred_site, Jerusalem_ City of David, pred_period, Early Roman (period), pred_score, 0.020
+
+true_id, 1, true_site, Me`arat ha-Nahal, true_period, Upper Palaeolithic
+pred_id, 1, pred_site, Me`arat ha-Nahal, pred_period, Upper Palaeolithic, pred_score, 0.791
+pred_id, 131, pred_site, Jericho_ T., pred_period, Pre-Pottery Neolithic B, pred_score, 0.047
+pred_id, 108, pred_site, Me`arat ha-Gulgolet, pred_period, Middle Palaeolithic, pred_score, 0.047
+pred_id, 13, pred_site, Me`arat Tannur, pred_period, Lower Palaeolithic, pred_score, 0.023
+pred_id, 95, pred_site, Me`arat Kebara, pred_period, Upper Palaeolithic, pred_score, 0.023
+pred_id, 69, pred_site, Magharat Shuqba, pred_period, Middle Palaeolithic, pred_score, 0.023
+pred_id, 68, pred_site, Zif_ Kh., pred_period, Middle Palaeolithic, pred_score, 0.023
+pred_id, 91, pred_site, Me`arat Amira, pred_period, Upper Palaeolithic, pred_score, 0.023
+
+true_id, 2, true_site, Lakhish_ T., true_period, Iron II
+pred_id, 2, pred_site, Lakhish_ T., pred_period, Iron II, pred_score, 0.625
+pred_id, 59, pred_site, Bet-Shemesh_ T., pred_period, Iron II, pred_score, 0.125
+pred_id, 78, pred_site, `Arad_ T., pred_period, Iron II, pred_score, 0.050
+pred_id, 50, pred_site, Samaria, pred_period, Iron II, pred_score, 0.025
+pred_id, 131, pred_site, Jericho_ T., pred_period, Pre-Pottery Neolithic B, pred_score, 0.025
+pred_id, 150, pred_site, Sharuhen_ T., pred_period, Iron II, pred_score, 0.025
+pred_id, 128, pred_site, Bir er-Ruqeish, pred_period, Iron II, pred_score, 0.025
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.025
+pred_id, 58, pred_site, Bet Mirsham_ T., pred_period, Iron II, pred_score, 0.025
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.025
+
+true_id, 3, true_site, Nahal Pattish (Gilat), true_period, Late Chalcolithic
+pred_id, 3, pred_site, Nahal Pattish (Gilat), pred_period, Late Chalcolithic, pred_score, 0.638
+pred_id, 58, pred_site, Bet Mirsham_ T., pred_period, Iron II, pred_score, 0.021
+pred_id, 130, pred_site, Har Qedumim, pred_period, Middle Palaeolithic, pred_score, 0.021
+pred_id, 83, pred_site, Megiddo_ T., pred_period, Early Bronze I, pred_score, 0.021
+pred_id, 66, pred_site, Lakhish_ T., pred_period, Late Bronze II, pred_score, 0.021
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.021
+pred_id, 86, pred_site, Besamon, pred_period, Pottery Neolithic, pred_score, 0.021
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.021
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.021
+pred_id, 188, pred_site, Zafit_ T., pred_period, Persian, pred_score, 0.021
+
+true_id, 4, true_site, Jerusalem_ City of David, true_period, Iron II
+pred_id, 4, pred_site, Jerusalem_ City of David, pred_period, Iron II, pred_score, 0.711
+pred_id, 133, pred_site, Jerusalem_ Old City_ Western and Southern Walls, pred_period, Iron II, pred_score, 0.079
+pred_id, 78, pred_site, `Arad_ T., pred_period, Iron II, pred_score, 0.053
+pred_id, 71, pred_site, Ramat Rahel, pred_period, Iron II, pred_score, 0.053
+pred_id, 86, pred_site, Besamon, pred_period, Pottery Neolithic, pred_score, 0.026
+pred_id, 2, pred_site, Lakhish_ T., pred_period, Iron II, pred_score, 0.026
+pred_id, 92, pred_site, Megiddo_ T., pred_period, Middle Bronze II, pred_score, 0.026
+pred_id, 90, pred_site, Jerusalem_ Ketef Hinnom, pred_period, Iron IIC-Babylonian, pred_score, 0.026
+
+true_id, 5, true_site, Nahal Hemar, true_period, Pre-Pottery Neolithic B
+pred_id, 5, pred_site, Nahal Hemar, pred_period, Pre-Pottery Neolithic B, pred_score, 0.606
+pred_id, 148, pred_site, Mezad Rahel, pred_period, Roman, pred_score, 0.030
+pred_id, 12, pred_site, Horevot Mazada, pred_period, Roman, pred_score, 0.030
+pred_id, 47, pred_site, Bet She'an_ T., pred_period, Middle Bronze II, pred_score, 0.030
+pred_id, 42, pred_site, `Akko_ Persian Garden, pred_period, Late Bronze II, pred_score, 0.030
+pred_id, 60, pred_site, Mafjar_ Kh. el-, pred_period, Umayyad, pred_score, 0.030
+pred_id, 160, pred_site, Anafa_ T., pred_period, Hellenistic, pred_score, 0.030
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.030
+pred_id, 143, pred_site, Moa, pred_period, Roman, pred_score, 0.030
+pred_id, 80, pred_site, Me`arat Oren, pred_period, Natufian, pred_score, 0.030
+
+true_id, 6, true_site, `Ujul_ T. el-, true_period, Middle Bronze II-Late Bronze
+pred_id, 6, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II-Late Bronze, pred_score, 0.550
+pred_id, 152, pred_site, Nahal Hever, pred_period, Middle Roman (70-135 CE), pred_score, 0.075
+pred_id, 150, pred_site, Sharuhen_ T., pred_period, Iron II, pred_score, 0.050
+pred_id, 32, pred_site, `Ujul_ T. el-, pred_period, Late Bronze II, pred_score, 0.050
+pred_id, 25, pred_site, Bet She'an_ T., pred_period, Late Bronze II, pred_score, 0.025
+pred_id, 185, pred_site, Bet She'an_ T., pred_period, Roman, pred_score, 0.025
+pred_id, 55, pred_site, Megiddo_ T., pred_period, Iron II, pred_score, 0.025
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.025
+pred_id, 58, pred_site, Bet Mirsham_ T., pred_period, Iron II, pred_score, 0.025
+pred_id, 35, pred_site, Megiddo_ T., pred_period, Iron I, pred_score, 0.025
+
+true_id, 7, true_site, Me`arat Kebara, true_period, Natufian
+pred_id, 7, pred_site, Me`arat Kebara, pred_period, Natufian, pred_score, 0.500
+pred_id, 11, pred_site, Me`arat ha-Nahal, pred_period, Natufian, pred_score, 0.300
+pred_id, 61, pred_site, Magharat Shuqba, pred_period, Natufian, pred_score, 0.133
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.033
+pred_id, 68, pred_site, Zif_ Kh., pred_period, Middle Palaeolithic, pred_score, 0.033
+
+true_id, 8, true_site, Nahal Mishmar_ Me`arat ha-Matmon, true_period, Late Chalcolithic
+pred_id, 8, pred_site, Nahal Mishmar_ Me`arat ha-Matmon, pred_period, Late Chalcolithic, pred_score, 0.714
+pred_id, 53, pred_site, Yiftah'el_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.057
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.029
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.029
+pred_id, 113, pred_site, `En Gedi, pred_period, Early Roman (period), pred_score, 0.029
+pred_id, 195, pred_site, Mesad Boqeq, pred_period, Byzantine, pred_score, 0.029
+pred_id, 193, pred_site, Ma`yan Barukh, pred_period, Roman, pred_score, 0.029
+pred_id, 51, pred_site, Wadi Murabba`at_ Cave 1, pred_period, Roman, pred_score, 0.029
+pred_id, 5, pred_site, Nahal Hemar, pred_period, Pre-Pottery Neolithic B, pred_score, 0.029
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.029
+
+true_id, 9, true_site, Sha`ar ha-Golan, true_period, Pottery Neolithic A
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.844
+pred_id, 82, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic, pred_score, 0.062
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.031
+pred_id, 93, pred_site, Hamadya, pred_period, Pottery Neolithic, pred_score, 0.031
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.031
+
+true_id, 10, true_site, Nahal Zin, true_period, Upper Palaeolithic
+pred_id, 10, pred_site, Nahal Zin, pred_period, Upper Palaeolithic, pred_score, 0.750
+pred_id, 53, pred_site, Yiftah'el_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.062
+pred_id, 26, pred_site, Me`arat Tannur, pred_period, Middle Palaeolithic, pred_score, 0.062
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.031
+pred_id, 69, pred_site, Magharat Shuqba, pred_period, Middle Palaeolithic, pred_score, 0.031
+pred_id, 68, pred_site, Zif_ Kh., pred_period, Middle Palaeolithic, pred_score, 0.031
+pred_id, 89, pred_site, `Ovadya_ T._ Prehistoric site, pred_period, Lower Palaeolithic, pred_score, 0.031
+
+true_id, 11, true_site, Me`arat ha-Nahal, true_period, Natufian
+pred_id, 11, pred_site, Me`arat ha-Nahal, pred_period, Natufian, pred_score, 0.500
+pred_id, 61, pred_site, Magharat Shuqba, pred_period, Natufian, pred_score, 0.231
+pred_id, 7, pred_site, Me`arat Kebara, pred_period, Natufian, pred_score, 0.154
+pred_id, 103, pred_site, Nizzana, pred_period, Byzantine, pred_score, 0.038
+pred_id, 54, pred_site, `Arad_ T., pred_period, Early Bronze II, pred_score, 0.038
+pred_id, 62, pred_site, Nahariyya_ Canaanite Temple, pred_period, Middle Bronze II, pred_score, 0.038
+
+true_id, 12, true_site, Horevot Mazada, true_period, Roman
+pred_id, 12, pred_site, Horevot Mazada, pred_period, Roman, pred_score, 0.593
+pred_id, 148, pred_site, Mezad Rahel, pred_period, Roman, pred_score, 0.111
+pred_id, 5, pred_site, Nahal Hemar, pred_period, Pre-Pottery Neolithic B, pred_score, 0.074
+pred_id, 16, pred_site, Horevot Mazada, pred_period, Early Roman (period), pred_score, 0.074
+pred_id, 196, pred_site, Nahal Mishmar, pred_period, Late Chalcolithic, pred_score, 0.037
+pred_id, 143, pred_site, Moa, pred_period, Roman, pred_score, 0.037
+pred_id, 51, pred_site, Wadi Murabba`at_ Cave 1, pred_period, Roman, pred_score, 0.037
+pred_id, 17, pred_site, Nahal Hever, pred_period, Middle Roman, pred_score, 0.037
+
+true_id, 13, true_site, Me`arat Tannur, true_period, Lower Palaeolithic
+pred_id, 13, pred_site, Me`arat Tannur, pred_period, Lower Palaeolithic, pred_score, 0.455
+pred_id, 140, pred_site, Me`arat ha-Gulgolet, pred_period, Lower Palaeolithic, pred_score, 0.136
+pred_id, 70, pred_site, Magharat Umm Qatafa, pred_period, Lower Palaeolithic, pred_score, 0.091
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.091
+pred_id, 89, pred_site, `Ovadya_ T._ Prehistoric site, pred_period, Lower Palaeolithic, pred_score, 0.091
+pred_id, 26, pred_site, Me`arat Tannur, pred_period, Middle Palaeolithic, pred_score, 0.091
+pred_id, 95, pred_site, Me`arat Kebara, pred_period, Upper Palaeolithic, pred_score, 0.045
+
+true_id, 14, true_site, `Enot `Enan, true_period, Natufian
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.524
+pred_id, 96, pred_site, Me`arot Yonim, pred_period, Natufian, pred_score, 0.143
+pred_id, 15, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pre-Ghassulian Chalcolithic, pred_score, 0.095
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.095
+pred_id, 19, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pottery Neolithic, pred_score, 0.048
+pred_id, 86, pred_site, Besamon, pred_period, Pottery Neolithic, pred_score, 0.048
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.048
+
+true_id, 15, true_site, Ha-Gosherim_ Nili (north), true_period, Pre-Ghassulian Chalcolithic
+pred_id, 15, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pre-Ghassulian Chalcolithic, pred_score, 0.522
+pred_id, 92, pred_site, Megiddo_ T., pred_period, Middle Bronze II, pred_score, 0.087
+pred_id, 25, pred_site, Bet She'an_ T., pred_period, Late Bronze II, pred_score, 0.043
+pred_id, 8, pred_site, Nahal Mishmar_ Me`arat ha-Matmon, pred_period, Late Chalcolithic, pred_score, 0.043
+pred_id, 98, pred_site, `Ujul_ T. el-, pred_period, Late Bronze, pred_score, 0.043
+pred_id, 60, pred_site, Mafjar_ Kh. el-, pred_period, Umayyad, pred_score, 0.043
+pred_id, 137, pred_site, Nahal Mishmar_ Cave of the Treasure, pred_period, Late Chalcolithic, pred_score, 0.043
+pred_id, 129, pred_site, Gan Soreq (north), pred_period, none, pred_score, 0.043
+pred_id, 19, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pottery Neolithic, pred_score, 0.043
+pred_id, 53, pred_site, Yiftah'el_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.043
+
+true_id, 16, true_site, Horevot Mazada, true_period, Early Roman (period)
+pred_id, 16, pred_site, Horevot Mazada, pred_period, Early Roman (period), pred_score, 0.273
+pred_id, 12, pred_site, Horevot Mazada, pred_period, Roman, pred_score, 0.136
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.091
+pred_id, 186, pred_site, Christmas Cave_ Nahal Qidron, pred_period, Roman, pred_score, 0.091
+pred_id, 153, pred_site, Qeiyafa_ Kh., pred_period, Iron IIA, pred_score, 0.045
+pred_id, 51, pred_site, Wadi Murabba`at_ Cave 1, pred_period, Roman, pred_score, 0.045
+pred_id, 74, pred_site, Jerusalem_ Old City, pred_period, Early Roman (period), pred_score, 0.045
+pred_id, 118, pred_site, Jerusalem_ Mount Scopus (west), pred_period, Early Roman (period), pred_score, 0.045
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.045
+pred_id, 35, pred_site, Megiddo_ T., pred_period, Iron I, pred_score, 0.045
+
+true_id, 17, true_site, Nahal Hever, true_period, Middle Roman
+pred_id, 17, pred_site, Nahal Hever, pred_period, Middle Roman, pred_score, 0.600
+pred_id, 145, pred_site, Hazor_ T., pred_period, Late Bronze II, pred_score, 0.067
+pred_id, 146, pred_site, Kavul, pred_period, Early Byzantine, pred_score, 0.067
+pred_id, 100, pred_site, Minha_ H., pred_period, Pottery Neolithic, pred_score, 0.067
+pred_id, 51, pred_site, Wadi Murabba`at_ Cave 1, pred_period, Roman, pred_score, 0.067
+pred_id, 166, pred_site, Hazor_ T., pred_period, Iron II, pred_score, 0.067
+pred_id, 181, pred_site, Asherat, pred_period, Late Roman, pred_score, 0.067
+
+true_id, 18, true_site, Jerusalem_ City of David, true_period, Hellenistic
+pred_id, 18, pred_site, Jerusalem_ City of David, pred_period, Hellenistic, pred_score, 0.846
+pred_id, 123, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Iron II, pred_score, 0.077
+pred_id, 76, pred_site, Ramla_ esh-Sheikh Rihan, pred_period, Early Islamic, pred_score, 0.077
+
+true_id, 19, true_site, Ha-Gosherim_ Nili (north), true_period, Pottery Neolithic
+pred_id, 19, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pottery Neolithic, pred_score, 0.316
+pred_id, 86, pred_site, Besamon, pred_period, Pottery Neolithic, pred_score, 0.211
+pred_id, 95, pred_site, Me`arat Kebara, pred_period, Upper Palaeolithic, pred_score, 0.105
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.105
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.105
+pred_id, 54, pred_site, `Arad_ T., pred_period, Early Bronze II, pred_score, 0.053
+pred_id, 31, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Early Roman (period), pred_score, 0.053
+pred_id, 138, pred_site, Besamon, pred_period, Pre-Pottery Neolithic, pred_score, 0.053
+
+true_id, 20, true_site, Maresha_ T., true_period, Persian-Hellenistic
+pred_id, 0, pred_site, Maresha_ T., pred_period, Hellenistic, pred_score, 0.556
+pred_id, 20, pred_site, Maresha_ T., pred_period, Persian-Hellenistic, pred_score, 0.333
+pred_id, 81, pred_site, Har Harif, pred_period, Harifian, pred_score, 0.056
+pred_id, 16, pred_site, Horevot Mazada, pred_period, Early Roman (period), pred_score, 0.056
+
+true_id, 21, true_site, `Ujul_ T. el-, true_period, Middle Bronze II
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.421
+pred_id, 6, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II-Late Bronze, pred_score, 0.316
+pred_id, 2, pred_site, Lakhish_ T., pred_period, Iron II, pred_score, 0.053
+pred_id, 3, pred_site, Nahal Pattish (Gilat), pred_period, Late Chalcolithic, pred_score, 0.053
+pred_id, 32, pred_site, `Ujul_ T. el-, pred_period, Late Bronze II, pred_score, 0.053
+pred_id, 59, pred_site, Bet-Shemesh_ T., pred_period, Iron II, pred_score, 0.053
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.053
+
+true_id, 22, true_site,  Unknown, true_period, none
+pred_id, 22, pred_site,  Unknown, pred_period, none, pred_score, 0.778
+pred_id, 141, pred_site, Meron, pred_period, none, pred_score, 0.167
+pred_id, 199, pred_site, 14590-24360 14590-24360, pred_period, none, pred_score, 0.056
+
+true_id, 23, true_site, Besamon, true_period, Pre-Pottery Neolithic B
+pred_id, 19, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pottery Neolithic, pred_score, 0.222
+pred_id, 36, pred_site, Minha_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.111
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.111
+pred_id, 138, pred_site, Besamon, pred_period, Pre-Pottery Neolithic, pred_score, 0.111
+pred_id, 76, pred_site, Ramla_ esh-Sheikh Rihan, pred_period, Early Islamic, pred_score, 0.056
+pred_id, 10, pred_site, Nahal Zin, pred_period, Upper Palaeolithic, pred_score, 0.056
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.056
+pred_id, 3, pred_site, Nahal Pattish (Gilat), pred_period, Late Chalcolithic, pred_score, 0.056
+pred_id, 63, pred_site, Besamon, pred_period, Neolithic, pred_score, 0.056
+pred_id, 191, pred_site, Ard es-Samrra, pred_period, Pottery Neolithic, pred_score, 0.056
+
+true_id, 24, true_site, Jericho_ T., true_period, Early Bronze III
+pred_id, 24, pred_site, Jericho_ T., pred_period, Early Bronze III, pred_score, 0.714
+pred_id, 142, pred_site, Mikhal_ T., pred_period, none, pred_score, 0.048
+pred_id, 32, pred_site, `Ujul_ T. el-, pred_period, Late Bronze II, pred_score, 0.048
+pred_id, 155, pred_site, Afeq, pred_period, Middle Bronze II, pred_score, 0.048
+pred_id, 110, pred_site, Mizpah, pred_period, Early Bronze I, pred_score, 0.048
+pred_id, 85, pred_site, `Atlit, pred_period, Persian, pred_score, 0.048
+pred_id, 83, pred_site, Megiddo_ T., pred_period, Early Bronze I, pred_score, 0.048
+
+true_id, 25, true_site, Bet She'an_ T., true_period, Late Bronze II
+pred_id, 25, pred_site, Bet She'an_ T., pred_period, Late Bronze II, pred_score, 0.238
+pred_id, 190, pred_site, Afeq, pred_period, Late Bronze II, pred_score, 0.143
+pred_id, 41, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron II, pred_score, 0.143
+pred_id, 32, pred_site, `Ujul_ T. el-, pred_period, Late Bronze II, pred_score, 0.095
+pred_id, 6, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II-Late Bronze, pred_score, 0.095
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.048
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.048
+pred_id, 106, pred_site, Caesarea, pred_period, Early Islamic, pred_score, 0.048
+pred_id, 98, pred_site, `Ujul_ T. el-, pred_period, Late Bronze, pred_score, 0.048
+pred_id, 100, pred_site, Minha_ H., pred_period, Pottery Neolithic, pred_score, 0.048
+
+true_id, 26, true_site, Me`arat Tannur, true_period, Middle Palaeolithic
+pred_id, 26, pred_site, Me`arat Tannur, pred_period, Middle Palaeolithic, pred_score, 0.467
+pred_id, 13, pred_site, Me`arat Tannur, pred_period, Lower Palaeolithic, pred_score, 0.133
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.067
+pred_id, 1, pred_site, Me`arat ha-Nahal, pred_period, Upper Palaeolithic, pred_score, 0.067
+pred_id, 130, pred_site, Har Qedumim, pred_period, Middle Palaeolithic, pred_score, 0.067
+pred_id, 89, pred_site, `Ovadya_ T._ Prehistoric site, pred_period, Lower Palaeolithic, pred_score, 0.067
+pred_id, 10, pred_site, Nahal Zin, pred_period, Upper Palaeolithic, pred_score, 0.067
+pred_id, 138, pred_site, Besamon, pred_period, Pre-Pottery Neolithic, pred_score, 0.067
+
+true_id, 27, true_site, Megiddo_ T., true_period, Iron IA
+pred_id, 27, pred_site, Megiddo_ T., pred_period, Iron IA, pred_score, 0.571
+pred_id, 121, pred_site, Bet-Shemesh_ T., pred_period, Iron I, pred_score, 0.143
+pred_id, 185, pred_site, Bet She'an_ T., pred_period, Roman, pred_score, 0.048
+pred_id, 2, pred_site, Lakhish_ T., pred_period, Iron II, pred_score, 0.048
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.048
+pred_id, 32, pred_site, `Ujul_ T. el-, pred_period, Late Bronze II, pred_score, 0.048
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.048
+pred_id, 36, pred_site, Minha_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.048
+
+true_id, 28, true_site, Yavne (north-west), true_period, Iron II
+pred_id, 28, pred_site, Yavne (north-west), pred_period, Iron II, pred_score, 0.938
+pred_id, 131, pred_site, Jericho_ T., pred_period, Pre-Pottery Neolithic B, pred_score, 0.062
+
+true_id, 29, true_site, Megiddo_ T., true_period, Late Bronze II
+pred_id, 6, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II-Late Bronze, pred_score, 0.333
+pred_id, 29, pred_site, Megiddo_ T., pred_period, Late Bronze II, pred_score, 0.250
+pred_id, 27, pred_site, Megiddo_ T., pred_period, Iron IA, pred_score, 0.083
+pred_id, 54, pred_site, `Arad_ T., pred_period, Early Bronze II, pred_score, 0.083
+pred_id, 92, pred_site, Megiddo_ T., pred_period, Middle Bronze II, pred_score, 0.083
+pred_id, 58, pred_site, Bet Mirsham_ T., pred_period, Iron II, pred_score, 0.083
+pred_id, 59, pred_site, Bet-Shemesh_ T., pred_period, Iron II, pred_score, 0.083
+
+true_id, 30, true_site, Gesher Benot Ya`aqov, true_period, Lower Palaeolithic
+pred_id, 30, pred_site, Gesher Benot Ya`aqov, pred_period, Lower Palaeolithic, pred_score, 0.667
+pred_id, 52, pred_site, Mayan Baruch , pred_period, Lower Palaeolithic, pred_score, 0.167
+pred_id, 140, pred_site, Me`arat ha-Gulgolet, pred_period, Lower Palaeolithic, pred_score, 0.056
+pred_id, 89, pred_site, `Ovadya_ T._ Prehistoric site, pred_period, Lower Palaeolithic, pred_score, 0.056
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.056
+
+true_id, 31, true_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, true_period, Early Roman (period)
+pred_id, 111, pred_site, Megiddo_ T., pred_period, Middle Bronze I, pred_score, 0.125
+pred_id, 4, pred_site, Jerusalem_ City of David, pred_period, Iron II, pred_score, 0.125
+pred_id, 31, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Early Roman (period), pred_score, 0.062
+pred_id, 103, pred_site, Nizzana, pred_period, Byzantine, pred_score, 0.062
+pred_id, 15, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pre-Ghassulian Chalcolithic, pred_score, 0.062
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.062
+pred_id, 11, pred_site, Me`arat ha-Nahal, pred_period, Natufian, pred_score, 0.062
+pred_id, 78, pred_site, `Arad_ T., pred_period, Iron II, pred_score, 0.062
+pred_id, 178, pred_site, Sheva`_ T., pred_period, Iron II, pred_score, 0.062
+pred_id, 58, pred_site, Bet Mirsham_ T., pred_period, Iron II, pred_score, 0.062
+
+true_id, 32, true_site, `Ujul_ T. el-, true_period, Late Bronze II
+pred_id, 40, pred_site, Akhziv, pred_period, Iron II, pred_score, 0.188
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.188
+pred_id, 29, pred_site, Megiddo_ T., pred_period, Late Bronze II, pred_score, 0.125
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.125
+pred_id, 41, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron II, pred_score, 0.062
+pred_id, 151, pred_site, Bet She'an_ T., pred_period, Late Bronze, pred_score, 0.062
+pred_id, 32, pred_site, `Ujul_ T. el-, pred_period, Late Bronze II, pred_score, 0.062
+pred_id, 37, pred_site, Jericho_ T., pred_period, Middle Bronze II, pred_score, 0.062
+pred_id, 27, pred_site, Megiddo_ T., pred_period, Iron IA, pred_score, 0.062
+pred_id, 6, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II-Late Bronze, pred_score, 0.062
+
+true_id, 33, true_site, Ashqelon_ T. Ashqelon, true_period, Iron IIC
+pred_id, 33, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron IIC, pred_score, 0.333
+pred_id, 41, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron II, pred_score, 0.167
+pred_id, 90, pred_site, Jerusalem_ Ketef Hinnom, pred_period, Iron IIC-Babylonian, pred_score, 0.111
+pred_id, 73, pred_site, Jerusalem_ City of David, pred_period, Early Roman (period), pred_score, 0.056
+pred_id, 31, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Early Roman (period), pred_score, 0.056
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.056
+pred_id, 84, pred_site, Nemal Akhziv, pred_period, Iron II, pred_score, 0.056
+pred_id, 155, pred_site, Afeq, pred_period, Middle Bronze II, pred_score, 0.056
+pred_id, 85, pred_site, `Atlit, pred_period, Persian, pred_score, 0.056
+pred_id, 3, pred_site, Nahal Pattish (Gilat), pred_period, Late Chalcolithic, pred_score, 0.056
+
+true_id, 34, true_site, Haifa_ T. Abu Hawwam, true_period, Late Bronze II
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.533
+pred_id, 66, pred_site, Lakhish_ T., pred_period, Late Bronze II, pred_score, 0.267
+pred_id, 174, pred_site, Jericho_ T., pred_period, Pottery Neolithic A, pred_score, 0.067
+pred_id, 150, pred_site, Sharuhen_ T., pred_period, Iron II, pred_score, 0.067
+pred_id, 151, pred_site, Bet She'an_ T., pred_period, Late Bronze, pred_score, 0.067
+
+true_id, 35, true_site, Megiddo_ T., true_period, Iron I
+pred_id, 35, pred_site, Megiddo_ T., pred_period, Iron I, pred_score, 0.417
+pred_id, 62, pred_site, Nahariyya_ Canaanite Temple, pred_period, Middle Bronze II, pred_score, 0.167
+pred_id, 85, pred_site, `Atlit, pred_period, Persian, pred_score, 0.083
+pred_id, 174, pred_site, Jericho_ T., pred_period, Pottery Neolithic A, pred_score, 0.083
+pred_id, 67, pred_site, Kfar Monash, pred_period, Early Bronze IB, pred_score, 0.083
+pred_id, 164, pred_site, Caesarea, pred_period, Early Roman (period), pred_score, 0.083
+pred_id, 188, pred_site, Zafit_ T., pred_period, Persian, pred_score, 0.083
+
+true_id, 36, true_site, Minha_ H., true_period, Pre-Pottery Neolithic B
+pred_id, 36, pred_site, Minha_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.529
+pred_id, 26, pred_site, Me`arat Tannur, pred_period, Middle Palaeolithic, pred_score, 0.118
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.118
+pred_id, 100, pred_site, Minha_ H., pred_period, Pottery Neolithic, pred_score, 0.059
+pred_id, 174, pred_site, Jericho_ T., pred_period, Pottery Neolithic A, pred_score, 0.059
+pred_id, 54, pred_site, `Arad_ T., pred_period, Early Bronze II, pred_score, 0.059
+pred_id, 171, pred_site,  Unknown, pred_period, Roman, pred_score, 0.059
+
+true_id, 37, true_site, Jericho_ T., true_period, Middle Bronze II
+pred_id, 37, pred_site, Jericho_ T., pred_period, Middle Bronze II, pred_score, 0.750
+pred_id, 77, pred_site, Jerusalem_ Rehov Salah ed-Din_ Ministry of Justice, pred_period, Late Roman, pred_score, 0.167
+pred_id, 165, pred_site, Gush Halav, pred_period, Byzantine, pred_score, 0.083
+
+true_id, 38, true_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, true_period, Late Hellenistic - Early Roman
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.231
+pred_id, 43, pred_site, `En Gedi, pred_period, Byzantine, pred_score, 0.154
+pred_id, 153, pred_site, Qeiyafa_ Kh., pred_period, Iron IIA, pred_score, 0.077
+pred_id, 45, pred_site, Jerusalem_ `En Rogel, pred_period, Roman, pred_score, 0.077
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.077
+pred_id, 76, pred_site, Ramla_ esh-Sheikh Rihan, pred_period, Early Islamic, pred_score, 0.077
+pred_id, 81, pred_site, Har Harif, pred_period, Harifian, pred_score, 0.077
+pred_id, 47, pred_site, Bet She'an_ T., pred_period, Middle Bronze II, pred_score, 0.077
+pred_id, 93, pred_site, Hamadya, pred_period, Pottery Neolithic, pred_score, 0.077
+pred_id, 94, pred_site, Jerusalem_ Giv`at ha-Mivtar, pred_period, Early Roman (period), pred_score, 0.077
+
+true_id, 39, true_site, Magharat Abu Shinja, true_period, Persian
+pred_id, 39, pred_site, Magharat Abu Shinja, pred_period, Persian, pred_score, 1.000
+
+true_id, 40, true_site, Akhziv, true_period, Iron II
+pred_id, 40, pred_site, Akhziv, pred_period, Iron II, pred_score, 0.300
+pred_id, 66, pred_site, Lakhish_ T., pred_period, Late Bronze II, pred_score, 0.200
+pred_id, 111, pred_site, Megiddo_ T., pred_period, Middle Bronze I, pred_score, 0.100
+pred_id, 153, pred_site, Qeiyafa_ Kh., pred_period, Iron IIA, pred_score, 0.100
+pred_id, 105, pred_site, Bet-Shemesh_ T., pred_period, Late Bronze II, pred_score, 0.100
+pred_id, 57, pred_site, Jerusalem_ City of David, pred_period, Persian, pred_score, 0.100
+pred_id, 72, pred_site, Bet She'an_ T., pred_period, Iron I, pred_score, 0.100
+
+true_id, 41, true_site, Ashqelon_ T. Ashqelon, true_period, Iron II
+pred_id, 33, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron IIC, pred_score, 0.250
+pred_id, 31, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Early Roman (period), pred_score, 0.083
+pred_id, 76, pred_site, Ramla_ esh-Sheikh Rihan, pred_period, Early Islamic, pred_score, 0.083
+pred_id, 150, pred_site, Sharuhen_ T., pred_period, Iron II, pred_score, 0.083
+pred_id, 32, pred_site, `Ujul_ T. el-, pred_period, Late Bronze II, pred_score, 0.083
+pred_id, 35, pred_site, Megiddo_ T., pred_period, Iron I, pred_score, 0.083
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.083
+pred_id, 41, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron II, pred_score, 0.083
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.083
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.083
+
+true_id, 42, true_site, `Akko_ Persian Garden, true_period, Late Bronze II
+pred_id, 42, pred_site, `Akko_ Persian Garden, pred_period, Late Bronze II, pred_score, 1.000
+
+true_id, 43, true_site, `En Gedi, true_period, Byzantine
+pred_id, 43, pred_site, `En Gedi, pred_period, Byzantine, pred_score, 0.500
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.250
+pred_id, 147, pred_site, Me`arot Yonim, pred_period, Upper Palaeolithic, pred_score, 0.083
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.083
+pred_id, 2, pred_site, Lakhish_ T., pred_period, Iron II, pred_score, 0.083
+
+true_id, 44, true_site, Gezer_ T., true_period, Late Bronze
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.250
+pred_id, 59, pred_site, Bet-Shemesh_ T., pred_period, Iron II, pred_score, 0.125
+pred_id, 148, pred_site, Mezad Rahel, pred_period, Roman, pred_score, 0.125
+pred_id, 151, pred_site, Bet She'an_ T., pred_period, Late Bronze, pred_score, 0.125
+pred_id, 42, pred_site, `Akko_ Persian Garden, pred_period, Late Bronze II, pred_score, 0.125
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.125
+pred_id, 62, pred_site, Nahariyya_ Canaanite Temple, pred_period, Middle Bronze II, pred_score, 0.125
+
+true_id, 45, true_site, Jerusalem_ `En Rogel, true_period, Roman
+pred_id, 45, pred_site, Jerusalem_ `En Rogel, pred_period, Roman, pred_score, 1.000
+
+true_id, 46, true_site, `En Besor, true_period, Early Bronze IB
+pred_id, 46, pred_site, `En Besor, pred_period, Early Bronze IB, pred_score, 0.833
+pred_id, 174, pred_site, Jericho_ T., pred_period, Pottery Neolithic A, pred_score, 0.083
+pred_id, 4, pred_site, Jerusalem_ City of David, pred_period, Iron II, pred_score, 0.083
+
+true_id, 47, true_site, Bet She'an_ T., true_period, Middle Bronze II
+pred_id, 25, pred_site, Bet She'an_ T., pred_period, Late Bronze II, pred_score, 0.182
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.182
+pred_id, 153, pred_site, Qeiyafa_ Kh., pred_period, Iron IIA, pred_score, 0.091
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.091
+pred_id, 15, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pre-Ghassulian Chalcolithic, pred_score, 0.091
+pred_id, 74, pred_site, Jerusalem_ Old City, pred_period, Early Roman (period), pred_score, 0.091
+pred_id, 43, pred_site, `En Gedi, pred_period, Byzantine, pred_score, 0.091
+pred_id, 73, pred_site, Jerusalem_ City of David, pred_period, Early Roman (period), pred_score, 0.091
+pred_id, 47, pred_site, Bet She'an_ T., pred_period, Middle Bronze II, pred_score, 0.091
+
+true_id, 48, true_site, Jerusalem_ Old City_ Western and Southern Walls, true_period, Early Roman (period)
+pred_id, 48, pred_site, Jerusalem_ Old City_ Western and Southern Walls, pred_period, Early Roman (period), pred_score, 0.900
+pred_id, 30, pred_site, Gesher Benot Ya`aqov, pred_period, Lower Palaeolithic, pred_score, 0.100
+
+true_id, 49, true_site, Hurfeish, true_period, Late Roman
+pred_id, 49, pred_site, Hurfeish, pred_period, Late Roman, pred_score, 0.500
+pred_id, 88, pred_site, Nahariyya_ Giv`at Katzenelson, pred_period, Late Roman, pred_score, 0.500
+
+true_id, 50, true_site, Samaria, true_period, Iron II
+pred_id, 50, pred_site, Samaria, pred_period, Iron II, pred_score, 0.500
+pred_id, 3, pred_site, Nahal Pattish (Gilat), pred_period, Late Chalcolithic, pred_score, 0.167
+pred_id, 85, pred_site, `Atlit, pred_period, Persian, pred_score, 0.167
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.083
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.083
+
+true_id, 51, true_site, Wadi Murabba`at_ Cave 1, true_period, Roman
+pred_id, 51, pred_site, Wadi Murabba`at_ Cave 1, pred_period, Roman, pred_score, 0.750
+pred_id, 143, pred_site, Moa, pred_period, Roman, pred_score, 0.125
+pred_id, 16, pred_site, Horevot Mazada, pred_period, Early Roman (period), pred_score, 0.125
+
+true_id, 52, true_site, Mayan Baruch , true_period, Lower Palaeolithic
+pred_id, 52, pred_site, Mayan Baruch , pred_period, Lower Palaeolithic, pred_score, 1.000
+
+true_id, 53, true_site, Yiftah'el_ H., true_period, Pre-Pottery Neolithic B
+pred_id, 53, pred_site, Yiftah'el_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.300
+pred_id, 33, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron IIC, pred_score, 0.200
+pred_id, 81, pred_site, Har Harif, pred_period, Harifian, pred_score, 0.200
+pred_id, 5, pred_site, Nahal Hemar, pred_period, Pre-Pottery Neolithic B, pred_score, 0.100
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.100
+pred_id, 41, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron II, pred_score, 0.100
+
+true_id, 54, true_site, `Arad_ T., true_period, Early Bronze II
+pred_id, 54, pred_site, `Arad_ T., pred_period, Early Bronze II, pred_score, 0.600
+pred_id, 117, pred_site, Jerusalem_ Binyane ha-Umma, pred_period, Roman, pred_score, 0.100
+pred_id, 9, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic A, pred_score, 0.100
+pred_id, 188, pred_site, Zafit_ T., pred_period, Persian, pred_score, 0.100
+pred_id, 64, pred_site, Bet Mirsham_ T., pred_period, Middle Bronze II, pred_score, 0.100
+
+true_id, 55, true_site, Megiddo_ T., true_period, Iron II
+pred_id, 55, pred_site, Megiddo_ T., pred_period, Iron II, pred_score, 0.533
+pred_id, 83, pred_site, Megiddo_ T., pred_period, Early Bronze I, pred_score, 0.067
+pred_id, 50, pred_site, Samaria, pred_period, Iron II, pred_score, 0.067
+pred_id, 6, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II-Late Bronze, pred_score, 0.067
+pred_id, 57, pred_site, Jerusalem_ City of David, pred_period, Persian, pred_score, 0.067
+pred_id, 80, pred_site, Me`arat Oren, pred_period, Natufian, pred_score, 0.067
+pred_id, 116, pred_site, Caesarea, pred_period, Byzantine, pred_score, 0.067
+pred_id, 164, pred_site, Caesarea, pred_period, Early Roman (period), pred_score, 0.067
+
+true_id, 56, true_site, Mezad Hazeva, true_period, Iron II
+pred_id, 56, pred_site, Mezad Hazeva, pred_period, Iron II, pred_score, 0.857
+pred_id, 31, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Early Roman (period), pred_score, 0.143
+
+true_id, 57, true_site, Jerusalem_ City of David, true_period, Persian
+pred_id, 57, pred_site, Jerusalem_ City of David, pred_period, Persian, pred_score, 0.750
+pred_id, 71, pred_site, Ramat Rahel, pred_period, Iron II, pred_score, 0.167
+pred_id, 4, pred_site, Jerusalem_ City of David, pred_period, Iron II, pred_score, 0.083
+
+true_id, 58, true_site, Bet Mirsham_ T., true_period, Iron II
+pred_id, 128, pred_site, Bir er-Ruqeish, pred_period, Iron II, pred_score, 0.333
+pred_id, 2, pred_site, Lakhish_ T., pred_period, Iron II, pred_score, 0.250
+pred_id, 55, pred_site, Megiddo_ T., pred_period, Iron II, pred_score, 0.167
+pred_id, 47, pred_site, Bet She'an_ T., pred_period, Middle Bronze II, pred_score, 0.083
+pred_id, 92, pred_site, Megiddo_ T., pred_period, Middle Bronze II, pred_score, 0.083
+pred_id, 160, pred_site, Anafa_ T., pred_period, Hellenistic, pred_score, 0.083
+
+true_id, 59, true_site, Bet-Shemesh_ T., true_period, Iron II
+pred_id, 194, pred_site, Megiddo_ T., pred_period, Late Bronze, pred_score, 0.429
+pred_id, 59, pred_site, Bet-Shemesh_ T., pred_period, Iron II, pred_score, 0.286
+pred_id, 98, pred_site, `Ujul_ T. el-, pred_period, Late Bronze, pred_score, 0.143
+pred_id, 150, pred_site, Sharuhen_ T., pred_period, Iron II, pred_score, 0.143
+
+true_id, 60, true_site, Mafjar_ Kh. el-, true_period, Umayyad
+pred_id, 60, pred_site, Mafjar_ Kh. el-, pred_period, Umayyad, pred_score, 0.667
+pred_id, 0, pred_site, Maresha_ T., pred_period, Hellenistic, pred_score, 0.111
+pred_id, 103, pred_site, Nizzana, pred_period, Byzantine, pred_score, 0.111
+pred_id, 173, pred_site, Gezer_ T., pred_period, Late Bronze II, pred_score, 0.111
+
+true_id, 61, true_site, Magharat Shuqba, true_period, Natufian
+pred_id, 11, pred_site, Me`arat ha-Nahal, pred_period, Natufian, pred_score, 0.600
+pred_id, 61, pred_site, Magharat Shuqba, pred_period, Natufian, pred_score, 0.200
+pred_id, 7, pred_site, Me`arat Kebara, pred_period, Natufian, pred_score, 0.200
+
+true_id, 62, true_site, Nahariyya_ Canaanite Temple, true_period, Middle Bronze II
+pred_id, 62, pred_site, Nahariyya_ Canaanite Temple, pred_period, Middle Bronze II, pred_score, 0.500
+pred_id, 127, pred_site, `Ai, pred_period, Early Bronze I, pred_score, 0.125
+pred_id, 54, pred_site, `Arad_ T., pred_period, Early Bronze II, pred_score, 0.125
+pred_id, 193, pred_site, Ma`yan Barukh, pred_period, Roman, pred_score, 0.125
+pred_id, 107, pred_site, Holot Qesari (south), pred_period, Late Roman - Byzantine, pred_score, 0.125
+
+true_id, 63, true_site, Besamon, true_period, Neolithic
+pred_id, 30, pred_site, Gesher Benot Ya`aqov, pred_period, Lower Palaeolithic, pred_score, 0.444
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.222
+pred_id, 86, pred_site, Besamon, pred_period, Pottery Neolithic, pred_score, 0.111
+pred_id, 63, pred_site, Besamon, pred_period, Neolithic, pred_score, 0.111
+pred_id, 82, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic, pred_score, 0.111
+
+true_id, 64, true_site, Bet Mirsham_ T., true_period, Middle Bronze II
+pred_id, 154, pred_site, `Atlit, pred_period, Middle Bronze II, pred_score, 0.444
+pred_id, 37, pred_site, Jericho_ T., pred_period, Middle Bronze II, pred_score, 0.222
+pred_id, 29, pred_site, Megiddo_ T., pred_period, Late Bronze II, pred_score, 0.111
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.111
+pred_id, 182, pred_site, Barqai, pred_period, Middle Bronze IIB, pred_score, 0.111
+
+true_id, 65, true_site, Bet She'an_ T., true_period, Iron II
+pred_id, 65, pred_site, Bet She'an_ T., pred_period, Iron II, pred_score, 0.500
+pred_id, 150, pred_site, Sharuhen_ T., pred_period, Iron II, pred_score, 0.167
+pred_id, 31, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Early Roman (period), pred_score, 0.167
+pred_id, 87, pred_site, Caesarea, pred_period, Fatimid, pred_score, 0.167
+
+true_id, 66, true_site, Lakhish_ T., true_period, Late Bronze II
+pred_id, 27, pred_site, Megiddo_ T., pred_period, Iron IA, pred_score, 0.250
+pred_id, 60, pred_site, Mafjar_ Kh. el-, pred_period, Umayyad, pred_score, 0.250
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.250
+pred_id, 187, pred_site, Samaria, pred_period, Hellenistic, pred_score, 0.250
+
+true_id, 67, true_site, Kfar Monash, true_period, Early Bronze IB
+pred_id, 67, pred_site, Kfar Monash, pred_period, Early Bronze IB, pred_score, 0.857
+pred_id, 25, pred_site, Bet She'an_ T., pred_period, Late Bronze II, pred_score, 0.143
+
+true_id, 68, true_site, Zif_ Kh., true_period, Middle Palaeolithic
+pred_id, 68, pred_site, Zif_ Kh., pred_period, Middle Palaeolithic, pred_score, 0.364
+pred_id, 69, pred_site, Magharat Shuqba, pred_period, Middle Palaeolithic, pred_score, 0.182
+pred_id, 108, pred_site, Me`arat ha-Gulgolet, pred_period, Middle Palaeolithic, pred_score, 0.182
+pred_id, 1, pred_site, Me`arat ha-Nahal, pred_period, Upper Palaeolithic, pred_score, 0.091
+pred_id, 7, pred_site, Me`arat Kebara, pred_period, Natufian, pred_score, 0.091
+pred_id, 180, pred_site, `Ai, pred_period, Early Bronze II-III, pred_score, 0.091
+
+true_id, 69, true_site, Magharat Shuqba, true_period, Middle Palaeolithic
+pred_id, 1, pred_site, Me`arat ha-Nahal, pred_period, Upper Palaeolithic, pred_score, 0.500
+pred_id, 69, pred_site, Magharat Shuqba, pred_period, Middle Palaeolithic, pred_score, 0.125
+pred_id, 68, pred_site, Zif_ Kh., pred_period, Middle Palaeolithic, pred_score, 0.125
+pred_id, 7, pred_site, Me`arat Kebara, pred_period, Natufian, pred_score, 0.125
+pred_id, 108, pred_site, Me`arat ha-Gulgolet, pred_period, Middle Palaeolithic, pred_score, 0.125
+
+true_id, 70, true_site, Magharat Umm Qatafa, true_period, Lower Palaeolithic
+pred_id, 70, pred_site, Magharat Umm Qatafa, pred_period, Lower Palaeolithic, pred_score, 0.900
+pred_id, 140, pred_site, Me`arat ha-Gulgolet, pred_period, Lower Palaeolithic, pred_score, 0.100
+
+true_id, 71, true_site, Ramat Rahel, true_period, Iron II
+pred_id, 189, pred_site, `En Gedi, pred_period, Roman, pred_score, 0.250
+pred_id, 50, pred_site, Samaria, pred_period, Iron II, pred_score, 0.125
+pred_id, 71, pred_site, Ramat Rahel, pred_period, Iron II, pred_score, 0.125
+pred_id, 4, pred_site, Jerusalem_ City of David, pred_period, Iron II, pred_score, 0.125
+pred_id, 57, pred_site, Jerusalem_ City of David, pred_period, Persian, pred_score, 0.125
+pred_id, 35, pred_site, Megiddo_ T., pred_period, Iron I, pred_score, 0.125
+pred_id, 133, pred_site, Jerusalem_ Old City_ Western and Southern Walls, pred_period, Iron II, pred_score, 0.125
+
+true_id, 72, true_site, Bet She'an_ T., true_period, Iron I
+pred_id, 72, pred_site, Bet She'an_ T., pred_period, Iron I, pred_score, 0.500
+pred_id, 86, pred_site, Besamon, pred_period, Pottery Neolithic, pred_score, 0.100
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.100
+pred_id, 2, pred_site, Lakhish_ T., pred_period, Iron II, pred_score, 0.100
+pred_id, 20, pred_site, Maresha_ T., pred_period, Persian-Hellenistic, pred_score, 0.100
+pred_id, 15, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pre-Ghassulian Chalcolithic, pred_score, 0.100
+
+true_id, 73, true_site, Jerusalem_ City of David, true_period, Early Roman (period)
+pred_id, 73, pred_site, Jerusalem_ City of David, pred_period, Early Roman (period), pred_score, 0.500
+pred_id, 31, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Early Roman (period), pred_score, 0.250
+pred_id, 36, pred_site, Minha_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.125
+pred_id, 41, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron II, pred_score, 0.125
+
+true_id, 74, true_site, Jerusalem_ Old City, true_period, Early Roman (period)
+pred_id, 74, pred_site, Jerusalem_ Old City, pred_period, Early Roman (period), pred_score, 0.600
+pred_id, 0, pred_site, Maresha_ T., pred_period, Hellenistic, pred_score, 0.300
+pred_id, 106, pred_site, Caesarea, pred_period, Early Islamic, pred_score, 0.100
+
+true_id, 75, true_site, Jerusalem_ Har ha-Zofim (east), true_period, Early Roman (period)
+pred_id, 75, pred_site, Jerusalem_ Har ha-Zofim (east), pred_period, Early Roman (period), pred_score, 0.714
+pred_id, 48, pred_site, Jerusalem_ Old City_ Western and Southern Walls, pred_period, Early Roman (period), pred_score, 0.143
+pred_id, 47, pred_site, Bet She'an_ T., pred_period, Middle Bronze II, pred_score, 0.143
+
+true_id, 76, true_site, Ramla_ esh-Sheikh Rihan, true_period, Early Islamic
+pred_id, 106, pred_site, Caesarea, pred_period, Early Islamic, pred_score, 0.250
+pred_id, 73, pred_site, Jerusalem_ City of David, pred_period, Early Roman (period), pred_score, 0.125
+pred_id, 76, pred_site, Ramla_ esh-Sheikh Rihan, pred_period, Early Islamic, pred_score, 0.125
+pred_id, 176, pred_site, Ramla, pred_period, Early Islamic, pred_score, 0.125
+pred_id, 16, pred_site, Horevot Mazada, pred_period, Early Roman (period), pred_score, 0.125
+pred_id, 162, pred_site, Bet She'an_ T., pred_period, Hellenistic, pred_score, 0.125
+pred_id, 27, pred_site, Megiddo_ T., pred_period, Iron IA, pred_score, 0.125
+
+true_id, 77, true_site, Jerusalem_ Rehov Salah ed-Din_ Ministry of Justice, true_period, Late Roman
+pred_id, 77, pred_site, Jerusalem_ Rehov Salah ed-Din_ Ministry of Justice, pred_period, Late Roman, pred_score, 0.500
+pred_id, 197, pred_site, Zuq el-Fauqani ez-, pred_period, Byzantine, pred_score, 0.167
+pred_id, 2, pred_site, Lakhish_ T., pred_period, Iron II, pred_score, 0.167
+pred_id, 152, pred_site, Nahal Hever, pred_period, Middle Roman (70-135 CE), pred_score, 0.167
+
+true_id, 78, true_site, `Arad_ T., true_period, Iron II
+pred_id, 78, pred_site, `Arad_ T., pred_period, Iron II, pred_score, 0.727
+pred_id, 178, pred_site, Sheva`_ T., pred_period, Iron II, pred_score, 0.182
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.091
+
+true_id, 79, true_site, Jerusalem_ `En Rogel, true_period, Early Roman (period)
+pred_id, 49, pred_site, Hurfeish, pred_period, Late Roman, pred_score, 0.333
+pred_id, 79, pred_site, Jerusalem_ `En Rogel, pred_period, Early Roman (period), pred_score, 0.333
+pred_id, 151, pred_site, Bet She'an_ T., pred_period, Late Bronze, pred_score, 0.167
+pred_id, 45, pred_site, Jerusalem_ `En Rogel, pred_period, Roman, pred_score, 0.167
+
+true_id, 80, true_site, Me`arat Oren, true_period, Natufian
+pred_id, 50, pred_site, Samaria, pred_period, Iron II, pred_score, 0.286
+pred_id, 8, pred_site, Nahal Mishmar_ Me`arat ha-Matmon, pred_period, Late Chalcolithic, pred_score, 0.286
+pred_id, 110, pred_site, Mizpah, pred_period, Early Bronze I, pred_score, 0.286
+pred_id, 92, pred_site, Megiddo_ T., pred_period, Middle Bronze II, pred_score, 0.143
+
+true_id, 81, true_site, Har Harif, true_period, Harifian
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.333
+pred_id, 81, pred_site, Har Harif, pred_period, Harifian, pred_score, 0.222
+pred_id, 3, pred_site, Nahal Pattish (Gilat), pred_period, Late Chalcolithic, pred_score, 0.111
+pred_id, 5, pred_site, Nahal Hemar, pred_period, Pre-Pottery Neolithic B, pred_score, 0.111
+pred_id, 10, pred_site, Nahal Zin, pred_period, Upper Palaeolithic, pred_score, 0.111
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.111
+
+true_id, 82, true_site, Sha`ar ha-Golan, true_period, Pottery Neolithic
+pred_id, 82, pred_site, Sha`ar ha-Golan, pred_period, Pottery Neolithic, pred_score, 0.500
+pred_id, 113, pred_site, `En Gedi, pred_period, Early Roman (period), pred_score, 0.333
+pred_id, 63, pred_site, Besamon, pred_period, Neolithic, pred_score, 0.167
+
+true_id, 83, true_site, Megiddo_ T., true_period, Early Bronze I
+pred_id, 83, pred_site, Megiddo_ T., pred_period, Early Bronze I, pred_score, 0.333
+pred_id, 37, pred_site, Jericho_ T., pred_period, Middle Bronze II, pred_score, 0.111
+pred_id, 153, pred_site, Qeiyafa_ Kh., pred_period, Iron IIA, pred_score, 0.111
+pred_id, 76, pred_site, Ramla_ esh-Sheikh Rihan, pred_period, Early Islamic, pred_score, 0.111
+pred_id, 88, pred_site, Nahariyya_ Giv`at Katzenelson, pred_period, Late Roman, pred_score, 0.111
+pred_id, 81, pred_site, Har Harif, pred_period, Harifian, pred_score, 0.111
+pred_id, 16, pred_site, Horevot Mazada, pred_period, Early Roman (period), pred_score, 0.111
+
+true_id, 84, true_site, Nemal Akhziv, true_period, Iron II
+pred_id, 84, pred_site, Nemal Akhziv, pred_period, Iron II, pred_score, 0.667
+pred_id, 149, pred_site, Nemal Akhziv, pred_period, Iron IIC, pred_score, 0.222
+pred_id, 190, pred_site, Afeq, pred_period, Late Bronze II, pred_score, 0.111
+
+true_id, 85, true_site, `Atlit, true_period, Persian
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.333
+pred_id, 85, pred_site, `Atlit, pred_period, Persian, pred_score, 0.167
+pred_id, 96, pred_site, Me`arot Yonim, pred_period, Natufian, pred_score, 0.167
+pred_id, 170, pred_site,  Unknown, pred_period, Byzantine, pred_score, 0.167
+pred_id, 197, pred_site, Zuq el-Fauqani ez-, pred_period, Byzantine, pred_score, 0.167
+
+true_id, 86, true_site, Besamon, true_period, Pottery Neolithic
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.333
+pred_id, 138, pred_site, Besamon, pred_period, Pre-Pottery Neolithic, pred_score, 0.333
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.167
+pred_id, 86, pred_site, Besamon, pred_period, Pottery Neolithic, pred_score, 0.167
+
+true_id, 87, true_site, Caesarea, true_period, Fatimid
+pred_id, 87, pred_site, Caesarea, pred_period, Fatimid, pred_score, 0.750
+pred_id, 181, pred_site, Asherat, pred_period, Late Roman, pred_score, 0.250
+
+true_id, 88, true_site, Nahariyya_ Giv`at Katzenelson, true_period, Late Roman
+pred_id, 88, pred_site, Nahariyya_ Giv`at Katzenelson, pred_period, Late Roman, pred_score, 1.000
+
+true_id, 89, true_site, `Ovadya_ T._ Prehistoric site, true_period, Lower Palaeolithic
+pred_id, 89, pred_site, `Ovadya_ T._ Prehistoric site, pred_period, Lower Palaeolithic, pred_score, 0.500
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.250
+pred_id, 30, pred_site, Gesher Benot Ya`aqov, pred_period, Lower Palaeolithic, pred_score, 0.125
+pred_id, 15, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pre-Ghassulian Chalcolithic, pred_score, 0.125
+
+true_id, 90, true_site, Jerusalem_ Ketef Hinnom, true_period, Iron IIC-Babylonian
+pred_id, 90, pred_site, Jerusalem_ Ketef Hinnom, pred_period, Iron IIC-Babylonian, pred_score, 0.750
+pred_id, 5, pred_site, Nahal Hemar, pred_period, Pre-Pottery Neolithic B, pred_score, 0.125
+pred_id, 42, pred_site, `Akko_ Persian Garden, pred_period, Late Bronze II, pred_score, 0.125
+
+true_id, 91, true_site, Me`arat Amira, true_period, Upper Palaeolithic
+pred_id, 1, pred_site, Me`arat ha-Nahal, pred_period, Upper Palaeolithic, pred_score, 0.714
+pred_id, 69, pred_site, Magharat Shuqba, pred_period, Middle Palaeolithic, pred_score, 0.143
+pred_id, 91, pred_site, Me`arat Amira, pred_period, Upper Palaeolithic, pred_score, 0.143
+
+true_id, 92, true_site, Megiddo_ T., true_period, Middle Bronze II
+pred_id, 37, pred_site, Jericho_ T., pred_period, Middle Bronze II, pred_score, 0.167
+pred_id, 127, pred_site, `Ai, pred_period, Early Bronze I, pred_score, 0.167
+pred_id, 92, pred_site, Megiddo_ T., pred_period, Middle Bronze II, pred_score, 0.167
+pred_id, 154, pred_site, `Atlit, pred_period, Middle Bronze II, pred_score, 0.167
+pred_id, 17, pred_site, Nahal Hever, pred_period, Middle Roman, pred_score, 0.167
+pred_id, 64, pred_site, Bet Mirsham_ T., pred_period, Middle Bronze II, pred_score, 0.167
+
+true_id, 93, true_site, Hamadya, true_period, Pottery Neolithic
+pred_id, 93, pred_site, Hamadya, pred_period, Pottery Neolithic, pred_score, 0.333
+pred_id, 26, pred_site, Me`arat Tannur, pred_period, Middle Palaeolithic, pred_score, 0.167
+pred_id, 25, pred_site, Bet She'an_ T., pred_period, Late Bronze II, pred_score, 0.167
+pred_id, 3, pred_site, Nahal Pattish (Gilat), pred_period, Late Chalcolithic, pred_score, 0.167
+pred_id, 89, pred_site, `Ovadya_ T._ Prehistoric site, pred_period, Lower Palaeolithic, pred_score, 0.167
+
+true_id, 94, true_site, Jerusalem_ Giv`at ha-Mivtar, true_period, Early Roman (period)
+pred_id, 94, pred_site, Jerusalem_ Giv`at ha-Mivtar, pred_period, Early Roman (period), pred_score, 0.600
+pred_id, 4, pred_site, Jerusalem_ City of David, pred_period, Iron II, pred_score, 0.200
+pred_id, 118, pred_site, Jerusalem_ Mount Scopus (west), pred_period, Early Roman (period), pred_score, 0.200
+
+true_id, 95, true_site, Me`arat Kebara, true_period, Upper Palaeolithic
+pred_id, 95, pred_site, Me`arat Kebara, pred_period, Upper Palaeolithic, pred_score, 0.833
+pred_id, 131, pred_site, Jericho_ T., pred_period, Pre-Pottery Neolithic B, pred_score, 0.167
+
+true_id, 96, true_site, Me`arot Yonim, true_period, Natufian
+pred_id, 53, pred_site, Yiftah'el_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.167
+pred_id, 96, pred_site, Me`arot Yonim, pred_period, Natufian, pred_score, 0.167
+pred_id, 89, pred_site, `Ovadya_ T._ Prehistoric site, pred_period, Lower Palaeolithic, pred_score, 0.167
+pred_id, 36, pred_site, Minha_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.167
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.167
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.167
+
+true_id, 97, true_site, `Atlit, true_period, Crusader
+pred_id, 97, pred_site, `Atlit, pred_period, Crusader, pred_score, 0.667
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.167
+pred_id, 178, pred_site, Sheva`_ T., pred_period, Iron II, pred_score, 0.167
+
+true_id, 98, true_site, `Ujul_ T. el-, true_period, Late Bronze
+pred_id, 131, pred_site, Jericho_ T., pred_period, Pre-Pottery Neolithic B, pred_score, 0.429
+pred_id, 175, pred_site, Neve Ur, pred_period, Middle Bronze II, pred_score, 0.143
+pred_id, 194, pred_site, Megiddo_ T., pred_period, Late Bronze, pred_score, 0.143
+pred_id, 6, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II-Late Bronze, pred_score, 0.143
+pred_id, 7, pred_site, Me`arat Kebara, pred_period, Natufian, pred_score, 0.143
+
+true_id, 99, true_site, Makr_ el-, true_period, Late Roman
+pred_id, 99, pred_site, Makr_ el-, pred_period, Late Roman, pred_score, 0.750
+pred_id, 181, pred_site, Asherat, pred_period, Late Roman, pred_score, 0.250
+
+true_id, 100, true_site, Minha_ H., true_period, Pottery Neolithic
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.333
+pred_id, 100, pred_site, Minha_ H., pred_period, Pottery Neolithic, pred_score, 0.167
+pred_id, 106, pred_site, Caesarea, pred_period, Early Islamic, pred_score, 0.167
+pred_id, 190, pred_site, Afeq, pred_period, Late Bronze II, pred_score, 0.167
+pred_id, 36, pred_site, Minha_ H., pred_period, Pre-Pottery Neolithic B, pred_score, 0.167
+
+true_id, 101, true_site, Tiberias and Hammat, true_period, Fatimid
+pred_id, 101, pred_site, Tiberias and Hammat, pred_period, Fatimid, pred_score, 1.000
+
+true_id, 102, true_site, Dan_ T., true_period, Late Bronze II
+pred_id, 102, pred_site, Dan_ T., pred_period, Late Bronze II, pred_score, 1.000
+
+true_id, 103, true_site, Nizzana, true_period, Byzantine
+pred_id, 48, pred_site, Jerusalem_ Old City_ Western and Southern Walls, pred_period, Early Roman (period), pred_score, 0.100
+pred_id, 5, pred_site, Nahal Hemar, pred_period, Pre-Pottery Neolithic B, pred_score, 0.100
+pred_id, 12, pred_site, Horevot Mazada, pred_period, Roman, pred_score, 0.100
+pred_id, 80, pred_site, Me`arat Oren, pred_period, Natufian, pred_score, 0.100
+pred_id, 189, pred_site, `En Gedi, pred_period, Roman, pred_score, 0.100
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.100
+pred_id, 118, pred_site, Jerusalem_ Mount Scopus (west), pred_period, Early Roman (period), pred_score, 0.100
+pred_id, 103, pred_site, Nizzana, pred_period, Byzantine, pred_score, 0.100
+pred_id, 76, pred_site, Ramla_ esh-Sheikh Rihan, pred_period, Early Islamic, pred_score, 0.100
+pred_id, 71, pred_site, Ramat Rahel, pred_period, Iron II, pred_score, 0.100
+
+true_id, 104, true_site, Nahal Omer , true_period, Early Islamic
+pred_id, 104, pred_site, Nahal Omer , pred_period, Early Islamic, pred_score, 0.500
+pred_id, 157, pred_site, Qumran_ Cave 4Q, pred_period, Early Roman (period), pred_score, 0.167
+pred_id, 196, pred_site, Nahal Mishmar, pred_period, Late Chalcolithic, pred_score, 0.167
+pred_id, 195, pred_site, Mesad Boqeq, pred_period, Byzantine, pred_score, 0.167
+
+true_id, 105, true_site, Bet-Shemesh_ T., true_period, Late Bronze II
+pred_id, 105, pred_site, Bet-Shemesh_ T., pred_period, Late Bronze II, pred_score, 0.800
+pred_id, 173, pred_site, Gezer_ T., pred_period, Late Bronze II, pred_score, 0.200
+
+true_id, 106, true_site, Caesarea, true_period, Early Islamic
+pred_id, 161, pred_site, Bet She'an, pred_period, Mamluk, pred_score, 0.250
+pred_id, 106, pred_site, Caesarea, pred_period, Early Islamic, pred_score, 0.250
+pred_id, 122, pred_site, Hammat, pred_period, Fatimid, pred_score, 0.125
+pred_id, 76, pred_site, Ramla_ esh-Sheikh Rihan, pred_period, Early Islamic, pred_score, 0.125
+pred_id, 116, pred_site, Caesarea, pred_period, Byzantine, pred_score, 0.125
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.125
+
+true_id, 107, true_site, Holot Qesari (south), true_period, Late Roman - Byzantine
+pred_id, 107, pred_site, Holot Qesari (south), pred_period, Late Roman - Byzantine, pred_score, 1.000
+
+true_id, 108, true_site, Me`arat ha-Gulgolet, true_period, Middle Palaeolithic
+pred_id, 69, pred_site, Magharat Shuqba, pred_period, Middle Palaeolithic, pred_score, 0.500
+pred_id, 3, pred_site, Nahal Pattish (Gilat), pred_period, Late Chalcolithic, pred_score, 0.167
+pred_id, 140, pred_site, Me`arat ha-Gulgolet, pred_period, Lower Palaeolithic, pred_score, 0.167
+pred_id, 108, pred_site, Me`arat ha-Gulgolet, pred_period, Middle Palaeolithic, pred_score, 0.167
+
+true_id, 109, true_site, Ashkelon  1933 , true_period, Iron IIC-Babylonian-Persian
+pred_id, 109, pred_site, Ashkelon  1933 , pred_period, Iron IIC-Babylonian-Persian, pred_score, 1.000
+
+true_id, 110, true_site, Mizpah, true_period, Early Bronze I
+pred_id, 110, pred_site, Mizpah, pred_period, Early Bronze I, pred_score, 0.857
+pred_id, 32, pred_site, `Ujul_ T. el-, pred_period, Late Bronze II, pred_score, 0.143
+
+true_id, 111, true_site, Megiddo_ T., true_period, Middle Bronze I
+pred_id, 111, pred_site, Megiddo_ T., pred_period, Middle Bronze I, pred_score, 0.571
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.429
+
+true_id, 112, true_site, Mizpah, true_period, Iron II
+pred_id, 59, pred_site, Bet-Shemesh_ T., pred_period, Iron II, pred_score, 0.429
+pred_id, 117, pred_site, Jerusalem_ Binyane ha-Umma, pred_period, Roman, pred_score, 0.286
+pred_id, 73, pred_site, Jerusalem_ City of David, pred_period, Early Roman (period), pred_score, 0.143
+pred_id, 18, pred_site, Jerusalem_ City of David, pred_period, Hellenistic, pred_score, 0.143
+
+true_id, 113, true_site, `En Gedi, true_period, Early Roman (period)
+pred_id, 196, pred_site, Nahal Mishmar, pred_period, Late Chalcolithic, pred_score, 0.286
+pred_id, 47, pred_site, Bet She'an_ T., pred_period, Middle Bronze II, pred_score, 0.143
+pred_id, 189, pred_site, `En Gedi, pred_period, Roman, pred_score, 0.143
+pred_id, 15, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pre-Ghassulian Chalcolithic, pred_score, 0.143
+pred_id, 145, pred_site, Hazor_ T., pred_period, Late Bronze II, pred_score, 0.143
+pred_id, 195, pred_site, Mesad Boqeq, pred_period, Byzantine, pred_score, 0.143
+
+true_id, 114, true_site, Burnat_ Kh., true_period, none
+pred_id, 114, pred_site, Burnat_ Kh., pred_period, none, pred_score, 0.667
+pred_id, 22, pred_site,  Unknown, pred_period, none, pred_score, 0.167
+pred_id, 142, pred_site, Mikhal_ T., pred_period, none, pred_score, 0.167
+
+true_id, 115, true_site, BURNT HOUSE, true_period, Early Roman (period)
+pred_id, 115, pred_site, BURNT HOUSE, pred_period, Early Roman (period), pred_score, 0.500
+pred_id, 80, pred_site, Me`arat Oren, pred_period, Natufian, pred_score, 0.333
+pred_id, 120, pred_site, Zaf_ T., pred_period, Pre-Ghassulian Chalcolithic, pred_score, 0.167
+
+true_id, 116, true_site, Caesarea, true_period, Byzantine
+pred_id, 116, pred_site, Caesarea, pred_period, Byzantine, pred_score, 0.833
+pred_id, 190, pred_site, Afeq, pred_period, Late Bronze II, pred_score, 0.167
+
+true_id, 117, true_site, Jerusalem_ Binyane ha-Umma, true_period, Roman
+pred_id, 117, pred_site, Jerusalem_ Binyane ha-Umma, pred_period, Roman, pred_score, 0.833
+pred_id, 189, pred_site, `En Gedi, pred_period, Roman, pred_score, 0.167
+
+true_id, 118, true_site, Jerusalem_ Mount Scopus (west), true_period, Early Roman (period)
+pred_id, 79, pred_site, Jerusalem_ `En Rogel, pred_period, Early Roman (period), pred_score, 0.500
+pred_id, 118, pred_site, Jerusalem_ Mount Scopus (west), pred_period, Early Roman (period), pred_score, 0.500
+
+true_id, 119, true_site, Lidd_ Kh., true_period, Late Roman
+pred_id, 119, pred_site, Lidd_ Kh., pred_period, Late Roman, pred_score, 0.500
+pred_id, 156, pred_site, Hedera , pred_period, Late Roman, pred_score, 0.500
+
+true_id, 120, true_site, Zaf_ T., true_period, Pre-Ghassulian Chalcolithic
+pred_id, 120, pred_site, Zaf_ T., pred_period, Pre-Ghassulian Chalcolithic, pred_score, 1.000
+
+true_id, 121, true_site, Bet-Shemesh_ T., true_period, Iron I
+pred_id, 42, pred_site, `Akko_ Persian Garden, pred_period, Late Bronze II, pred_score, 0.400
+pred_id, 74, pred_site, Jerusalem_ Old City, pred_period, Early Roman (period), pred_score, 0.200
+pred_id, 112, pred_site, Mizpah, pred_period, Iron II, pred_score, 0.200
+pred_id, 153, pred_site, Qeiyafa_ Kh., pred_period, Iron IIA, pred_score, 0.200
+
+true_id, 122, true_site, Hammat, true_period, Fatimid
+pred_id, 25, pred_site, Bet She'an_ T., pred_period, Late Bronze II, pred_score, 0.286
+pred_id, 101, pred_site, Tiberias and Hammat, pred_period, Fatimid, pred_score, 0.286
+pred_id, 131, pred_site, Jericho_ T., pred_period, Pre-Pottery Neolithic B, pred_score, 0.143
+pred_id, 122, pred_site, Hammat, pred_period, Fatimid, pred_score, 0.143
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.143
+
+true_id, 123, true_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, true_period, Iron II
+pred_id, 123, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Iron II, pred_score, 1.000
+
+true_id, 124, true_site, Nemal Akhziv, true_period, Iron IIB
+pred_id, 124, pred_site, Nemal Akhziv, pred_period, Iron IIB, pred_score, 0.500
+pred_id, 154, pred_site, `Atlit, pred_period, Middle Bronze II, pred_score, 0.333
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.167
+
+true_id, 125, true_site, Palmahim, true_period, Late Roman
+pred_id, 125, pred_site, Palmahim, pred_period, Late Roman, pred_score, 1.000
+
+true_id, 126, true_site, 'En Tamar, true_period, Roman
+pred_id, 126, pred_site, 'En Tamar, pred_period, Roman, pred_score, 0.500
+pred_id, 12, pred_site, Horevot Mazada, pred_period, Roman, pred_score, 0.250
+pred_id, 104, pred_site, Nahal Omer , pred_period, Early Islamic, pred_score, 0.250
+
+true_id, 127, true_site, `Ai, true_period, Early Bronze I
+pred_id, 37, pred_site, Jericho_ T., pred_period, Middle Bronze II, pred_score, 0.333
+pred_id, 127, pred_site, `Ai, pred_period, Early Bronze I, pred_score, 0.333
+pred_id, 155, pred_site, Afeq, pred_period, Middle Bronze II, pred_score, 0.333
+
+true_id, 128, true_site, Bir er-Ruqeish, true_period, Iron II
+pred_id, 128, pred_site, Bir er-Ruqeish, pred_period, Iron II, pred_score, 1.000
+
+true_id, 129, true_site, Gan Soreq (north), true_period, none
+pred_id, 129, pred_site, Gan Soreq (north), pred_period, none, pred_score, 0.333
+pred_id, 179, pred_site, Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0), pred_period, none, pred_score, 0.333
+pred_id, 114, pred_site, Burnat_ Kh., pred_period, none, pred_score, 0.333
+
+true_id, 130, true_site, Har Qedumim, true_period, Middle Palaeolithic
+pred_id, 130, pred_site, Har Qedumim, pred_period, Middle Palaeolithic, pred_score, 0.667
+pred_id, 26, pred_site, Me`arat Tannur, pred_period, Middle Palaeolithic, pred_score, 0.333
+
+true_id, 131, true_site, Jericho_ T., true_period, Pre-Pottery Neolithic B
+pred_id, 131, pred_site, Jericho_ T., pred_period, Pre-Pottery Neolithic B, pred_score, 0.800
+pred_id, 180, pred_site, `Ai, pred_period, Early Bronze II-III, pred_score, 0.200
+
+true_id, 132, true_site, Jerusalem_ Old City, true_period, Late Hellenistic
+pred_id, 74, pred_site, Jerusalem_ Old City, pred_period, Early Roman (period), pred_score, 0.571
+pred_id, 122, pred_site, Hammat, pred_period, Fatimid, pred_score, 0.143
+pred_id, 73, pred_site, Jerusalem_ City of David, pred_period, Early Roman (period), pred_score, 0.143
+pred_id, 0, pred_site, Maresha_ T., pred_period, Hellenistic, pred_score, 0.143
+
+true_id, 133, true_site, Jerusalem_ Old City_ Western and Southern Walls, true_period, Iron II
+pred_id, 4, pred_site, Jerusalem_ City of David, pred_period, Iron II, pred_score, 0.833
+pred_id, 2, pred_site, Lakhish_ T., pred_period, Iron II, pred_score, 0.167
+
+true_id, 134, true_site, Nahal Hever, true_period, Roman
+pred_id, 16, pred_site, Horevot Mazada, pred_period, Early Roman (period), pred_score, 0.143
+pred_id, 4, pred_site, Jerusalem_ City of David, pred_period, Iron II, pred_score, 0.143
+pred_id, 117, pred_site, Jerusalem_ Binyane ha-Umma, pred_period, Roman, pred_score, 0.143
+pred_id, 8, pred_site, Nahal Mishmar_ Me`arat ha-Matmon, pred_period, Late Chalcolithic, pred_score, 0.143
+pred_id, 12, pred_site, Horevot Mazada, pred_period, Roman, pred_score, 0.143
+pred_id, 17, pred_site, Nahal Hever, pred_period, Middle Roman, pred_score, 0.143
+pred_id, 134, pred_site, Nahal Hever, pred_period, Roman, pred_score, 0.143
+
+true_id, 135, true_site, Be'er Sheva`_ H. Zafad, true_period, Late Chalcolithic
+pred_id, 75, pred_site, Jerusalem_ Har ha-Zofim (east), pred_period, Early Roman (period), pred_score, 0.167
+pred_id, 6, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II-Late Bronze, pred_score, 0.167
+pred_id, 21, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II, pred_score, 0.167
+pred_id, 160, pred_site, Anafa_ T., pred_period, Hellenistic, pred_score, 0.167
+pred_id, 135, pred_site, Be'er Sheva`_ H. Zafad, pred_period, Late Chalcolithic, pred_score, 0.167
+pred_id, 2, pred_site, Lakhish_ T., pred_period, Iron II, pred_score, 0.167
+
+true_id, 136, true_site, Ha-Gosherim, true_period, Hellenistic
+pred_id, 136, pred_site, Ha-Gosherim, pred_period, Hellenistic, pred_score, 0.333
+pred_id, 89, pred_site, `Ovadya_ T._ Prehistoric site, pred_period, Lower Palaeolithic, pred_score, 0.333
+pred_id, 15, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pre-Ghassulian Chalcolithic, pred_score, 0.333
+
+true_id, 137, true_site, Nahal Mishmar_ Cave of the Treasure, true_period, Late Chalcolithic
+pred_id, 137, pred_site, Nahal Mishmar_ Cave of the Treasure, pred_period, Late Chalcolithic, pred_score, 0.800
+pred_id, 8, pred_site, Nahal Mishmar_ Me`arat ha-Matmon, pred_period, Late Chalcolithic, pred_score, 0.200
+
+true_id, 138, true_site, Besamon, true_period, Pre-Pottery Neolithic
+pred_id, 86, pred_site, Besamon, pred_period, Pottery Neolithic, pred_score, 0.400
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.200
+pred_id, 138, pred_site, Besamon, pred_period, Pre-Pottery Neolithic, pred_score, 0.200
+pred_id, 63, pred_site, Besamon, pred_period, Neolithic, pred_score, 0.200
+
+true_id, 139, true_site, Jerusalem_ `En Rogel, true_period, Late Roman
+pred_id, 139, pred_site, Jerusalem_ `En Rogel, pred_period, Late Roman, pred_score, 1.000
+
+true_id, 140, true_site, Me`arat ha-Gulgolet, true_period, Lower Palaeolithic
+pred_id, 108, pred_site, Me`arat ha-Gulgolet, pred_period, Middle Palaeolithic, pred_score, 0.500
+pred_id, 70, pred_site, Magharat Umm Qatafa, pred_period, Lower Palaeolithic, pred_score, 0.250
+pred_id, 140, pred_site, Me`arat ha-Gulgolet, pred_period, Lower Palaeolithic, pred_score, 0.250
+
+true_id, 141, true_site, Meron, true_period, none
+pred_id, 141, pred_site, Meron, pred_period, none, pred_score, 1.000
+
+true_id, 142, true_site, Mikhal_ T., true_period, none
+pred_id, 141, pred_site, Meron, pred_period, none, pred_score, 0.750
+pred_id, 22, pred_site,  Unknown, pred_period, none, pred_score, 0.250
+
+true_id, 143, true_site, Moa, true_period, Roman
+pred_id, 148, pred_site, Mezad Rahel, pred_period, Roman, pred_score, 0.250
+pred_id, 51, pred_site, Wadi Murabba`at_ Cave 1, pred_period, Roman, pred_score, 0.250
+pred_id, 195, pred_site, Mesad Boqeq, pred_period, Byzantine, pred_score, 0.250
+pred_id, 16, pred_site, Horevot Mazada, pred_period, Early Roman (period), pred_score, 0.250
+
+true_id, 144, true_site, Yavne (north-west), true_period, Iron IIA
+pred_id, 28, pred_site, Yavne (north-west), pred_period, Iron II, pred_score, 1.000
+
+true_id, 145, true_site, Hazor_ T., true_period, Late Bronze II
+pred_id, 145, pred_site, Hazor_ T., pred_period, Late Bronze II, pred_score, 1.000
+
+true_id, 146, true_site, Kavul, true_period, Early Byzantine
+pred_id, 6, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II-Late Bronze, pred_score, 0.500
+pred_id, 99, pred_site, Makr_ el-, pred_period, Late Roman, pred_score, 0.250
+pred_id, 103, pred_site, Nizzana, pred_period, Byzantine, pred_score, 0.250
+
+true_id, 147, true_site, Me`arot Yonim, true_period, Upper Palaeolithic
+pred_id, 100, pred_site, Minha_ H., pred_period, Pottery Neolithic, pred_score, 0.333
+pred_id, 97, pred_site, `Atlit, pred_period, Crusader, pred_score, 0.333
+pred_id, 7, pred_site, Me`arat Kebara, pred_period, Natufian, pred_score, 0.333
+
+true_id, 148, true_site, Mezad Rahel, true_period, Roman
+pred_id, 12, pred_site, Horevot Mazada, pred_period, Roman, pred_score, 1.000
+
+true_id, 149, true_site, Nemal Akhziv, true_period, Iron IIC
+pred_id, 149, pred_site, Nemal Akhziv, pred_period, Iron IIC, pred_score, 0.500
+pred_id, 124, pred_site, Nemal Akhziv, pred_period, Iron IIB, pred_score, 0.333
+pred_id, 84, pred_site, Nemal Akhziv, pred_period, Iron II, pred_score, 0.167
+
+true_id, 150, true_site, Sharuhen_ T., true_period, Iron II
+pred_id, 112, pred_site, Mizpah, pred_period, Iron II, pred_score, 0.250
+pred_id, 150, pred_site, Sharuhen_ T., pred_period, Iron II, pred_score, 0.250
+pred_id, 6, pred_site, `Ujul_ T. el-, pred_period, Middle Bronze II-Late Bronze, pred_score, 0.250
+pred_id, 80, pred_site, Me`arat Oren, pred_period, Natufian, pred_score, 0.250
+
+true_id, 151, true_site, Bet She'an_ T., true_period, Late Bronze
+pred_id, 98, pred_site, `Ujul_ T. el-, pred_period, Late Bronze, pred_score, 0.250
+pred_id, 62, pred_site, Nahariyya_ Canaanite Temple, pred_period, Middle Bronze II, pred_score, 0.250
+pred_id, 29, pred_site, Megiddo_ T., pred_period, Late Bronze II, pred_score, 0.250
+pred_id, 172, pred_site, `Ujul_ T. el-, pred_period, Late Bronze I, pred_score, 0.250
+
+true_id, 152, true_site, Nahal Hever, true_period, Middle Roman (70-135 CE)
+pred_id, 126, pred_site, 'En Tamar, pred_period, Roman, pred_score, 0.400
+pred_id, 152, pred_site, Nahal Hever, pred_period, Middle Roman (70-135 CE), pred_score, 0.200
+pred_id, 143, pred_site, Moa, pred_period, Roman, pred_score, 0.200
+pred_id, 16, pred_site, Horevot Mazada, pred_period, Early Roman (period), pred_score, 0.200
+
+true_id, 153, true_site, Qeiyafa_ Kh., true_period, Iron IIA
+pred_id, 59, pred_site, Bet-Shemesh_ T., pred_period, Iron II, pred_score, 0.667
+pred_id, 153, pred_site, Qeiyafa_ Kh., pred_period, Iron IIA, pred_score, 0.333
+
+true_id, 154, true_site, `Atlit, true_period, Middle Bronze II
+pred_id, 154, pred_site, `Atlit, pred_period, Middle Bronze II, pred_score, 1.000
+
+true_id, 155, true_site, Afeq, true_period, Middle Bronze II
+pred_id, 155, pred_site, Afeq, pred_period, Middle Bronze II, pred_score, 0.600
+pred_id, 41, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron II, pred_score, 0.400
+
+true_id, 156, true_site, Hedera , true_period, Late Roman
+pred_id, 156, pred_site, Hedera , pred_period, Late Roman, pred_score, 0.400
+pred_id, 119, pred_site, Lidd_ Kh., pred_period, Late Roman, pred_score, 0.200
+pred_id, 88, pred_site, Nahariyya_ Giv`at Katzenelson, pred_period, Late Roman, pred_score, 0.200
+pred_id, 181, pred_site, Asherat, pred_period, Late Roman, pred_score, 0.200
+
+true_id, 157, true_site, Qumran_ Cave 4Q, true_period, Early Roman (period)
+pred_id, 157, pred_site, Qumran_ Cave 4Q, pred_period, Early Roman (period), pred_score, 0.800
+pred_id, 152, pred_site, Nahal Hever, pred_period, Middle Roman (70-135 CE), pred_score, 0.200
+
+true_id, 158, true_site, Sharuhen_ T., true_period, Iron I
+pred_id, 158, pred_site, Sharuhen_ T., pred_period, Iron I, pred_score, 0.500
+pred_id, 121, pred_site, Bet-Shemesh_ T., pred_period, Iron I, pred_score, 0.250
+pred_id, 66, pred_site, Lakhish_ T., pred_period, Late Bronze II, pred_score, 0.250
+
+true_id, 159, true_site, Shiqmim (Unofficial name), true_period, Late Chalcolithic
+pred_id, 19, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pottery Neolithic, pred_score, 0.250
+pred_id, 64, pred_site, Bet Mirsham_ T., pred_period, Middle Bronze II, pred_score, 0.250
+pred_id, 159, pred_site, Shiqmim (Unofficial name), pred_period, Late Chalcolithic, pred_score, 0.250
+pred_id, 14, pred_site, `Enot `Enan, pred_period, Natufian, pred_score, 0.250
+
+true_id, 160, true_site, Anafa_ T., true_period, Hellenistic
+pred_id, 110, pred_site, Mizpah, pred_period, Early Bronze I, pred_score, 0.200
+pred_id, 85, pred_site, `Atlit, pred_period, Persian, pred_score, 0.200
+pred_id, 54, pred_site, `Arad_ T., pred_period, Early Bronze II, pred_score, 0.200
+pred_id, 90, pred_site, Jerusalem_ Ketef Hinnom, pred_period, Iron IIC-Babylonian, pred_score, 0.200
+pred_id, 188, pred_site, Zafit_ T., pred_period, Persian, pred_score, 0.200
+
+true_id, 161, true_site, Bet She'an, true_period, Mamluk
+pred_id, 161, pred_site, Bet She'an, pred_period, Mamluk, pred_score, 1.000
+
+true_id, 162, true_site, Bet She'an_ T., true_period, Hellenistic
+pred_id, 162, pred_site, Bet She'an_ T., pred_period, Hellenistic, pred_score, 0.500
+pred_id, 29, pred_site, Megiddo_ T., pred_period, Late Bronze II, pred_score, 0.250
+pred_id, 78, pred_site, `Arad_ T., pred_period, Iron II, pred_score, 0.250
+
+true_id, 163, true_site, Bet She'an_ T., true_period, Late Bronze I
+pred_id, 163, pred_site, Bet She'an_ T., pred_period, Late Bronze I, pred_score, 0.400
+pred_id, 116, pred_site, Caesarea, pred_period, Byzantine, pred_score, 0.200
+pred_id, 59, pred_site, Bet-Shemesh_ T., pred_period, Iron II, pred_score, 0.200
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.200
+
+true_id, 164, true_site, Caesarea, true_period, Early Roman (period)
+pred_id, 0, pred_site, Maresha_ T., pred_period, Hellenistic, pred_score, 0.333
+pred_id, 85, pred_site, `Atlit, pred_period, Persian, pred_score, 0.333
+pred_id, 164, pred_site, Caesarea, pred_period, Early Roman (period), pred_score, 0.333
+
+true_id, 165, true_site, Gush Halav, true_period, Byzantine
+pred_id, 101, pred_site, Tiberias and Hammat, pred_period, Fatimid, pred_score, 0.500
+pred_id, 165, pred_site, Gush Halav, pred_period, Byzantine, pred_score, 0.250
+pred_id, 59, pred_site, Bet-Shemesh_ T., pred_period, Iron II, pred_score, 0.250
+
+true_id, 166, true_site, Hazor_ T., true_period, Iron II
+pred_id, 55, pred_site, Megiddo_ T., pred_period, Iron II, pred_score, 0.500
+pred_id, 0, pred_site, Maresha_ T., pred_period, Hellenistic, pred_score, 0.167
+pred_id, 13, pred_site, Me`arat Tannur, pred_period, Lower Palaeolithic, pred_score, 0.167
+pred_id, 56, pred_site, Mezad Hazeva, pred_period, Iron II, pred_score, 0.167
+
+true_id, 167, true_site, Jerusalem_ Old City_ Western and Southern Walls, true_period, Middle Roman - Late Roman
+pred_id, 167, pred_site, Jerusalem_ Old City_ Western and Southern Walls, pred_period, Middle Roman - Late Roman, pred_score, 1.000
+
+true_id, 168, true_site, Jerusalem_ Pisgat Ze'ev, true_period, Early Roman (period)
+pred_id, 43, pred_site, `En Gedi, pred_period, Byzantine, pred_score, 0.500
+pred_id, 118, pred_site, Jerusalem_ Mount Scopus (west), pred_period, Early Roman (period), pred_score, 0.500
+
+true_id, 169, true_site, Panias_ H., true_period, Ottoman
+pred_id, 169, pred_site, Panias_ H., pred_period, Ottoman, pred_score, 0.600
+pred_id, 73, pred_site, Jerusalem_ City of David, pred_period, Early Roman (period), pred_score, 0.200
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.200
+
+true_id, 170, true_site,  Unknown, true_period, Byzantine
+pred_id, 185, pred_site, Bet She'an_ T., pred_period, Roman, pred_score, 0.500
+pred_id, 171, pred_site,  Unknown, pred_period, Roman, pred_score, 0.250
+pred_id, 187, pred_site, Samaria, pred_period, Hellenistic, pred_score, 0.250
+
+true_id, 171, true_site,  Unknown, true_period, Roman
+pred_id, 171, pred_site,  Unknown, pred_period, Roman, pred_score, 0.500
+pred_id, 170, pred_site,  Unknown, pred_period, Byzantine, pred_score, 0.500
+
+true_id, 172, true_site, `Ujul_ T. el-, true_period, Late Bronze I
+pred_id, 32, pred_site, `Ujul_ T. el-, pred_period, Late Bronze II, pred_score, 0.667
+pred_id, 126, pred_site, 'En Tamar, pred_period, Roman, pred_score, 0.333
+
+true_id, 173, true_site, Gezer_ T., true_period, Late Bronze II
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.750
+pred_id, 25, pred_site, Bet She'an_ T., pred_period, Late Bronze II, pred_score, 0.250
+
+true_id, 174, true_site, Jericho_ T., true_period, Pottery Neolithic A
+pred_id, 102, pred_site, Dan_ T., pred_period, Late Bronze II, pred_score, 0.400
+pred_id, 127, pred_site, `Ai, pred_period, Early Bronze I, pred_score, 0.200
+pred_id, 34, pred_site, Haifa_ T. Abu Hawwam, pred_period, Late Bronze II, pred_score, 0.200
+pred_id, 83, pred_site, Megiddo_ T., pred_period, Early Bronze I, pred_score, 0.200
+
+true_id, 175, true_site, Neve Ur, true_period, Middle Bronze II
+pred_id, 175, pred_site, Neve Ur, pred_period, Middle Bronze II, pred_score, 0.500
+pred_id, 43, pred_site, `En Gedi, pred_period, Byzantine, pred_score, 0.500
+
+true_id, 176, true_site, Ramla, true_period, Early Islamic
+pred_id, 176, pred_site, Ramla, pred_period, Early Islamic, pred_score, 0.400
+pred_id, 74, pred_site, Jerusalem_ Old City, pred_period, Early Roman (period), pred_score, 0.200
+pred_id, 31, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Early Roman (period), pred_score, 0.200
+pred_id, 25, pred_site, Bet She'an_ T., pred_period, Late Bronze II, pred_score, 0.200
+
+true_id, 177, true_site, Rehov_ T., true_period, Iron IIA
+pred_id, 23, pred_site, Besamon, pred_period, Pre-Pottery Neolithic B, pred_score, 0.250
+pred_id, 177, pred_site, Rehov_ T., pred_period, Iron IIA, pred_score, 0.250
+pred_id, 44, pred_site, Gezer_ T., pred_period, Late Bronze, pred_score, 0.250
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.250
+
+true_id, 178, true_site, Sheva`_ T., true_period, Iron II
+pred_id, 4, pred_site, Jerusalem_ City of David, pred_period, Iron II, pred_score, 1.000
+
+true_id, 179, true_site, Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0), true_period, none
+pred_id, 179, pred_site, Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0), pred_period, none, pred_score, 1.000
+
+true_id, 180, true_site, `Ai, true_period, Early Bronze II-III
+pred_id, 26, pred_site, Me`arat Tannur, pred_period, Middle Palaeolithic, pred_score, 0.400
+pred_id, 55, pred_site, Megiddo_ T., pred_period, Iron II, pred_score, 0.200
+pred_id, 40, pred_site, Akhziv, pred_period, Iron II, pred_score, 0.200
+pred_id, 24, pred_site, Jericho_ T., pred_period, Early Bronze III, pred_score, 0.200
+
+true_id, 181, true_site, Asherat, true_period, Late Roman
+pred_id, 181, pred_site, Asherat, pred_period, Late Roman, pred_score, 1.000
+
+true_id, 182, true_site, Barqai, true_period, Middle Bronze IIB
+pred_id, 154, pred_site, `Atlit, pred_period, Middle Bronze II, pred_score, 0.500
+pred_id, 182, pred_site, Barqai, pred_period, Middle Bronze IIB, pred_score, 0.250
+pred_id, 184, pred_site, Bet Mirsham_ T., pred_period, Middle Bronze IIB, pred_score, 0.250
+
+true_id, 183, true_site, Be'er Sheva`_ H. Matar, true_period, Late Chalcolithic
+pred_id, 33, pred_site, Ashqelon_ T. Ashqelon, pred_period, Iron IIC, pred_score, 0.500
+pred_id, 183, pred_site, Be'er Sheva`_ H. Matar, pred_period, Late Chalcolithic, pred_score, 0.500
+
+true_id, 184, true_site, Bet Mirsham_ T., true_period, Middle Bronze IIB
+pred_id, 184, pred_site, Bet Mirsham_ T., pred_period, Middle Bronze IIB, pred_score, 1.000
+
+true_id, 185, true_site, Bet She'an_ T., true_period, Roman
+pred_id, 185, pred_site, Bet She'an_ T., pred_period, Roman, pred_score, 0.500
+pred_id, 146, pred_site, Kavul, pred_period, Early Byzantine, pred_score, 0.250
+pred_id, 15, pred_site, Ha-Gosherim_ Nili (north), pred_period, Pre-Ghassulian Chalcolithic, pred_score, 0.250
+
+true_id, 186, true_site, Christmas Cave_ Nahal Qidron, true_period, Roman
+pred_id, 186, pred_site, Christmas Cave_ Nahal Qidron, pred_period, Roman, pred_score, 0.250
+pred_id, 12, pred_site, Horevot Mazada, pred_period, Roman, pred_score, 0.250
+pred_id, 150, pred_site, Sharuhen_ T., pred_period, Iron II, pred_score, 0.250
+pred_id, 195, pred_site, Mesad Boqeq, pred_period, Byzantine, pred_score, 0.250
+
+true_id, 187, true_site, Samaria, true_period, Hellenistic
+pred_id, 24, pred_site, Jericho_ T., pred_period, Early Bronze III, pred_score, 0.333
+pred_id, 160, pred_site, Anafa_ T., pred_period, Hellenistic, pred_score, 0.333
+pred_id, 187, pred_site, Samaria, pred_period, Hellenistic, pred_score, 0.333
+
+true_id, 188, true_site, Zafit_ T., true_period, Persian
+pred_id, 188, pred_site, Zafit_ T., pred_period, Persian, pred_score, 0.500
+pred_id, 110, pred_site, Mizpah, pred_period, Early Bronze I, pred_score, 0.250
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.250
+
+true_id, 189, true_site, `En Gedi, true_period, Roman
+pred_id, 189, pred_site, `En Gedi, pred_period, Roman, pred_score, 0.400
+pred_id, 38, pred_site, Jerusalem_ Old City_ Jewish Quarter_ Area F_ M, pred_period, Late Hellenistic - Early Roman, pred_score, 0.200
+pred_id, 102, pred_site, Dan_ T., pred_period, Late Bronze II, pred_score, 0.200
+pred_id, 139, pred_site, Jerusalem_ `En Rogel, pred_period, Late Roman, pred_score, 0.200
+
+true_id, 190, true_site, Afeq, true_period, Late Bronze II
+pred_id, 145, pred_site, Hazor_ T., pred_period, Late Bronze II, pred_score, 0.400
+pred_id, 190, pred_site, Afeq, pred_period, Late Bronze II, pred_score, 0.400
+pred_id, 78, pred_site, `Arad_ T., pred_period, Iron II, pred_score, 0.200
+
+true_id, 191, true_site, Ard es-Samrra, true_period, Pottery Neolithic
+pred_id, 25, pred_site, Bet She'an_ T., pred_period, Late Bronze II, pred_score, 0.200
+pred_id, 3, pred_site, Nahal Pattish (Gilat), pred_period, Late Chalcolithic, pred_score, 0.200
+pred_id, 93, pred_site, Hamadya, pred_period, Pottery Neolithic, pred_score, 0.200
+pred_id, 191, pred_site, Ard es-Samrra, pred_period, Pottery Neolithic, pred_score, 0.200
+pred_id, 164, pred_site, Caesarea, pred_period, Early Roman (period), pred_score, 0.200
+
+true_id, 192, true_site, Bet She'an_ T., true_period, Middle Bronze IIB
+pred_id, 192, pred_site, Bet She'an_ T., pred_period, Middle Bronze IIB, pred_score, 1.000
+
+true_id, 193, true_site, Ma`yan Barukh, true_period, Roman
+pred_id, 79, pred_site, Jerusalem_ `En Rogel, pred_period, Early Roman (period), pred_score, 0.667
+pred_id, 193, pred_site, Ma`yan Barukh, pred_period, Roman, pred_score, 0.333
+
+true_id, 194, true_site, Megiddo_ T., true_period, Late Bronze
+pred_id, 29, pred_site, Megiddo_ T., pred_period, Late Bronze II, pred_score, 0.667
+pred_id, 194, pred_site, Megiddo_ T., pred_period, Late Bronze, pred_score, 0.333
+
+true_id, 195, true_site, Mesad Boqeq, true_period, Byzantine
+pred_id, 104, pred_site, Nahal Omer , pred_period, Early Islamic, pred_score, 0.500
+pred_id, 196, pred_site, Nahal Mishmar, pred_period, Late Chalcolithic, pred_score, 0.250
+pred_id, 143, pred_site, Moa, pred_period, Roman, pred_score, 0.250
+
+true_id, 196, true_site, Nahal Mishmar, true_period, Late Chalcolithic
+pred_id, 196, pred_site, Nahal Mishmar, pred_period, Late Chalcolithic, pred_score, 0.333
+pred_id, 8, pred_site, Nahal Mishmar_ Me`arat ha-Matmon, pred_period, Late Chalcolithic, pred_score, 0.333
+pred_id, 12, pred_site, Horevot Mazada, pred_period, Roman, pred_score, 0.333
+
+true_id, 197, true_site, Zuq el-Fauqani ez-, true_period, Byzantine
+pred_id, 170, pred_site,  Unknown, pred_period, Byzantine, pred_score, 0.400
+pred_id, 27, pred_site, Megiddo_ T., pred_period, Iron IA, pred_score, 0.200
+pred_id, 76, pred_site, Ramla_ esh-Sheikh Rihan, pred_period, Early Islamic, pred_score, 0.200
+pred_id, 116, pred_site, Caesarea, pred_period, Byzantine, pred_score, 0.200
+
+true_id, 198, true_site, `Alya_ Kh., true_period, Roman
+pred_id, 125, pred_site, Palmahim, pred_period, Late Roman, pred_score, 0.667
+pred_id, 88, pred_site, Nahariyya_ Giv`at Katzenelson, pred_period, Late Roman, pred_score, 0.333
+
+true_id, 199, true_site, 14590-24360 14590-24360, true_period, none
+pred_id, 199, pred_site, 14590-24360 14590-24360, pred_period, none, pred_score, 1.000
+

@@ -1,0 +1,27 @@
+{
+  "exp": {
+    "name": "15_69_cutOut_valid_no_relu"
+  },
+  "data_loader": {
+    "name": "testing_generator",
+    "data_dir_train": "data_loader/data/site_period_200_cls/train",
+    "data_dir_valid": "data_loader/data/site_period_200_cls/valid",
+    "class_mode": "sparse",
+    "is_train": false
+  },
+  "model":{
+    "name": "cosloss_model.CosLosModel",
+    "learning_rate": 0.001,
+    "optimizer": "adam",
+    "img_width": 299,
+    "img_height": 299,
+    "alpha": 0.25,
+    "scale": 64,
+    "is_use_triplet_loss": false,
+    "pretraind_model": "experiments/antique_15_69_cosloss_cutout.h5",
+    "embedding_dim": 200,
+    "is_use_relu_on_embeddings": false,
+    "batch_size": 24
+  }
+}
+
