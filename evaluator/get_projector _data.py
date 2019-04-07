@@ -53,9 +53,9 @@ with open('classes.csv', 'r') as f:
 
 
 
-experient = 'cosloss_15_69_no_relu'
-labels = np.genfromtxt('labels/cosloss_15_69_cutOut_valid_no_relu.tsv', delimiter=',')
-embeddings_numpy = np.genfromtxt('embeddings/cosloss_15_69_cutOut_valid_no_relu.csv', delimiter=',')
+experient = 'triplet1'
+labels = np.genfromtxt('labels/triplet1.tsv', delimiter=',')
+embeddings_numpy = np.genfromtxt('embeddings/triplet1.csv', delimiter=',')
 
 LABELS = os.path.join(os.getcwd(), "labels_names.tsv")
 LOGDIR = 'projector/' + experient

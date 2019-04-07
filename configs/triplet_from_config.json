@@ -1,11 +1,11 @@
 {
   "exp": {
-    "name": "triplet"
+    "name": "triplet_623_2"
   },
   "data_loader": {
     "name": "triplet_generator",
-    "data_dir_train": "data_loader/data/site_period_200_cls/train",
-    "data_dir_valid": "data_loader/data/site_period_200_cls/valid",
+    "data_dir_train": "data_loader/data/old_site_period_none_unknown/site_period_623_cls_triplet/train",
+    "data_dir_valid": "data_loader/data/old_site_period_none_unknown/site_period_623_cls_triplet/valid",
     "horizontal_flip": true,
     "fill_mode": "nearest",
     "zoom_range": 0.15,
@@ -16,7 +16,8 @@
     "class_mode": "sparse",
     "is_use_relu_on_embeddings": true,
     "K": 4,
-    "P": 6
+    "P": 6,
+    "is_sample_each_cls_once": false
   },
   "model":{
     "name": "cosloss.CosLosModel",
@@ -32,9 +33,9 @@
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",
-    "num_epochs": 20,
+    "num_epochs": 12,
     "batch_size": 24,
-    "learning_rate_values": [0.0001, 0.00001, 0.00001],
+    "learning_rate_values": [0.00000001, 0.00000001, 0.00000001],
     "learning_rate_epoch_change": [3,9],
     "verbose_training": true
   },
@@ -42,7 +43,7 @@
     "checkpoint_monitor": "val_loss",
     "checkpoint_mode": "min",
     "checkpoint_save_best_only": true,
-   "checkpoint_save_weights_only": true,
+   "checkpoint_save_weights_only": false,
     "checkpoint_verbose": true,
     "tensorboard_write_graph": true
   }

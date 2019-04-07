@@ -17,6 +17,7 @@ class TripletGenerator(keras.utils.Sequence,):
         self.P = config.data_loader.P
         self.keras_datagen = ImageDataGenerator(**datagen_args)
         self.batch_size = self.K*self.P
+        self.num_of_classes = []
 
         if is_train:
             self.data_folder = config.data_loader.data_dir_train
@@ -28,19 +29,27 @@ class TripletGenerator(keras.utils.Sequence,):
         self.active_images = {}
         self.active_classes = []
         self.num_of_images = []
+        self.is_sample_each_cls_once = config.data_loader.is_sample_each_cls_once
         self.on_epoch_end()
 
     def __len__(self):
         'Denotes the number of batches per epoch'
-        return int(np.floor(self.num_of_images / self.batch_size))
+        if self.is_sample_each_cls_once:
+            return int(np.floor(self.num_of_classes / self.P))
+        else:
+            return int(np.floor(self.num_of_images / self.batch_size))
 
     def __getitem__(self, index):
         'Generates data containing batch_size samples'  # X : (n_samples, *dim, n_channels)
-        # Initialization
-        X = np.empty((self.batch_size, *self.dim, self.n_channels))
+
 
         # pick P classes
-        p_classes = random.sample(self.active_classes, self.P)
+        try:
+            p_classes = random.sample(self.active_classes, self.P)
+        except:
+            self.on_epoch_end()
+            print('resetting')
+            p_classes = random.sample(self.active_classes, self.P)
 
         image_files_list = []
         labels_list = []
@@ -58,12 +67,18 @@ class TripletGenerator(keras.utils.Sequence,):
                     labels_list.append(int(cls))
                     # zeroing chosen images
                     self.active_images[cls_path][ind] = 0
-                indices = [i for i, x in enumerate(self.active_images[cls_path]) if x == 1]
-                if not indices:
+                if self.is_sample_each_cls_once:
                     self.active_classes.remove(cls)
-            else:  # there are less than K images
+                else:
+                    indices = [i for i, x in enumerate(self.active_images[cls_path]) if x == 1]
+                    if not indices:
+                        self.active_classes.remove(cls)
+            else:  # there are less than K active images
                 already_chosen_indices = [i for i, x in enumerate(self.active_images[cls_path]) if x == 0]
-                extra_ind = random.sample(already_chosen_indices, self.K - num_of_valid_img_in_cls)
+                try: # if there are (K-valid images) in class
+                    extra_ind = random.sample(already_chosen_indices, self.K - num_of_valid_img_in_cls)
+                except: # else
+                    extra_ind = []
 
                 for ind in indices + extra_ind:
                     img_file = self.content[cls_path][ind]
@@ -73,9 +88,13 @@ class TripletGenerator(keras.utils.Sequence,):
                     self.active_images[cls_path][ind] = 0
                 self.active_classes.remove(cls)
 
+        # Initialization
+        X = np.empty((len(image_files_list), *self.dim, self.n_channels))
+
         # generate data
         for i, file_path in enumerate(image_files_list):
             X[i, ] = self.read_and_preprocess_images(file_path)
+
 
         return X, np.array(labels_list, dtype=np.int)
 
@@ -85,6 +104,7 @@ class TripletGenerator(keras.utils.Sequence,):
         for root, dirs, files in os.walk(self.data_folder):
             if dirs.__len__() != 0:
                 self.active_classes = dirs
+                self.num_of_classes = len(self.active_classes)
             for subdir in dirs:
                 self.content[os.path.join(root, subdir)] = []
             self.content[root] = files

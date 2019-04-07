@@ -1,62 +1,10 @@
 
 import csv
-import wget
-import requests
 import numpy as np
+from shutil import copyfile
 import re
 import os
 
-#change none and to ruler period
-# cnt = 0
-# is_valid_list = []
-# with open('artifacts.csv', 'r') as f:
-#     reader = csv.reader(f)
-#     for row in reader:
-#         if cnt == 0:
-#             print(row)
-#         if cnt > 0:
-#             is_valid = row[5]
-#             if is_valid == '1':
-#                 period = row[2]
-#                 if period == 'none':
-#                     # go to artifact web page and get ruler if there is one.
-#                     res = requests.get('http://www.antiquities.org.il/t/item_en.aspx?CurrentPageKey={}'.format(row[0]))
-#                     # serach for Ruler
-#                     m = re.search('Ruler[ ]?: <\/b>[ ]?([^<]*)<b', res.text)
-#                     if m is not None:
-#                         str1111 = m.group(1)
-#                         str1111 = str1111.replace('&nbsp', '')
-#                         print(row[0] + ',' + str1111 )
-#                     else:
-#                         print(row[0] + ',' + 'invalid')
-#                     #print(res.text)
-#         cnt = cnt + 1
-
-#change none and to ruler period
-# cnt = 0
-# is_valid_list = []
-# with open('artifacts.csv', 'r') as f:
-#     reader = csv.reader(f)
-#     for row in reader:
-#         if cnt == 0:
-#             print(row)
-#         if cnt > 0:
-#             is_valid = row[5]
-#             if is_valid == '1':
-#                 period = row[2]
-#                 if period == 'none':
-#                     # go to artifact web page and get ruler if there is one.
-#                     res = requests.get('http://www.antiquities.org.il/t/item_en.aspx?CurrentPageKey={}'.format(row[0]))
-#                     # serach for Ruler
-#                     m = re.search('Ruler[ ]?: <\/b>[ ]?([^<]*)<b', res.text)
-#                     if m is not None:
-#                         str1111 = m.group(1)
-#                         str1111 = str1111.replace('&nbsp', '')
-#                         print(row[0] + ',' + str1111 )
-#                     else:
-#                         print(row[0] + ',' + 'invalid')
-#                     #print(res.text)
-#         cnt = cnt + 1
 
 cnt = 0
 id = {}
@@ -67,10 +15,15 @@ with open('classes.csv', 'r') as f:
             print(row)
         if cnt > 0:
             id[row[1]] = int(row[0])
-            os.mkdir('antiques_site_period_all/' + row[0])
+            #print(os.getcwd())
+            os.mkdir('../../data_loader/data/antiques_site_period_200/train/' + row[0])
+            os.mkdir('../../data_loader/data/antiques_site_period_200/valid/' + row[0])
+            if id[row[1]] > 199:
+                break
+            #np.testing.assert_almost_equal(0, 1)
         cnt = cnt + 1
 
-np.testing.assert_almost_equal(0,1)
+np.testing.assert_almost_equal(0, 1)
 # get new class list
 cnt = 0
 site_list = []
@@ -92,8 +45,17 @@ with open('artifacts.csv', 'r') as f:
                 period_list.append(period)
                 cls = site + '_' + period
                 class_list.append(cls)
-                print(id[cls])
+                additional_looks = int(row[3])
+                #print(id[cls])
+                # copy primary image
+                #copyfile('../../data_loader/data/antiques_all/' + row[0] + '_0.jpg',
+                #         '../../data_loader/data/antiques_site_period_all/' + str(id[cls]) + '/' + row[0] + '_0.jpg')
 
+                # copy addtional looks
+                #if additional_looks != 0:
+                #    for mm in range(additional_looks):
+                #        copyfile('../../data_loader/data/antiques_all/' + row[0] + '_{}.jpg'.format(mm + 1),
+                #                 '../../data_loader/data/antiques_site_period_all/' + str(id[cls]) + '/' + row[0] + '_{}.jpg'.format(mm+1))
             else:
                 print('invalid')
 
@@ -102,6 +64,7 @@ with open('artifacts.csv', 'r') as f:
 
         cnt = cnt + 1
 
+np.testing.assert_almost_equal(0,1)
 set_period = set(period_list)
 set_sites = set(site_list)
 set_class = set(class_list)
