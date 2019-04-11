@@ -45,6 +45,9 @@ class CosLosModel(BaseModel):
     def coss_loss_wrapper(self, alpha, scale):
         def coss_loss1(y_true, y_pred):
             y_true_casted = K.cast(y_true, dtype='int32')
+            # !!! y_true and y_pred must have the smae shape !!!
+            # therefore we need to crop label array to be in size (B,)
+            # @todo run again after implementing the comment above !!!!
             # y_true_casted = K.expand_dims(y_true_casted, axis=-1)
             # print(K.int_shape(y_true_casted))
             return models.cos_face_loss.cos_loss(y_pred, y_true_casted, 200, alpha=alpha, scale=scale, reuse=True)
@@ -52,8 +55,12 @@ class CosLosModel(BaseModel):
 
     def triplet_loss_wrapper(self, margin, is_squared):
         def triplet_loss1(y_true, y_pred):
-            y_true_casted = K.cast(y_true, dtype='int32')
+            # !!! y_true and y_pred must have the smae shape !!!
+            # therefore we need to crop label array to be in size (B,)
+            batch_size = K.shape(y_true)[0]
+            y_true = y_true[0,:batch_size]
+            #y_true_casted = K.cast(y_true, dtype='int32')
             # y_true_casted = K.expand_dims(y_true_casted, axis=-1)
             # print(K.int_shape(y_true_casted))
-            return models.triplet_loss.batch_hard_triplet_loss(y_true_casted, y_pred, margin, is_squared)
+            return models.triplet_loss.batch_hard_triplet_loss(y_true, y_pred, margin, is_squared)
         return triplet_loss1

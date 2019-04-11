@@ -1,6 +1,6 @@
 {
   "exp": {
-    "name": "triplet_623_2"
+    "name": "triplet_623_cls_0.000001_2"
   },
   "data_loader": {
     "name": "triplet_generator",
@@ -16,7 +16,7 @@
     "class_mode": "sparse",
     "is_use_relu_on_embeddings": true,
     "K": 4,
-    "P": 6,
+    "P": 4,
     "is_sample_each_cls_once": false
   },
   "model":{
@@ -29,14 +29,14 @@
     "scale": 64,
     "is_use_triplet_loss": true,
     "margin": 0.2,
-    "is-squared": false
+    "is_squared": false
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",
-    "num_epochs": 12,
+    "num_epochs": 30,
     "batch_size": 24,
-    "learning_rate_values": [0.00000001, 0.00000001, 0.00000001],
-    "learning_rate_epoch_change": [3,9],
+    "learning_rate_values": [0.000001, 0.000001, 0.000001],
+    "learning_rate_epoch_change": [4,9],
     "verbose_training": true
   },
   "callbacks":{

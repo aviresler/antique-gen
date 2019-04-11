@@ -89,14 +89,17 @@ class TripletGenerator(keras.utils.Sequence,):
                 self.active_classes.remove(cls)
 
         # Initialization
-        X = np.empty((len(image_files_list), *self.dim, self.n_channels))
+        X = np.empty((len(image_files_list), *self.dim, self.n_channels),dtype=np.float32)
 
         # generate data
         for i, file_path in enumerate(image_files_list):
             X[i, ] = self.read_and_preprocess_images(file_path)
 
-
-        return X, np.array(labels_list, dtype=np.int)
+        #cstom loss in keras requires the labels and predictions to be in the same size
+        temp_labels = np.array(labels_list, dtype=np.int32)
+        labels = np.tile(temp_labels, (X.shape[0], int(np.ceil(self.num_of_classes/X.shape[0]))))
+        labels = labels[:,:self.num_of_classes]
+        return X, labels
 
     def on_epoch_end(self):
         'initialize indicators arrays '
@@ -119,7 +122,7 @@ class TripletGenerator(keras.utils.Sequence,):
     def read_and_preprocess_images(self, image_path):
         # read image from disk
         img = image.load_img(image_path, target_size=(self.dim[0], self.dim[1],3))
-        img = image.img_to_array(img)
+        img = image.img_to_array(img,dtype=np.float32)
 
         if self.config.data_loader.is_use_cutOut:
             preprocess_function = preprocess_input
@@ -131,8 +134,6 @@ class TripletGenerator(keras.utils.Sequence,):
 
         # random transform
         x = self.keras_datagen.random_transform(img)
-
-
 
         return x
 

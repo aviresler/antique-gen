@@ -1,11 +1,11 @@
 {
   "exp": {
-    "name": "triplet_623"
+    "name": "triplet_0.000001_623_cls"
   },
   "data_loader": {
     "name": "testing_generator",
-    "data_dir_train": "data_loader/data/old_site_period_none_unknown/site_period_623_cls_triplet/train",
-    "data_dir_valid": "data_loader/data/old_site_period_none_unknown/site_period_623_cls_triplet/valid",
+    "data_dir_train": "data_loader/data/old_site_period_none_unknown/site_period_200_cls/train",
+    "data_dir_valid": "data_loader/data/old_site_period_none_unknown/site_period_200_cls/valid",
     "class_mode": "sparse",
     "is_train": true
   },
@@ -18,7 +18,7 @@
     "alpha": 0.25,
     "scale": 64,
     "is_use_triplet_loss": false,
-    "pretraind_model": "experiments/2019-04-07/triplet_623/checkpoints/triplet_623.hdf5",
+    "pretraind_model": "experiments/2019-04-11/triplet_0.000001_623_cls/checkpoints/triplet_0.000001_623_cls.hdf5",
     "embedding_dim": 200,
     "is_use_relu_on_embeddings": false,
     "batch_size": 24
