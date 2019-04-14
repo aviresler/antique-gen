@@ -4,16 +4,17 @@
   },
   "data_loader": {
     "name": "default_generator",
-    "data_dir_train": "data_loader/data/site_period_200_cls/train",
-    "data_dir_valid": "data_loader/data/site_period_200_cls/valid",
+    "data_dir_train": "data_loader/data/site_period_top_200/train",
+    "data_dir_valid": "data_loader/data/site_period_top_200/valid",
+    "num_of_classes": 200,
     "horizontal_flip": true,
     "fill_mode": "nearest",
     "zoom_range": 0.15,
     "width_shift_range": 0.15,
     "height_shift_range": 0.15,
     "rotation_range": 30,
-    "is_use_cutOut": false,
-    "class_mode": "sparse"
+    "is_use_cutOut": true,
+    "class_mode": "categorical"
   },
   "model":{
     "name": "cosloss.CosLosModel",
@@ -24,7 +25,7 @@
     "alpha": 0.25,
     "scale": 64,
     "is_use_triplet_loss": false,
-    "is_use_relu_on_embeddings": false,
+    "is_use_relu_on_embeddings": true,
     "embedding_dim": 200
   },
   "trainer":{

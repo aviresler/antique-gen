@@ -97,8 +97,8 @@ class TripletGenerator(keras.utils.Sequence,):
 
         #cstom loss in keras requires the labels and predictions to be in the same size
         temp_labels = np.array(labels_list, dtype=np.int32)
-        labels = np.tile(temp_labels, (X.shape[0], int(np.ceil(self.num_of_classes/X.shape[0]))))
-        labels = labels[:,:self.num_of_classes]
+        labels = np.tile(temp_labels, (X.shape[0], int(np.ceil(self.config.model.embedding_dim/X.shape[0]))))
+        labels = labels[:,:self.config.model.embedding_dim]
         return X, labels
 
     def on_epoch_end(self):

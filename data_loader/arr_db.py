@@ -1,7 +1,5 @@
 
 import csv
-import wget
-import requests
 import numpy as np
 import re
 import os
@@ -108,7 +106,8 @@ def split_into_train_valid_top_200():
 
             cnt = cnt + 1
 
-
+create_directories()
+copy_images_to_calses_folders()
 split_into_train_valid_top_200()
 #set_period = set(period_list)
 #set_sites = set(site_list)

@@ -1,11 +1,12 @@
 {
   "exp": {
-    "name": "triplet_623_cls_0.000001_2"
+    "name": "triplet_623_cls_0.000001_2_once"
   },
   "data_loader": {
     "name": "triplet_generator",
     "data_dir_train": "data_loader/data/old_site_period_none_unknown/site_period_623_cls_triplet/train",
     "data_dir_valid": "data_loader/data/old_site_period_none_unknown/site_period_623_cls_triplet/valid",
+    "num_of_classes": 200,
     "horizontal_flip": true,
     "fill_mode": "nearest",
     "zoom_range": 0.15,
@@ -29,7 +30,8 @@
     "scale": 64,
     "is_use_triplet_loss": true,
     "margin": 0.2,
-    "is_squared": false
+    "is_squared": false,
+    "embedding_dim": 200
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",

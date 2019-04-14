@@ -1,6 +1,6 @@
 {
   "exp": {
-    "name": "triplet_0.000001_623_cls"
+    "name": "triplet_623_cls_0.000001_2_once"
   },
   "data_loader": {
     "name": "testing_generator",
@@ -18,7 +18,7 @@
     "alpha": 0.25,
     "scale": 64,
     "is_use_triplet_loss": false,
-    "pretraind_model": "experiments/2019-04-11/triplet_0.000001_623_cls/checkpoints/triplet_0.000001_623_cls.hdf5",
+    "pretraind_model": "experiments/2019-04-11/triplet_623_cls_0.000001_2_once/checkpoints/triplet_623_cls_0.000001_2_onces.hdf5",
     "embedding_dim": 200,
     "is_use_relu_on_embeddings": false,
     "batch_size": 24

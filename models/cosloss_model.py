@@ -22,9 +22,9 @@ class CosLosModel(BaseModel):
         x = self.model.layers[-1].output
 
         if self.config.model.is_use_relu_on_embeddings:
-            x = Dense(200, activation="relu", kernel_regularizer=regularizers.l2(0.0001))(x)
+            x = Dense(self.config.model.embedding_dim, activation="relu", kernel_regularizer=regularizers.l2(0.0001))(x)
         else:
-            x = Dense(200, kernel_regularizer=regularizers.l2(0.0001))(x)
+            x = Dense(self.config.model.embedding_dim, kernel_regularizer=regularizers.l2(0.0001))(x)
 
         x = Dropout(0.5)(x)
 
@@ -45,12 +45,8 @@ class CosLosModel(BaseModel):
     def coss_loss_wrapper(self, alpha, scale):
         def coss_loss1(y_true, y_pred):
             y_true_casted = K.cast(y_true, dtype='int32')
-            # !!! y_true and y_pred must have the smae shape !!!
-            # therefore we need to crop label array to be in size (B,)
-            # @todo run again after implementing the comment above !!!!
-            # y_true_casted = K.expand_dims(y_true_casted, axis=-1)
-            # print(K.int_shape(y_true_casted))
-            return models.cos_face_loss.cos_loss(y_pred, y_true_casted, 200, alpha=alpha, scale=scale, reuse=True)
+            y_true_casted = K.argmax(y_true_casted, axis= 1)
+            return models.cos_face_loss.cos_loss(y_pred, y_true_casted, self.config.data_loader.num_of_classes, alpha=alpha, scale=scale, reuse=True)
         return coss_loss1
 
     def triplet_loss_wrapper(self, margin, is_squared):
