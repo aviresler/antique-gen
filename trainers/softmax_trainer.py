@@ -19,16 +19,17 @@ class SoftMaxModelTrainer(BaseTrain):
 
 
     def init_callbacks(self):
-        self.callbacks.append(
-            ModelCheckpoint(
-                filepath=os.path.join(self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_loss:.2f}.hdf5' % self.config.exp.name),
-                monitor=self.config.callbacks.checkpoint_monitor,
-                mode=self.config.callbacks.checkpoint_mode,
-                save_best_only=self.config.callbacks.checkpoint_save_best_only,
-                save_weights_only=self.config.callbacks.checkpoint_save_weights_only,
-                verbose=self.config.callbacks.checkpoint_verbose,
+        if self.config.callbacks.is_save_model:
+            self.callbacks.append(
+                ModelCheckpoint(
+                    filepath=os.path.join(self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_loss:.2f}.hdf5' % self.config.exp.name),
+                    monitor=self.config.callbacks.checkpoint_monitor,
+                    mode=self.config.callbacks.checkpoint_mode,
+                    save_best_only=self.config.callbacks.checkpoint_save_best_only,
+                    save_weights_only=self.config.callbacks.checkpoint_save_weights_only,
+                    verbose=self.config.callbacks.checkpoint_verbose,
+                )
             )
-        )
 
         self.callbacks.append(
             TensorBoard(
