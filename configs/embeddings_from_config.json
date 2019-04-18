@@ -8,7 +8,8 @@
     "data_dir_valid": "data_loader/data/site_period_top_200/valid",
     "class_mode": "sparse",
     "num_of_classes": 200,
-    "is_train": true
+    "is_train": true,
+    "batch_size": 24
   },
   "model":{
     "name": "cosloss_model.CosLosModel",
@@ -21,8 +22,7 @@
     "is_use_triplet_loss": false,
     "pretraind_model": "experiments/2019-04-14/cossloss_new_data_split_2/checkpoints/cossloss_new_data_split_2.hdf5",
     "embedding_dim": 200,
-    "is_use_relu_on_embeddings": false,
-    "batch_size": 24
+    "is_use_relu_on_embeddings": false
   }
 }
 

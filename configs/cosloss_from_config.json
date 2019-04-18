@@ -14,7 +14,11 @@
     "height_shift_range": 0.15,
     "rotation_range": 30,
     "is_use_cutOut": true,
-    "class_mode": "categorical"
+    "class_mode": "sparse",
+    "K": 4,
+    "P": 6,
+    "batch_size": 24,
+    "is_sample_each_cls_once": false
   },
   "model":{
     "name": "cosloss.CosLosModel",
@@ -26,12 +30,12 @@
     "scale": 64,
     "is_use_triplet_loss": false,
     "is_use_relu_on_embeddings": true,
-    "embedding_dim": 200
+    "embedding_dim": 200,
+    "is_use_dummy_model": false
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",
-    "num_epochs": 20,
-    "batch_size": 24,
+    "num_epochs": 1,
     "learning_rate_values": [0.0001, 0.000001, 0.000001],
     "learning_rate_epoch_change": [3,9],
     "verbose_training": true

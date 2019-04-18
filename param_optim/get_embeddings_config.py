@@ -43,7 +43,6 @@ def main():
             for k in range(len(generator)):
                 print(k)
                 x, y_true = next(generator)
-                y_true = np.argmax(y_true, axis=1)
                 y_pred = model.model.predict(x)
                 y_true = [label_map[x] for x in y_true]
 

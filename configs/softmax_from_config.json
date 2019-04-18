@@ -13,8 +13,8 @@
     "height_shift_range": 0.15,
     "rotation_range": 30,
     "is_use_cutOut": false,
-    "class_mode": "categorical"
-
+    "class_mode": "categorical",
+    "batch_size": 24
   },
   "model":{
     "name": "softmax_model.SoftMaxModel",
@@ -26,7 +26,6 @@
   "trainer":{
     "name": "simple_mnist_trainer.SimpleMnistModelTrainer",
     "num_epochs": 20,
-    "batch_size": 24,
     "learning_rate_values": [0.0001, 0.00001, 0.00001],
     "learning_rate_epoch_change": [3,9],
     "validation_split":0.25,

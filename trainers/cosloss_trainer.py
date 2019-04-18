@@ -30,13 +30,12 @@ class CosLossModelTrainer(BaseTrain):
                     verbose=self.config.callbacks.checkpoint_verbose,
                 )
             )
-
-        self.callbacks.append(
-            TensorBoard(
-                log_dir=self.config.callbacks.tensorboard_log_dir,
-                write_graph=self.config.callbacks.tensorboard_write_graph,
+            self.callbacks.append(
+                TensorBoard(
+                    log_dir=self.config.callbacks.tensorboard_log_dir,
+                    write_graph=self.config.callbacks.tensorboard_write_graph,
+                )
             )
-        )
 
         self.callbacks.append(
             EarlyStopping(

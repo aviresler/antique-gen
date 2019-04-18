@@ -33,21 +33,23 @@ def findEuclideanDistance(source_representation, test_representation):
 #valid_labels = np.genfromtxt(valid_labels_tsv, delimiter='\t')
 
 
-def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, experiment ):
+def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, experiment, is_save_files = True ):
     cnt = 0
     labels_list = []
     weight_list = []
     clasee_names = []
-    with open('evaluator/classes.csv', 'r') as f:
-        reader = csv.reader(f)
-        for row in reader:
-            if cnt == 0:
-                print(row)
-            if cnt > 0:
-                labels_list.append(row[0])
-                weight_list.append(row[4])
-                clasee_names.append(row[7])
-            cnt = cnt + 1
+
+    if is_save_files:
+        with open('evaluator/classes.csv', 'r') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                if cnt == 0:
+                    print(row)
+                if cnt > 0:
+                    labels_list.append(row[0])
+                    weight_list.append(row[4])
+                    clasee_names.append(row[7])
+                cnt = cnt + 1
 
     similaity_mat = cosine_similarity(valid_embeddings, train_embeddings, dense_output=True)
     max_ind = np.argmax(similaity_mat, axis=1)
@@ -58,6 +60,7 @@ def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, exp
     num_no_zero = np.count_nonzero(vec0-vec1)
     equal_elements = vec0.shape[0] - num_no_zero
     accuracy = 100*equal_elements/vec0.shape[0]
+
     print('accuracy= {}'.format(accuracy))
 
     N_valid = valid_embeddings.shape[0]
@@ -66,16 +69,19 @@ def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, exp
     confusion_mat_data[:, 0] = np.squeeze(vec0)
     confusion_mat_data[:, 1] = np.squeeze(vec1)
 
-    # in the following file classes are represented by numbers
-    np.savetxt('evaluator/conf_mat_data/' + experiment + '_data.csv', confusion_mat_data, delimiter=",")
+    if is_save_files:
+        # in the following file classes are represented by numbers
+        np.savetxt('evaluator/conf_mat_data/' + experiment + '_data.csv', confusion_mat_data, delimiter=",")
 
-    lines = 'valid \t train\n'
-    for k in range(N_valid):
-        valid_class = clasee_names[np.int(confusion_mat_data[k, 0])].replace(',', '_')
-        train_class = clasee_names[np.int(confusion_mat_data[k, 1])].replace(',', '_')
-        lines = lines + '{} \t {}\n'.format(valid_class, train_class)
+        lines = 'valid \t train\n'
+        for k in range(N_valid):
+            valid_class = clasee_names[np.int(confusion_mat_data[k, 0])].replace(',', '_')
+            train_class = clasee_names[np.int(confusion_mat_data[k, 1])].replace(',', '_')
+            lines = lines + '{} \t {}\n'.format(valid_class, train_class)
 
-    with open('evaluator/conf_mat_data/' + experiment + '_labels.csv', "w") as text_file:
-        text_file.write(lines)
+        with open('evaluator/conf_mat_data/' + experiment + '_labels.csv', "w") as text_file:
+            text_file.write(lines)
+
+    return accuracy
 
 

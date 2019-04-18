@@ -99,7 +99,8 @@ def cos_loss(x, y,  num_cls, reuse=False, alpha=0.25, scale=64,name = 'cos_loss'
     # print(xs)
     # print(y.get_shape())
     # print(y)
-    with tf.variable_scope('centers_var',reuse=tf.AUTO_REUSE) as center_scope:
+    #tf.AUTO_REUSE
+    with tf.variable_scope('centers_var',reuse=False) as center_scope:
         w = tf.get_variable("centers", [xs[1], num_cls], dtype=tf.float32, 
             initializer=tf.contrib.layers.xavier_initializer(),trainable=True)
     # print(w.get_shape())

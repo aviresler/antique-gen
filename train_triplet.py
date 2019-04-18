@@ -8,6 +8,7 @@ from trainers.cosloss_trainer import CosLossModelTrainer
 import sys
 from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
+import numpy as np
 
 def main():
     # capture the config path from the run arguments

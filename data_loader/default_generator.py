@@ -24,7 +24,7 @@ def get_default_generator(config, is_train = True):
     train_generator = train_datagen.flow_from_directory(
     data_dir,
     target_size= (config.model.img_height, config.model.img_width),
-    batch_size= config.trainer.batch_size,
+    batch_size= config.data_loader.batch_size,
     class_mode= config.data_loader.class_mode)
 
     return train_generator
@@ -44,7 +44,7 @@ def get_testing_generator(config, is_train = False):
     test_generator = test_datagen.flow_from_directory(
     data_dir,
     target_size= (config.model.img_height, config.model.img_width),
-    batch_size= config.model.batch_size,
+    batch_size= config.data_loader.batch_size,
     class_mode= "sparse",
     shuffle=False)
 
