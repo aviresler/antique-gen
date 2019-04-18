@@ -16,6 +16,7 @@ import os
 import time
 from evaluator.get_valid_nearest_neighbor import eval_model
 from data_loader.triplet_data_loader import TripletGenerator
+from data_loader.cosface_data_loader import CosFaceGenerator
 import tensorflow as tf
 from keras import backend as K
 import time
@@ -39,17 +40,15 @@ def main():
             # releasing memory
             K.clear_session()
             # @todo: find cleaner solution, instead of waiting for memory release
-            time.sleep(5)
-
+            # current solution: downgrade keras to version 2.1.6
+            #time.sleep(10)
 
             # read basic config
             args = get_args()
             config = process_config(args.config)
 
-            print(config)
             # update config
             config, experiment = update_config(config, param_csv_path, params_start_col, loss_col, test_file)
-            print(config)
 
             if int(experiment) == -1:
                 break
@@ -62,10 +61,9 @@ def main():
                                 zoom_range=config.data_loader.zoom_range,
                                 horizontal_flip=config.data_loader.horizontal_flip)
 
-            # @todo: replace with custom, random generator
+            train_generator = CosFaceGenerator(config, datagen_args, True)
+            valid_generator = CosFaceGenerator(config, datagen_args, False)
 
-            train_generator = TripletGenerator(config, datagen_args, True)
-            valid_generator = TripletGenerator(config, datagen_args, False)
 
             print('Create the model.')
             model = CosLosModel(config)

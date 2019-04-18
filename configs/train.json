@@ -1,6 +1,6 @@
 {
   "exp": {
-    "name": "cossloss_new_data_split_2"
+    "name": "cossloss_optim"
   },
   "data_loader": {
     "name": "default_generator",
@@ -28,7 +28,7 @@
     "img_height": 299,
     "alpha": 0.25,
     "scale": 64,
-    "is_use_triplet_loss": false,
+    "loss": "cosface",
     "is_use_relu_on_embeddings": false,
     "embedding_dim": 200,
     "is_use_dummy_model": false

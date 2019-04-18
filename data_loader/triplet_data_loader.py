@@ -95,7 +95,7 @@ class TripletGenerator(keras.utils.Sequence,):
         for i, file_path in enumerate(image_files_list):
             X[i, ] = self.read_and_preprocess_images(file_path)
 
-        #cstom loss in keras requires the labels and predictions to be in the same size
+        # custom loss in keras requires the labels and predictions to be in the same size
         temp_labels = np.zeros((len(labels_list), 1),dtype=np.int32)
         temp_labels[:,0] = np.array(labels_list, dtype=np.int32)
         labels = np.tile(temp_labels, (1, int(self.config.model.embedding_dim)))
@@ -122,7 +122,7 @@ class TripletGenerator(keras.utils.Sequence,):
     def read_and_preprocess_images(self, image_path):
         # read image from disk
         img = image.load_img(image_path, target_size=(self.dim[0], self.dim[1],3))
-        img = image.img_to_array(img,dtype=np.float32)
+        img = image.img_to_array(img)
 
         if self.config.data_loader.is_use_cutOut:
             preprocess_function = preprocess_input
