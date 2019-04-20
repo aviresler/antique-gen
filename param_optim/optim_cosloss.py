@@ -44,11 +44,14 @@ def main():
             #time.sleep(10)
 
             # read basic config
+
             args = get_args()
             config = process_config(args.config)
 
+
             # update config
             config, experiment = update_config(config, param_csv_path, params_start_col, loss_col, test_file)
+
 
             if int(experiment) == -1:
                 break

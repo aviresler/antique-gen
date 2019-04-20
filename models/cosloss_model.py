@@ -52,13 +52,23 @@ class CosLosModel(BaseModel):
 
             self.model = Model(input=self.model.input, output=self.model.output)
 
-
-        adam1 = optimizers.Adam(lr=0.0)
-
-        if self.config.model.is_use_triplet_loss:
-            loss_func = self.triplet_loss_wrapper(self.config.model.margin, self.config.model.is_squared)
+        if self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
+            adam1 = optimizers.Adam(lr=0.0)
+        elif self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
+            print('decrease_platue')
+            adam1 = optimizers.Adam(lr=self.config.trainer.learning_rate)
         else:
+            print('invalid learning rate configuration')
+            raise
+
+
+        if self.config.model.loss == 'triplet':
+            loss_func = self.triplet_loss_wrapper(self.config.model.margin, self.config.model.is_squared)
+        elif self.config.model.loss == 'cosface':
             loss_func = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+        else:
+            print('invalid loss type')
+            raise
 
 
         self.model.compile(

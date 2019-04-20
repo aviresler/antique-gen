@@ -22,7 +22,6 @@
   },
   "model":{
     "name": "cosloss.CosLosModel",
-    "learning_rate": 0.001,
     "optimizer": "adam",
     "img_width": 299,
     "img_height": 299,
@@ -37,6 +36,9 @@
     "name": "cosface.SimpleMnistModelTrainer",
     "num_epochs": 1,
     "learning_rate_values": [0.0001, 0.000001, 0.000001],
+    "learning_rate_schedule_type": "ReduceLROnPlateau",
+    "learning_rate": 0.0001,
+    "lr_decrease_factor": 0.1,
     "learning_rate_epoch_change": [3,9],
     "verbose_training": true
   },
@@ -47,7 +49,7 @@
     "checkpoint_save_weights_only": true,
     "checkpoint_verbose": true,
     "tensorboard_write_graph": true,
-    "is_save_model": true
+    "is_save_model": false
   }
 }
 

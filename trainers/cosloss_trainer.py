@@ -1,6 +1,6 @@
 from base.base_trainer import BaseTrain
 import os
-from keras.callbacks import ModelCheckpoint, TensorBoard, EarlyStopping, LearningRateScheduler
+from keras.callbacks import ModelCheckpoint, TensorBoard, EarlyStopping, LearningRateScheduler, ReduceLROnPlateau
 from trainers.learning_rate_scd import step_decay_wrapper
 
 
@@ -39,12 +39,20 @@ class CosLossModelTrainer(BaseTrain):
 
         self.callbacks.append(
             EarlyStopping(
-                monitor='val_loss', min_delta=0, patience=3, verbose=1, mode='auto')
+                monitor='val_loss', min_delta=0.1, patience=4, verbose=1, mode='auto')
         )
 
-        self.callbacks.append(
-            LearningRateScheduler(self.step_decay_function)
-        )
+        if self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
+            self.callbacks.append(
+                ReduceLROnPlateau(monitor='val_loss', factor=self.config.trainer.lr_decrease_factor,
+                                            patience=2, min_lr=1e-09)
+            )
+        elif self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
+            self.callbacks.append(
+                LearningRateScheduler(self.step_decay_function)
+            )
+
+
 
         #if hasattr(self.config,"comet_api_key"):
         #    from comet_ml import Experiment
