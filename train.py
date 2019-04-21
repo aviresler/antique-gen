@@ -68,6 +68,8 @@ def main():
         trainer.train()
 
         # get accuracy, using default generators
+        config['data_loader']['data_dir_train'] = config['data_loader']['data_dir_train_test']
+        config['data_loader']['data_dir_valid'] = config['data_loader']['data_dir_valid_test']
         train_generator = get_testing_generator(config, True)
         valid_generator = get_testing_generator(config, False)
         generators = [train_generator, valid_generator]

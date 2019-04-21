@@ -1,11 +1,14 @@
 {
   "exp": {
-    "name": "cossloss_idicative"
+    "name": "triplet_idicative"
   },
   "data_loader": {
-    "name": "default_generator",
-    "data_dir_train": "data_loader/data/site_period_top_200/train",
-    "data_dir_valid": "data_loader/data/site_period_top_200/valid",
+    "data_dir_train": "data_loader/data/site_period_570/train",
+    "data_dir_valid": "data_loader/data/site_period_570/valid",
+    "info_line_below": "in triplet loss testing is done with 200 classes",
+    "data_dir_train_test": "data_loader/data/site_period_top_200/train",
+    "data_dir_valid_test": "data_loader/data/site_period_top_200/valid",
+    "info_line_below1": "valid only for cosface loss",
     "num_of_classes": 200,
     "horizontal_flip": true,
     "fill_mode": "nearest",
@@ -27,10 +30,13 @@
     "img_height": 299,
     "alpha": 0.25,
     "scale": 64,
-    "loss": "cosface",
+    "margin": 0.2,
+    "is_squared": false,
+    "batch_type": "hard",
+    "loss": "triplet",
     "is_use_relu_on_embeddings": false,
     "embedding_dim": 328,
-    "is_use_dummy_model": true,
+    "is_use_dummy_model": false,
     "pretraind_model": "None"
   },
   "trainer":{

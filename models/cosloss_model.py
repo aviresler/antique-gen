@@ -93,5 +93,11 @@ class CosLosModel(BaseModel):
             #y_true_casted = K.cast(y_true, dtype='int32')
             # y_true_casted = K.expand_dims(y_true_casted, axis=-1)
             # print(K.int_shape(y_true_casted))
-            return models.triplet_loss.batch_hard_triplet_loss(y_true_, y_pred, margin, is_squared)
+            if self.config.model.batch_type == 'hard':
+                return models.triplet_loss.batch_hard_triplet_loss(y_true_, y_pred, margin, is_squared)
+            elif self.config.model.batch_type == 'all':
+                models.triplet_loss.batch_all_triplet_loss(y_true_, y_pred, margin, is_squared)
+            else:
+                'unrecognized batch type'
+                raise
         return triplet_loss1
