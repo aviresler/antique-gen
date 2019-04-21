@@ -64,8 +64,15 @@ def main():
                                 zoom_range=config.data_loader.zoom_range,
                                 horizontal_flip=config.data_loader.horizontal_flip)
 
-            train_generator = CosFaceGenerator(config, datagen_args, True)
-            valid_generator = CosFaceGenerator(config, datagen_args, False)
+            if config.model.loss == 'cosface':
+                train_generator = CosFaceGenerator(config, datagen_args, True)
+                valid_generator = CosFaceGenerator(config, datagen_args, False)
+            elif config.model.loss == 'triplet':
+                train_generator = TripletGenerator(config, datagen_args, True)
+                valid_generator = TripletGenerator(config, datagen_args, False)
+            else:
+                print('invalid loss type')
+                raise
 
 
             print('Create the model.')
@@ -167,7 +174,11 @@ def update_config(config, param_csv_path, params_start_col, loss_col, test_file)
                     for i, param in enumerate(param_names):
                         print(param + ' ' + params[i])
                         param_list = param.split('.')
-                        config[param_list[0]][param_list[1]] = float(params[i])
+                        try:
+                            config[param_list[0]][param_list[1]] = float(params[i])
+                        except:
+                            config[param_list[0]][param_list[1]] = params[i]
+
 
                     # update params that are valid only for param optim runs
                     config['callbacks']['is_save_model'] = False
