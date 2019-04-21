@@ -41,7 +41,8 @@ def copy_images_to_calses_folders():
                 print(row)
             if cnt > 0:
                 is_valid = row[5]
-                if is_valid == '1':
+                is_indicative = row[6]
+                if is_valid == '1' and is_indicative == 'yes':
                     cls = row[4]
                     add_look = int(row[3])
                     copyfile('data/antiques_all_images/{}_0.jpg'.format(row[0]),
@@ -106,6 +107,105 @@ def split_into_train_valid_top_200():
 
             cnt = cnt + 1
 
+
+def print_classes_for_artifacts():
+
+
+    cnt = 0
+    id = {}
+    with open('classes.csv', 'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if cnt == 0:
+                print(row)
+            if cnt > 0:
+                id[row[1]] = row[0]
+            cnt = cnt + 1
+    #print(id)
+    #np.testing.assert_almost_equal(0,1)
+
+
+    cnt = 0
+    invalid_cnt = 0
+    site_list = []
+    period_list = []
+    class_list = []
+    with open('artifacts.csv', 'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if cnt == 0:
+                print(row)
+            if cnt > 0:
+                is_valid = row[5]
+                is_indicative = row[6]
+                if is_valid == '1' and is_indicative == 'yes':
+                    #cls = row[4]
+                    add_look = int(row[3])
+
+                    site = row[1]
+                    site = site.replace(',', '-')
+                    site_list.append(site)
+                    period = row[2]
+                    period = period.replace(',', '-')
+                    period_list.append(period)
+                    cls = site + '_' + period
+                    class_list.append(cls)
+                    print(id[cls])
+                else:
+                    #print(row)
+                    invalid_cnt = invalid_cnt+1
+                    print('invalid')
+            cnt = cnt + 1
+
+    #counting how many images in class
+    # img_in_cls = {}
+    # class_set = set(class_list)
+    # for cls_ in class_set:
+    #     img_in_cls[cls_] = 0
+    #
+    # cnt = 0
+    # with open('artifacts.csv', 'r') as f:
+    #     reader = csv.reader(f)
+    #     for row in reader:
+    #         if cnt == 0:
+    #             print(row)
+    #         if cnt > 0:
+    #             is_valid = row[5]
+    #             is_indicative = row[6]
+    #             if is_valid == '1' and is_indicative == 'yes':
+    #                 # cls = row[4]
+    #                 add_look = int(row[3])
+    #
+    #                 site = row[1]
+    #                 site = site.replace(',', '-')
+    #                 site_list.append(site)
+    #                 period = row[2]
+    #                 period = period.replace(',', '-')
+    #                 period_list.append(period)
+    #                 cls = site + '_' + period
+    #                 class_list.append(cls)
+    #                 img_in_cls[cls] = img_in_cls[cls] + 1 + int(add_look)
+    #                 # print(id[cls])
+    #             else:
+    #                 # print(row)
+    #                 invalid_cnt = invalid_cnt + 1
+    #                 # print('invalid')
+    #         cnt = cnt + 1
+    #
+    # for key, value in img_in_cls.items():
+    #     print(key + ',' + str(value))
+    # period_set = set(period_list)
+    # for prd_ in period_set:
+    #     print(prd_)
+
+    #site_set = set(site_list)
+    #for sit_ in site_set:
+    #     print(sit_)
+
+
+
+
+#print_classes_for_artifacts()
 create_directories()
 copy_images_to_calses_folders()
 split_into_train_valid_top_200()
