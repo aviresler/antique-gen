@@ -36,7 +36,6 @@ def findEuclideanDistance(source_representation, test_representation):
 def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, experiment, is_save_files = True ):
     cnt = 0
     labels_list = []
-    weight_list = []
     clasee_names = []
 
     if is_save_files:
@@ -47,8 +46,7 @@ def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, exp
                     print(row)
                 if cnt > 0:
                     labels_list.append(row[0])
-                    weight_list.append(row[4])
-                    clasee_names.append(row[7])
+                    clasee_names.append(row[1])
                 cnt = cnt + 1
 
     similaity_mat = cosine_similarity(valid_embeddings, train_embeddings, dense_output=True)

@@ -1,6 +1,6 @@
 {
   "exp": {
-    "name": "cossloss_optim"
+    "name": "cossloss_idicative"
   },
   "data_loader": {
     "name": "default_generator",
@@ -29,12 +29,12 @@
     "scale": 64,
     "loss": "cosface",
     "is_use_relu_on_embeddings": false,
-    "embedding_dim": 200,
+    "embedding_dim": 328,
     "is_use_dummy_model": false
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",
-    "num_epochs": 1,
+    "num_epochs": 30,
     "learning_rate_values": [0.0001, 0.000001, 0.000001],
     "learning_rate_schedule_type": "ReduceLROnPlateau",
     "learning_rate": 0.0001,
@@ -49,7 +49,7 @@
     "checkpoint_save_weights_only": true,
     "checkpoint_verbose": true,
     "tensorboard_write_graph": true,
-    "is_save_model": false
+    "is_save_model": true
   }
 }
 

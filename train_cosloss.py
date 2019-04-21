@@ -20,8 +20,15 @@ def main():
         create_dirs([config.callbacks.tensorboard_log_dir, config.callbacks.checkpoint_dir])
 
         print('train generator')
-        train_generator = get_default_generator(config, True)
-        valid_generator = get_default_generator(config, False)
+        datagen_args = dict(rotation_range=config.data_loader.rotation_range,
+                            width_shift_range=config.data_loader.width_shift_range,
+                            height_shift_range=config.data_loader.height_shift_range,
+                            shear_range=config.data_loader.shear_range,
+                            zoom_range=config.data_loader.zoom_range,
+                            horizontal_flip=config.data_loader.horizontal_flip)
+
+        train_generator = CosFaceGenerator(config, datagen_args, True)
+        valid_generator = CosFaceGenerator(config, datagen_args, False)
 
         print('Create the model.')
         model = CosLosModel(config)
