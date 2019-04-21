@@ -71,6 +71,10 @@ def main():
             print('Create the model.')
             model = CosLosModel(config)
 
+            print('loading pretrained model')
+            if not config.model.pretraind_model == 'None':
+                model.load(config.model.pretraind_model)
+
             print('Create the trainer')
             trainer = CosLossModelTrainer(model.model, train_generator ,valid_generator, config)
 
@@ -88,6 +92,8 @@ def main():
             lines[int(experiment) + 1][5] = time.strftime("%Y-%m-%d",time.localtime())
 
             # get accuracy, using default generators
+            config['data_loader']['data_dir_train'] = config['data_loader']['data_dir_train_test']
+            config['data_loader']['data_dir_valid'] = config['data_loader']['data_dir_valid_test']
             train_generator = get_testing_generator(config, True)
             valid_generator = get_testing_generator(config, False)
             generators = [train_generator, valid_generator]
