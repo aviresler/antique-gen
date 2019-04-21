@@ -57,6 +57,10 @@ def main():
         print('Create the model.')
         model = CosLosModel(config)
 
+        print('loading pretrained model')
+        if not config.model.pretraind_model == 'None':
+            model.load(config.model.pretraind_model)
+
         print('Create the trainer')
         trainer = CosLossModelTrainer(model.model, train_generator ,valid_generator, config)
 

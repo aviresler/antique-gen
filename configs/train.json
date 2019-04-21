@@ -30,7 +30,8 @@
     "loss": "cosface",
     "is_use_relu_on_embeddings": false,
     "embedding_dim": 328,
-    "is_use_dummy_model": false
+    "is_use_dummy_model": true,
+    "pretraind_model": "None"
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",
