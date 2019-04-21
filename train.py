@@ -32,6 +32,9 @@ def main():
         args = get_args()
         config = process_config(args.config)
 
+        # create the experiments dirs
+        create_dirs([config.callbacks.tensorboard_log_dir, config.callbacks.checkpoint_dir])
+
         print('train generator')
         datagen_args = dict(rotation_range=config.data_loader.rotation_range,
                             width_shift_range=config.data_loader.width_shift_range,
