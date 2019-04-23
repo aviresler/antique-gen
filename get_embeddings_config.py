@@ -32,29 +32,31 @@ def main():
         generators = [train_generator,valid_generator]
         generators_id = ['_train', '_valid']
 
-
         for m, generator in enumerate(generators):
-            num_of_images = len(generator.filenames)
+            batch_size = config['data_loader']['batch_size']
+
+            num_of_images = len(generator)*(batch_size)
             labels = np.zeros((num_of_images, 1), dtype=np.int)
-            predication = np.zeros((num_of_images, config.model.embedding_dim), dtype=np.float32)
+            predication = np.zeros((num_of_images, int(config.model.embedding_dim)), dtype=np.float32)
 
             label_map = (generator.class_indices)
             label_map = dict((v, k) for k, v in label_map.items())  # flip k,v
 
-            print(len(generator))
+            cur_ind = 0
             for k in range(len(generator)):
                 print(k)
-                x, y_true = next(generator)
-                y_true = np.argmax(y_true, axis=1)
+                x, y_true_ = generator.__getitem__(k)
+                y_true = [label_map[x] for x in y_true_]
                 y_pred = model.model.predict(x)
-                y_true = [label_map[x] for x in y_true]
 
-                if k == len(generator) -1:
-                    labels[k*config.model.batch_size:,0] = y_true
-                    predication[k*config.model.batch_size:, :] = y_pred
-                else:
-                    labels[k*config.model.batch_size:(k+1)*config.model.batch_size,0] = y_true
-                    predication[k*config.model.batch_size:(k+1)*config.model.batch_size, :] = y_pred
+                num_of_items = y_pred.shape[0]
+
+                predication[cur_ind: cur_ind+num_of_items,:] = y_pred
+                labels[cur_ind: cur_ind + num_of_items, :] = np.expand_dims(y_true, axis=1)
+                cur_ind = cur_ind + num_of_items
+
+            predication = predication[:cur_ind,:]
+            labels = labels[:cur_ind, :]
 
             if m == 0:
                 train_labels = labels
@@ -67,7 +69,9 @@ def main():
             np.savetxt('evaluator/labels/' + config.exp.name + generators_id[m] + '.tsv', labels, delimiter=',')
             np.savetxt('evaluator/embeddings/' + config.exp.name + generators_id[m] + '.csv', predication, delimiter=',')
 
-        eval_model(train_prediction,valid_prediction,train_labels, valid_labels, config.exp.name)
+        accuracy = eval_model(train_prediction, valid_prediction, train_labels, valid_labels, config.exp.name,
+                              is_save_files=True)
+        print('accuracy = {0:.3f}'.format(accuracy))
 
 
 
