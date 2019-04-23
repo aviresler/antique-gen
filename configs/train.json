@@ -1,6 +1,6 @@
 {
   "exp": {
-    "name": "triplet_idicative"
+    "name": "triplet_indicative_all"
   },
   "data_loader": {
     "data_dir_train": "data_loader/data/site_period_570/train",
@@ -32,20 +32,20 @@
     "scale": 64,
     "margin": 0.2,
     "is_squared": false,
-    "batch_type": "hard",
+    "batch_type": "all",
     "loss": "triplet",
     "is_use_relu_on_embeddings": false,
     "embedding_dim": 328,
     "is_use_dummy_model": false,
-    "pretraind_model": "None"
+    "pretraind_model": "../experiments/2019-04-21/cossloss_indicative/checkpoints/cossloss_indicative.hdf5"
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",
     "num_epochs": 30,
     "learning_rate_values": [0.0001, 0.000001, 0.000001],
     "learning_rate_schedule_type": "ReduceLROnPlateau",
-    "learning_rate": 0.0001,
-    "lr_decrease_factor": 0.1,
+    "learning_rate": 5E-7,
+    "lr_decrease_factor": 0.2,
     "learning_rate_epoch_change": [3,9],
     "verbose_training": true
   },
