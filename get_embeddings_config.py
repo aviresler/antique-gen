@@ -6,6 +6,7 @@ import sys
 from data_loader.default_generator import get_testing_generator
 import numpy as np
 from evaluator.get_valid_nearest_neighbor import eval_model
+from models.cosloss_model import CosLosModel
 
 def main():
     # capture the config path from the run arguments
@@ -22,7 +23,8 @@ def main():
         valid_generator = get_testing_generator(config, False)
 
         print('Create the model.')
-        model = factory.create("models."+config.model.name)(config)
+        model = CosLosModel(config)
+        #model = factory.create("models."+config.model.name)(config)
 
         print('loading pretrained model')
         model.load(config.model.pretraind_model)
@@ -36,7 +38,6 @@ def main():
             labels = np.zeros((num_of_images, 1), dtype=np.int)
             predication = np.zeros((num_of_images, config.model.embedding_dim), dtype=np.float32)
 
-            label_map = (generator.class_indices)
             label_map = dict((v, k) for k, v in label_map.items())  # flip k,v
 
             print(len(generator))

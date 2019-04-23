@@ -112,11 +112,13 @@ def main():
                 labels = np.zeros((num_of_images, 1), dtype=np.int)
                 predication = np.zeros((num_of_images, int(config.model.embedding_dim)), dtype=np.float32)
 
+                label_map = dict((v, k) for k, v in label_map.items())  # flip k,v
+
                 cur_ind = 0
                 for k in range(len(generator)):
                     print(k)
-                    x, y_true = generator.__getitem__(k)
-                    #y_true = y_true[:, 0]
+                    x, y_true_ = generator.__getitem__(k)
+                    y_true = [label_map[x] for x in y_true_]
                     y_pred = model.model.predict(x)
                     num_of_items = y_pred.shape[0]
 

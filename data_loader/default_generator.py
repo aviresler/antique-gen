@@ -29,12 +29,13 @@ def get_default_generator(config, is_train = True):
 
     return train_generator
 
+
 def get_testing_generator(config, is_train = False):
 
     if is_train:
-        data_dir = config.data_loader.data_dir_train
+        data_dir = config.data_loader.data_dir_train_test
     else:
-        data_dir = config.data_loader.data_dir_valid
+        data_dir = config.data_loader.data_dir_valid_test
 
     test_datagen = ImageDataGenerator(
     preprocessing_function = preprocess_input,
