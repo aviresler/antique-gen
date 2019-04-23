@@ -38,6 +38,7 @@ def main():
             labels = np.zeros((num_of_images, 1), dtype=np.int)
             predication = np.zeros((num_of_images, config.model.embedding_dim), dtype=np.float32)
 
+            label_map = (generator.class_indices)
             label_map = dict((v, k) for k, v in label_map.items())  # flip k,v
 
             print(len(generator))
