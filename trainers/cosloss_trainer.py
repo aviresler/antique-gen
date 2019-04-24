@@ -34,12 +34,13 @@ class CosLossModelTrainer(BaseTrain):
                     verbose=self.config.callbacks.checkpoint_verbose,
                 )
             )
-            self.callbacks.append(
-                TensorBoard(
-                    log_dir=self.config.callbacks.tensorboard_log_dir,
-                    write_graph=self.config.callbacks.tensorboard_write_graph,
-                )
+
+        self.callbacks.append(
+            TensorBoard(
+                log_dir=self.config.callbacks.tensorboard_log_dir,
+                write_graph=self.config.callbacks.tensorboard_write_graph,
             )
+        )
 
         self.callbacks.append(
             EarlyStopping(
@@ -49,7 +50,7 @@ class CosLossModelTrainer(BaseTrain):
         if self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
             self.callbacks.append(
                 ReduceLROnPlateau(monitor='val_loss', factor=self.config.trainer.lr_decrease_factor,
-                                            patience=2, min_lr=1e-09)
+                                            patience=2, min_lr=1e-12)
             )
         elif self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
             self.callbacks.append(

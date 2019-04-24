@@ -61,11 +61,19 @@ class CosLosModel(BaseModel):
             print('invalid learning rate configuration')
             raise
 
-
+        metrics = []
         if self.config.model.loss == 'triplet':
             loss_func = self.triplet_loss_wrapper(self.config.model.margin, self.config.model.is_squared)
+            if self.config.model.batch_type == 'hard':
+                hardest_pos_dist = self.triplet_loss_wrapper_batch_hard_hardest_pos_dist(self.config.model.margin, self.config.model.is_squared)
+                metrics.append(hardest_pos_dist)
+                hardest_neg_dist = self.triplet_loss_wrapper_batch_hard_hardest_neg_dist(self.config.model.margin, self.config.model.is_squared)
+                metrics.append(hardest_neg_dist)
+            if self.config.model.batch_type == 'all':
+                pos_fraction = self.triplet_loss_wrapper_batch_all_positive_fraction(self.config.model.margin, self.config.model.is_squared)
+                metrics.append(pos_fraction)
         elif self.config.model.loss == 'cosface':
-            loss_func = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+            loss_func = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale,'hardest_positive_dist')
         else:
             print('invalid loss type')
             raise
@@ -73,7 +81,9 @@ class CosLosModel(BaseModel):
 
         self.model.compile(
               loss=loss_func,
-              optimizer=adam1)
+              optimizer=adam1,
+              metrics= metrics
+        )
 
     def coss_loss_wrapper(self, alpha, scale):
         def coss_loss1(y_true, y_pred):
@@ -91,10 +101,45 @@ class CosLosModel(BaseModel):
             #batch_size = K.shape(y_true)[0]
             y_true_ = y_true[:,0]
             if self.config.model.batch_type == 'hard':
-                return models.triplet_loss.batch_hard_triplet_loss(y_true_, y_pred, margin, is_squared)
+                loss, hardest_positive_dist, hardest_negative_dist = models.triplet_loss.batch_hard_triplet_loss(y_true_, y_pred, margin, is_squared)
+                return loss
             elif self.config.model.batch_type == 'all':
-                return models.triplet_loss.batch_all_triplet_loss(y_true_, y_pred, margin, is_squared)
+                loss, fraction_positive_triplets = models.triplet_loss.batch_all_triplet_loss(y_true_, y_pred, margin, is_squared)
+                return loss
             else:
                 'unrecognized batch type'
                 raise
         return triplet_loss1
+
+    def triplet_loss_wrapper_batch_hard_hardest_pos_dist(self, margin, is_squared):
+        def hardest_pos_dist(y_true, y_pred):
+            # !!! y_true and y_pred must have the smae shape !!!
+            # therefore we need to crop label array to be in size (B,)
+            #batch_size = K.shape(y_true)[0]
+            y_true_ = y_true[:,0]
+            loss, hardest_positive_dist, hardest_negative_dist = models.triplet_loss.batch_hard_triplet_loss(y_true_, y_pred, margin, is_squared)
+            return hardest_positive_dist
+        return hardest_pos_dist
+
+    def triplet_loss_wrapper_batch_hard_hardest_neg_dist(self, margin, is_squared):
+        def hardest_neg_dist(y_true, y_pred):
+            # !!! y_true and y_pred must have the smae shape !!!
+            # therefore we need to crop label array to be in size (B,)
+            #batch_size = K.shape(y_true)[0]
+            y_true_ = y_true[:,0]
+            loss, hardest_positive_dist, hardest_negative_dist = models.triplet_loss.batch_hard_triplet_loss(y_true_, y_pred, margin, is_squared)
+            return hardest_negative_dist
+        return hardest_neg_dist
+
+    def triplet_loss_wrapper_batch_all_positive_fraction(self, margin, is_squared):
+        def positive_fraction(y_true, y_pred):
+            # !!! y_true and y_pred must have the smae shape !!!
+            # therefore we need to crop label array to be in size (B,)
+            #batch_size = K.shape(y_true)[0]
+            y_true_ = y_true[:,0]
+            loss, fraction_positive_triplets = models.triplet_loss.batch_all_triplet_loss(y_true_, y_pred, margin,
+                                                                                          is_squared)
+            return fraction_positive_triplets
+        return positive_fraction
+
+
