@@ -6,8 +6,8 @@ from sklearn import decomposition
 import csv
 
 
-labels = np.genfromtxt('labels/cossloss_idicative_valid.tsv', delimiter=',')
-embeddings = np.genfromtxt('embeddings/cossloss_idicative_valid.csv', delimiter=',')
+labels = np.genfromtxt('labels/coss_loss_indicative_valid_valid.tsv', delimiter=',')
+embeddings = np.genfromtxt('embeddings/coss_loss_indicative_valid_valid.csv', delimiter=',')
 
 cnt = 0
 cls_dict = {}
@@ -33,8 +33,7 @@ color = np.zeros((X.shape[0]), dtype=np.float)
 for i,label in enumerate(labels):
     color[i] = cls_dict[label]
 
-
-#y = cls_dict[labels]
+color /= np.max(color)
 
 fig = plt.figure(1, figsize=(4, 3))
 plt.clf()
@@ -44,7 +43,7 @@ ax = Axes3D(fig, rect=[0, 0, .95, 1], elev=48, azim=134)
 #ax = fig.add_subplot(1,1,1)
 
 plt.cla()
-pca = decomposition.PCA(n_components=3)
+pca = decomposition.PCA(n_components=3, whiten=True)
 pca.fit(X)
 X = pca.transform(X)
 
@@ -60,6 +59,27 @@ print(X.shape)
 # y = np.choose(y, [1, 2, 0]).astype(np.float)
 ax.scatter(X[:, 0], X[:, 1],X[:, 2],c=color, cmap=plt.cm.nipy_spectral,
            edgecolor='k')
+
+#ax.w_xaxis.set_ticklabels([])
+#ax.w_yaxis.set_ticklabels([])
+#ax.w_zaxis.set_ticklabels([])
+
+plt.show()
+
+#plt.cla()
+pca = decomposition.PCA(n_components=2, whiten=True)
+pca.fit(X)
+X = pca.transform(X)
+
+fig, ax = plt.subplots()
+
+im = ax.scatter(X[:, 0], X[:, 1],c=color, cmap=plt.cm.nipy_spectral,
+           edgecolor='k')
+
+cbar = fig.colorbar(im, ax=ax)
+cbar.ax.set_yticklabels(['Lower Palaeolithic','Pre-Pottery Neolithic B','Middle Bronze IIB','Hellenistic','Early Byzantine','Ottoman'])
+# set the color limits - not necessary here, but good to know how.
+#im.set_clim(0.0, 1.0)
 
 #ax.w_xaxis.set_ticklabels([])
 #ax.w_yaxis.set_ticklabels([])

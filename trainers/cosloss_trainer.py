@@ -1,7 +1,11 @@
 from base.base_trainer import BaseTrain
 import os
-from keras.callbacks import ModelCheckpoint, TensorBoard, EarlyStopping, LearningRateScheduler, ReduceLROnPlateau
+from keras.callbacks import ModelCheckpoint, TensorBoard, EarlyStopping, LearningRateScheduler, ReduceLROnPlateau, LambdaCallback
 from trainers.learning_rate_scd import step_decay_wrapper
+import numpy as np
+from data_loader.default_generator import get_testing_generator
+from evaluator.get_valid_nearest_neighbor import eval_model
+import json
 
 
 
@@ -52,6 +56,13 @@ class CosLossModelTrainer(BaseTrain):
                 LearningRateScheduler(self.step_decay_function)
             )
 
+        if self.config.model.loss == 'triplet':
+            self.callbacks.append(
+            LambdaCallback(on_epoch_end=lambda epoch, logs: self.json_log.write(
+                json.dumps({'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'], 'acc': self.get_accuracy() }) + '\n'),
+                on_train_end=lambda logs: self.json_log.close())
+            )
+
 
 
         #if hasattr(self.config,"comet_api_key"):
@@ -62,6 +73,7 @@ class CosLossModelTrainer(BaseTrain):
         #    self.callbacks.append(experiment.get_keras_callback())
 
     def train(self):
+        self.json_log = open(self.config.callbacks.tensorboard_log_dir + '/loss_log.json', mode='wt', buffering=1)
         history = self.model.fit_generator(
             self.generator,
             epochs=self.config.trainer.num_epochs,
@@ -73,3 +85,57 @@ class CosLossModelTrainer(BaseTrain):
 
         self.loss.extend(history.history['loss'])
         self.val_loss.extend(history.history['val_loss'])
+
+
+    def get_accuracy(self, isSaveEmbeddings = False):
+        # get accuracy, using default generators
+        self.config['data_loader']['data_dir_train'] = self.config['data_loader']['data_dir_train_test']
+        self.config['data_loader']['data_dir_valid'] = self.config['data_loader']['data_dir_valid_test']
+        train_generator = get_testing_generator(self.config, True)
+        valid_generator = get_testing_generator(self.config, False)
+        generators = [train_generator, valid_generator]
+        generators_id = ['_train', '_valid']
+
+        for m, generator in enumerate(generators):
+            batch_size = self.config['data_loader']['batch_size']
+
+            num_of_images = len(generator) * (batch_size)
+            labels = np.zeros((num_of_images, 1), dtype=np.int)
+            predication = np.zeros((num_of_images, int(self.config.model.embedding_dim)), dtype=np.float32)
+
+            label_map = (generator.class_indices)
+            label_map = dict((v, k) for k, v in label_map.items())  # flip k,v
+
+            cur_ind = 0
+            for k in range(len(generator)):
+                print(k)
+                x, y_true_ = generator.__getitem__(k)
+                y_true = [label_map[x] for x in y_true_]
+                y_pred = self.model.predict(x)
+
+                num_of_items = y_pred.shape[0]
+
+                predication[cur_ind: cur_ind + num_of_items, :] = y_pred
+                labels[cur_ind: cur_ind + num_of_items, :] = np.expand_dims(y_true, axis=1)
+                cur_ind = cur_ind + num_of_items
+
+            predication = predication[:cur_ind, :]
+            labels = labels[:cur_ind, :]
+
+            if m == 0:
+                train_labels = labels
+                train_prediction = predication
+            else:
+                valid_labels = labels
+                valid_prediction = predication
+
+            if isSaveEmbeddings:
+                np.savetxt('evaluator/labels/' + self.config.exp.name + generators_id[m] + '.tsv', labels, delimiter=',')
+                np.savetxt('evaluator/embeddings/' + self.config.exp.name + generators_id[m] + '.csv', predication,
+                       delimiter=',')
+
+        accuracy = eval_model(train_prediction, valid_prediction, train_labels, valid_labels, self.config.exp.name,
+                              is_save_files=False)
+        print('accuracy = {0:.3f}'.format(accuracy))
+
+        return accuracy
