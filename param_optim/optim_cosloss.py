@@ -52,6 +52,11 @@ def main():
             # update config
             config, experiment = update_config(config, param_csv_path, params_start_col, loss_col, test_file)
 
+            # create the experiments dirs
+            config.callbacks.tensorboard_log_dir += experiment
+            config.callbacks.checkpoint_dir += experiment
+            create_dirs([config.callbacks.tensorboard_log_dir , config.callbacks.checkpoint_dir])
+
 
             if int(experiment) == -1:
                 break
@@ -98,45 +103,8 @@ def main():
             lines[int(experiment) + 1][4] = str(len(trainer.loss))
             lines[int(experiment) + 1][5] = time.strftime("%Y-%m-%d",time.localtime())
 
-            # get accuracy, using default generators
-            config['data_loader']['data_dir_train'] = config['data_loader']['data_dir_train_test']
-            config['data_loader']['data_dir_valid'] = config['data_loader']['data_dir_valid_test']
-            train_generator = get_testing_generator(config, True)
-            valid_generator = get_testing_generator(config, False)
-            generators = [train_generator, valid_generator]
+            accuracy = trainer.get_accuracy()
 
-            for m, generator in enumerate(generators):
-                batch_size = config['data_loader']['K']*config['data_loader']['P']
-
-                num_of_images = len(generator)*(batch_size)
-                labels = np.zeros((num_of_images, 1), dtype=np.int)
-                predication = np.zeros((num_of_images, int(config.model.embedding_dim)), dtype=np.float32)
-
-                label_map = dict((v, k) for k, v in label_map.items())  # flip k,v
-
-                cur_ind = 0
-                for k in range(len(generator)):
-                    print(k)
-                    x, y_true_ = generator.__getitem__(k)
-                    y_true = [label_map[x] for x in y_true_]
-                    y_pred = model.model.predict(x)
-                    num_of_items = y_pred.shape[0]
-
-                    predication[cur_ind: cur_ind+num_of_items,:] = y_pred
-                    labels[cur_ind: cur_ind + num_of_items, :] = np.expand_dims(y_true, axis=1)
-                    cur_ind = cur_ind + num_of_items
-
-                predication = predication[:cur_ind,:]
-                labels = labels[:cur_ind, :]
-
-                if m == 0:
-                    train_labels = labels
-                    train_prediction = predication
-                else:
-                    valid_labels = labels
-                    valid_prediction = predication
-
-            accuracy = eval_model(train_prediction, valid_prediction, train_labels, valid_labels, config.exp.name, is_save_files=False)
             lines[int(experiment) + 1][1] = '{0:.3f}'.format(accuracy)
 
 
@@ -187,6 +155,8 @@ def update_config(config, param_csv_path, params_start_col, loss_col, test_file)
                     if not str.startswith(config['data_loader']['data_dir_train'], '../'):
                         config['data_loader']['data_dir_train'] = '../' + config['data_loader']['data_dir_train']
                         config['data_loader']['data_dir_valid'] = '../' + config['data_loader']['data_dir_valid']
+                        config['data_loader']['data_dir_train_test'] = '../' + config['data_loader']['data_dir_train_test']
+                        config['data_loader']['data_dir_valid_test'] = '../' + config['data_loader']['data_dir_valid_test']
 
                     # save run json for future inquiries
                     json1 = json.dumps(config.toDict(), indent=4)
