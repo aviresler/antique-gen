@@ -42,28 +42,39 @@ class CosLossModelTrainer(BaseTrain):
             )
         )
 
-        self.callbacks.append(
-            EarlyStopping(
-                monitor='val_loss', min_delta=0.1, patience=10, verbose=1, mode='auto')
-        )
+        if self.config.trainer.is_early_stop:
+            self.callbacks.append(
+                EarlyStopping(
+                    monitor='val_loss', min_delta=0.1, patience=10, verbose=1, mode='auto')
+            )
 
-        if self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
-            self.callbacks.append(
-                ReduceLROnPlateau(monitor='val_loss', factor=self.config.trainer.lr_decrease_factor,
-                                            patience=5, min_lr=1e-12)
+        if self.config.trainer.is_change_lr:
+            if self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
+                self.callbacks.append(
+                    ReduceLROnPlateau(monitor='val_loss', factor=self.config.trainer.lr_decrease_factor,
+                                                patience=5, min_lr=1e-12)
+                )
+            elif self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
+                self.callbacks.append(
+                    LearningRateScheduler(self.step_decay_function)
             )
-        elif self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
-            self.callbacks.append(
-                LearningRateScheduler(self.step_decay_function)
-            )
+
 
         if self.config.model.loss == 'triplet':
-            self.callbacks.append(
-            LambdaCallback(on_epoch_end=lambda epoch, logs: self.json_log.write(
-                json.dumps({'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'], 'acc': self.get_accuracy(),
-                            'hard_pos_dist' : logs['hardest_pos_dist'], 'hard_neg_dist' : logs['hardest_neg_dist'] }) + '\n'),
-                on_train_end=lambda logs: self.json_log.close())
-            )
+            if self.config.mode.batch_type == 'hard':
+                self.callbacks.append(
+                    LambdaCallback(on_epoch_end=lambda epoch, logs: self.json_log.write(
+                        json.dumps({'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'], 'acc': self.get_accuracy(),
+                                    'hard_pos_dist' : logs['hardest_pos_dist'], 'hard_neg_dist' : logs['hardest_neg_dist'] }) + '\n'),
+                        on_train_end=lambda logs: self.json_log.close())
+                    )
+            else:
+                self.callbacks.append(
+                    LambdaCallback(on_epoch_end=lambda epoch, logs: self.json_log.write(
+                        json.dumps({'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'], 'acc': self.get_accuracy(),
+                                    'positive_fraction' : logs['positive_fraction'], 'val_positive_fraction' : logs['val_positive_fraction'] }) + '\n'),
+                        on_train_end=lambda logs: self.json_log.close())
+                    )
 
 
 

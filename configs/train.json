@@ -1,12 +1,12 @@
 {
   "exp": {
-    "name": "triplet_indicative_all"
+    "name": "triplet_indicative_hard2_"
   },
   "data_loader": {
-    "data_dir_train": "data_loader/data/site_period_570/train",
+    "data_dir_train": "data_loader/data/site_period_570/valid",
     "data_dir_valid": "data_loader/data/site_period_570/valid",
     "info_line_below": "in triplet loss testing is done with 200 classes",
-    "data_dir_train_test": "data_loader/data/site_period_top_200/train",
+    "data_dir_train_test": "data_loader/data/site_period_top_200/valid",
     "data_dir_valid_test": "data_loader/data/site_period_top_200/valid",
     "info_line_below1": "valid only for cosface loss",
     "num_of_classes": 200,
@@ -21,7 +21,7 @@
     "K": 4,
     "P": 6,
     "batch_size": 24,
-    "is_sample_each_cls_once": false
+    "is_sample_each_cls_once": "TRUE"
   },
   "model":{
     "name": "cosloss.CosLosModel",
@@ -32,22 +32,24 @@
     "scale": 64,
     "margin": 0.2,
     "is_squared": false,
-    "batch_type": "all",
+    "batch_type": "hard",
     "loss": "triplet",
     "is_use_relu_on_embeddings": false,
     "embedding_dim": 328,
-    "is_use_dummy_model": false,
-    "pretraind_model": "../experiments/2019-04-21/cossloss_indicative/checkpoints/cossloss_indicative.hdf5"
+    "is_use_dummy_model": true,
+    "pretraind_model": "None"
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",
-    "num_epochs": 30,
+    "num_epochs": 2,
     "learning_rate_values": [0.0001, 0.000001, 0.000001],
     "learning_rate_schedule_type": "ReduceLROnPlateau",
     "learning_rate": 5E-7,
     "lr_decrease_factor": 0.2,
     "learning_rate_epoch_change": [3,9],
-    "verbose_training": true
+    "verbose_training": true,
+    "is_change_lr": false,
+    "is_early_stop": false
   },
   "callbacks":{
     "checkpoint_monitor": "val_loss",
@@ -56,7 +58,7 @@
     "checkpoint_save_weights_only": true,
     "checkpoint_verbose": true,
     "tensorboard_write_graph": true,
-    "is_save_model": true
+    "is_save_model": false
   }
 }
 

@@ -34,7 +34,7 @@ class TripletGenerator(keras.utils.Sequence,):
 
     def __len__(self):
         'Denotes the number of batches per epoch'
-        if self.is_sample_each_cls_once:
+        if self.is_sample_each_cls_once == 'TRUE':
             return int(np.floor(self.num_of_classes / self.P))
         else:
             return int(np.floor(self.num_of_images / self.batch_size))
@@ -67,7 +67,7 @@ class TripletGenerator(keras.utils.Sequence,):
                     labels_list.append(int(cls))
                     # zeroing chosen images
                     self.active_images[cls_path][ind] = 0
-                if self.is_sample_each_cls_once:
+                if self.is_sample_each_cls_once == 'TRUE':
                     self.active_classes.remove(cls)
                 else:
                     indices = [i for i, x in enumerate(self.active_images[cls_path]) if x == 1]
@@ -130,7 +130,6 @@ class TripletGenerator(keras.utils.Sequence,):
             preprocess_function = get_random_eraser(v_l=0, v_h=1)
 
         img = preprocess_function(img)
-
 
         # random transform
         x = self.keras_datagen.random_transform(img)

@@ -28,7 +28,7 @@ def main():
     # then process the json configuration fill
     try:
         MAX_ITR = 150
-        test_file = 'test_cosface'
+        test_file = 'test_triplet_after_indicative'
         param_csv_path = test_file + '.csv'
         params_start_col = 6
         loss_col = 3
