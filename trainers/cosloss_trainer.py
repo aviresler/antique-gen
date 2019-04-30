@@ -75,6 +75,14 @@ class CosLossModelTrainer(BaseTrain):
                                     'positive_fraction' : logs['positive_fraction'], 'val_positive_fraction' : logs['val_positive_fraction'] }) + '\n'),
                         on_train_end=lambda logs: self.json_log.close())
                     )
+        elif self.config.model.loss == 'cosface':
+            self.callbacks.append(
+                LambdaCallback(on_epoch_end=lambda epoch, logs: self.json_log.write(
+                    json.dumps(
+                        {'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'], 'acc': self.get_accuracy()}) + '\n'),
+                               on_train_end=lambda logs: self.json_log.close())
+            )
+
 
 
 
