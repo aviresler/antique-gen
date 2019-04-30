@@ -108,10 +108,15 @@ def _get_triplet_mask(labels):
     # Combine the two masks
     mask = tf.logical_and(distinct_indices, valid_labels)
 
-    return mask
+    mask_smaller_200 = tf.math.less(labels,199.5)
+    mask_smaller_200 = tf.expand_dims(mask_smaller_200, 1)
+    mask_smaller_200 = tf.expand_dims(mask_smaller_200, 2)
+    mask_smaller_200 = tf.tile(mask_smaller_200, [1, tf.shape(labels)[0], tf.shape(labels)[0]])
+
+    return mask, mask_smaller_200
 
 
-def batch_all_triplet_loss(labels, embeddings, margin, squared=False):
+def batch_all_triplet_loss(labels, embeddings, margin, squared=False, is_zero_less_200= False):
     """Build the triplet loss over a batch of embeddings.
     We generate all the valid triplets and average the loss over the positive ones.
     Args:
@@ -120,6 +125,8 @@ def batch_all_triplet_loss(labels, embeddings, margin, squared=False):
         margin: margin for triplet loss
         squared: Boolean. If true, output is the pairwise squared euclidean distance matrix.
                  If false, output is the pairwise euclidean distance matrix.
+        is_zero_less_200: if this argument is true, only consider anchors that have labels smaller than 200
+                          in the triplet loss
     Returns:
         triplet_loss: scalar tensor containing the triplet loss
     """
@@ -139,10 +146,16 @@ def batch_all_triplet_loss(labels, embeddings, margin, squared=False):
     # and the 2nd (batch_size, 1, batch_size)
     triplet_loss = anchor_positive_dist - anchor_negative_dist + margin
 
+
     # Put to zero the invalid triplets
     # (where label(a) != label(p) or label(n) == label(a) or a == p)
-    mask = _get_triplet_mask(labels)
+    mask, mask_smaller_200 = _get_triplet_mask(labels)
     mask = tf.to_float(mask)
+
+    if is_zero_less_200:
+        mask_smaller_200 = tf.to_float(mask_smaller_200)
+        mask = tf.multiply(mask, mask_smaller_200)
+
     triplet_loss = tf.multiply(mask, triplet_loss)
 
     # Remove negative losses (i.e. the easy triplets)

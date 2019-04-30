@@ -70,10 +70,11 @@ class CosLosModel(BaseModel):
                 hardest_neg_dist = self.triplet_loss_wrapper_batch_hard_hardest_neg_dist(self.config.model.margin, self.config.model.is_squared)
                 metrics.append(hardest_neg_dist)
             if self.config.model.batch_type == 'all':
-                pos_fraction = self.triplet_loss_wrapper_batch_all_positive_fraction(self.config.model.margin, self.config.model.is_squared)
+                pos_fraction = self.triplet_loss_wrapper_batch_all_positive_fraction(self.config.model.margin,
+                                                                                         self.config.model.is_squared)
                 metrics.append(pos_fraction)
         elif self.config.model.loss == 'cosface':
-            loss_func = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale,'hardest_positive_dist')
+            loss_func = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
         else:
             print('invalid loss type')
             raise
@@ -104,7 +105,12 @@ class CosLosModel(BaseModel):
                 loss, hardest_positive_dist, hardest_negative_dist = models.triplet_loss.batch_hard_triplet_loss(y_true_, y_pred, margin, is_squared)
                 return loss
             elif self.config.model.batch_type == 'all':
-                loss, fraction_positive_triplets = models.triplet_loss.batch_all_triplet_loss(y_true_, y_pred, margin, is_squared)
+                if self.config.model.is_batch_all_consider_only_200:
+                    loss, fraction_positive_triplets = models.triplet_loss.batch_all_triplet_loss(y_true_, y_pred, margin, is_squared,True)
+                else:
+                    loss, fraction_positive_triplets = models.triplet_loss.batch_all_triplet_loss(y_true_, y_pred,
+                                                                                                  margin, is_squared,
+                                                                                                  False)
                 return loss
             else:
                 'unrecognized batch type'
@@ -137,8 +143,12 @@ class CosLosModel(BaseModel):
             # therefore we need to crop label array to be in size (B,)
             #batch_size = K.shape(y_true)[0]
             y_true_ = y_true[:,0]
-            loss, fraction_positive_triplets = models.triplet_loss.batch_all_triplet_loss(y_true_, y_pred, margin,
-                                                                                          is_squared)
+            if self.config.model.is_batch_all_consider_only_200:
+                loss, fraction_positive_triplets = models.triplet_loss.batch_all_triplet_loss(y_true_, y_pred, margin,
+                                                                                          is_squared,True)
+            else:
+                loss, fraction_positive_triplets = models.triplet_loss.batch_all_triplet_loss(y_true_, y_pred, margin,
+                                                                                          is_squared,False)
             return fraction_positive_triplets
         return positive_fraction
 

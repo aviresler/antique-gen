@@ -44,12 +44,35 @@ class TripletGenerator(keras.utils.Sequence,):
 
 
         # pick P classes
+        MAX_ITR = 10
         try:
-            p_classes = random.sample(self.active_classes, self.P)
+            if self.config.model.is_batch_all_consider_only_200:
+                for k in range(MAX_ITR):
+                    p_classes = random.sample(self.active_classes, self.P)
+                    cl_np = np.array(p_classes,dtype=np.int)
+                    if (np.sum(cl_np < 200) == 0): # there is no class which is smaller than 200
+                        continue
+                    else:
+                        break
+                if k == MAX_ITR - 1:
+                    raise
+            else:
+                p_classes = random.sample(self.active_classes, self.P)
         except:
             self.on_epoch_end()
             print('resetting')
-            p_classes = random.sample(self.active_classes, self.P)
+            if self.config.model.is_batch_all_consider_only_200:
+                for k in range(MAX_ITR):
+                    p_classes = random.sample(self.active_classes, self.P)
+                    cl_np = np.array(p_classes, dtype=np.int)
+                    if (np.sum(cl_np < 200) == 0):  # there is no class which is smaller than 200
+                        continue
+                    else:
+                        break
+                if k == MAX_ITR - 1:
+                    raise
+            else:
+                p_classes = random.sample(self.active_classes, self.P)
 
         image_files_list = []
         labels_list = []

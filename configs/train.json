@@ -1,10 +1,10 @@
 {
   "exp": {
-    "name": "triplet_indicative_hard2_"
+    "name": "triplet_all_greater200"
   },
   "data_loader": {
-    "data_dir_train": "data_loader/data/site_period_570/valid",
-    "data_dir_valid": "data_loader/data/site_period_570/valid",
+    "data_dir_train": "data_loader/data/site_period_562_triplet/train",
+    "data_dir_valid": "data_loader/data/site_period_562_triplet/valid",
     "info_line_below": "in triplet loss testing is done with 200 classes",
     "data_dir_train_test": "data_loader/data/site_period_top_200/valid",
     "data_dir_valid_test": "data_loader/data/site_period_top_200/valid",
@@ -32,12 +32,13 @@
     "scale": 64,
     "margin": 0.2,
     "is_squared": false,
-    "batch_type": "hard",
+    "batch_type": "all",
     "loss": "triplet",
     "is_use_relu_on_embeddings": false,
     "embedding_dim": 328,
     "is_use_dummy_model": true,
-    "pretraind_model": "None"
+    "pretraind_model": "None",
+    "is_batch_all_consider_only_200": true
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",
