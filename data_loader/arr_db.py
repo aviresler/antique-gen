@@ -148,7 +148,7 @@ def print_classes_for_artifacts():
                     period = row[2]
                     period = period.replace(',', '-')
                     period_list.append(period)
-                    cls = site + '_' + period
+                    cls = period + '_' + site
                     class_list.append(cls)
                     print(id[cls])
                 else:

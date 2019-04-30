@@ -1,1319 +1,1271 @@
-class_id,class_name,num_of_images
-0,Maresha- T._Hellenistic,298
-1,Me`arat ha-Nahal_Upper Palaeolithic,264
-2,Lakhish- T._Iron II,263
-3,Nahal Pattish (Gilat)_Late Chalcolithic,258
-4,Jerusalem- City of David_Iron II,212
-5,Nahal Hemar_Pre-Pottery Neolithic B,202
-6,`Ujul- T. el-_Middle Bronze II-Late Bronze,188
-7,Me`arat Kebara_Natufian,187
-8,Sha`ar ha-Golan_Pottery Neolithic A,185
-9,Nahal Mishmar- Me`arat ha-Matmon_Late Chalcolithic,185
-10,Nahal Zin_Upper Palaeolithic,155
-11,Me`arat ha-Nahal_Natufian,151
-12,Horevot Mazada_Roman,129
-13,Me`arat Tannur_Lower Palaeolithic,121
-14,Ha-Gosherim- Nili (north)_Pre-Ghassulian Chalcolithic,106
-15,`Enot `Enan_Natufian,106
-16,Horevot Mazada_Early Roman (period),105
-17,Nahal Hever_Middle Roman,99
-18,Jerusalem- City of David_Hellenistic,98
-19,Ha-Gosherim- Nili (north)_Pottery Neolithic,97
-20,Maresha- T._Persian-Hellenistic,95
-21,`Ujul- T. el-_Middle Bronze II,93
-22,Besamon_Pre-Pottery Neolithic B,88
-23,Jericho- T._Early Bronze III,88
-24,Megiddo- T._Iron IA,86
-25,Yavne (north-west)_Iron II,86
-26,Bet She'an- T._Late Bronze II,86
-27,Me`arat Tannur_Middle Palaeolithic,86
-28,Megiddo- T._Late Bronze II,85
-29,Gesher Benot Ya`aqov_Lower Palaeolithic,84
-30,Jerusalem- Old City- Jewish Quarter- Area F- M_Early Roman (period),84
-31,`Ujul- T. el-_Late Bronze II,82
-32,Ashqelon- T. Ashqelon_Iron IIC,81
-33,Haifa- T. Abu Hawwam_Late Bronze II,77
-34,Megiddo- T._Iron I,75
-35,Minha- H._Pre-Pottery Neolithic B,75
-36,Jericho- T._Middle Bronze II,74
-37,Jerusalem- Old City- Jewish Quarter- Area F- M_Late Hellenistic - Early Roman,73
-38,Magharat Abu Shinja_Persian,70
-39,Ashqelon- T. Ashqelon_Iron II,66
-40,Akhziv_Iron II,66
-41,`Akko- Persian Garden_Late Bronze II,62
-42,`En Gedi_Byzantine,61
-43,Gezer- T._Late Bronze,61
-44,Jerusalem- `En Rogel_Roman,60
-45,Jerusalem- Old City- Western and Southern Walls_Early Roman (period),58
-46,Bet She'an- T._Middle Bronze II,58
-47,`En Besor_Early Bronze IB,58
-48,Samaria_Iron II,57
-49,Hurfeish_Late Roman,57
-50,Wadi Murabba`at- Cave 1_Roman,57
-51,מעין ברוך_Lower Palaeolithic,57
-52,Yiftah'el- H._Pre-Pottery Neolithic B,56
-53,`Arad- T._Early Bronze II,55
-54,Megiddo- T._Iron II,53
-55,Mezad Hazeva_Iron II,53
-56,Jerusalem- City of David_Persian,52
-57,Nahariyya- Canaanite Temple_Middle Bronze II,51
-58,Bet Mirsham- T._Iron II,51
-59,Bet-Shemesh- T._Iron II,51
-60,Magharat Shuqba_Natufian,51
-61,Mafjar- Kh. el-_Umayyad,51
-62,Besamon_Neolithic,50
-63,Bet Mirsham- T._Middle Bronze II,49
-64,Lakhish- T._Late Bronze II,49
-65,Bet She'an- T._Iron II,49
-66,Kfar Monash_Early Bronze IB,48
-67,Zif- Kh._Middle Palaeolithic,47
-68,Magharat Shuqba_Middle Palaeolithic,46
-69,Magharat Umm Qatafa_Lower Palaeolithic,46
-70,Ramat Rahel_Iron II,45
-71,Bet She'an- T._Iron I,44
-72,Jerusalem- Old City_Early Roman (period),44
-73,Jerusalem- City of David_Early Roman (period),44
-74,Ramla- esh-Sheikh Rihan_Early Islamic,43
-75,Jerusalem- Har ha-Zofim (east)_Early Roman (period),43
-76,Jerusalem- Rehov Salah ed-Din- Ministry of Justice_Late Roman,42
-77,Jerusalem- `En Rogel_Early Roman (period),41
-78,`Arad- T._Iron II,41
-79,Me`arat Oren_Natufian,41
-80,Har Harif_Harifian,40
-81,Sha`ar ha-Golan_Pottery Neolithic,39
-82,Megiddo- T._Early Bronze I,38
-83,Nemal Akhziv_Iron II,38
-84,`Atlit_Persian,37
-85,Nahariyya- Giv`at Katzenelson_Late Roman,36
-86,Caesarea_Fatimid,36
-87,Besamon_Pottery Neolithic,36
-88,Me`arat Amira_Upper Palaeolithic,35
-89,`Ovadya- T.- Prehistoric site_Lower Palaeolithic,35
-90,Jerusalem- Ketef Hinnom_Iron IIC-Babylonian,35
-91,Megiddo- T._Middle Bronze II,35
-92,Me`arat Kebara_Upper Palaeolithic,34
-93,Me`arot Yonim_Natufian,34
-94,Jerusalem- Giv`at ha-Mivtar_Early Roman (period),34
-95,Hamadya_Pottery Neolithic,34
-96,Makr- el-_Late Roman,33
-97,`Atlit_Crusader,33
-98,Tiberias and Hammat_Fatimid,33
-99,`Ujul- T. el-_Late Bronze,33
-100,Minha- H._Pottery Neolithic,33
-101,נחל עומר_Early Islamic,32
-102,Dan- T._Late Bronze II,32
-103,Nizzana_Byzantine,32
-104,Bet-Shemesh- T._Late Bronze II,31
-105,Holot Qesari (south)_Late Roman - Byzantine,31
-106,Me`arat ha-Gulgolet_Middle Palaeolithic,31
-107,Caesarea_Early Islamic,31
-108,Ashkelon  1933_Iron IIC-Babylonian-Persian,30
-109,Mizpah_Early Bronze I,30
-110,Mizpah_Iron II,29
-111,Megiddo- T._Middle Bronze I,29
-112,`En Gedi_Early Roman (period),28
-113,Jerusalem- Binyane ha-Umma_Roman,28
-114,BURNT HOUSE_Early Roman (period),28
-115,Caesarea_Byzantine,28
-116,Zaf- T._Pre-Ghassulian Chalcolithic,28
-117,Lidd- Kh._Late Roman,28
-118,Jerusalem- Mount Scopus (west)_Early Roman (period),28
-119,Nemal Akhziv_Iron IIB,27
-120,Hammat_Fatimid,27
-121,Palmahim_Late Roman,27
-122,Jerusalem- Old City- Jewish Quarter- Area F- M_Iron II,27
-123,Bet-Shemesh- T._Iron I,27
-124,Jerusalem- Old City_Late Hellenistic,26
-125,Bir er-Ruqeish_Iron II,26
-126,`Ai_Early Bronze I,26
-127,Har Qedumim_Middle Palaeolithic,26
-128,Nahal Hever_Roman,26
-129,'En Tamar_Roman,26
-130,Jericho- T._Pre-Pottery Neolithic B,26
-131,Jerusalem- Old City- Western and Southern Walls_Iron II,26
-132,Nahal Mishmar- Cave of the Treasure_Late Chalcolithic,25
-133,Be'er Sheva`- H. Zafad_Late Chalcolithic,25
-134,Ha-Gosherim_Hellenistic,25
-135,Yavne (north-west)_Iron IIA,24
-136,Besamon_Pre-Pottery Neolithic,24
-137,Me`arat ha-Gulgolet_Lower Palaeolithic,24
-138,Moa_Roman,24
-139,Jerusalem- `En Rogel_Late Roman,24
-140,Kavul_Early Byzantine,23
-141,Mezad Rahel_Roman,23
-142,Hazor- T._Late Bronze II,23
-143,Nemal Akhziv_Iron IIC,23
-144,Me`arot Yonim_Upper Palaeolithic,23
-145,Sharuhen- T._Iron II,23
-146,Bet She'an- T._Late Bronze,22
-147,Qeiyafa- Kh._Iron IIA,22
-148,Nahal Hever_Middle Roman (70-135 CE),22
-149,Qumran- Cave 4Q_Early Roman (period),21
-150,Shiqmim (Unofficial name)_Late Chalcolithic,21
-151,`Atlit_Middle Bronze II,21
-152,Afeq_Middle Bronze II,21
-153,Sharuhen- T._Iron I,21
-154,Hedera_Late Roman,21
-155,Jerusalem- Pisgat Ze'ev_Early Roman (period),20
-156,Caesarea_Early Roman (period),20
-157,Panias- H._Ottoman,20
-158,Bet She'an- T._Late Bronze I,20
-159,Jerusalem- Old City- Western and Southern Walls_Middle Roman - Late Roman,20
-160,Hazor- T._Iron II,20
-161,Gush Halav_Byzantine,20
-162,Anafa- T._Hellenistic,20
-163,Bet She'an- T._Hellenistic,20
-164,Bet She'an_Mamluk,20
-165,Ramla_Early Islamic,19
-166,`Ujul- T. el-_Late Bronze I,19
-167,Neve Ur_Middle Bronze II,19
-168,Sheva`- T._Iron II,19
-169,Jericho- T._Pottery Neolithic A,19
-170,Rehov- T._Iron IIA,19
-171,Gezer- T._Late Bronze II,19
-172,Bet She'an- T._Roman,18
-173,Asherat_Late Roman,18
-174,Barqai_Middle Bronze IIB,18
-175,Bet Mirsham- T._Middle Bronze IIB,18
-176,Zafit- T._Persian,18
-177,`Ai_Early Bronze II-III,18
-178,Be'er Sheva`- H. Matar_Late Chalcolithic,18
-179,Christmas Cave- Nahal Qidron_Roman,18
-180,Samaria_Hellenistic,18
-181,Nahal Mishmar_Late Chalcolithic,17
-182,Zuq el-Fauqani ez-_Byzantine,17
-183,Afeq_Late Bronze II,17
-184,Ard es-Samrra_Pottery Neolithic,17
-185,Ma`yan Barukh_Roman,17
-186,`En Gedi_Roman,17
-187,Mesad Boqeq_Byzantine,17
-188,Megiddo- T._Late Bronze,17
-189,Bet She'an- T._Middle Bronze IIB,17
-190,Megiddo- T._Middle Bronze II-Late Bronze,16
-191,Jisr- el-_Middle Bronze II,16
-192,Lakhish- T._Persian,16
-193,Mezad Rahel_Early Roman (period),16
-194,Nahal tut_Persian,16
-195,`Alya- Kh._Roman,16
-196,Bet-Shemesh- T._Middle Bronze II,16
-197,Caesarea_Crusader,16
-198,Avel Bet Ma`akha- T._Lower Palaeolithic,16
-199,Nahal Hever- Cave 2_Middle Roman,15
-200,Nizzana_Late Byzantine,15
-201,Arshaf- T._Crusader,15
-202,`En Gedi_Middle Roman,15
-203,Neve Ur_Middle Bronze IIA,15
-204,Moa_Late Roman,14
-205,Nahal Ze`elim_Late Chalcolithic,14
-206,Ono_Byzantine,14
-207,Sha`ar Efrayim (south) [north]_Late Chalcolithic,14
-208,Palmahim_Late Roman - Byzantine,14
-209,`Akko (north)_Early Roman (period),14
-210,Haifa- T. Abu Hawwam_Iron I,14
-211,Nahal Zin_Upper Paleolithic,14
-212,Zelef- H._Middle Bronze II,14
-213,Jerusalem- Har ha-Zofim_Early Roman (period),14
-214,`Ujul- T. el-_Middle Bronze IIB,14
-215,Nahal 'Omer_Early Islamic,14
-216,Hefzi-Bah_Geometric Kebaran,13
-217,Ashqelon- T. Ashqelon_Middle Roman - Late Roman,13
-218,Haifa- T. Abu Hawwam_Persian,13
-219,Bet She'an- T._Early Roman (period),13
-220,Ha-Gosherim_Early Roman (period),13
-221,Nahal Zin_Natufian,13
-222,Samaria_Roman,13
-223,Rosh ha-`Ayin_Ottoman,13
-224,Nahal Hadera (north)_Late Roman,13
-225,Ashqelon- Afridar and Barnea`_Pre-Pottery Neolithic C,13
-226,Ramla_Mamluk,13
-227,`Akko_Crusader,13
-228,Lidd- Kh._Late Roman - Byzantine,12
-229,Har Mizpe Yammim_Persian,12
-230,Afeq_Roman,12
-231,Maresha- T._Late Hellenistic,12
-232,Yoqne`am- T._Iron I,12
-233,Qastra- H._Byzantine,12
-234,Sharuhen- T._Persian,12
-235,Sha`ar ha-Golan_Late Neolithic,12
-236,Ashqelon- T. Ashqelon_Early Roman (period),12
-237,Ni`ana- Kh._Byzantine,12
-238,Bet She'an- T._Byzantine,12
-239,Me`arat Sefunim_Upper Palaeolithic,12
-240,Neve Ur_Pre-Pottery Neolithic A,12
-241,Nahal Be'er Sheva`_Late Chalcolithic,12
-242,Rasm Kharbush_Late Chalcolithic,12
-243,Karkor `Illit- H._Byzantine,12
-244,Nahal Mishmar_Roman,11
-245,Gezer- T._Iron I,11
-246,`En Gedi_Late Hellenistic,11
-247,`Ard el-Mihjar_Byzantine,11
-248,Me`arat Kebara_Middle Palaeolithic,11
-249,Hatula_Pre-Pottery Neolithic A,11
-250,Qumran Caves_Early Roman (period),11
-251,Qedesh- T._Middle Bronze I,11
-252,Jerusalem- Ymca--Keren ha-Yesod Street_Late Roman,11
-253,Zippor- T._Persian,11
-254,Zuq el-Fauqani ez-_Arab-Byzantine,11
-255,Mishmarot_Roman,11
-256,Jerusalem- Rockefeller Museum_Late Roman,11
-257,Burga- T._Middle Bronze IIA,11
-258,Minha- H._Pottery Neolithic A,11
-259,Bet Yerah- T._Early Bronze II,11
-260,Gamma- T._Persian,11
-261,Qastra- H._Early Roman (period),11
-262,Besamon_Pottery Neolithic A,11
-263,Gezer- T._Early Bronze I,10
-264,Rasm- Kh. er-_Hellenistic,10
-265,Bet She`arim- H._Byzantine,10
-266,Zariq- T. and `En Zariq_Pottery Neolithic B / Pre-Ghassulian Chc,10
-267,Ashqelon- T. Ashqelon_Byzantine,10
-268,Bira- Kh. el-_Late Chalcolithic,10
-269,Bet Yerah- T._Early Bronze III,10
-270,Jerusalem- ha-`Ophel_Iron II,10
-271,Jerusalem- Giva`t Shapira_Early Roman (period),10
-272,  Ashkelon  region  סביבות  אשקלון_Persian (?),10
-273,Jerusalem- Rehov Salah ed-Din- Ministry of Justice_Middle Roman - Late Roman,10
-274,Me`arat Kebara_Kebaran,10
-275,Jerusalem- Old City- Western and Southern Walls_Fatimid,10
-276,Hoga- H._Byzantine,9
-277,Zippori_Middle Roman - Late Roman,9
-278,Jerusalem- Old City- Jewish Quarter- Cardo_Early Islamic,9
-279,Jerusalem- Nahalat Ahim_Byzantine,9
-280,Shubeika- Kh. esh-_Roman,9
-281,Haifa- T. Abu Hawwam_Autonomous;(399BCE - 337BCE),9
-282,Sharuhen- T._Late Bronze IIB-Iron I,9
-283,Minha- H._Neolithic,9
-284,Caesarea_Late Roman,9
-285,`Ujul- T. el-_Middle Bronze IIB-C,9
-286,Bet She'an- T._Early Bronze III,9
-287,Ashdod Yam- H._Late Bronze II,9
-288,Jerusalem- Nahalat Ahim_Late Byzantine,9
-289,Sera`- T._Late Bronze IIB-Iron I,9
-290,Hazor- T._Middle Bronze II,9
-291,Qastra- H._Late Roman - Byzantine,9
-292,`Ar`ara_Roman,9
-293,Afeq_Iron I,9
-294,Bet She'an- T._Late Roman,9
-295,Ni`ana- Kh._Late Roman - Early Byzantine,9
-296,Rosh Zayit- H._Iron II,9
-297,`Ai_Early Bronze III,9
-298,Moza `Illit_Late Roman,9
-299,Azor_Middle Bronze IIB,9
-300,Bet Mirsham- T._Late Bronze II,9
-301,Ramot Menashe 1_Lower Palaeolithic,8
-302,Minha- H._Late Neolithic,8
-303,Jerusalem- Old City- Western and Southern Walls_Roman,8
-304,Bet She'an- T._Late Bronze IIB,8
-305,Ma`yan Barukh_Lower Palaeolithic,8
-306,Dan- T._Iron II,8
-307,Ma`yan Barukh_Middle Bronze I,8
-308,Caesarea_Late Roman - Byzantine,8
-309,Christmas Cave- Nahal Qidron_Late Chalcolithic,8
-310,Jersusalem- `Arab es-Sawahira_Byzantine,8
-311,איזור כיסופים_Lower Palaeolithic,8
-312,Gamma- T._Iron II,8
-313,Caesarea_Roman,8
-314,Jerusalem- Mizrah Talpiyyot_Early Roman (period),8
-315,Caesarea_Umayyad,8
-316,(+)Yehud- T. (1269/0)_Middle Bronze I,8
-317,Cave of Horror_Middle Roman (70-135 CE),8
-318,Jerusalem- Old City- Jewish Quarter- Area F- M_Hellenistic,8
-319,Lakhish- T._Middle Bronze I,8
-320,Besamon_Pottery Neolithic B,8
-321,Bet She'an- T._Middle Bronze I,8
-322,Ashkelon  1933_Persian-Hellenistic,8
-323,Waziya- Kh. el-_Byzantine,8
-324,Haruzim (east)_Pre-Pottery Neolithic C,8
-325,Samaria_Iron IIC-Babylonian-Persian,8
-326,Batash- T._Iron II,8
-327,Dor- T._Persian,8
-328,Qastra- H._Roman,8
-329,Hanita_Late Roman,8
-330,Me`arat Oren_Pre-Pottery Neolithic B,8
-331,Wadi Murabba`at- Cave 1_Late Chalcolithic,8
-332,Qitmit- H._Iron II,8
-333,Jarrar- Kh._Late Roman,8
-334,Turmus- T._Late Chalcolithic,8
-335,Ni`ana- Kh._Mamluk,8
-336,"אשקלון-ליד    בה""ס    בכפר    ג'ורה        Askhlekon        area_Roman",7
-337,Qumran- Cave 2Q_Early Roman (period),7
-338,Azor_Late Chalcolithic,7
-339,Haifa- Tel `Amal and Neve Yosef_Iron II,7
-340,Mishmar ha-`Emeq_Byzantine,7
-341,Megiddo- T._Late Bronze IIB-Iron I,7
-342,Ha-Gosherim- Nili (north)_Chalcolithic,7
-343,Bet She'an- T._Iron IIA,7
-344,Ashqelon- Migdal Ashqelon_Byzantine,7
-345,Besamon_Early Bronze,7
-346,`En Gedi - Goren- Tell_Iron II,7
-347,Mugharet    el    Ghul_Neolithic,7
-348,Jericho- T._Early Bronze,7
-349,Qarqar- H._Late Chalcolithic,7
-350,Me`arat Amira_Middle Palaeolithic,7
-351,Ni`ana- Kh._Late Roman - Byzantine,7
-352,Bet-Shemesh- T._Late Bronze I,7
-353,Zur Natan_Middle Roman - Late Roman,7
-354,Tel Aviv- esh-Sheikh Muwannis_Ottoman,7
-355,Ha-Gosherim- Nili (north)_Neolithic,7
-356,Jerusalem- Old City- Jewish Quarter- Cardo_Mamluk,7
-357,Tiv`on_Roman,7
-358,Ha-Gosherim_Pre-Ghassulian Chalcolithic,7
-359,`Alya- Kh._Late Roman,7
-360,Jerusalem- Old City_Late Hellenistic - Early Roman (152 BCE - 70 CE),7
-361,Jerusalem- Old City- Jewish Quarter- Area F- M_Hellenistic-Roman,7
-362,`Eleq- H._Early Roman (period),7
-363,Holon- Industrial Zone_Early Bronze I,7
-364,Serah `Illit- H._Late Roman,7
-365,Gan Soreq (north)_Autonomous;(400BCE - 331BCE),6
-366,Shubeika- Kh. esh-_Late Roman - Early Byzantine,6
-367,עכו_Crusader,6
-368,Afeq_Middle Bronze II-Late Bronze,6
-369,Bet She'an- T._Early Bronze I,6
-370,(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0)_Antiochus IV;(175BCE - 164BCE),6
-371,Nahariyya_Autonomous;(399BCE - 300BCE),6
-372,Cave of Horror_Roman,6
-373,Mazoq Nahal Mitla_Middle Palaeolithic,6
-374,Jerusalem- Mamilla_Byzantine,6
-375,Megiddo- T._Late Bronze I,6
-376,Zur Natan_Byzantine,6
-377,Beth Zur_Iron II,6
-378,Ha-Gosherim- Nili (north)_Early Bronze,6
-379,Haifa- Shiqmona_Middle Bronze II,6
-380,Jerusalem- The Jewish Quarter- St. Mary of the Knights_Crusader,6
-381,Turmus- T._Late Chalcolithic-Pre-Ghassulian Chalcolithic,6
-382,Ni`ana- Kh._Early Byzantine,6
-383,Lidd- Kh._Byzantine,6
-384,Qitmit- H._Iron IIC,6
-385,Jerusalem- Nahalat Ahim_Late Bronze II,6
-386,Besamon_PPN,6
-387,Ashqelon- T. Ashqelon_Late Roman,6
-388,Bet Mirsham- T._Late Bronze,6
-389,רמות מנשה 1_Lower Palaeolithic,6
-390,Mezad Sha`ar Ramon_Late Roman,6
-391,Mizpah_Early Bronze,6
-392,Me`arat ha-Gulgolet_Lower Palaeolithic (?),6
-393,Jerusalem- Old City_Iron II,6
-394,Jerusalem- `En Rogel_Byzantine,6
-395,Dalia 1_Lower Palaeolithic,6
-396,Kokhav ha-Yarden_Crusader,6
-397,Hedera_Late Roman - Byzantine,6
-398,Jerusalem- Baq`a_Lower Palaeolithic,6
-399,Jerusalem- City of David_Hellenistic-Roman,6
-400,בית גמליאל_Middle Bronze II,6
-401,`Ein el-Hariri_Late Chalcolithic,6
-402,Tiv`on_Middle Roman,6
-403,Manawat- el-_Late Roman,6
-404,`En `Aqev_Upper Palaeolithic,6
-405,Giv`at Yasaf_Late Roman,6
-406,Sharuhen- T._Late Bronze II,6
-407,Bet She'an_Umayyad,6
-408,Ashqelon- T. Ashqelon_Roman,6
-409,Jerusalem- Mizrah Talpiyyot_Roman,6
-410,`Akko- T._Persian,6
-411,Caesarea_Late Byzantine-Ummayad,6
-412,Yoqne`am- T._Middle Bronze II,6
-413,Kinneret_Early Bronze II,6
-414,Shechem (Ancient Site)_Middle Bronze II,6
-415,Kabri_Pottery Neolithic B / Pre-Ghassulian Chc,6
-416,Bet Guvrin_Late Roman,6
-417,Jerusalem- Old City- Western and Southern Walls_Great Revolt;(69CE / 70CE),6
-418,Ashdod- T._Iron I,5
-419,Mamshit- H._Late Roman,5
-420,Jericho- T._Pre-Pottery Neolithic A,5
-421,Mafjar- Kh. el-_Early Islamic,5
-422,Gezer- T._Early Bronze,5
-423,Abu Ghosh_Pre-Pottery Neolithic B,5
-424,American  Colony  Tombs-1940_Late Roman,5
-425,`Ujul- T. el-_Middle Bronze I,5
-426,`En Gedi_Late Hellenistic - Roman,5
-427,Iqrit_Late Roman - Early Byzantine,5
-428,Sharuhen- T._Iron I (?),5
-429,Ben Shemen_Middle Roman (70-135 CE),5
-430,Haifa- T. Abu Hawwam_Iron II,5
-431,Gamma- T._Persian (?),5
-432,Kabri_Pottery Neolithic B / Pre-Ghassulian Chalcolithic,5
-433,Jericho- T._Late Bronze I,5
-434,Maresha- T._Persian,5
-435,Jerusalem- Old City- Jewish Quarter- Area F- M_Late Hellenistic,5
-436,`Utsa- H._Byzantine,5
-437,`En ha-Shomer_Epi-Palaeolithic,5
-438,`En Gedi_Late Hellenistic - Early Roman,5
-439,קבר  אל  בסה  El  Basseh_Roman,5
-440,Qastra- H._Late Roman,5
-441,Jerusalem- Giv`at Shapira_Early Roman (period),5
-442,Jerusalem- Wa`ar Abu es-Safa_Early Roman (period),5
-443,Bet Natif- H._Roman,5
-444,Montfort_Crusader,5
-445,Nahariyya- Giv`at Katzenelson_Byzantine,5
-446,Trig. point 819-A (west)_Byzantine,5
-447,`Arad- T._Persian,5
-448,Gezer- T._Middle Bronze II,5
-449,Jerusalem- Old City_Late Hellenistic-Early Roman (period),5
-450,Jerusalem- Kh. el-Burj_Crusader,5
-451,Mishmar ha-`Emeq_Late Roman - Early Byzantine,5
-452,Jerusalem- City of David_Early Bronze I,5
-453,Be'er Shema`- H._Late Byzantine,5
-454,Berekhat Ram_Lower Palaeolithic,5
-455,Gamma- T._Iron Age,5
-456,Panias- H._Ayyubid,5
-457,Miqne- T._Late Bronze II,5
-458,Wadi Murabba`at- Cave 1_Early Roman (period),5
-459,`Aqav- H._Byzantine,5
-460,Yoqne`am- T._Iron II,5
-461,Jericho- T._Late Chalcolithic,5
-462,Lod_Roman,5
-463,Ha-Gosherim- Nili (north)_Late Chalcolithic,5
-464,`Ira T._Iron II,5
-465,Lakhish- T._Late Bronze,5
-466,Jerusalem- Romema_Early Roman (period),5
-467,Makr- el-_Byzantine,5
-468,Beit Fajjar_Late Roman - Byzantine,5
-469,Caesarea_Middle Roman - Late Roman,5
-470,`Akko (north)_Roman,5
-471,Sha`ar ha-Golan_Neolithic,5
-472,Timna`_Late Bronze,5
-473,Jerusalem- Ketef Hinnom_Early Roman (period),5
-474,Rekhesh- T._Iron I,5
-475,Gezer- T._Iron II,5
-476,MAGHARAT UMM EZ-ZUWEITINA_Natufian,5
-477,Nahal Mishmar- Me`arat ha-Matmon_Roman,5
-478,`Utsa- H._Hellenistic,5
-479,Barqai_Middle Bronze II,5
-480,Zippori_Roman,5
-481,Ha-Gosherim- Nili (north)_Pottery Neolithic B,4
-482,טולול  רוסום  Tulul  er-Rusum_Byzantine,4
-483,כברי תחנת הטרנספורמטור_Late Roman,4
-484,(+)Qedesh- T. (3631/0);Qedesh- T. (north) (22853/0)_Cleopatra Thea (Seleucid)#%Antiochus VIII;(126BCE / 125BCE),4
-485,נחל חבר- מערה ב'_Middle Roman (70-135 CE),4
-486,Ramat Rahel_Late Roman,4
-487,Gezer- T._Hellenistic,4
-488,Me`arat ha-Gulgolet_Middle Palaeolithic (?),4
-489,Jerusalem- `En Rogel_Late Roman - Byzantine,4
-490,Qashish- T._Early Bronze III,4
-491,Me`arat Oren_Geometric Kebaran,4
-492,מערת  חג  המולד  בנחל  קדרון_Roman,4
-493,Jerusalem- Old City_Early Byzantine,4
-494,Mishmar ha-`Emeq_Roman-Byzantine,4
-495,Jatt_Late Bronze II,4
-496,Jericho- T._Pre-Pottery Neolithic,4
-497,Ashdod- T._Early Roman (period),4
-498,Trig. point 204-E_Byzantine,4
-499,Dor- T._Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE),4
-500,Ma`yan Barukh (north-east)_Late Byzantine (?),4
-501,Jericho- T._Pottery Neolithic,4
-502,Bet Mirsham- T._Iron II (?),4
-503,Cave of Horror_Early Roman - Middle Roman,4
-504,Meron_Nero;(54CE - 68CE),4
-505,Tiv`on_Early Roman (period),4
-506,Hishule Carmel- Underwater site_Neolithic,4
-507,BURNT HOUSE_Roman (?),4
-508,Mezad `Ateret_Demetrius II;(145BCE / 144BCE),4
-509,Nahal Ze'elim_Late Chalcolithic,4
-510,Burnat- Kh._Alexander Jannaeus;(80BCE / 79BCE),4
-511,Maresha- T._Byzantine,4
-512,Maresha- T._Early Roman (period),4
-513,Gezer- T._Late Bronze (?),4
-514,Mikhal- T._Autonomous;(500BCE - 400BCE),4
-515,Mishor Adumim- Khan el-Ahmar_Byzantine,4
-516,Caesarea_Late Roman - Early Byzantine,4
-517,`En Gedi_Late Byzantine,4
-518,Khan- Kh. el-_Byzantine,4
-519,Gan Soreq (north)_Ptolemy II;(275BCE / 274BCE - 246BCE),4
-520,Me`arat ha-Gulgolet_Upper Palaeolithic,4
-521,Haruzim (east)_Neolithic,4
-522,Shubeib- T._Late Roman,4
-523,Jerusalem- Giv`at Sha'ul_Agrippa II;(50CE - 100CE),4
-524,Tel Aviv- T. Qasila_Iron II,4
-525,Meron_Gordian III;(238CE - 244CE),4
-526,Jerusalem- City of David_Middle Roman - Late Roman,4
-527,Ramat Rahel_Persian,4
-528,Jerusalem- Old City- Jewish Quarter- Cardo_Ayyubid,4
-529,Mevorakh- T._Roman,4
-530,Dhahiriya- edh-_Iron II,4
-531,Ashqelon- Industrial Area (north)_Byzantine,4
-532,Mizpah_Iron I,4
-533,Muzzav- H._Roman,4
-534,Jerusalem- Ketef Hinnom_Persian,4
-535,Burnat- Kh._Alexander Jannaeus;(104BCE - 80BCE / 79BCE),4
-536,אתלית  ים-  אתר  תת  ימי_Pottery Neolithic A,4
-537,Mikhal- T._Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE),4
-538,Tiberias and Hammat_Early Islamic,4
-539,(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0)_Antiochus III;(198BCE - 187BCE),4
-540,סאווריף  -1932  Sawarif_Early Roman (period),4
-541,El-Bineh  1932_Late Roman,4
-542,Zippori_Byzantine,4
-543,`En Gedi - Goren- T._Persian,4
-544,Bet She`arim- H._Roman,4
-545,Oholo 2_Epi-Paleolithic-Epi-Palaeolithic,4
-546,Jerusalem- City of David- Pool of Shiloah_Roman,4
-547,`Ujul- T. el-_Late Bronze (?),4
-548,Qanat el-Ja`ar_Early Bronze IB,4
-549,`Azeqa- T._Iron II,4
-550,Nahariyya- Giv`at Katzenelson_Roman,4
-551,Khirba- el-_Mattathias Antigonus;(40BCE - 37BCE),4
-552,Za`quqa- Kh._Early Hellenistic,4
-553,Ashdod- T._Iron II,4
-554,Dor- T._Ptolemy II;(285BCE - 272BCE),4
-555,Zomet Pardesiya_Byzantine,4
-556,Ashqelon- T. Ashqelon_Fatimid,4
-557,Jericho- T._Iron II,4
-558,Kafar Bara_Late Roman - Early Byzantine,4
-559,`Eleq- H._Late Byzantine,4
-560,Jerusalem- Old City- Jewish Quarter- Israelite and Hellenistic Towers_Umayyad,4
-561,Jerusalem- Old City_Byzantine,4
-562,Gan Soreq (north)_Ptolemy II;(285BCE - 246BCE),4
-563,Jerusalem- `Ein el-Haniya_Byzantine,4
-564,Me`arat ha-Nahal_Middle Palaeolithic,4
-565,Ha-Gosherim_Late Hellenistic,4
-566,Mahzevat `Evron_Lower Palaeolithic,4
-567,Jerusalem- Old City- Jewish Quarter- Cardo_Roman-Byzantine,4
-568,Kabri- el-_Late Roman,4
-569,`En Gedi_Late Roman - Byzantine,4
-570,Ha-Gosherim- Nili (north)_Late Neolithic,4
-571,Zelef- H._Late Bronze II,4
-572,Tirat Karmel_Middle Palaeolithic,4
-573,Lakhish- T._Early Bronze II,4
-574,Jerusalem- `Emeq Refaim_Lower Palaeolithic,4
-575,Minha- H._Pottery Neolithic B,4
-576,Ashqelon- Afridar and Barnea`_Iron I,3
-577,`Ein ez-Zeituna_Early Roman - Middle Roman,3
-578,Kafr Kama_Byzantine,3
-579,Jericho- T._Early Bronze I,3
-580,Sha`ar Efrayim (south) [north]_Pottery Neolithic,3
-581,Kefar ha-Horesh_Pre-Pottery Neolithic B,3
-582,Mishmar David_Hellenistic,3
-583,BURNT HOUSE_Early Roman - Middle Roman,3
-584,`Akko Aqueduct_Byzantine,3
-585,רחובות_Late Roman,3
-586,Zeror- T._Iron I,3
-587,Zippor- T._Alexander the Great;(336BCE - 323BCE),3
-588,Fardisya- Kh._Late Roman,3
-589,י-ם- עמק המצלבה_Roman,3
-590,נבי- רובי- מערה_Middle Bronze II,3
-591,Tel Aviv- Ha-Qirya_Hellenistic,3
-592,Iqrit_Late Roman,3
-593,Jerusalem- Ketef Hinnom_Hellenistic,3
-594,Qallil- T._Middle Bronze II,3
-595,Rehovot- Weizmann Institute_Fatimid,3
-596,Batash- T._Iron IIC,3
-597,`Ujul- T. el-_Middle Bronze II (?),3
-598,Yoqne`am- T._Hellenistic,3
-599,Ashqelon- T. Ashqelon_Middle Bronze IIB,3
-600,Hedera_Late Roman - Early Byzantine,3
-601,Nahal Hever_Early Roman (period),3
-602,Sharuhen- T._Late Bronze IIB,3
-603,Nahal Hadera (north)_Early Roman (period),3
-604,Azor_Late Bronze IIB-Iron I,3
-605,טבריה_Byzantine,3
-606,Kissufim road_Late Chalcolithic,3
-607,Sheva`- T._Persian,3
-608,Bet Mirsham- T._Early Bronze II,3
-609,Ashqelon- Migdal Ashqelon_Roman,3
-610,Biq`at Quneitra_Middle Palaeolithic,3
-611,אזור  אשקלון  Ashkelon  area_Late Roman,3
-612,Bene Beraq- Giv`at Sokolov_Late Chalcolithic,3
-613,Hoga- H._Late Byzantine-Ummayad,3
-614,`En Te'o_Pottery Neolithic,3
-615,Afeq_Early Bronze I,3
-616,Hazor- T._Iron I,3
-617,Bet Mirsham- T._Iron I,3
-618,Turmus `Aiya_Roman,3
-619,Rehov- T._Middle Bronze II,3
-620,Ashqelon- T. Ashqelon_Late Bronze IIB-Iron I,3
-621,Fassuta_Middle Bronze IIB,3
-622,Jerusalem- City of David_Arab-Byzantine,3
-623,Binyamina_Roman,3
-624,Bishop  Gobat  School-  Rock  cut  cistern_Early Roman (period),3
-625,Kison- T._Iron II,3
-626,תנור_Chalcolithic,3
-627,Ma`yan Barukh_Middle Roman (70-135 CE),3
-628,Kittan- T._Middle Bronze II,3
-629,אשקלון  Ashkelon_Roman,3
-630,`Evron_Byzantine,3
-631,`En ha-Shomer_Neolithic,3
-632,Bet She'an_Late Bronze II,3
-633,Tel Aviv- T. Qasila_Iron IIA,3
-634,`Enot `Enan (south)_Middle Bronze I,3
-635,Ras Abu Dahud (north)_Byzantine,3
-636,(+)Jerusalem- Monastery of the Cross (2788/0);Jerusalem- Sederot ha-Nasi Ben Zvi (2786/1);Jerusalem- Sederot ha-Nasi Ben Zvi (2786/0)_Early Roman (period),3
-637,Ashqelon- T. Ashqelon_Persian,3
-638,Qastra- H._Late Byzantine,3
-639,Jerusalem- Mont Scopus (west)_Early Roman (period),3
-640,Jerusalem- Old City- Jewish Quarter- Israelite and Hellenistic Towers_Mamluk,3
-641,(+)`Akko- Underwater Site (4401/0);`Akko (2266/0)_Crusader,3
-642,Acre_Crusader,3
-643,Bet She'an- T._Late Bronze IIB-Iron I,3
-644,תל באיזור השפלה (אחד מן הארבעה של מקליסטר)?_Iron I,3
-645,Moza_Iron II,3
-646,Bet She'an- T._Persian,3
-647,Gezer- T._Middle Bronze IIB-C,3
-648,Hermesh- H._Persian,3
-649,Jerusalem- Giv`at Shapira_Roman,3
-650,מצודת לענה?_Iron II,3
-651,Azor_Ottoman,3
-652,Anafa- T._Early Roman (period),3
-653,Shubeika- Kh. esh-_Late Byzantine-Ummayad,3
-654,Kinrot- T._Iron II,3
-655,`Ein el-Fares_Late Chalcolithic,3
-656,Hurfeish_Early Roman (period),3
-657,Ashqelon- T. Ashqelon_Late Bronze,3
-658,Yin`am- T._Late Bronze II,3
-659,Samaria_Early Roman (period),3
-660,Rosh Horsha_Natufian,3
-661,תל  ברק  Tell  Barak_Roman,3
-662,Bet She'an- T._Iron Age,3
-663,Nagila- T._Late Bronze I,3
-664,Ashdod- T._Persian,3
-665,Ashqelon- T. Ashqelon_Middle Bronze IIC,3
-666,Bet She`arim- H._Late Roman,3
-667,Haifa- T. Abu Hawwam_Late Bronze,3
-668,Kabri- el-_Roman,3
-669,`En Gedi- Nahal David_Hellenistic,3
-670,Qumran- Cave 7Q_Roman,3
-671,Qesari- H._Islamic,3
-672,Qazyon- H._Roman-Byzantine,3
-673,BURNT HOUSE_Byzantine,3
-674,Mefalsim- T._Byzantine,3
-675,Ashqelon- T. Ashqelon_Persian (?),3
-676,Be'er Sheb'a- Old Beduin Market_Byzantine,3
-677,Kefar Gil`adi_Pottery Neolithic A,3
-678,Nahal Zalmon Estuary_Early Roman (period),3
-679,Korazim_Late Roman,3
-680,Tel Yosef_Middle Bronze II,3
-681,Zafit- T._Persian-Hellenistic,3
-682,Giv`at Ayyala_Middle Bronze II,3
-683,Akhziv (north)_Iron IIC,3
-684,Jerusalem- Old City- Jewish Quarter- Area F- M_Roman,3
-685,`Ujul- T. el-_Late Bronze I (?),3
-686,`Arad- T._Early Bronze I,3
-687,Qiryat Ata_Early Byzantine,3
-688,`Ujul- T. el-_Early Bronze I,3
-689,Taiyiba- et-_Late Chalcolithic,3
-690,Nizzana_Arab-Byzantine,3
-691,Kabri_Iron IIC-Babylonian-Persian,3
-692,Govit- H._Late Chalcolithic,3
-693,`En ha-Shomer_Pre-Pottery Neolithic,3
-694,Jerusalem- Ymca--Keren ha-Yesod Street_Roman,3
-695,Haifa- T. Shiqmona_Middle Bronze II,3
-696,Afiq_Byzantine,3
-697,Tel Aviv- Rehov M. Bodenheimer_Pottery Neolithic,3
-698,Besamon_Pre-Pottery Neolithic B (?),3
-699,Jerusalem- ha-`Ophel_Early Roman (period),3
-700,Har Yeda`ya_Byzantine,3
-701,Megiddo- T._Early Bronze I-II,3
-702,Shubeika- Kh. esh-_Roman-Byzantine,3
-703,`En Gedi_Roman-Byzantine,3
-704,Jerusalem- Rehov Alfasi_Late Hellenistic - Early Roman,3
-705,Jerusalem- Old City_Early Islamic,3
-706,`En Gev- T._Iron II,3
-707,Deir Sallam- Kh._Byzantine,3
-708,`En Gedi- Synagogue_Byzantine,3
-709,Caesarea_Fatimid-Ayyubid,3
-710,`En Besor_Late Chalcolithic,3
-711,Panias- H._Roman,3
-712,(+)Menorim- H. (3676/0);Tiberias- Sitt Sukaina & Moslem cemet. (3679/11);Tiberias and Hammat (3679/0)_Fatimid,3
-713,Sasa_Iron I,3
-714,ג'ת_Iron II,3
-715,Moza `Illit_Middle Bronze II,3
-716,Jerusalem- Manahat_Late Bronze II,3
-717,Tir`an_Middle Bronze II,3
-718,Shen Ramon_Early Bronze IA,3
-719,(+)Ashqelon- Marina (349/1);Ashqelon- Afridar and Barnea` (349/0);Ashqelon- Semadar Hotel (349/2)_Ottoman,3
-720,Kinrot- T._Early Bronze II-III,3
-721,Caesarea_Mamluk,3
-722,Qiryat Ata_Byzantine,3
-723,Afeq_Late Bronze I,3
-724,Ashqelon- T. Ashqelon_Late Hellenistic - Early Roman,3
-725,Caesarea- Harbour_Crusader,3
-726,Bethsaida_Mamluk,3
-727,משמר העמק- שומריה-קברים_Middle Roman,3
-728,Jerusalem- Giv`at ha-Mivtar_Late Hellenistic - Early Roman,3
-729,Jerusalem- Old City- Jewish Quarter- Cardo_Byzantine,3
-730,קבר  אל  בסה  El  Basseh_Byzantine,3
-731,Mishmar ha-`Emeq_Late Roman,3
-732,Jerusalem- Old City- Western and Southern Walls Excavations_Early Roman (period),3
-733,`Ai_Iron I,3
-734,Neve Ur_Pottery Neolithic,3
-735,Bet-Shemesh- T._Late Bronze IIB-Iron I,3
-736,Turmus- T._Chalcolithic,3
-737,Mikhal- T._Alexander the Great;(317BCE - 311BCE),2
-738,Yafo_Ayyubid-Mamluk,2
-739,Tiberias and Hammat- Thermae_Byzantine,2
-740,Gan Soreq (south)_Antiochus IV;(175BCE - 164BCE),2
-741,Nahf_Galerius Maximianus;(305CE - 311CE),2
-742,Gamma- T._Late Bronze (?),2
-743,Zippori_Late Roman,2
-744,חולות אשדוד_Late Byzantine,2
-745,עכו_Late Hellenistic,2
-746,Umm el-Qanatir_Byzantine,2
-747,Jerusalem- Qiryat ha-Yovel_Antiochus VII;(132BCE / 131BCE - 131BCE / 130BCE),2
-748,Bet Se'an T.- Iztabba (north)_Ptolemy XI;(112BCE / 111BCE),2
-749,Qumran- Cave 9Q_Early Roman (period),2
-750,Jerusalem- Binyane ha-Umma_Herod;(37BCE - 4BCE),2
-751,Batash- T._Iron IIB,2
-752,Kison- T._Autonomous;(332BCE - 275BCE),2
-753,Burnat- Kh._Alexander Jannaeus;(104BCE - 76BCE),2
-754,Bethsaida_Demetrius II;(145BCE / 144BCE),2
-755,Jerusalem- Meqor Hayyim_Galba;(68CE - 69CE),2
-756,Jerusalem- Old City- Western and Southern Walls_Byzantine,2
-757,Mikhal- T._Baalshalim II;(401BCE - 366BCE),2
-758,Be'er Sheva`- H. Betar_Late Chalcolithic,2
-759,Sasa_Valerian I;(253CE - 260CE),2
-760,Bet She'an- Shikkun Waw_Constantine I;(307CE),2
-761,עזה  Gaza  Area_Late Roman,2
-762,Jerusalem- City of David_Byzantine,2
-763,(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0)_Autonomous;(453BCE - 411BCE),2
-764,Bethsaida_Elagabalus;(218CE - 222CE),2
-765,Nevoraya- H._Severus Alexander;(222CE - 235CE),2
-766,Burnat- Kh._Antiochus IV;(175BCE - 164BCE),2
-767,Burnat- Kh._Herod;(37BCE - 4BCE),2
-768,Shechem (Ancient Site)_Roman,2
-769,Jerusalem- Old City- Jewish Quarter- Cardo_Ottoman,2
-770,Rafah- Kh._Trajan Decius;(249CE - 250CE),2
-771,`Isfiya_Byzantine,2
-772,Jerusalem- Old City- Western and Southern Walls_Early Roman - Middle Roman,2
-773,Mor- T_Late Bronze II,2
-774,Bethsaida_Antiochus IV;(175BCE - 164BCE),2
-775,Sharuhen- T._Middle Bronze II,2
-776,Mezad `Ateret_Alexander I Balas;(147BCE / 146BCE),2
-777,Moza_Persian,2
-778,עברון_Lower Palaeolithic,2
-779,Bethsaida_Agrippa II;(84CE / 85CE),2
-780,Rosh ha-`Ayin_Iron II,2
-781,Jerusalem- Shikkunei Nuseiba_Agrippa II;(73CE / 74CE),2
-782,Kison- T._Seleucus IV;(187BCE - 175BCE),2
-783,Dalton_Autonomous;(399BCE - 333BCE),2
-784,Bethsaida_Caracalla;(206CE / 207CE),2
-785,Zippori_Constantine II;(324CE - 325CE),2
-786,Zippori_Elagabalus;(218CE - 222CE),2
-787,Gelilot_Iron IIC-Babylonian-Persian,2
-788,Burnat- Kh._Alexander Jannaeus;(80BCE / 79BCE - 76BCE),2
-789,Jerusalem- Ramot C+D_Late Hellenistic,2
-790,Sha`ar ha-`Amaqim_Antiochus III;(202BCE - 187BCE),2
-791,Khirba- el-_Late Hellenistic-Hasmonean-Early Nabatea,2
-792,Jerusalem- Shikkunei Nuseiba_Archelaus;(4BCE - 6CE),2
-793,Maresha- T._Antiochus VII;(138BCE - 129BCE),2
-794,Nahariyya_Autonomous;(350BCE - 332BCE),2
-795,Mafjar- Kh. el-_Islamic,2
-796,ממזרח  לבית  שאן  -  Beth  She'an  Area_Byzantine,2
-797,Horevot Mazada_Great Revolt;(69CE / 70CE),2
-798,מערות צבר- מפת עין גדי- חפירות 1972- פסח בר אדון_Middle Roman,2
-799,Jericho- T._Late Bronze,2
-800,חיזמה(?)_Early Roman (period),2
-801,Jerusalem- Giv`at Sha'ul_Antiochus IX;(112BCE / 110BCE),2
-802,Shema`- H._Agrippa II;(83CE / 84CE),2
-803,Ashdod Yam- H._Iron I,2
-804,Shalem- T._Crusader,2
-805,Gamla_Autonomous ( );(53BCE / 52BCE),2
-806,Burnat- Kh._Demetrius II;(129BCE / 128BCE),2
-807,ירושלים-  בית  יתומים  הסורי  Syrian  Orphanage-Jerusalem_Late Roman,2
-808,Ramla- Mahzevot Nesher (north)_Ptolemy II;(285BCE - 246BCE),2
-809,Yin`am- T._Iron IIA,2
-810,Mizpah_Early Bronze III,2
-811,Makr- el-_Roman,2
-812,Eshtemo`a_Early Byzantine,2
-813,Megiddo- T._Persian,2
-814,Ashqelon- Ni`ilya_Roman,2
-815,Lakhish- T._Late Bronze I,2
-816,Meron_Hadrian;(119CE - 120CE),2
-817,(+)Jerusalem- Old City (2921/0);Jerusalem- Har Ziyyon (2867/0);Jerusalem- Hinnom Valley (2868/0)_Alexander Jannaeus;(104BCE - 80BCE / 79BCE),2
-818,Antioch??? סוריה_Hellenistic,2
-819,Gan Soreq (north)_Autonomous;(399BCE - 300BCE),2
-820,(+)Maresha- Underground System No. 61 (1300/3);Hemda- H. (1299/0);Maresha- T. (1300/0)_Ptolemy II;(285BCE - 246BCE),2
-821,Bet Mirsham- T._Middle Bronze II-Late Bronze,2
-822,Brit Ahim_Roman,2
-823,קבר  אל  בסה  El  Basseh_Late Roman - Byzantine,2
-824,Jerusalem- Nabi `Akasha (north)_Hellenistic,2
-825,Or `Aqiva_Late Roman,2
-826,Tel Aviv- T. el-Hashshash_Ptolemy II;(285BCE - 246BCE),2
-827,Ashqelon- Afridar and Barnea` (east)_Autonomous;(360BCE - 300BCE),2
-828,Bet She'an- T._Early Bronze II,2
-829,Kokhav ha-Yarden_Ayyubid-Mamluk,2
-830,Ramat Yishay_Antiochus III;(222BCE - 187BCE),2
-831,`En Nashut- H._Byzantine,2
-832,(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0)_Seleucus III;(224BCE - 222BCE),2
-833,Giv`at Yasaf_Persian,2
-834,Jerusalem- Old City- Western and Southern Walls_Archelaus;(4BCE - 6CE),2
-835,Gezer- T._Ptolemy VI;(159BCE / 158BCE - 155BCE / 154BCE),2
-836,Jerualem- Old City Wall_Judah Aristobulus I;(104BCE - 104BCE),2
-837,`Aro`er- T._Iron IIC,2
-838,Tinshemet- H._Early Islamic-Umayyad-Abbasid,2
-839,Panias- H._Herod Philip;(8CE / 9CE),2
-840,Meron_Constantius II;(346CE - 350CE),2
-841,Qashish- T._Early Bronze II-III,2
-842,Trig. point 112-S_Iron I,2
-843,Be'er Sheva`_Constantine I;(324CE - 330CE),2
-844,Cave 27- En-Gedi_Roman,2
-845,Samaria_Hellenistic (?),2
-846,Ha-Gosherim_Middle Roman,2
-847,Gov- H._Byzantine,2
-848,Rimmon- H._Jovian;(363CE - 364CE),2
-849,Bet She`arim- H._Late Roman - Early Byzantine,2
-850,ואדי מורבעאת_Early Roman (period),2
-851,Yafo_Antiochus VIII;(122BCE / 121BCE),2
-852,Jerusalem- Third Wall Area_Arab-Byzantine 1 (coin type);(645CE - 670CE),2
-853,(+)Maresha- Underground System No. 61 (1300/3);Hemda- H. (1299/0);Maresha- T. (1300/0)_Antiochus III;(222BCE - 187BCE),2
-854,Parve- H._Carus;(282CE - 283CE),2
-855,Megiddo- T._Early Bronze,2
-856,Jerusalem- Old City- Jewish Quarter- Area F- M_Nabatean,2
-857,Gan Soreq (north)_Mazday;(343BCE - 333BCE),2
-858,Zippori_Hellenistic,2
-859,Bet She'an_Ayyubid-Mamluk,2
-860,דקלה_Leo I;(457CE - 474CE),2
-861,Gezer- T._Persian,2
-862,`Arad- T._Early Bronze IB,2
-863,Caesarea_Baldwin III;(1143CE - 1163CE),2
-864,Zeror- T._Antiochus IV;(175BCE - 164BCE),2
-865,עכו- בניין הדואר_Late Hellenistic,2
-866,Meron_Constantius II;(335CE - 337CE),2
-867,Kokhav ha-Yarden_Islamic,2
-868,`Ujul- T. el-_Middle Bronze IIC,2
-869,Arshaf- T._Crusader-Ayyubid,2
-870,Ashqelon- Afridar and Barnea` (east)_Ptolemy II;(275BCE / 274BCE - 246BCE),2
-871,Me`arat `Amud_Middle Palaeolithic,2
-872,Rimmon- H._Theodosius II;(408CE - 450CE),2
-873,Bethel_Late Bronze I,2
-874,Bet She'an- T._Early Byzantine,2
-875,Jerusalem- Third Wall Area_Byzantine,2
-876,Meron_Autonomous;(100CE - 200CE),2
-877,Holon- Industry Zone_Lower Palaeolithic,2
-878,Bethsaida_Antiochus III;(198BCE - 187BCE),2
-879,Sharuhen- T._Late Bronze,2
-880,Qedesh- T._Ptolemy II;(285BCE - 246BCE),2
-881,Jerusalem- Rockefeller Museum_Roman,2
-882,Ashqelon- Afridar and Barnea`_Iron IIC-Babylonian-Persian,2
-883,Panias- H._Agrippa II;(74CE / 75CE),2
-884,(+)Jerusalem- Binyane ha-Umma (5444/0);Jerusalem- Binyane ha-Umma (2789/0);Jerusalem- Binyene ha-Umma (south) (27212/0)_Great Revolt;(68CE / 69CE),2
-885,Ashqelon- Migdal Ashqelon_Roman-Byzantine (?),2
-886,'Asida- Kh._Byzantine,2
-887,Haruzim (east)_Pre-Pottery Neolithic,2
-888,`Azeqa- T._Iron I,2
-889,Nahal Gerar_Late Chalcolithic,2
-890,Ashqelon- Abu Qutuf_Alexander the Great;(336BCE - 323BCE),2
-891,Burqa_Byzantine,2
-892,Maresha- T._Iron II,2
-893,(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0)_Antiochus I;(281BCE - 261BCE),2
-894,איזור היספין 647_Late Chalcolithic,2
-895,Ashqelon- T. Ashqelon_Iron IIC-Babylonian-Persian,2
-896,Lod- Maqam esh-Sheikh `Abd er-Rahman_Autonomous;(64CE / 65CE - 68CE / 69CE),2
-897,Ben Shemen_Alexander Jannaeus;(104BCE - 76BCE),2
-898,Ma`alot-Tarshiha_Byzantine,2
-899,Burnat- Kh (south-west)_Early Roman (period),2
-900,Shoham_Byzantine,2
-901,Bet She'an_Byzantine,2
-902,Manawat- el-_Roman-Byzantine,2
-903,Gush Halav_Demetrius II;(128BCE / 127BCE),2
-904,Bethsaida_Antiochus VII;(135BCE / 134BCE),2
-905,Burnat- Kh._Agrippa I;(41CE / 42CE),2
-906,Yafo_Autonomous;(399BCE - 336BCE),2
-907,Nahariyya_Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE),2
-908,Bet-Shemesh- T._Iron IIA,2
-909,Rosh `En Mor_Middle Palaeolithic,2
-910,(+)Maresha- Underground System No. 51 (1300/25);La`ada- H. (1249/0);Maresha- T. (1300/0)_Antiochus III;(198BCE - 187BCE),2
-911,CAESAREA- HARBOUR_Crusader,2
-912,Bustan- H._Byzantine,2
-913,Tirat Karmel_Lower Palaeolithic,2
-914,Jerusalem- Third Wall Area_Heraclius;(611CE / 612CE),2
-915,Hemda- H._Bar Kokhba;(134CE - 135CE),2
-916,Kh.Raghwan  -Jerusalem  area_Byzantine,2
-917,אשקלון_Middle Bronze II,2
-918,Akhziv_Autonomous;(136CE / 137CE),2
-919,Acre  Museum  collection_Roman,2
-920,Kharoz- H._Neolithic,2
-921,Qeren Naftali_Herod Philip;(30CE / 31CE),2
-922,Iqrit_Caracalla;(198CE - 217CE),2
-923,Nazor- H._Byzantine,2
-924,Darkemon- H._Roman,2
-925,`Alya- Kh._Hadrian;(117CE - 138CE),2
-926,(+)Jerualem- Old City Wall (2921/108);Jerusalem- Old City (2921/0);Jerusalem- City of David (2922/0)_Antiochus III;(198BCE - 187BCE),2
-927,Me`arot Yonim_Epi-Paleolithic-Natufian-Epi-Palaeolithic,2
-928,Yoqne`am- T._Iron IIA,2
-929,Samaria_Late Roman,2
-930,Gan Soreq (north)_Autonomous;(410BCE - 333BCE),2
-931,יבנה- קבר מס' 4_Late Bronze II,2
-932,Bet She'an_Antiochus IX;(114BCE / 113BCE - 111BCE),2
-933,Afeq_Middle Bronze IIB,2
-934,Yoqne`am- T._Late Bronze IIB-Iron I,2
-935,Burnat- Kh._Demetrius II;(145BCE - 125BCE),2
-936,Horevot Mazada_Late Hellenistic - Early Roman,2
-937,Haifa- Tel-Hanan_Ptolemy II;(275BCE / 274BCE - 246BCE),2
-938,Jerusalem- Old City_Late Byzantine,2
-939,`En Gedi_Mamluk,2
-940,(+) (1579/0);Kefar Sava- Trig. point 11-R (1578/0); (25070/0)_Late Byzantine-Ummayad,2
-941,Wadi Murabba`at- Cave 1_Epi-Palaeolithic,2
-942,שמיר_Pottery Neolithic,2
-943,Tel Aviv- T. Qasila_Iron I,2
-944,Sha`ar Efrayim (south) [north]_Early Bronze IB,2
-945,Meron_Valerian I;(253CE - 260CE),2
-946,Gezer- T._Late Bronze IIB-Iron I,2
-947,Burnat- Kh._Judah Aristobulus I;(104BCE - 103BCE),2
-948,זבלי- ח' )שובל)?_Roman-Byzantine,2
-949,Jerusalem- Old City- Western and Southern Walls_Great Revolt;(68CE / 69CE),2
-950,Nahf_Maxentius;(309CE - 312CE),2
-951,Bata- H._Heraclius;(639CE - 641CE),2
-952,קברים ליד מכמש_Persian,2
-953,Hamadya_Late Neolithic,2
-954,Korazim_Late Roman 1 (coin);(330CE - 337CE),2
-955,Mafjar- Kh. el-_Late Byzantine-Ummayad,2
-956,Jerusalem- Old City- Western and Southern Walls_Trajan Decius;(249CE - 251CE),2
-957,Gamla_Antipas ( );(29CE / 30CE),2
-958,Bet She'an- T._Late Chalcolithic,2
-959,Hadat- H._Demetrius II;(127BCE / 126BCE),2
-960,Mikhal- T._Alexander the Great;(323BCE - 315BCE),2
-961,Hadat- H._Demetrius I;(162BCE - 150BCE),2
-962,Zippori_Constantine I;(330CE - 337CE),2
-963,`Alya- Kh._Plautilla;(202CE - 205CE),2
-964,Kafr Kama_Late Roman,2
-965,Shema`- H._Elagabalus;(218CE - 222CE),2
-966,Majami`- el-_Late Chalcolithic,2
-967,Mikhal- T._Ptolemy II;(267BCE),2
-968,`Akko- Underwater Site_Ptolemy VI;(164BCE / 163BCE),2
-969,Iqrit_Elagabalus;(218CE - 222CE),2
-970,Mikhal- T._Ptolemy II;(248BCE),2
-971,Gush Halav_Domitian (81-96);(81CE - 96CE),2
-972,Afeq- T._Seleucus IV;(187BCE - 175BCE),2
-973,Ha-Gosherim- Nili (north)_Pottery Neolithic B / Pre-Ghassulian Chalcolithic,2
-974,Mishmar ha-`Emeq_Demetrius II;(141BCE),2
-975,Yoqne`am- T._Late Bronze,2
-976,Yafo_Antiochus VII;(138BCE - 129BCE),2
-977,(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0)_Seleucus IV;(187BCE - 175BCE),2
-978,Matlul Zurim_Middle Bronze I,2
-979,Iqrit_Julia Maesa;(218CE - 222CE),2
-980,Burnat- Kh._Ptolemy II;(285BCE - 246BCE),2
-981,Sharuhen- T._Early Bronze I,2
-982,Bet Guvrin_Byzantine,2
-983,Ha-Gosherim_Late Hellenistic - Early Roman,2
-984,Kison- T._Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE),2
-985,Bet She'an- T._Early Bronze,2
-986,Lakhish- T._Early Bronze II-III,2
-987,Karm er-Ras_Herod;(37BCE - 4BCE),2
-988,Megiddo- T._Iron IIA,2
-989,Gush Halav_Crusader (?),2
-990,`Idham- T. el-_Middle Bronze IIA,2
-991,Meron_Vespasian;(69CE - 79CE),2
-992,Lakhish- T._Late Bronze IIB-Iron I,2
-993,Jerusalem- Giv`at Sha'ul_Agrippa I;(41CE / 42CE),2
-994,Acre  Museum  Collection_Late Roman,2
-995,Jerusalem- City of David_Alexander I Balas;(152BCE - 145BCE),2
-996,Tiberias and Hammat- Thermae_Crusader,2
-997,Ashqelon- Afridar and Barnea` (east)_Antiochus IV;(175BCE - 164BCE),2
-998,Zaf- T._Chalcolithic,2
-999,Nazerat_Roman (?),2
-1000,Jerusalem- Giv`at Sha'ul_Antiochus VIII (?);(125BCE - 96BCE),2
-1001,Burnat- Kh._John Hyrcanus I;(130BCE - 104BCE),2
-1002,Ashqelon- Afridar and Barnea` (east)_Late Roman,2
-1003,Jerusalem- Old City- Jewish Quarter- Cardo_Ayyubid-Mamluk,2
-1004,בורין  1935  (כביש  טולכרם)  Burin_Early Islamic,2
-1005,Caesarea_Valence (bishopric);(1101CE - 1200CE),2
-1006,Jerusalem- Old City- Western and Southern Walls_Augustus;(9CE / 10CE),2
-1007,Megiddo- T._Iron IIC-Babylonian-Persian,2
-1008,בית שאן- בה'כ השומרוני_Byzantine,2
-1009,(+)Jerusalem- Binyane ha-Umma (5444/0);Jerusalem- Binyane ha-Umma (2789/0);Jerusalem- Binyene ha-Umma (south) (27212/0)_Antiochus IV;(173BCE / 172BCE - 168BCE),2
-1010,Ben Shemen_Early Roman (period),2
-1011,Ziqim_Heraclius;(613CE - 618CE),2
-1012,Hizma_Early Roman (period),2
-1013,Ashqelon- T. Ashqelon_Late Roman - Byzantine,2
-1014,Caesarea_Umayyad (post reform);(697CE - 750CE),2
-1015,Rimmon- H._Justinian I;(527CE - 565CE),2
-1016,Haifa- Nemal ha-Qishon_Late Bronze II,2
-1017,Akhziv- T_Persian,2
-1018,Horevot Mazada_Great Revolt;(67CE / 68CE),2
-1019,Jerusalem- City of David- Pool of Shiloah_Archelaus;(4BCE - 6CE),2
-1020,Bet Natif- H._Late Roman,2
-1021,Korazim_Constantine II;(321CE - 321CE),2
-1022,Tiberias and Hammat_Agrippa II;(67CE / 68CE),2
-1023,Me`arat Hillazon Tahtit_Natufian,2
-1024,Nahariyya_Ptolemy II;(246BCE - 241BCE),2
-1025,Jerusalem- Rockefeller Museum_Byzantine,2
-1026,Nahariyya- Giv`at Katzenelson_Poppaea;(65CE - 65CE),2
-1027,`Akko_Late Roman,2
-1028,`En Gedi - Goren- Tell_Ptolemy II;(285BCE - 246BCE),2
-1029,רמת רחל_Byzantine,2
-1030,Ashqelon- el-Jura_Early Roman (period),2
-1031,Ma`on- H._Byzantine,2
-1032,Na`aran_Byzantine,2
-1033,Nahal David- Me`arat ha-Berekha_Late Chalcolithic,2
-1034,Be'er Shema`- H._Early Islamic,2
-1035,נחל ישי_Late Chalcolithic,2
-1036,Dalton_Autonomous;(449BCE - 411BCE),2
-1037,על גדות ואדי אפתח_Middle Roman,2
-1038,יריחו  -  Nestorian  Hermitage  Jericho_Early Islamic,2
-1039,Gan Soreq (north)_Ptolemy VIII;(146BCE / 145BCE - 116BCE),2
-1040,`En Gedi - Goren- Tell_Agrippa I;(41CE / 42CE),2
-1041,Korazim_Constantine I;(324CE / 325CE),2
-1042,Dalhamiya_Pottery Neolithic,2
-1043,Bet She'an- T._Late Bronze I (?),2
-1044,Qedesh- T._Demetrius II;(144BCE / 143BCE),2
-1045,Hani- H._Antiochus VII;(133BCE / 132BCE),2
-1046,Rimmon- H._Valentinian I;(364CE - 375CE),2
-1047,Meron_Hadrian;(117CE - 138CE),2
-1048,Ashqelon- Afridar and Barnea` (east)_Alexander I Balas;(150BCE - 145BCE),2
-1049,Rasm- Kh. er-_Late Hellenistic,2
-1050,Iqrit_Elagabalus;(219CE - 222CE),2
-1051,Shema`- H._Frederick II;(1249CE / 1249CE),2
-1052,Qazyon- H._Roman,2
-1053,`Akko_Florentine (Rulers);(1252CE - 1533CE),2
-1054,Bet-Shemesh- T._Late Chalcolithic,2
-1055,Jerusalem- Broad Wall_Early Roman (period),2
-1056,Yif`at and Gevat (east)_Early Roman (period),2
-1057,Ishwa`_Bar Kokhba;(134CE - 135CE),2
-1058,Bet Guvrin_Herod;(37BCE - 4BCE),2
-1059,Beth Zur_Ptolemy II;(285BCE - 246BCE),2
-1060,(+)Jerualem- Old City Wall (2921/108);Jerusalem- Old City (2921/0);Jerusalem- City of David (2922/0)_Demetrius I;(161BCE - 150BCE),2
-1061,Akhziv_Autonomous;(152CE / 153CE),2
-1062,Jerusalem- Derekh Shkhem-pinat Rehov Zalah ed-Din_Roman-Byzantine,2
-1063,Zippor- T._Alexander the Great;(333BCE / 332BCE),2
-1064,ואדי אל בירה. אזור הר תבור_Late Bronze II,2
-1065,Baqa el-Gharbiya (south)_Byzantine,2
-1066,Tiberias and Hammat_Umayyad (post reform);(700CE - 715CE),2
-1067,`Eqed_Antiochus VII;(138BCE - 129BCE),2
-1068,`En Dmumit_Byzantine,2
-1069,Haifa- Shiqmona- Underwater site_Antoninus Pius;(188CE),2
-1070,Trig. point 568-N (north-west)_Agrippa I;(41CE / 42CE),2
-1071,Mezad Sha`ar Ramon_Roman,2
-1072,Ashkelon  1933_Iron IIC-Babylonian-Persian (?),2
-1073,Meron_Herod Philip;(29CE / 30CE),2
-1074,Zippori_Gallienus;(253CE - 268CE),2
-1075,Mikhal- T._Autonomous;(401BCE - 358BCE),2
-1076,Musha`an_Late Chalcolithic,2
-1077,Ramla- Mahzevot Nesher (north)_Antiochus III;(198BCE - 187BCE),2
-1078,(+)Shoham (north) (15125/0);Trig. point 200-Z (south) (13259/0);Shoham (east) (25101/0)_Antiochus III;(198BCE - 187BCE),2
-1079,Mikhal- T._Autonomous;(299BCE - 200BCE),2
-1080,Kefar Nahum_Julian II;(360CE - 363CE),2
-1081,Bet She'an- T._Iron IIA-Iron I,2
-1082,Iqrit_Septimius Severus;(193CE - 211CE),2
-1083,Bethsaida_Ptolemy III;(246BCE - 221BCE / 220BCE),2
-1084,Fakhura-(Sheep pens)_Elagabalus;(218CE - 222CE),2
-1085,Qasrin_Vespasian;(69CE - 79CE),2
-1086,Lod_Elagabalus;(218CE - 222CE),2
-1087,Yotvata_Aretas IV;(31CE / 32CE),2
-1088,Gan Soreq (north)_Autonomous;(410BCE - 331BCE),2
-1089,Mikhal- T._Persian,2
-1090,דקלה_Marcian;(450CE - 457CE),2
-1091,Jerusalem- Mamilla_Late Byzantine,2
-1092,Karm er-Ras_Agrippa II;(85CE / 86CE),2
-1093,Gan Soreq (north)_Autonomous;(372BCE - 333BCE / 332BCE),2
-1094,Jerusalem- Meqor Hayyim_Nero;(63CE),2
-1095,Sha`ar ha-`Amaqim_Seleucus III;(224BCE - 222BCE),2
-1096,Samaria_Ptolemy III;(246BCE - 221BCE / 220BCE),2
-1097,Tel Aviv- Ramat Aviv_Ottoman,2
-1098,Ramla- Highway No. 1_Early Islamic,2
-1099,Bet She'an- T._Middle Bronze II-Late Bronze,2
-1100,`Akko_Mamluk,2
-1101,`Akko (north)_Autonomous;(110BCE - 64BCE),2
-1102,Jerusalem- Old City- Citadel_Antiochus VII;(131BCE / 130BCE),2
-1103,Goded- T._Iron II,2
-1104,Gat- T._Early Roman (period),2
-1105,Lakhish- T._Middle Bronze II,2
-1106,Rehov- T._Iron II,2
-1107,(+)`Akko- T. (2328/0);`Akko (2266/0)_Ptolemy IV (?);(221BCE / 220BCE - 204BCE / 203BCE),2
-1108,Akhziv_Persian,2
-1109,Haifa- T. Shiqmona_Persian,2
-1110,Kefar Ruppin_Late Bronze II,2
-1111,Nemal Akhziv_Iron Age,2
-1112,Jerusalem- Har Hozvim_John of Ibelin;(1200CE - 1236CE),2
-1113,Jerusalem- Derekh Shkhem-pinat Rehov Zalah ed-Din_Late Roman,2
-1114,Mikhal- T._Ptolemy II;(256BCE),2
-1115,Jerusalem- City of David_Autonomous;(475BCE - 440BCE),2
-1116,Akhziv_Geta;(198CE - 205CE),2
-1117,Zippori_Alexander Jannaeus;(104BCE - 76BCE),2
-1118,Maresha- T._Seleucus IV;(187BCE - 175BCE),2
-1119,Bet She'an- T._Middle Bronze IIC,2
-1120,Jerusalem- Hinnom Valley- lower_Roman,2
-1121,Jerusalem- Giv`at Sha'ul_Autonomous;(550BCE - 520BCE),2
-1122,Qumran- Cave 2Q_Roman,2
-1123,`Akko_Autonomous;(140BCE - 200CE),2
-1124,Bethsaida_Iron II,2
-1125,Abu Ghosh_Pre-Pottery Neolithic C,2
-1126,Karm er-Ras_Agrippa II;(74CE / 75CE - 83CE / 84CE),2
-1127,Kfar Monash_Early Bronze,1
-1128,Jerusalem- Old City- Western and Southern Walls_Late Roman,1
-1129,טבריה  TIBERIAS_Late Roman,1
-1130,Hasi- T._Persian,1
-1131,Gamma- T._Iron Age (?),1
-1132,Jerusalem- Old City- Western and Southern Walls_Late Byzantine,1
-1133,Moza_Iron IIC,1
-1134,Abu  Tor  cleared  in  1932_Early Roman (period),1
-1135,Hasi- T._Ottoman,1
-1136,Tirya- H._Late Roman,1
-1137,Bet Yerah- T._Early Bronze III (?),1
-1138,Beit Nuba_Byzantine,1
-1139,`Eton- T._Iron I,1
-1140,Jerusalem- City of David_Late Roman - Byzantine (?),1
-1141,Mafjar- Kh. el-_Roman,1
-1142,Jerusalem- Rockefeller Museum_Early Roman (period),1
-1143,Ashqelon- Afridar and Barnea`_Late Hellenistic - Early Roman (152 BCE - 70 CE),1
-1144,Mamshit- H._Byzantine,1
-1145,Tirya- H._Early Roman (period),1
-1146,Nahal Mishmar- Me`arat ha-Matmon_Middle Roman,1
-1147,Baqa el-Gharbiya (south)_Late Roman - Early Byzantine,1
-1148,`Azeqa- T._Late Bronze II,1
-1149,Jerusalem- City of David_Late Roman - Early Byzantine,1
-1150,Shechem (Town)_Early Roman (period),1
-1151,ג'פנא  (ליד  רמאללה)  Jifna_Roman,1
-1152,Bet Guvrin_Roman,1
-1153,Sokho- Horevot_Roman,1
-1154,Gush Halav_Arab-Byzantine,1
-1155,Korazim_Byzantine,1
-1156,Tiberias and Hammat_Mamluk,1
-1157,איזור  חברון  Dura  Hebron  District_Roman,1
-1158,`Utsa- H._Late Roman - Early Byzantine,1
-1159,Lakhish- T._Late Bronze IIB,1
-1160,Bet She'an- T._Iron II (?),1
-1161,Qumran- Cave 11Q_Early Roman (period),1
-1162,מאמאס- ליד אמת המים של קיסריה Mamas next to Caesarea Aqueduct_Roman,1
-1163,תעלת  עכו  -  Moat  of  Acre_Hellenistic,1
-1164,Shave Ziyyon_Byzantine,1
-1165,Bet-Shemesh- T._Crusader (?),1
-1166,Zippori_Early Byzantine,1
-1167,Jerusalem- Ya`ar Ha-Shalom_Early Roman (period),1
-1168,Sea  of  Galilee-  North  of  Tiberias_Late Chalcolithic,1
-1169,Jerusalem- Ymca--Keren ha-Yesod Street_Byzantine,1
-1170,Mazor_Roman,1
-1171,Ramat Rahel_Byzantine,1
-1172,Me`arat Amira_Upper Palaeolithic (?),1
-1173,Tiberias and Hammat_Crusader,1
-1174,Nahal `Arugot_Late Chalcolithic,1
-1175,Sha`ar ha-`Amaqim_Antiochus III;(198BCE - 187BCE),1
-1176,Jerusalem- Old City- Jewish Quarter- Area F- M_Late Hellenistic - Early Roman (?),1
-1177,Zuq el-Fauqani ez-_Roman-Byzantine,1
-1178,לא ידוע- ירושלים_Roman,1
-1179,Jerusalem- Shmuel ha-Navi_Early Roman (period),1
-1180,Tel Aviv- T. Qasila_Byzantine,1
-1181,Sha`ar ha-Golan_Pre-Pottery Neolithic A,1
-1182,Afeq_Middle Bronze II (?),1
-1183,Gerisa- T._Late Bronze II,1
-1184,עכו-בית  קברות  Sheikh  'Izz  ed-Din_Roman,1
-1185,ליד  חדיתה  -קבר  מצוייר  Haditha  Painted  Tomb_Roman,1
-1186,Mizpah_Iron IIC,1
-1187,Ashqelon- Afridar and Barnea`_Hellenistic,1
-1188,ירושלים-  הכביש  ליד  גת  שמנים  Road  near  Gethsemane_Byzantine,1
-1189,Samakh  T.  -  Haifa  Region_Roman,1
-1190,Jerusalem- Old City- Jewish Quarter- Area F- M_Late Hellenistic-Early Roman (period),1
-1191,Brit Ahim_Hellenistic,1
-1192,`Asafna- Kh._Roman,1
-1193,Jerusalem- Old City_Early Islamic-Late Byzantine,1
-1194,Bet-Shemesh- T._Late Bronze IIA,1
-1195,Zuq el-Fauqani ez-_Byzantine (?),1
-1196,Gaza Harbour_Early Byzantine,1
-1197,Shuni_Late Roman,1
-1198,Shalem- T._Middle Roman,1
-1199,נהריה_Middle Roman,1
-1200,Mizpah_Iron I (?),1
-1201,`Ar`ara (south-west)_Iron I,1
-1202,Merot- H._Byzantine,1
-1203,Qumran Caves_Roman,1
-1204,BURNT HOUSE_Early Roman (period) (?),1
-1205,Yafia`_Byzantine,1
-1206,Lod_Late Byzantine,1
-1207,Haifa- T. Shiqmona_Byzantine,1
-1208,Jerusalem- Old City_Late Roman - Byzantine,1
-1209,Qannir- Kh._Late Roman,1
-1210,Jerusalem- Old City- St. Stephan's Gate_Byzantine,1
-1211,Huldah Area. 4231-4831_Byzantine,1
-1212,Jerusalem- `En Kerem_Roman,1
-1213,Ha-Zorea`- T. Qira_Neolithic,1
-1214,Qiryat Ata_Late Roman,1
-1215,Mizpah_Iron Age (?),1
-1216,Ha-Gosherim_Late Roman - Early Byzantine,1
-1217,Karkor `Illit- H._Arab-Byzantine,1
-1218,Megiddo- T._Iron Age,1
-1219,Shubeika- Kh. esh-_Late Roman - Byzantine,1
-1220,Jericho- T._Early Bronze II,1
-1221,Nahal Hever. Cave 2_Middle Roman,1
-1222,Jerusalem- Har Ziyyon_Ottoman (?),1
-1223,Hauran  Area  -Jordan ירדן_Late Roman,1
-1224,Beth Zur_Iron IIC-Babylonian-Persian,1
-1225,Sha`ar Efrayim (south) [north]_Pre-Pottery Neolithic,1
-1226,Jerusalem- Qiryat Moriah_Iron II,1
-1227,Mizpah_Early Bronze I-II,1
-1228,Bet She`arim- H._Late Roman - Byzantine,1
-1229,ירושלים-  סילואן_Early Roman (period),1
-1230,Nahal Yarmut_Late Hellenistic,1
-1231,ואדי מרבעאת_Roman,1
-1232,Lakhish- T._Early Bronze III,1
-1233,Turmus- T._Pre-Ghassulian Chalcolithic,1
-1234,Jerusalem- `En Rogel_Late Byzantine,1
-1235,`En Gedi - Goren- T._Iron IIC-Babylonian-Persian,1
-1236,Kryat Ata- Shekhunat Moler_Early Bronze II,1
-1237,אשקלון  Ashkelon_Byzantine,1
-1238,Jerusalem- `En Rogel_Middle Roman - Late Roman,1
-1239,Qumran- Cave Q1_Roman,1
-1240,Nahariyya- Giv`at Katzenelson_Middle Roman,1
-1241,Jerusalem- Old City- Western and Southern Walls_Middle Roman,1
-1242,Evlayim_Roman,1
-1243,`Alya- Kh._Early Roman (period),1
-1244,Jerusalem- Ketef Hinnom_Late Roman,1
-1245,Jerusalem- Hinnom Valley_Byzantine,1
-1246,Ashqelon- Afridar and Barnea` (east)_Middle Hellenistic,1
-1247,Shubeika- Kh. esh-_Byzantine,1
-1248,Jerusalem- Har ha-Zofim (east)_Byzantine,1
-1249,Turmus- T._Pre-Pottery Neolithic,1
-1250,Ghadariyya_Byzantine,1
-1251,Shechem (Town)_Roman,1
-1252,Nahal Arbel_Roman,1
-1253,איזור  אשקלון  אתרים  שונים  Ashkelon  Area_Byzantine,1
-1254,Akhziv (north)_Iron II,1
-1255,El  Basseh  Tomb_Roman,1
-1256,`Erani- T._Early Bronze,1
-1257,Miqne- T._Late Bronze,1
-1258,Mafjar- Kh. el-_Byzantine,1
-1259,Mishmar ha-`Emeq_Late Roman - Byzantine,1
-1260,Bet She'an_Late Roman,1
-1261,Jerusalem- Derekh Shkhem-pinat Rehov Zalah ed-Din_Byzantine,1
-1262,Jerusalem- Old City- Western and Southern Walls_Early Hellenistic,1
-1263,Kafr Kanna (east)_Early Roman (period),1
-1264,Shoham_Umayyad-Abbasid,1
-1265,`Erani- T._Early Bronze I,1
-1266,Samaria_Persian-Hellenistic,1
-1267,Caesarea- Synagogue_Byzantine,1
-1268,Herzeliyya Bet_Late Roman,1
-1269,`Erani- T._Iron II,1
-1270,"12  ק""מ  מערבית    ל-Khalasa_Neolithic (?)",1
-1271,`Atlit_Hellenistic,1
-1272,מורדות  הר  עיבל  Slopes  of  Mt.Ebal_Roman,1
-1273,Acre  Museum  collection_Late Roman,1
-1274,`En Gedi - Goren- Tell_Iron IIC,1
-1275,`Ujul- T. el-_Byzantine,1
-1276,Jerusalem- Har ha-Zofim_Late Hellenistic - Early Roman,1
-1277,גזר_Late Hellenistic,1
-1278,I Yonim_Persian,1
-1279,Baqa el-Gharbiya (south)_Early Roman (period),1
-1280,Sawafir esh-Sharqiya- es-_Byzantine,1
-1281,Jerusalem north- Sanhedriyya- Cave 12_Early Roman (period),1
-1282,Jerusalem- Old City- St. Stephan's Gate_Early Roman (period),1
-1283,El-Bineh  1932_Roman-Byzantine,1
-1284,`En Nevel_Kebaran,1
-1285,Haluza_Byzantine,1
-1286,נהריה_Roman,1
-1287,Nahal Barqos_Late Neolithic,1
-1288,Jerusalem- Old City_Late Roman - Early Byzantine,1
-1289,Minha- H._Pre-Pottery Neolithic,1
-1290,Shefar`am_Byzantine,1
-1291,`Atlit_Iron II,1
-1292,Ashkelon  1933_Persian,1
-1293,Tel Aviv- T. Qasila_Iron IIA-Iron I,1
-1294,Jerusalem- Old City_Persian-Hellenistic,1
-1295,קבר  אל  בסה  El  Basseh_Late Roman,1
-1296,Korazim_Late Roman - Byzantine,1
-1297,`Ein Yabrud_Late Roman,1
-1298,Hoga- H._Late Byzantine-Ummayad (?),1
-1299,Kfar Monash_Early Bronze I,1
-1300,Bet-Shemesh- T._Late Bronze,1
-1301,מערה    ט'הרייה    Dhaheriah    Cave_Hellenistic,1
-1302,Nahal Ze`elim_Roman,1
-1303,קבר בבית סחור_Iron I,1
-1304,Haifa- T. Abu Hawwam_Early Roman (period),1
-1305,טבריה- קבר רומי בעיר_Roman,1
-1306,`Illin- H._Early Islamic,1
-1307,Istabul- Kh._Byzantine,1
-1308,Bet Neqofa_Middle Roman - Late Roman,1
-1309,Nazor- H._Late Byzantine,1
-1310,כפר מונש_Early Bronze IB,1
-1311,שכם  -  Nablus_Roman,1
-1312,`Ujul- T. el-_Mamluk,1
-1313,חירבת  ערה  Ara  Horvat_Byzantine,1
-1314,Shelomi (Soush)_Late Roman - Early Byzantine,1
-1315,Rama- er-_Late Roman,1
-1316,Jerusalem North- Mahanayim- Cave 22_Early Roman (period),1
-1317,BURNT HOUSE_Roman,1
+id,class_name,num_of_images,period,site,period order
+0,Hellenistic_Maresha- T.,298,Hellenistic,Maresha- T.,-1
+1,Iron II_Lakhish- T.,263,Iron II,Lakhish- T.,-1
+2,Late Chalcolithic_Nahal Pattish (Gilat),253,Late Chalcolithic,Nahal Pattish (Gilat),-1
+3,Iron II_Jerusalem- City of David,212,Iron II,Jerusalem- City of David,-1
+4,Late Chalcolithic_Nahal Mishmar- Cave of the Treasure,210,Late Chalcolithic,Nahal Mishmar- Cave of the Treasure,-1
+5,Pre-Pottery Neolithic B_Nahal Hemar,198,Pre-Pottery Neolithic B,Nahal Hemar,-1
+6,Middle Bronze II-Late Bronze_`Ujul- T. el-,188,Middle Bronze II-Late Bronze,`Ujul- T. el-,-1
+7,Natufian_Me`arat Kebara,185,Natufian,Me`arat Kebara,-1
+8,Pottery Neolithic A_Sha`ar ha-Golan,183,Pottery Neolithic A,Sha`ar ha-Golan,-1
+9,Upper Palaeolithic_Me`arat ha-Nahal,163,Upper Palaeolithic,Me`arat ha-Nahal,-1
+10,Natufian_Me`arat ha-Nahal,142,Natufian,Me`arat ha-Nahal,-1
+11,Upper Palaeolithic_Nahal Zin,137,Upper Palaeolithic,Nahal Zin,-1
+12,Middle Roman_Nahal Hever,136,Middle Roman,Nahal Hever,-1
+13,Roman_Horevot Mazada,122,Roman,Horevot Mazada,-1
+14,Pre-Ghassulian Chalcolithic_Ha-Gosherim,113,Pre-Ghassulian Chalcolithic,Ha-Gosherim,-1
+15,Natufian_`Enot `Enan,106,Natufian,`Enot `Enan,-1
+16,Early Roman (period)_Horevot Mazada,104,Early Roman (period),Horevot Mazada,-1
+17,Lower Palaeolithic_Me`arat Tannur,98,Lower Palaeolithic,Me`arat Tannur,-1
+18,Hellenistic_Jerusalem- City of David,98,Hellenistic,Jerusalem- City of David,-1
+19,Persian-Hellenistic_Maresha- T.,95,Persian-Hellenistic,Maresha- T.,-1
+20,Middle Bronze II_`Ujul- T. el-,93,Middle Bronze II,`Ujul- T. el-,-1
+21,Pottery Neolithic_Ha-Gosherim- Nili (north),89,Pottery Neolithic,Ha-Gosherim- Nili (north),-1
+22,Early Bronze III_Jericho- T.,88,Early Bronze III,Jericho- T.,-1
+23,Iron IA_Megiddo- T.,86,Iron IA,Megiddo- T.,-1
+24,Iron II_Yavne (north-west),86,Iron II,Yavne (north-west),-1
+25,Late Bronze II_Bet She'an- T.,85,Late Bronze II,Bet She'an- T.,-1
+26,Late Bronze II_Megiddo- T.,85,Late Bronze II,Megiddo- T.,-1
+27,Pre-Pottery Neolithic B_Besamon,84,Pre-Pottery Neolithic B,Besamon,-1
+28,Early Roman (period)_Jerusalem- Old City- Jewish Quarter- Area F- M,84,Early Roman (period),Jerusalem- Old City- Jewish Quarter- Area F- M,-1
+29,Lower Palaeolithic_Gesher Benot Ya`aqov,82,Lower Palaeolithic,Gesher Benot Ya`aqov,-1
+30,Late Bronze II_`Ujul- T. el-,82,Late Bronze II,`Ujul- T. el-,-1
+31,Iron IIC_Ashqelon- T. Ashqelon,81,Iron IIC,Ashqelon- T. Ashqelon,-1
+32,Iron I_Megiddo- T.,75,Iron I,Megiddo- T.,-1
+33,Pre-Pottery Neolithic B_Minha- H.,75,Pre-Pottery Neolithic B,Minha- H.,-1
+34,Late Bronze II_Haifa- T. Abu Hawwam,75,Late Bronze II,Haifa- T. Abu Hawwam,-1
+35,Middle Bronze II_Jericho- T.,74,Middle Bronze II,Jericho- T.,-1
+36,Middle Palaeolithic_Me`arat Tannur,72,Middle Palaeolithic,Me`arat Tannur,-1
+37,Late Hellenistic - Early Roman_Jerusalem- Old City- Jewish Quarter- Area F- M,71,Late Hellenistic - Early Roman,Jerusalem- Old City- Jewish Quarter- Area F- M,-1
+38,Persian_Magharat Abu Shinja,70,Persian,Magharat Abu Shinja,-1
+39,Iron II_Akhziv,66,Iron II,Akhziv,-1
+40,Iron II_Ashqelon- T. Ashqelon,66,Iron II,Ashqelon- T. Ashqelon,-1
+41,Early Islamic_Ramla,64,Early Islamic,Ramla,-1
+42,Fatimid_Tiberias and Hammat,63,Fatimid,Tiberias and Hammat,-1
+43,Late Bronze II_`Akko- Persian Garden,62,Late Bronze II,`Akko- Persian Garden,-1
+44,Late Bronze_Gezer- T.,61,Late Bronze,Gezer- T.,-1
+45,Byzantine_`En Gedi,61,Byzantine,`En Gedi,-1
+46,Roman_Jerusalem- `En Rogel,60,Roman,Jerusalem- `En Rogel,-1
+47,Lower Palaeolithic_Ma’yan Baruch,60,Lower Palaeolithic,Ma’yan Baruch,-1
+48,Early Roman (period)_Jerusalem- Old City- Western and Southern Walls,58,Early Roman (period),Jerusalem- Old City- Western and Southern Walls,-1
+49,Middle Bronze II_Bet She'an- T.,58,Middle Bronze II,Bet She'an- T.,-1
+50,Early Bronze IB_`En Besor,58,Early Bronze IB,`En Besor,-1
+51,Roman_Wadi Murabba,58,Roman,Wadi Murabba,-1
+52,Iron II_Samaria,57,Iron II,Samaria,-1
+53,Late Roman_Hurfeish,57,Late Roman,Hurfeish,-1
+54,Early Bronze II_`Arad- T.,54,Early Bronze II,`Arad- T.,-1
+55,Iron II_Megiddo- T.,53,Iron II,Megiddo- T.,-1
+56,Iron II_Mezad Hazeva,53,Iron II,Mezad Hazeva,-1
+57,Persian_Jerusalem- City of David,52,Persian,Jerusalem- City of David,-1
+58,Umayyad_Mafjar- Kh. el-,51,Umayyad,Mafjar- Kh. el-,-1
+59,Middle Bronze II_Nahariyya- Canaanite Temple,51,Middle Bronze II,Nahariyya- Canaanite Temple,-1
+60,Iron II_Bet Mirsham- T.,51,Iron II,Bet Mirsham- T.,-1
+61,Iron II_Bet-Shemesh- T.,51,Iron II,Bet-Shemesh- T.,-1
+62,Pre-Pottery Neolithic B_Yiftah'el- H.,50,Pre-Pottery Neolithic B,Yiftah'el- H.,-1
+63,Middle Bronze II_Bet Mirsham- T.,49,Middle Bronze II,Bet Mirsham- T.,-1
+64,Iron II_Bet She'an- T.,49,Iron II,Bet She'an- T.,-1
+65,Early Bronze IB_Kfar Monash,49,Early Bronze IB,Kfar Monash,-1
+66,Late Bronze II_Lakhish- T.,49,Late Bronze II,Lakhish- T.,-1
+67,Neolithic_Besamon,48,Neolithic,Besamon,-1
+68,Natufian_Magharat Shuqba,45,Natufian,Magharat Shuqba,-1
+69,Iron II_Ramat Rahel,45,Iron II,Ramat Rahel,-1
+70,Iron I_Bet She'an- T.,44,Iron I,Bet She'an- T.,-1
+71,Early Roman (period)_Jerusalem- Old City,44,Early Roman (period),Jerusalem- Old City,-1
+72,Early Roman (period)_Jerusalem- City of David,44,Early Roman (period),Jerusalem- City of David,-1
+73,Early Roman (period)_Jerusalem- Har ha-Zofim (east),43,Early Roman (period),Jerusalem- Har ha-Zofim (east),-1
+74,Middle Palaeolithic_Zif- Kh.,43,Middle Palaeolithic,Zif- Kh.,-1
+75,Late Roman_Jerusalem- Rehov Salah ed-Din- Ministry of Justice,42,Late Roman,Jerusalem- Rehov Salah ed-Din- Ministry of Justice,-1
+76,Iron II_`Arad- T.,41,Iron II,`Arad- T.,-1
+77,Early Roman (period)_Jerusalem- `En Rogel,41,Early Roman (period),Jerusalem- `En Rogel,-1
+78,Early Roman (period)_Qumran Caves,40,Early Roman (period),Qumran Caves,-1
+79,Natufian_Me`arat Oren,39,Natufian,Me`arat Oren,-1
+80,Iron II_Nemal Akhziv,38,Iron II,Nemal Akhziv,-1
+81,Early Bronze I_Megiddo- T.,38,Early Bronze I,Megiddo- T.,-1
+82,Pottery Neolithic_Sha`ar ha-Golan,37,Pottery Neolithic,Sha`ar ha-Golan,-1
+83,Persian_`Atlit,37,Persian,`Atlit,-1
+84,Harifian_Har Harif,36,Harifian,Har Harif,-1
+85,Fatimid_Caesarea,36,Fatimid,Caesarea,-1
+86,Pottery Neolithic_Besamon,36,Pottery Neolithic,Besamon,-1
+87,Late Roman_Nahariyya- Giv`at Katzenelson,36,Late Roman,Nahariyya- Giv`at Katzenelson,-1
+88,Middle Bronze II_Megiddo- T.,35,Middle Bronze II,Megiddo- T.,-1
+89,Iron IIC-Babylonian_Jerusalem- Ketef Hinnom,35,Iron IIC-Babylonian,Jerusalem- Ketef Hinnom,-1
+90,Pottery Neolithic_Hamadya,34,Pottery Neolithic,Hamadya,-1
+91,Early Roman (period)_Jerusalem- Giv`at ha-Mivtar,34,Early Roman (period),Jerusalem- Giv`at ha-Mivtar,-1
+92,Lower Palaeolithic_Magharat Umm Qatafa,34,Lower Palaeolithic,Magharat Umm Qatafa,-1
+93,Crusader_`Atlit,33,Crusader,`Atlit,-1
+94,Late Bronze_`Ujul- T. el-,33,Late Bronze,`Ujul- T. el-,-1
+95,Late Roman_Makr- el-,33,Late Roman,Makr- el-,-1
+96,Pottery Neolithic_Minha- H.,33,Pottery Neolithic,Minha- H.,-1
+97,Byzantine_Nizzana,32,Byzantine,Nizzana,-1
+98,Natufian_Me`arot Yonim,32,Natufian,Me`arot Yonim,-1
+99,Iron IIC-Babylonian-Persian_Ashqelon- T. Ashqelon,32,Iron IIC-Babylonian-Persian,Ashqelon- T. Ashqelon,-1
+100,Late Bronze II_Dan- T.,32,Late Bronze II,Dan- T.,-1
+101,Early Islamic_נחל עומר,32,Early Islamic,נחל עומר,-1
+102,Late Bronze II_Bet-Shemesh- T.,31,Late Bronze II,Bet-Shemesh- T.,-1
+103,Late Roman - Byzantine_Holot Qesari (south),31,Late Roman - Byzantine,Holot Qesari (south),-1
+104,Early Islamic_Caesarea,31,Early Islamic,Caesarea,-1
+105,Early Bronze I_Mizpah,30,Early Bronze I,Mizpah,-1
+106,Pre-Pottery Neolithic_Besamon,30,Pre-Pottery Neolithic,Besamon,-1
+107,Upper Palaeolithic_Me`arat Kebara,29,Upper Palaeolithic,Me`arat Kebara,-1
+108,Iron II_Mizpah,29,Iron II,Mizpah,-1
+109,Middle Bronze I_Megiddo- T.,29,Middle Bronze I,Megiddo- T.,-1
+110,Pre-Ghassulian Chalcolithic_Zaf- T.,28,Pre-Ghassulian Chalcolithic,Zaf- T.,-1
+111,Early Roman (period)_`En Gedi,28,Early Roman (period),`En Gedi,-1
+112,Roman_Jerusalem- Binyane ha-Umma,28,Roman,Jerusalem- Binyane ha-Umma,-1
+113,Late Roman_Lidd- Kh.,28,Late Roman,Lidd- Kh.,-1
+114,Lower Palaeolithic_`Ovadya- T.- Prehistoric site,28,Lower Palaeolithic,`Ovadya- T.- Prehistoric site,-1
+115,Byzantine_Caesarea,28,Byzantine,Caesarea,-1
+116,Early Roman (period)_Jerusalem- Mount Scopus (west),28,Early Roman (period),Jerusalem- Mount Scopus (west),-1
+117,Late Roman_Palmahim,27,Late Roman,Palmahim,-1
+118,Iron IIB_Nemal Akhziv,27,Iron IIB,Nemal Akhziv,-1
+119,Iron II_Jerusalem- Old City- Jewish Quarter- Area F- M,27,Iron II,Jerusalem- Old City- Jewish Quarter- Area F- M,-1
+120,Early Roman (period)_BURNT HOUSE,27,Early Roman (period),BURNT HOUSE,-1
+121,Iron I_Bet-Shemesh- T.,27,Iron I,Bet-Shemesh- T.,-1
+122,Iron II_Jerusalem- Old City- Western and Southern Walls,26,Iron II,Jerusalem- Old City- Western and Southern Walls,-1
+123,Roman_Nahal Hever,26,Roman,Nahal Hever,-1
+124,Pre-Pottery Neolithic B_Jericho- T.,26,Pre-Pottery Neolithic B,Jericho- T.,-1
+125,Iron II_Bir er-Ruqeish,26,Iron II,Bir er-Ruqeish,-1
+126,Iron IIC_Akhziv,26,Iron IIC,Akhziv,-1
+127,Roman_'En Tamar,26,Roman,'En Tamar,-1
+128,Late Hellenistic_Jerusalem- Old City,26,Late Hellenistic,Jerusalem- Old City,-1
+129,Early Bronze I_`Ai,26,Early Bronze I,`Ai,-1
+130,Hellenistic_Ha-Gosherim,25,Hellenistic,Ha-Gosherim,-1
+131,Late Chalcolithic_Be'er Sheva`- H. Zafad,25,Late Chalcolithic,Be'er Sheva`- H. Zafad,-1
+132,Middle Palaeolithic_Me`arat ha-Gulgolet,25,Middle Palaeolithic,Me`arat ha-Gulgolet,-1
+133,Upper Palaeolithic_Me`arat Amira,24,Upper Palaeolithic,Me`arat Amira,-1
+134,Iron IIA_Yavne (north-west),24,Iron IIA,Yavne (north-west),-1
+135,Roman_Moa,24,Roman,Moa,-1
+136,Late Roman_Jerusalem- `En Rogel,24,Late Roman,Jerusalem- `En Rogel,-1
+137,Early Byzantine_Kavul,23,Early Byzantine,Kavul,-1
+138,Iron II_Sharuhen- T.,23,Iron II,Sharuhen- T.,-1
+139,Late Bronze II_Hazor- T.,23,Late Bronze II,Hazor- T.,-1
+140,Roman_Mezad Rahel,23,Roman,Mezad Rahel,-1
+141,Crusader_`Akko,22,Crusader,`Akko,-1
+142,Lower Palaeolithic_Me`arat ha-Gulgolet,22,Lower Palaeolithic,Me`arat ha-Gulgolet,-1
+143,Iron IIA_Qeiyafa- Kh.,22,Iron IIA,Qeiyafa- Kh.,-1
+144,Late Bronze_Bet She'an- T.,22,Late Bronze,Bet She'an- T.,-1
+145,Upper Palaeolithic_Me`arot Yonim,21,Upper Palaeolithic,Me`arot Yonim,-1
+146,Middle Bronze II_Afeq,21,Middle Bronze II,Afeq,-1
+147,Crusader_Caesarea,21,Crusader,Caesarea,-1
+148,Iron I_Sharuhen- T.,21,Iron I,Sharuhen- T.,-1
+149,Late Roman_Hedera,21,Late Roman,Hedera,-1
+150,Late Chalcolithic_Shiqmim (Unofficial name),21,Late Chalcolithic,Shiqmim (Unofficial name),-1
+151,Middle Bronze II_`Atlit,21,Middle Bronze II,`Atlit,-1
+152,Late Bronze I_Bet She'an- T.,20,Late Bronze I,Bet She'an- T.,-1
+153,Mamluk_Bet She'an,20,Mamluk,Bet She'an,-1
+154,Iron II_Hazor- T.,20,Iron II,Hazor- T.,-1
+155,Middle Roman - Late Roman_Jerusalem- Old City- Western and Southern Walls,20,Middle Roman - Late Roman,Jerusalem- Old City- Western and Southern Walls,-1
+156,Hellenistic_Anafa- T.,20,Hellenistic,Anafa- T.,-1
+157,Early Roman (period)_Caesarea,20,Early Roman (period),Caesarea,-1
+158,Byzantine_Gush Halav,20,Byzantine,Gush Halav,-1
+159,Early Roman (period)_Jerusalem- Pisgat Ze'ev,20,Early Roman (period),Jerusalem- Pisgat Ze'ev,-1
+160,Hellenistic_Bet She'an- T.,20,Hellenistic,Bet She'an- T.,-1
+161,Ottoman_Panias- H.,20,Ottoman,Panias- H.,-1
+162,Iron II_Sheva`- T.,19,Iron II,Sheva`- T.,-1
+163,Late Bronze II_Gezer- T.,19,Late Bronze II,Gezer- T.,-1
+164,Pottery Neolithic A_Jericho- T.,19,Pottery Neolithic A,Jericho- T.,-1
+165,Middle Bronze II_Neve Ur,19,Middle Bronze II,Neve Ur,-1
+166,Late Bronze I_`Ujul- T. el-,19,Late Bronze I,`Ujul- T. el-,-1
+167,Iron IIA_Rehov- T.,19,Iron IIA,Rehov- T.,-1
+168,Roman_`En Gedi,19,Roman,`En Gedi,-1
+169,Roman_Bet She'an- T.,18,Roman,Bet She'an- T.,-1
+170,Hellenistic_Samaria,18,Hellenistic,Samaria,-1
+171,Middle Palaeolithic_Har Qedumim,18,Middle Palaeolithic,Har Qedumim,-1
+172,Middle Palaeolithic_Magharat Shuqba,18,Middle Palaeolithic,Magharat Shuqba,-1
+173,Late Roman_Asherat,18,Late Roman,Asherat,-1
+174,Early Bronze II-III_`Ai,18,Early Bronze II-III,`Ai,-1
+175,Persian_Zafit- T.,18,Persian,Zafit- T.,-1
+176,Byzantine_Bet She'an,18,Byzantine,Bet She'an,-1
+177,Middle Bronze IIB_Bet Mirsham- T.,18,Middle Bronze IIB,Bet Mirsham- T.,-1
+178,Late Chalcolithic_Be'er Sheva`- H. Matar,18,Late Chalcolithic,Be'er Sheva`- H. Matar,-1
+179,Middle Bronze IIB_Barqai,18,Middle Bronze IIB,Barqai,-1
+180,Middle Bronze IIB_Bet She'an- T.,17,Middle Bronze IIB,Bet She'an- T.,-1
+181,Roman_Ma`yan Barukh,17,Roman,Ma`yan Barukh,-1
+182,Byzantine_Zuq el-Fauqani ez-,17,Byzantine,Zuq el-Fauqani ez-,-1
+183,Late Bronze_Megiddo- T.,17,Late Bronze,Megiddo- T.,-1
+184,Late Chalcolithic_Nahal Mishmar,17,Late Chalcolithic,Nahal Mishmar,-1
+185,Byzantine_Mesad Boqeq,17,Byzantine,Mesad Boqeq,-1
+186,Late Bronze II_Afeq,17,Late Bronze II,Afeq,-1
+187,Roman_`Alya- Kh.,16,Roman,`Alya- Kh.,-1
+188,Middle Bronze II_Bet-Shemesh- T.,16,Middle Bronze II,Bet-Shemesh- T.,-1
+189,Lower Palaeolithic_Avel Bet Ma`akha- T.,16,Lower Palaeolithic,Avel Bet Ma`akha- T.,-1
+190,Roman_Christmas Cave- Nahal Qidron,16,Roman,Christmas Cave- Nahal Qidron,-1
+191,Middle Bronze II-Late Bronze_Megiddo- T.,16,Middle Bronze II-Late Bronze,Megiddo- T.,-1
+192,Persian_Lakhish- T.,16,Persian,Lakhish- T.,-1
+193,Middle Bronze II_Jisr- el-,16,Middle Bronze II,Jisr- el-,-1
+194,Early Roman (period)_Mezad Rahel,16,Early Roman (period),Mezad Rahel,-1
+195,Persian_Nahal tut,16,Persian,Nahal tut,-1
+196,Middle Bronze IIA_Neve Ur,15,Middle Bronze IIA,Neve Ur,-1
+197,Pottery Neolithic_Ard es-Samrra,15,Pottery Neolithic,Ard es-Samrra,-1
+198,Middle Roman_`En Gedi,15,Middle Roman,`En Gedi,-1
+199,Crusader_Arshaf- T.,15,Crusader,Arshaf- T.,-1
+200,Late Byzantine_Nizzana,15,Late Byzantine,Nizzana,-1
+201,Iron I_Haifa- T. Abu Hawwam,14,Iron I,Haifa- T. Abu Hawwam,-1
+202,Middle Bronze IIB_`Ujul- T. el-,14,Middle Bronze IIB,`Ujul- T. el-,-1
+203,Early Roman (period)_`Akko (north),14,Early Roman (period),`Akko (north),-1
+204,Byzantine_Ono,14,Byzantine,Ono,-1
+205,Late Roman - Byzantine_Palmahim,14,Late Roman - Byzantine,Palmahim,-1
+206,Middle Bronze II_Zelef- H.,14,Middle Bronze II,Zelef- H.,-1
+207,Late Roman_Moa,14,Late Roman,Moa,-1
+208,Early Roman (period)_Jerusalem- Har ha-Zofim,14,Early Roman (period),Jerusalem- Har ha-Zofim,-1
+209,Early Islamic_Nahal 'Omer,14,Early Islamic,Nahal 'Omer,-1
+210,Pre-Pottery Neolithic C_Ashqelon- Afridar and Barnea`,13,Pre-Pottery Neolithic C,Ashqelon- Afridar and Barnea`,-1
+211,Persian_Haifa- T. Abu Hawwam,13,Persian,Haifa- T. Abu Hawwam,-1
+212,Natufian_Nahal Zin,13,Natufian,Nahal Zin,-1
+213,Middle Roman - Late Roman_Ashqelon- T. Ashqelon,13,Middle Roman - Late Roman,Ashqelon- T. Ashqelon,-1
+214,Early Roman (period)_Ha-Gosherim,13,Early Roman (period),Ha-Gosherim,-1
+215,Mamluk_Ramla,13,Mamluk,Ramla,-1
+216,Ottoman_Rosh ha-`Ayin,13,Ottoman,Rosh ha-`Ayin,-1
+217,Roman_Samaria,13,Roman,Samaria,-1
+218,Early Roman (period)_Bet She'an- T.,13,Early Roman (period),Bet She'an- T.,-1
+219,Late Chalcolithic_Nahal Ze`elim,13,Late Chalcolithic,Nahal Ze`elim,-1
+220,Late Roman_Nahal Hadera (north),13,Late Roman,Nahal Hadera (north),-1
+221,Late Roman - Byzantine_Lidd- Kh.,12,Late Roman - Byzantine,Lidd- Kh.,-1
+222,Byzantine_Karkor `Illit- H.,12,Byzantine,Karkor `Illit- H.,-1
+223,Persian_Sharuhen- T.,12,Persian,Sharuhen- T.,-1
+224,Late Chalcolithic_Sha`ar Efrayim (south) [north],12,Late Chalcolithic,Sha`ar Efrayim (south) [north],-1
+225,Byzantine_Qastra- H.,12,Byzantine,Qastra- H.,-1
+226,Byzantine_Ni`ana- Kh.,12,Byzantine,Ni`ana- Kh.,-1
+227,Early Roman (period)_Ashqelon- T. Ashqelon,12,Early Roman (period),Ashqelon- T. Ashqelon,-1
+228,Roman_Afeq,12,Roman,Afeq,-1
+229,Late Neolithic_Sha`ar ha-Golan,12,Late Neolithic,Sha`ar ha-Golan,-1
+230,Roman_Ashkelon,12,Roman,Ashkelon,-1
+231,Late Hellenistic_Maresha- T.,12,Late Hellenistic,Maresha- T.,-1
+232,Persian_Har Mizpe Yammim,12,Persian,Har Mizpe Yammim,-1
+233,Iron I_Yoqne`am- T.,12,Iron I,Yoqne`am- T.,-1
+234,Late Chalcolithic_Nahal Be'er Sheva`,12,Late Chalcolithic,Nahal Be'er Sheva`,-1
+235,Pre-Pottery Neolithic A_Neve Ur,12,Pre-Pottery Neolithic A,Neve Ur,-1
+236,Middle Bronze IIA_Burga- T.,11,Middle Bronze IIA,Burga- T.,-1
+237,Early Bronze II_Bet Yerah- T.,11,Early Bronze II,Bet Yerah- T.,-1
+238,Pottery Neolithic A_Minha- H.,11,Pottery Neolithic A,Minha- H.,-1
+239,Pre-Pottery Neolithic A_Hatula,11,Pre-Pottery Neolithic A,Hatula,-1
+240,Pottery Neolithic A_Besamon,11,Pottery Neolithic A,Besamon,-1
+241,Late Chalcolithic_Rasm Kharbush,11,Late Chalcolithic,Rasm Kharbush,-1
+242,Middle Bronze I_Qedesh- T.,11,Middle Bronze I,Qedesh- T.,-1
+243,Persian_Gamma- T.,11,Persian,Gamma- T.,-1
+244,Roman_Mishmarot,11,Roman,Mishmarot,-1
+245,Iron I_Gezer- T.,11,Iron I,Gezer- T.,-1
+246,Roman_Nahal Mishmar,11,Roman,Nahal Mishmar,-1
+247,Byzantine_`Ard el-Mihjar,11,Byzantine,`Ard el-Mihjar,-1
+248,Persian_Zippor- T.,11,Persian,Zippor- T.,-1
+249,Pottery Neolithic B / Pre-Ghassulian Chalcolithic_Kabri,11,Pottery Neolithic B / Pre-Ghassulian Chalcolithic,Kabri,-1
+250,Middle Palaeolithic_Me`arat Kebara,11,Middle Palaeolithic,Me`arat Kebara,-1
+251,Early Roman (period)_Qastra- H.,11,Early Roman (period),Qastra- H.,-1
+252,Late Hellenistic_`En Gedi,11,Late Hellenistic,`En Gedi,-1
+253,Arab-Byzantine_Zuq el-Fauqani ez-,11,Arab-Byzantine,Zuq el-Fauqani ez-,-1
+254,Late Roman_Jerusalem- Rockefeller Museum,11,Late Roman,Jerusalem- Rockefeller Museum,-1
+255,Late Roman_Jerusalem- Ymca--Keren ha-Yesod Street,11,Late Roman,Jerusalem- Ymca--Keren ha-Yesod Street,-1
+256,Early Roman (period)_Jerusalem- Giva`t Shapira,10,Early Roman (period),Jerusalem- Giva`t Shapira,-1
+257,Persian (?)_  Ashkelon  region  סביבות  אשקלון,10,Persian (?),  Ashkelon  region  סביבות  אשקלון,-1
+258,Fatimid_Jerusalem- Old City- Western and Southern Walls,10,Fatimid,Jerusalem- Old City- Western and Southern Walls,-1
+259,Iron II_Jerusalem- ha-`Ophel,10,Iron II,Jerusalem- ha-`Ophel,-1
+260,Byzantine_Bet She`arim- H.,10,Byzantine,Bet She`arim- H.,-1
+261,Byzantine_Ashqelon- T. Ashqelon,10,Byzantine,Ashqelon- T. Ashqelon,-1
+262,Kebaran_Me`arat Kebara,10,Kebaran,Me`arat Kebara,-1
+263,Pottery Neolithic B / Pre-Ghassulian Chalcolithic_Zariq- T. and `En Zariq,10,Pottery Neolithic B / Pre-Ghassulian Chalcolithic,Zariq- T. and `En Zariq,-1
+264,Early Bronze III_Bet Yerah- T.,10,Early Bronze III,Bet Yerah- T.,-1
+265,Late Chalcolithic_Bira- Kh. el-,10,Late Chalcolithic,Bira- Kh. el-,-1
+266,Middle Roman - Late Roman_Jerusalem- Rehov Salah ed-Din- Ministry of Justice,10,Middle Roman - Late Roman,Jerusalem- Rehov Salah ed-Din- Ministry of Justice,-1
+267,Early Bronze I_Gezer- T.,10,Early Bronze I,Gezer- T.,-1
+268,Hellenistic_Rasm- Kh. er-,10,Hellenistic,Rasm- Kh. er-,-1
+269,Upper Palaeolithic_Me`arat Sefunim,10,Upper Palaeolithic,Me`arat Sefunim,-1
+270,Early Islamic_Jerusalem- Old City- Jewish Quarter- Cardo,9,Early Islamic,Jerusalem- Old City- Jewish Quarter- Cardo,-1
+271,Late Roman - Byzantine_Qastra- H.,9,Late Roman - Byzantine,Qastra- H.,-1
+272,Late Bronze IIB-Iron I_Sera`- T.,9,Late Bronze IIB-Iron I,Sera`- T.,-1
+273,Iron II_Rosh Zayit- H.,9,Iron II,Rosh Zayit- H.,-1
+274,Roman_`Ar`ara,9,Roman,`Ar`ara,-1
+275,Iron I_Afeq,9,Iron I,Afeq,-1
+276,Middle Bronze IIB-C_`Ujul- T. el-,9,Middle Bronze IIB-C,`Ujul- T. el-,-1
+277,Late Roman - Early Byzantine_Ni`ana- Kh.,9,Late Roman - Early Byzantine,Ni`ana- Kh.,-1
+278,Late Byzantine_Jerusalem- Nahalat Ahim,9,Late Byzantine,Jerusalem- Nahalat Ahim,-1
+279,Late Bronze IIB-Iron I_Sharuhen- T.,9,Late Bronze IIB-Iron I,Sharuhen- T.,-1
+280,Late Bronze II_Bet Mirsham- T.,9,Late Bronze II,Bet Mirsham- T.,-1
+281,Middle Bronze IIB_Azor,9,Middle Bronze IIB,Azor,-1
+282,Early Bronze III_Bet She'an- T.,9,Early Bronze III,Bet She'an- T.,-1
+283,Middle Bronze II_Hazor- T.,9,Middle Bronze II,Hazor- T.,-1
+284,Roman_Shubeika- Kh. esh-,9,Roman,Shubeika- Kh. esh-,-1
+285,Neolithic_Minha- H.,9,Neolithic,Minha- H.,-1
+286,Byzantine_Jerusalem- Nahalat Ahim,9,Byzantine,Jerusalem- Nahalat Ahim,-1
+287,Early Bronze III_`Ai,9,Early Bronze III,`Ai,-1
+288,Byzantine_Hoga- H.,9,Byzantine,Hoga- H.,-1
+289,Geometric Kebaran_Hefzi-Bah,9,Geometric Kebaran,Hefzi-Bah,-1
+290,Late Roman_Moza `Illit,9,Late Roman,Moza `Illit,-1
+291,Late Bronze II_Ashdod Yam- H.,9,Late Bronze II,Ashdod Yam- H.,-1
+292,Autonomous;(399BCE - 337BCE)_Haifa- T. Abu Hawwam,9,Autonomous;(399BCE - 337BCE),Haifa- T. Abu Hawwam,-1
+293,Middle Roman - Late Roman_Zippori,9,Middle Roman - Late Roman,Zippori,-1
+294,Late Roman_Caesarea,9,Late Roman,Caesarea,-1
+295,Late Roman_Ashqelon- T. Ashqelon,9,Late Roman,Ashqelon- T. Ashqelon,-1
+296,Iron IIC-Babylonian-Persian_Samaria,8,Iron IIC-Babylonian-Persian,Samaria,-1
+297,Hellenistic_Jerusalem- Old City- Jewish Quarter- Area F- M,8,Hellenistic,Jerusalem- Old City- Jewish Quarter- Area F- M,-1
+298,Roman_Qastra- H.,8,Roman,Qastra- H.,-1
+299,Late Chalcolithic_Turmus- T.,8,Late Chalcolithic,Turmus- T.,-1
+300,Lower Palaeolithic_איזור כיסופים,8,Lower Palaeolithic,איזור כיסופים,-1
+301,Pottery Neolithic B_Besamon,8,Pottery Neolithic B,Besamon,-1
+302,Early Roman (period)_Jerusalem- Mizrah Talpiyyot,8,Early Roman (period),Jerusalem- Mizrah Talpiyyot,-1
+303,Pre-Pottery Neolithic C_Haruzim (east),8,Pre-Pottery Neolithic C,Haruzim (east),-1
+304,Late Chalcolithic_Wadi Murabba`at- Cave 1,8,Late Chalcolithic,Wadi Murabba`at- Cave 1,-1
+305,Iron II_Qitmit- H.,8,Iron II,Qitmit- H.,-1
+306,Byzantine_Waziya- Kh. el-,8,Byzantine,Waziya- Kh. el-,-1
+307,Late Chalcolithic_Christmas Cave- Nahal Qidron,8,Late Chalcolithic,Christmas Cave- Nahal Qidron,-1
+308,Late Roman_Jarrar- Kh.,8,Late Roman,Jarrar- Kh.,-1
+309,Umayyad_Caesarea,8,Umayyad,Caesarea,-1
+310,Late Bronze IIB_Bet She'an- T.,8,Late Bronze IIB,Bet She'an- T.,-1
+311,Late Roman_Bet She'an- T.,8,Late Roman,Bet She'an- T.,-1
+312,Roman_Jerusalem- Old City- Western and Southern Walls,8,Roman,Jerusalem- Old City- Western and Southern Walls,-1
+313,Iron II_Dan- T.,8,Iron II,Dan- T.,-1
+314,Roman_Caesarea,8,Roman,Caesarea,-1
+315,Middle Roman_Cave of Horror,8,Middle Roman,Cave of Horror,-1
+316,Late Roman - Byzantine_Caesarea,8,Late Roman - Byzantine,Caesarea,-1
+317,Lower Palaeolithic_Ramot Menashe 1,8,Lower Palaeolithic,Ramot Menashe 1,-1
+318,Middle Bronze I_Lakhish- T.,8,Middle Bronze I,Lakhish- T.,-1
+319,Mamluk_Ni`ana- Kh.,8,Mamluk,Ni`ana- Kh.,-1
+320,Iron II_Gamma- T.,8,Iron II,Gamma- T.,-1
+321,Middle Bronze I_Ma`yan Barukh,8,Middle Bronze I,Ma`yan Barukh,-1
+322,Middle Bronze I_(+)Yehud- T. (1269/0),8,Middle Bronze I,(+)Yehud- T. (1269/0),-1
+323,Late Roman_Hanita,8,Late Roman,Hanita,-1
+324,Persian-Hellenistic_Ashkelon  1933,8,Persian-Hellenistic,Ashkelon  1933,-1
+325,Middle Bronze I_Bet She'an- T.,8,Middle Bronze I,Bet She'an- T.,-1
+326,Byzantine_Jersusalem- `Arab es-Sawahira,8,Byzantine,Jersusalem- `Arab es-Sawahira,-1
+327,Iron II_Batash- T.,8,Iron II,Batash- T.,-1
+328,Late Neolithic_Minha- H.,8,Late Neolithic,Minha- H.,-1
+329,Persian_Dor- T.,8,Persian,Dor- T.,-1
+330,Roman_Qumran Caves,7,Roman,Qumran Caves,-1
+331,Byzantine_Mishmar ha-`Emeq,7,Byzantine,Mishmar ha-`Emeq,-1
+332,Roman_Tiv`on,7,Roman,Tiv`on,-1
+333,Early Bronze I_Holon- Industrial Zone,7,Early Bronze I,Holon- Industrial Zone,-1
+334,Neolithic_Mugharet    el    Ghul,7,Neolithic,Mugharet    el    Ghul,-1
+335,Late Roman_Serah `Illit- H.,7,Late Roman,Serah `Illit- H.,-1
+336,Early Bronze_Besamon,7,Early Bronze,Besamon,-1
+337,Late Chalcolithic_Azor,7,Late Chalcolithic,Azor,-1
+338,Middle Palaeolithic_Me`arat Amira,7,Middle Palaeolithic,Me`arat Amira,-1
+339,Middle Roman - Late Roman_Zur Natan,7,Middle Roman - Late Roman,Zur Natan,-1
+340,Chalcolithic_Ha-Gosherim- Nili (north),7,Chalcolithic,Ha-Gosherim- Nili (north),-1
+341,Late Hellenistic - Early Roman_Jerusalem- Old City,7,Late Hellenistic - Early Roman,Jerusalem- Old City,-1
+342,Early Roman (period)_`Eleq- H.,7,Early Roman (period),`Eleq- H.,-1
+343,Early Bronze_Jericho- T.,7,Early Bronze,Jericho- T.,-1
+344,Byzantine_Ashqelon- Migdal Ashqelon,7,Byzantine,Ashqelon- Migdal Ashqelon,-1
+345,Mamluk_Jerusalem- Old City- Jewish Quarter- Cardo,7,Mamluk,Jerusalem- Old City- Jewish Quarter- Cardo,-1
+346,Iron II_Haifa- Tel `Amal and Neve Yosef,7,Iron II,Haifa- Tel `Amal and Neve Yosef,-1
+347,Late Bronze IIB-Iron I_Megiddo- T.,7,Late Bronze IIB-Iron I,Megiddo- T.,-1
+348,Late Roman - Byzantine_Ni`ana- Kh.,7,Late Roman - Byzantine,Ni`ana- Kh.,-1
+349,Late Bronze I_Bet-Shemesh- T.,7,Late Bronze I,Bet-Shemesh- T.,-1
+350,Early Roman (period)_Wadi Murabba`at,7,Early Roman (period),Wadi Murabba`at,-1
+351,Late Roman_`Alya- Kh.,7,Late Roman,`Alya- Kh.,-1
+352,Neolithic_Ha-Gosherim- Nili (north),7,Neolithic,Ha-Gosherim- Nili (north),-1
+353,Ottoman_Tel Aviv- esh-Sheikh Muwannis,7,Ottoman,Tel Aviv- esh-Sheikh Muwannis,-1
+354,Iron IIA_Bet She'an- T.,7,Iron IIA,Bet She'an- T.,-1
+355,Hellenistic-Roman_Jerusalem- Old City- Jewish Quarter- Area F- M,7,Hellenistic-Roman,Jerusalem- Old City- Jewish Quarter- Area F- M,-1
+356,Late Chalcolithic_Qarqar- H.,7,Late Chalcolithic,Qarqar- H.,-1
+357,Middle Bronze II_Haifa- Shiqmona,6,Middle Bronze II,Haifa- Shiqmona,-1
+358,Crusader_Jerusalem- The Jewish Quarter- St. Mary of the Knights,6,Crusader,Jerusalem- The Jewish Quarter- St. Mary of the Knights,-1
+359,Late Bronze_Bet Mirsham- T.,6,Late Bronze,Bet Mirsham- T.,-1
+360,Early Byzantine_Ni`ana- Kh.,6,Early Byzantine,Ni`ana- Kh.,-1
+361,Byzantine_Zur Natan,6,Byzantine,Zur Natan,-1
+362,Early Bronze II_Kinneret,6,Early Bronze II,Kinneret,-1
+363,Late Bronze II_Sharuhen- T.,6,Late Bronze II,Sharuhen- T.,-1
+364,Early Bronze I_Bet She'an- T.,6,Early Bronze I,Bet She'an- T.,-1
+365,Iron IIC_Qitmit- H.,6,Iron IIC,Qitmit- H.,-1
+366,Roman_Ashqelon- T. Ashqelon,6,Roman,Ashqelon- T. Ashqelon,-1
+367,Iron II_`En Gedi - Goren- Tell,6,Iron II,`En Gedi - Goren- Tell,-1
+368,Byzantine_Jerusalem- `En Rogel,6,Byzantine,Jerusalem- `En Rogel,-1
+369,Byzantine_Lidd- Kh.,6,Byzantine,Lidd- Kh.,-1
+370,Middle Roman_Tiv`on,6,Middle Roman,Tiv`on,-1
+371,Lower Palaeolithic_Mahzevat `Evron,6,Lower Palaeolithic,Mahzevat `Evron,-1
+372,Upper Palaeolithic_`En `Aqev,6,Upper Palaeolithic,`En `Aqev,-1
+373,Great Revolt;(69CE / 70CE)_Jerusalem- Old City- Western and Southern Walls,6,Great Revolt;(69CE / 70CE),Jerusalem- Old City- Western and Southern Walls,-1
+374,Middle Bronze II_Yoqne`am- T.,6,Middle Bronze II,Yoqne`am- T.,-1
+375,Late Chalcolithic-Pre-Ghassulian Chalcolithic_Turmus- T.,6,Late Chalcolithic-Pre-Ghassulian Chalcolithic,Turmus- T.,-1
+376,Autonomous;(399BCE - 300BCE)_Nahariyya,6,Autonomous;(399BCE - 300BCE),Nahariyya,-1
+377,Lower Palaeolithic_Jerusalem- Baq`a,6,Lower Palaeolithic,Jerusalem- Baq`a,-1
+378,Iron II_Beth Zur,6,Iron II,Beth Zur,-1
+379,Middle Bronze II-Late Bronze_Afeq,6,Middle Bronze II-Late Bronze,Afeq,-1
+380,Antiochus IV;(175BCE - 164BCE)_(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),6,Antiochus IV;(175BCE - 164BCE),(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),-1
+381,Early Bronze_Ha-Gosherim- Nili (north),6,Early Bronze,Ha-Gosherim- Nili (north),-1
+382,Roman_Jerusalem- Mizrah Talpiyyot,6,Roman,Jerusalem- Mizrah Talpiyyot,-1
+383,Late Roman_Bet Guvrin,6,Late Roman,Bet Guvrin,-1
+384,Late Roman_Manawat- el-,6,Late Roman,Manawat- el-,-1
+385,Middle Bronze II_בית גמליאל,6,Middle Bronze II,בית גמליאל,-1
+386,Late Roman_Mezad Sha`ar Ramon,6,Late Roman,Mezad Sha`ar Ramon,-1
+387,Middle Bronze II_Shechem (Ancient Site),6,Middle Bronze II,Shechem (Ancient Site),-1
+388,Roman_Cave of Horror,6,Roman,Cave of Horror,-1
+389,Umayyad_Bet She'an,6,Umayyad,Bet She'an,-1
+390,Autonomous;(400BCE - 331BCE)_Gan Soreq (north),6,Autonomous;(400BCE - 331BCE),Gan Soreq (north),-1
+391,Late Byzantine-Ummayad_Caesarea,6,Late Byzantine-Ummayad,Caesarea,-1
+392,Persian_`Akko- T.,6,Persian,`Akko- T.,-1
+393,Crusader_Kokhav ha-Yarden,6,Crusader,Kokhav ha-Yarden,-1
+394,Early Bronze_Mizpah,6,Early Bronze,Mizpah,-1
+395,Iron II_Jerusalem- Old City,6,Iron II,Jerusalem- Old City,-1
+396,Late Roman - Byzantine_Hedera,6,Late Roman - Byzantine,Hedera,-1
+397,Pre-Pottery Neolithic B_Me`arat Oren,6,Pre-Pottery Neolithic B,Me`arat Oren,-1
+398,Late Chalcolithic_`Ein el-Hariri,6,Late Chalcolithic,`Ein el-Hariri,-1
+399,Lower Palaeolithic_רמות מנשה 1,6,Lower Palaeolithic,רמות מנשה 1,-1
+400,Late Roman_Giv`at Yasaf,6,Late Roman,Giv`at Yasaf,-1
+401,Lower Palaeolithic_Dalia 1,6,Lower Palaeolithic,Dalia 1,-1
+402,Byzantine_Jerusalem- Mamilla,6,Byzantine,Jerusalem- Mamilla,-1
+403,Late Bronze I_Megiddo- T.,6,Late Bronze I,Megiddo- T.,-1
+404,Hellenistic-Roman_Jerusalem- City of David,6,Hellenistic-Roman,Jerusalem- City of David,-1
+405,Late Roman - Early Byzantine_Shubeika- Kh. esh-,6,Late Roman - Early Byzantine,Shubeika- Kh. esh-,-1
+406,Late Bronze II_Jerusalem- Nahalat Ahim,6,Late Bronze II,Jerusalem- Nahalat Ahim,-1
+407,Middle Palaeolithic_Mazoq Nahal Mitla,6,Middle Palaeolithic,Mazoq Nahal Mitla,-1
+408,Late Roman - Byzantine_Beit Fajjar,5,Late Roman - Byzantine,Beit Fajjar,-1
+409,Late Roman_American  Colony  Tombs-1940,5,Late Roman,American  Colony  Tombs-1940,-1
+410,Roman_קבר  אל  בסה  El  Basseh,5,Roman,קבר  אל  בסה  El  Basseh,-1
+411,Hellenistic_`Utsa- H.,5,Hellenistic,`Utsa- H.,-1
+412,Early Roman (period)_Jerusalem- Giv`at Shapira,5,Early Roman (period),Jerusalem- Giv`at Shapira,-1
+413,Late Roman - Early Byzantine_Iqrit,5,Late Roman - Early Byzantine,Iqrit,-1
+414,Late Roman_Mamshit- H.,5,Late Roman,Mamshit- H.,-1
+415,Early Islamic_Mafjar- Kh. el-,5,Early Islamic,Mafjar- Kh. el-,-1
+416,Late Roman - Early Byzantine_Mishmar ha-`Emeq,5,Late Roman - Early Byzantine,Mishmar ha-`Emeq,-1
+417,Byzantine_Nahariyya- Giv`at Katzenelson,5,Byzantine,Nahariyya- Giv`at Katzenelson,-1
+418,Byzantine_`Aqav- H.,5,Byzantine,`Aqav- H.,-1
+419,Late Hellenistic_Jerusalem- Old City- Jewish Quarter- Area F- M,5,Late Hellenistic,Jerusalem- Old City- Jewish Quarter- Area F- M,-1
+420,Late Bronze II_Miqne- T.,5,Late Bronze II,Miqne- T.,-1
+421,Iron II_Yoqne`am- T.,5,Iron II,Yoqne`am- T.,-1
+422,Iron I (?)_Sharuhen- T.,5,Iron I (?),Sharuhen- T.,-1
+423,Lower Palaeolithic_Berekhat Ram,5,Lower Palaeolithic,Berekhat Ram,-1
+424,Early Roman (period)_Jerusalem- Wa`ar Abu es-Safa,5,Early Roman (period),Jerusalem- Wa`ar Abu es-Safa,-1
+425,Persian_Maresha- T.,5,Persian,Maresha- T.,-1
+426,Middle Roman_Ben Shemen,5,Middle Roman,Ben Shemen,-1
+427,Early Roman (period)_Jerusalem- Ketef Hinnom,5,Early Roman (period),Jerusalem- Ketef Hinnom,-1
+428,Persian_`Arad- T.,5,Persian,`Arad- T.,-1
+429,Late Roman_Qastra- H.,5,Late Roman,Qastra- H.,-1
+430,Persian (?)_Gamma- T.,5,Persian (?),Gamma- T.,-1
+431,Pre-Pottery Neolithic A_Jericho- T.,5,Pre-Pottery Neolithic A,Jericho- T.,-1
+432,Roman_Bet Natif- H.,5,Roman,Bet Natif- H.,-1
+433,Iron II_Haifa- T. Abu Hawwam,5,Iron II,Haifa- T. Abu Hawwam,-1
+434,Crusader_Jerusalem- Kh. el-Burj,5,Crusader,Jerusalem- Kh. el-Burj,-1
+435,Middle Bronze I_`Ujul- T. el-,5,Middle Bronze I,`Ujul- T. el-,-1
+436,Epi-Palaeolithic_`En ha-Shomer,5,Epi-Palaeolithic,`En ha-Shomer,-1
+437,Late Chalcolithic_Jericho- T.,5,Late Chalcolithic,Jericho- T.,-1
+438,Late Bronze_Lakhish- T.,5,Late Bronze,Lakhish- T.,-1
+439,Pre-Pottery Neolithic B_Abu Ghosh,5,Pre-Pottery Neolithic B,Abu Ghosh,-1
+440,Iron II_`Ira T.,5,Iron II,`Ira T.,-1
+441,Late Bronze I_Jericho- T.,5,Late Bronze I,Jericho- T.,-1
+442,Early Bronze I_Jerusalem- City of David,5,Early Bronze I,Jerusalem- City of David,-1
+443,Iron Age_Gamma- T.,5,Iron Age,Gamma- T.,-1
+444,Late Chalcolithic_Ha-Gosherim- Nili (north),5,Late Chalcolithic,Ha-Gosherim- Nili (north),-1
+445,Roman_Nahal Mishmar- Cave of the Treasure,5,Roman,Nahal Mishmar- Cave of the Treasure,-1
+446,Ayyubid_Panias- H.,5,Ayyubid,Panias- H.,-1
+447,Late Byzantine_Be'er Shema`- H.,5,Late Byzantine,Be'er Shema`- H.,-1
+448,Iron I_Rekhesh- T.,5,Iron I,Rekhesh- T.,-1
+449,Late Bronze_Timna`,5,Late Bronze,Timna`,-1
+450,Late Hellenistic - Early Roman_`En Gedi,5,Late Hellenistic - Early Roman,`En Gedi,-1
+451,Byzantine_Trig. point 819-A (west),5,Byzantine,Trig. point 819-A (west),-1
+452,Early Bronze_Gezer- T.,5,Early Bronze,Gezer- T.,-1
+453,Late Hellenistic - Roman_`En Gedi,5,Late Hellenistic - Roman,`En Gedi,-1
+454,Byzantine_Tiberias,5,Byzantine,Tiberias,-1
+455,Natufian_MAGHARAT UMM EZ-ZUWEITINA,5,Natufian,MAGHARAT UMM EZ-ZUWEITINA,-1
+456,Middle Bronze II_Barqai,5,Middle Bronze II,Barqai,-1
+457,Iron I_Ashdod- T.,5,Iron I,Ashdod- T.,-1
+458,Byzantine_`Utsa- H.,5,Byzantine,`Utsa- H.,-1
+459,Iron II_Gezer- T.,5,Iron II,Gezer- T.,-1
+460,Neolithic_Sha`ar ha-Golan,5,Neolithic,Sha`ar ha-Golan,-1
+461,Early Roman (period)_Jerusalem- Romema,5,Early Roman (period),Jerusalem- Romema,-1
+462,Middle Roman - Late Roman_Caesarea,5,Middle Roman - Late Roman,Caesarea,-1
+463,Roman_Zippori,5,Roman,Zippori,-1
+464,Crusader_Montfort,5,Crusader,Montfort,-1
+465,Roman_Lod,5,Roman,Lod,-1
+466,Byzantine_Makr- el-,5,Byzantine,Makr- el-,-1
+467,Roman_`Akko (north),5,Roman,`Akko (north),-1
+468,Late Hellenistic-Early Roman (period)_Jerusalem- Old City,5,Late Hellenistic-Early Roman (period),Jerusalem- Old City,-1
+469,Middle Bronze II_Gezer- T.,5,Middle Bronze II,Gezer- T.,-1
+470,Byzantine_Jerusalem- `Ein el-Haniya,4,Byzantine,Jerusalem- `Ein el-Haniya,-1
+471,Pottery Neolithic_Jericho- T.,4,Pottery Neolithic,Jericho- T.,-1
+472,Antiochus III;(198BCE - 187BCE)_(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),4,Antiochus III;(198BCE - 187BCE),(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),-1
+473,Autonomous;(500BCE - 400BCE)_Mikhal- T.,4,Autonomous;(500BCE - 400BCE),Mikhal- T.,-1
+474,Middle Roman - Late Roman_Jerusalem- City of David,4,Middle Roman - Late Roman,Jerusalem- City of David,-1
+475,Pottery Neolithic B_Minha- H.,4,Pottery Neolithic B,Minha- H.,-1
+476,Late Byzantine_`En Gedi,4,Late Byzantine,`En Gedi,-1
+477,Roman_Nahariyya- Giv`at Katzenelson,4,Roman,Nahariyya- Giv`at Katzenelson,-1
+478,Neolithic_Hishule Carmel- Underwater site,4,Neolithic,Hishule Carmel- Underwater site,-1
+479,Alexander Jannaeus;(80BCE / 79BCE)_Burnat- Kh.,4,Alexander Jannaeus;(80BCE / 79BCE),Burnat- Kh.,-1
+480,Iron II (?)_Bet Mirsham- T.,4,Iron II (?),Bet Mirsham- T.,-1
+481,Byzantine_Ashqelon- Industrial Area (north),4,Byzantine,Ashqelon- Industrial Area (north),-1
+482,Late Byzantine_`Eleq- H.,4,Late Byzantine,`Eleq- H.,-1
+483,Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE)_Dor- T.,4,Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE),Dor- T.,-1
+484,Late Bronze (?)_Gezer- T.,4,Late Bronze (?),Gezer- T.,-1
+485,Roman_מערת  חג  המולד  בנחל  קדרון,4,Roman,מערת  חג  המולד  בנחל  קדרון,-1
+486,Persian_`En Gedi - Goren- T.,4,Persian,`En Gedi - Goren- T.,-1
+487,Roman_Mevorakh- T.,4,Roman,Mevorakh- T.,-1
+488,Early Roman (period)_Maresha- T.,4,Early Roman (period),Maresha- T.,-1
+489,Pottery Neolithic B_Ha-Gosherim- Nili (north),4,Pottery Neolithic B,Ha-Gosherim- Nili (north),-1
+490,Middle Palaeolithic (?)_Me`arat ha-Gulgolet,4,Middle Palaeolithic (?),Me`arat ha-Gulgolet,-1
+491,Late Roman_Ramat Rahel,4,Late Roman,Ramat Rahel,-1
+492,Lower Palaeolithic (?)_Me`arat ha-Gulgolet,4,Lower Palaeolithic (?),Me`arat ha-Gulgolet,-1
+493,Ayyubid_Jerusalem- Old City- Jewish Quarter- Cardo,4,Ayyubid,Jerusalem- Old City- Jewish Quarter- Cardo,-1
+494,Late Bronze II_Zelef- H.,4,Late Bronze II,Zelef- H.,-1
+495,Ptolemy II;(285BCE - 246BCE)_Gan Soreq (north),4,Ptolemy II;(285BCE - 246BCE),Gan Soreq (north),-1
+496,Pre-Pottery Neolithic_Jericho- T.,4,Pre-Pottery Neolithic,Jericho- T.,-1
+497,Middle Palaeolithic_Tirat Karmel,4,Middle Palaeolithic,Tirat Karmel,-1
+498,Persian_Jerusalem- Ketef Hinnom,4,Persian,Jerusalem- Ketef Hinnom,-1
+499,Early Islamic_Tiberias and Hammat,4,Early Islamic,Tiberias and Hammat,-1
+500,Early Hellenistic_Za`quqa- Kh.,4,Early Hellenistic,Za`quqa- Kh.,-1
+501,Late Roman - Early Byzantine_Kafar Bara,4,Late Roman - Early Byzantine,Kafar Bara,-1
+502,Late Bronze II_Jatt,4,Late Bronze II,Jatt,-1
+503,Early Roman (period)_Tiv`on,4,Early Roman (period),Tiv`on,-1
+504,Cleopatra Thea (Seleucid)#%Antiochus VIII;(126BCE / 125BCE)_(+)Qedesh- T. (3631/0);Qedesh- T. (north) (22853/0),4,Cleopatra Thea (Seleucid)#%Antiochus VIII;(126BCE / 125BCE),(+)Qedesh- T. (3631/0);Qedesh- T. (north) (22853/0),-1
+505,Late Hellenistic_Akko,4,Late Hellenistic,Akko,-1
+506,Iron II_Dhahiriya- edh-,4,Iron II,Dhahiriya- edh-,-1
+507,Geometric Kebaran_Me`arat Oren,4,Geometric Kebaran,Me`arat Oren,-1
+508,Byzantine_Khan- Kh. el-,4,Byzantine,Khan- Kh. el-,-1
+509,Iron II_Tel Aviv- T. Qasila,4,Iron II,Tel Aviv- T. Qasila,-1
+510,Late Hellenistic_Ha-Gosherim,4,Late Hellenistic,Ha-Gosherim,-1
+511,Roman-Byzantine_Mishmar ha-`Emeq,4,Roman-Byzantine,Mishmar ha-`Emeq,-1
+512,Byzantine_Maresha- T.,4,Byzantine,Maresha- T.,-1
+513,Ptolemy II;(285BCE - 272BCE)_Dor- T.,4,Ptolemy II;(285BCE - 272BCE),Dor- T.,-1
+514,Late Roman_Shubeib- T.,4,Late Roman,Shubeib- T.,-1
+515,Byzantine_Mishor Adumim- Khan el-Ahmar,4,Byzantine,Mishor Adumim- Khan el-Ahmar,-1
+516,Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE)_Mikhal- T.,4,Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE),Mikhal- T.,-1
+517,Nero;(54CE - 68CE)_Meron,4,Nero;(54CE - 68CE),Meron,-1
+518,Alexander Jannaeus;(104BCE - 80BCE / 79BCE)_Burnat- Kh.,4,Alexander Jannaeus;(104BCE - 80BCE / 79BCE),Burnat- Kh.,-1
+519,Early Byzantine_Jerusalem- Old City,4,Early Byzantine,Jerusalem- Old City,-1
+520,Early Roman - Middle Roman_Cave of Horror,4,Early Roman - Middle Roman,Cave of Horror,-1
+521,Late Roman_כברי תחנת הטרנספורמטור,4,Late Roman,כברי תחנת הטרנספורמטור,-1
+522,Roman (?)_BURNT HOUSE,4,Roman (?),BURNT HOUSE,-1
+523,Late Chalcolithic_Nahal Ze'elim,4,Late Chalcolithic,Nahal Ze'elim,-1
+524,Late Byzantine (?)_Ma`yan Barukh (north-east),4,Late Byzantine (?),Ma`yan Barukh (north-east),-1
+525,Iron I_Mizpah,4,Iron I,Mizpah,-1
+526,Roman_Muzzav- H.,4,Roman,Muzzav- H.,-1
+527,Neolithic_Haruzim (east),4,Neolithic,Haruzim (east),-1
+528,Roman_Jerusalem- City of David- Pool of Shiloah,4,Roman,Jerusalem- City of David- Pool of Shiloah,-1
+529,Iron II_`Azeqa- T.,4,Iron II,`Azeqa- T.,-1
+530,Roman_Bet She`arim- H.,4,Roman,Bet She`arim- H.,-1
+531,Fatimid_Ashqelon- T. Ashqelon,4,Fatimid,Ashqelon- T. Ashqelon,-1
+532,Persian_Ashqelon- T. Ashqelon,4,Persian,Ashqelon- T. Ashqelon,-1
+533,Byzantine_טולול  רוסום  Tulul  er-Rusum,4,Byzantine,טולול  רוסום  Tulul  er-Rusum,-1
+534,Early Bronze II_Lakhish- T.,4,Early Bronze II,Lakhish- T.,-1
+535,Ptolemy II;(275BCE / 274BCE - 246BCE)_Gan Soreq (north),4,Ptolemy II;(275BCE / 274BCE - 246BCE),Gan Soreq (north),-1
+536,Late Neolithic_Ha-Gosherim- Nili (north),4,Late Neolithic,Ha-Gosherim- Nili (north),-1
+537,Late Bronze (?)_`Ujul- T. el-,4,Late Bronze (?),`Ujul- T. el-,-1
+538,Iron II_Ashdod- T.,4,Iron II,Ashdod- T.,-1
+539,Late Roman - Byzantine_`En Gedi,4,Late Roman - Byzantine,`En Gedi,-1
+540,Late Roman_El-Bineh  1932,4,Late Roman,El-Bineh  1932,-1
+541,Early Roman (period)_Hizma,4,Early Roman (period),Hizma,-1
+542,Early Bronze III_Qashish- T.,4,Early Bronze III,Qashish- T.,-1
+543,Gordian III;(238CE - 244CE)_Meron,4,Gordian III;(238CE - 244CE),Meron,-1
+544,Late Roman - Early Byzantine_Caesarea,4,Late Roman - Early Byzantine,Caesarea,-1
+545,Persian_Ramat Rahel,4,Persian,Ramat Rahel,-1
+546,Umayyad_Jerusalem- Old City- Jewish Quarter- Israelite and Hellenistic Towers,4,Umayyad,Jerusalem- Old City- Jewish Quarter- Israelite and Hellenistic Towers,-1
+547,Byzantine_Zippori,4,Byzantine,Zippori,-1
+548,Iron II_Jericho- T.,4,Iron II,Jericho- T.,-1
+549,Early Bronze IB_Qanat el-Ja`ar,4,Early Bronze IB,Qanat el-Ja`ar,-1
+550,Hellenistic_Gezer- T.,4,Hellenistic,Gezer- T.,-1
+551,Byzantine_Trig. point 204-E,4,Byzantine,Trig. point 204-E,-1
+552,Early Roman (period)_Ashdod- T.,4,Early Roman (period),Ashdod- T.,-1
+553,Pottery Neolithic A_אתלית  ים-  אתר  תת  ימי,4,Pottery Neolithic A,אתלית  ים-  אתר  תת  ימי,-1
+554,Early Roman (period)_סאווריף  -1932  Sawarif,4,Early Roman (period),סאווריף  -1932  Sawarif,-1
+555,Late Roman_Kabri- el-,4,Late Roman,Kabri- el-,-1
+556,Agrippa II;(50CE - 100CE)_Jerusalem- Giv`at Sha'ul,4,Agrippa II;(50CE - 100CE),Jerusalem- Giv`at Sha'ul,-1
+557,Late Roman - Byzantine_Jerusalem- `En Rogel,4,Late Roman - Byzantine,Jerusalem- `En Rogel,-1
+558,Byzantine_Zomet Pardesiya,4,Byzantine,Zomet Pardesiya,-1
+559,Demetrius II;(145BCE / 144BCE)_Mezad `Ateret,4,Demetrius II;(145BCE / 144BCE),Mezad `Ateret,-1
+560,Byzantine_Jerusalem- Old City,4,Byzantine,Jerusalem- Old City,-1
+561,Mattathias Antigonus;(40BCE - 37BCE)_Khirba- el-,4,Mattathias Antigonus;(40BCE - 37BCE),Khirba- el-,-1
+562,Early Roman (period)_Anafa- T.,3,Early Roman (period),Anafa- T.,-1
+563,Roman_Kabri- el-,3,Roman,Kabri- el-,-1
+564,Middle Bronze IIB_Fassuta,3,Middle Bronze IIB,Fassuta,-1
+565,Iron Age_Bet She'an- T.,3,Iron Age,Bet She'an- T.,-1
+566,Early Bronze I_Jericho- T.,3,Early Bronze I,Jericho- T.,-1
+567,Late Bronze II_Bet She'an,3,Late Bronze II,Bet She'an,-1
+568,Late Chalcolithic_Govit- H.,3,Late Chalcolithic,Govit- H.,-1
+569,Late Roman - Early Byzantine_Hedera,3,Late Roman - Early Byzantine,Hedera,-1
+570,Persian_Hermesh- H.,3,Persian,Hermesh- H.,-1
+571,Late Bronze II_Jerusalem- Manahat,3,Late Bronze II,Jerusalem- Manahat,-1
+572,Middle Bronze II_נבי- רובי- מערה,3,Middle Bronze II,נבי- רובי- מערה,-1
+573,Chalcolithic_Turmus- T.,3,Chalcolithic,Turmus- T.,-1
+574,Iron I_Sasa,3,Iron I,Sasa,-1
+575,Persian_Ashdod- T.,3,Persian,Ashdod- T.,-1
+576,Late Byzantine_Qastra- H.,3,Late Byzantine,Qastra- H.,-1
+577,Chalcolithic_תנור,3,Chalcolithic,תנור,-1
+578,Early Bronze I_`Arad- T.,3,Early Bronze I,`Arad- T.,-1
+579,Byzantine_Kafr Kama,3,Byzantine,Kafr Kama,-1
+580,Iron II_ג'ת,3,Iron II,ג'ת,-1
+581,Late Bronze IIB-Iron I_Bet She'an- T.,3,Late Bronze IIB-Iron I,Bet She'an- T.,-1
+582,Iron II_`En Gev- T.,3,Iron II,`En Gev- T.,-1
+583,Crusader_Acre,3,Crusader,Acre,-1
+584,Iron I_`Ai,3,Iron I,`Ai,-1
+585,Early Roman (period)_Bishop  Gobat  School-  Rock  cut  cistern,3,Early Roman (period),Bishop  Gobat  School-  Rock  cut  cistern,-1
+586,Iron II_Moza,3,Iron II,Moza,-1
+587,Iron I_Hazor- T.,3,Iron I,Hazor- T.,-1
+588,Early Bronze IA_Shen Ramon,3,Early Bronze IA,Shen Ramon,-1
+589,Arab-Byzantine_Nizzana,3,Arab-Byzantine,Nizzana,-1
+590,Mamluk_Caesarea,3,Mamluk,Caesarea,-1
+591,Iron I_תל באיזור השפלה (אחד מן הארבעה של מקליסטר)?,3,Iron I,תל באיזור השפלה (אחד מן הארבעה של מקליסטר)?,-1
+592,Late Chalcolithic_`Ein el-Fares,3,Late Chalcolithic,`Ein el-Fares,-1
+593,Early Roman (period)_Jerusalem- Old City- Western and Southern Walls Excavations,3,Early Roman (period),Jerusalem- Old City- Western and Southern Walls Excavations,-1
+594,Byzantine_Jerusalem- Old City- Jewish Quarter- Cardo,3,Byzantine,Jerusalem- Old City- Jewish Quarter- Cardo,-1
+595,Late Roman_Iqrit,3,Late Roman,Iqrit,-1
+596,Early Roman (period)_Nahal Zalmon Estuary,3,Early Roman (period),Nahal Zalmon Estuary,-1
+597,Byzantine_Qiryat Ata,3,Byzantine,Qiryat Ata,-1
+598,Middle Bronze II_Rehov- T.,3,Middle Bronze II,Rehov- T.,-1
+599,Roman_י-ם- עמק המצלבה,3,Roman,י-ם- עמק המצלבה,-1
+600,Pottery Neolithic_`En Te'o,3,Pottery Neolithic,`En Te'o,-1
+601,Persian (?)_Ashqelon- T. Ashqelon,3,Persian (?),Ashqelon- T. Ashqelon,-1
+602,Byzantine_BURNT HOUSE,3,Byzantine,BURNT HOUSE,-1
+603,Pottery Neolithic_Neve Ur,3,Pottery Neolithic,Neve Ur,-1
+604,Late Roman_Mishmar ha-`Emeq,3,Late Roman,Mishmar ha-`Emeq,-1
+605,Islamic_Qesari- H.,3,Islamic,Qesari- H.,-1
+606,Early Roman - Middle Roman_`Ein ez-Zeituna,3,Early Roman - Middle Roman,`Ein ez-Zeituna,-1
+607,Iron II_מצודת לענה?,3,Iron II,מצודת לענה?,-1
+608,Middle Bronze IIB-C_Gezer- T.,3,Middle Bronze IIB-C,Gezer- T.,-1
+609,Roman-Byzantine_`En Gedi,3,Roman-Byzantine,`En Gedi,-1
+610,Persian_Bet She'an- T.,3,Persian,Bet She'an- T.,-1
+611,Byzantine_Mefalsim- T.,3,Byzantine,Mefalsim- T.,-1
+612,Byzantine_Ramat Rahel,3,Byzantine,Ramat Rahel,-1
+613,Late Byzantine-Ummayad_Hoga- H.,3,Late Byzantine-Ummayad,Hoga- H.,-1
+614,Roman_Ashqelon- Migdal Ashqelon,3,Roman,Ashqelon- Migdal Ashqelon,-1
+615,Byzantine_Ras Abu Dahud (north),3,Byzantine,Ras Abu Dahud (north),-1
+616,Hellenistic_Jerusalem- Ketef Hinnom,3,Hellenistic,Jerusalem- Ketef Hinnom,-1
+617,Pre-Pottery Neolithic_`En ha-Shomer,3,Pre-Pottery Neolithic,`En ha-Shomer,-1
+618,Middle Bronze II_Tel Yosef,3,Middle Bronze II,Tel Yosef,-1
+619,Early Islamic_Jerusalem- Old City,3,Early Islamic,Jerusalem- Old City,-1
+620,Middle Bronze II_Giv`at Ayyala,3,Middle Bronze II,Giv`at Ayyala,-1
+621,Mamluk_Jerusalem- Old City- Jewish Quarter- Israelite and Hellenistic Towers,3,Mamluk,Jerusalem- Old City- Jewish Quarter- Israelite and Hellenistic Towers,-1
+622,Byzantine_Har Yeda`ya,3,Byzantine,Har Yeda`ya,-1
+623,Middle Bronze I_`Enot `Enan (south),3,Middle Bronze I,`Enot `Enan (south),-1
+624,Late Chalcolithic_`En Besor,3,Late Chalcolithic,`En Besor,-1
+625,Early Roman (period)_Samaria,3,Early Roman (period),Samaria,-1
+626,Byzantine_`En Gedi- Synagogue,3,Byzantine,`En Gedi- Synagogue,-1
+627,Ottoman_(+)Ashqelon- Marina (349/1);Ashqelon- Afridar and Barnea` (349/0);Ashqelon- Semadar Hotel (349/2),3,Ottoman,(+)Ashqelon- Marina (349/1);Ashqelon- Afridar and Barnea` (349/0);Ashqelon- Semadar Hotel (349/2),-1
+628,Late Hellenistic - Early Roman_Jerusalem- Giv`at ha-Mivtar,3,Late Hellenistic - Early Roman,Jerusalem- Giv`at ha-Mivtar,-1
+629,Late Roman_Fardisya- Kh.,3,Late Roman,Fardisya- Kh.,-1
+630,Early Roman - Middle Roman_BURNT HOUSE,3,Early Roman - Middle Roman,BURNT HOUSE,-1
+631,Early Roman (period)_Jerusalem- ha-`Ophel,3,Early Roman (period),Jerusalem- ha-`Ophel,-1
+632,Ottoman_Azor,3,Ottoman,Azor,-1
+633,Early Bronze I-II_Megiddo- T.,3,Early Bronze I-II,Megiddo- T.,-1
+634,Early Roman (period)_Hurfeish,3,Early Roman (period),Hurfeish,-1
+635,Middle Bronze II_Moza `Illit,3,Middle Bronze II,Moza `Illit,-1
+636,Late Bronze IIB-Iron I_Ashqelon- T. Ashqelon,3,Late Bronze IIB-Iron I,Ashqelon- T. Ashqelon,-1
+637,Middle Bronze II_Qallil- T.,3,Middle Bronze II,Qallil- T.,-1
+638,Late Chalcolithic_Kissufim road,3,Late Chalcolithic,Kissufim road,-1
+639,Middle Bronze IIB_Ashqelon- T. Ashqelon,3,Middle Bronze IIB,Ashqelon- T. Ashqelon,-1
+640,Middle Bronze II_Kittan- T.,3,Middle Bronze II,Kittan- T.,-1
+641,Mamluk_Bethsaida,3,Mamluk,Bethsaida,-1
+642,Arab-Byzantine_Jerusalem- City of David,3,Arab-Byzantine,Jerusalem- City of David,-1
+643,Iron I_Zeror- T.,3,Iron I,Zeror- T.,-1
+644,Middle Bronze II_Tir`an,3,Middle Bronze II,Tir`an,-1
+645,Late Bronze I (?)_`Ujul- T. el-,3,Late Bronze I (?),`Ujul- T. el-,-1
+646,Byzantine_קבר  אל  בסה  El  Basseh,3,Byzantine,קבר  אל  בסה  El  Basseh,-1
+647,Late Byzantine-Ummayad_Shubeika- Kh. esh-,3,Late Byzantine-Ummayad,Shubeika- Kh. esh-,-1
+648,Iron IIA_Tel Aviv- T. Qasila,3,Iron IIA,Tel Aviv- T. Qasila,-1
+649,Early Bronze II-III_Kinrot- T.,3,Early Bronze II-III,Kinrot- T.,-1
+650,Early Roman (period)_(+)Jerusalem- Monastery of the Cross (2788/0);Jerusalem- Sederot ha-Nasi Ben Zvi (2786/1);Jerusalem- Sederot ha-Nasi Ben Zvi (2786/0),3,Early Roman (period),(+)Jerusalem- Monastery of the Cross (2788/0);Jerusalem- Sederot ha-Nasi Ben Zvi (2786/1);Jerusalem- Sederot ha-Nasi Ben Zvi (2786/0),-1
+651,Middle Roman_Ma`yan Barukh,3,Middle Roman,Ma`yan Barukh,-1
+652,Middle Bronze II (?)_`Ujul- T. el-,3,Middle Bronze II (?),`Ujul- T. el-,-1
+653,Late Bronze I_Nagila- T.,3,Late Bronze I,Nagila- T.,-1
+654,Late Chalcolithic_Bene Beraq- Giv`at Sokolov,3,Late Chalcolithic,Bene Beraq- Giv`at Sokolov,-1
+655,Roman_Jerusalem- Old City- Jewish Quarter- Area F- M,3,Roman,Jerusalem- Old City- Jewish Quarter- Area F- M,-1
+656,Roman_Panias- H.,3,Roman,Panias- H.,-1
+657,Hellenistic_`En Gedi- Nahal David,3,Hellenistic,`En Gedi- Nahal David,-1
+658,Late Roman_Korazim,3,Late Roman,Korazim,-1
+659,Roman_Binyamina,3,Roman,Binyamina,-1
+660,Pottery Neolithic_Sha`ar Efrayim (south) [north],3,Pottery Neolithic,Sha`ar Efrayim (south) [north],-1
+661,Middle Palaeolithic_Biq`at Quneitra,3,Middle Palaeolithic,Biq`at Quneitra,-1
+662,Byzantine_`Akko Aqueduct,3,Byzantine,`Akko Aqueduct,-1
+663,Roman-Byzantine_Shubeika- Kh. esh-,3,Roman-Byzantine,Shubeika- Kh. esh-,-1
+664,Early Bronze II_Bet Mirsham- T.,3,Early Bronze II,Bet Mirsham- T.,-1
+665,Iron IIC-Babylonian-Persian_Kabri,3,Iron IIC-Babylonian-Persian,Kabri,-1
+666,Pottery Neolithic_Tel Aviv- Rehov M. Bodenheimer,3,Pottery Neolithic,Tel Aviv- Rehov M. Bodenheimer,-1
+667,Early Roman (period)_Nahal Hadera (north),3,Early Roman (period),Nahal Hadera (north),-1
+668,Late Bronze IIB_Sharuhen- T.,3,Late Bronze IIB,Sharuhen- T.,-1
+669,Persian-Hellenistic_Zafit- T.,3,Persian-Hellenistic,Zafit- T.,-1
+670,Iron IIC_Batash- T.,3,Iron IIC,Batash- T.,-1
+671,Natufian_Rosh Horsha,3,Natufian,Rosh Horsha,-1
+672,Byzantine_Afiq,3,Byzantine,Afiq,-1
+673,Roman_תל  ברק  Tell  Barak,3,Roman,תל  ברק  Tell  Barak,-1
+674,Byzantine_`Evron,3,Byzantine,`Evron,-1
+675,Fatimid-Ayyubid_Caesarea,3,Fatimid-Ayyubid,Caesarea,-1
+676,Early Bronze I_Afeq,3,Early Bronze I,Afeq,-1
+677,Hellenistic_Mishmar David,3,Hellenistic,Mishmar David,-1
+678,Iron II_Kinrot- T.,3,Iron II,Kinrot- T.,-1
+679,Iron I_Bet Mirsham- T.,3,Iron I,Bet Mirsham- T.,-1
+680,Late Bronze IIB-Iron I_Azor,3,Late Bronze IIB-Iron I,Azor,-1
+681,Late Roman_Bet She`arim- H.,3,Late Roman,Bet She`arim- H.,-1
+682,Late Hellenistic - Early Roman_Jerusalem- Rehov Alfasi,3,Late Hellenistic - Early Roman,Jerusalem- Rehov Alfasi,-1
+683,Roman_Jerusalem- Giv`at Shapira,3,Roman,Jerusalem- Giv`at Shapira,-1
+684,Neolithic_`En ha-Shomer,3,Neolithic,`En ha-Shomer,-1
+685,Middle Roman_משמר העמק- שומריה-קברים,3,Middle Roman,משמר העמק- שומריה-קברים,-1
+686,Late Roman_רחובות,3,Late Roman,רחובות,-1
+687,Roman_Turmus `Aiya,3,Roman,Turmus `Aiya,-1
+688,Late Bronze I_Afeq,3,Late Bronze I,Afeq,-1
+689,Early Byzantine_Qiryat Ata,3,Early Byzantine,Qiryat Ata,-1
+690,Late Bronze IIB-Iron I_Bet-Shemesh- T.,3,Late Bronze IIB-Iron I,Bet-Shemesh- T.,-1
+691,Persian_Sheva`- T.,3,Persian,Sheva`- T.,-1
+692,Byzantine_Be'er Sheb'a- Old Beduin Market,3,Byzantine,Be'er Sheb'a- Old Beduin Market,-1
+693,Pre-Pottery Neolithic B_Kefar ha-Horesh,3,Pre-Pottery Neolithic B,Kefar ha-Horesh,-1
+694,Late Bronze_Ashqelon- T. Ashqelon,3,Late Bronze,Ashqelon- T. Ashqelon,-1
+695,Iron I_Ashqelon- Afridar and Barnea`,3,Iron I,Ashqelon- Afridar and Barnea`,-1
+696,Middle Bronze II_Haifa- T. Shiqmona,3,Middle Bronze II,Haifa- T. Shiqmona,-1
+697,Byzantine_Deir Sallam- Kh.,3,Byzantine,Deir Sallam- Kh.,-1
+698,Early Roman (period)_Jerusalem- Mont Scopus (west),3,Early Roman (period),Jerusalem- Mont Scopus (west),-1
+699,Roman-Byzantine_Qazyon- H.,3,Roman-Byzantine,Qazyon- H.,-1
+700,Early Roman (period)_Nahal Hever,3,Early Roman (period),Nahal Hever,-1
+701,Hellenistic_Yoqne`am- T.,3,Hellenistic,Yoqne`am- T.,-1
+702,Roman_Jerusalem- Ymca--Keren ha-Yesod Street,3,Roman,Jerusalem- Ymca--Keren ha-Yesod Street,-1
+703,Alexander the Great;(336BCE - 323BCE)_Zippor- T.,3,Alexander the Great;(336BCE - 323BCE),Zippor- T.,-1
+704,Pre-Pottery Neolithic B (?)_Besamon,3,Pre-Pottery Neolithic B (?),Besamon,-1
+705,Iron II_Kison- T.,3,Iron II,Kison- T.,-1
+706,Hellenistic_Tel Aviv- Ha-Qirya,3,Hellenistic,Tel Aviv- Ha-Qirya,-1
+707,Early Bronze I_`Ujul- T. el-,3,Early Bronze I,`Ujul- T. el-,-1
+708,Late Hellenistic - Early Roman_Ashqelon- T. Ashqelon,3,Late Hellenistic - Early Roman,Ashqelon- T. Ashqelon,-1
+709,Late Chalcolithic_Taiyiba- et-,3,Late Chalcolithic,Taiyiba- et-,-1
+710,Middle Bronze IIC_Ashqelon- T. Ashqelon,3,Middle Bronze IIC,Ashqelon- T. Ashqelon,-1
+711,Late Bronze_Haifa- T. Abu Hawwam,3,Late Bronze,Haifa- T. Abu Hawwam,-1
+712,Fatimid_Rehovot- Weizmann Institute,3,Fatimid,Rehovot- Weizmann Institute,-1
+713,Late Bronze II_Yin`am- T.,3,Late Bronze II,Yin`am- T.,-1
+714,Pottery Neolithic A_Kefar Gil`adi,3,Pottery Neolithic A,Kefar Gil`adi,-1
+715,Aretas IV;(31CE / 32CE)_Yotvata,2,Aretas IV;(31CE / 32CE),Yotvata,-1
+716,Persian_קברים ליד מכמש,2,Persian,קברים ליד מכמש,-1
+717,Early Roman (period)_Yif`at and Gevat (east),2,Early Roman (period),Yif`at and Gevat (east),-1
+718,Alexander the Great;(333BCE / 332BCE)_Zippor- T.,2,Alexander the Great;(333BCE / 332BCE),Zippor- T.,-1
+719,Domitian (81-96);(81CE - 96CE)_Gush Halav,2,Domitian (81-96);(81CE - 96CE),Gush Halav,-1
+720,Middle Bronze II-Late Bronze_Bet Mirsham- T.,2,Middle Bronze II-Late Bronze,Bet Mirsham- T.,-1
+721,Agrippa II;(74CE / 75CE)_Panias- H.,2,Agrippa II;(74CE / 75CE),Panias- H.,-1
+722,Ptolemy II;(275BCE / 274BCE - 246BCE)_Haifa- Tel-Hanan,2,Ptolemy II;(275BCE / 274BCE - 246BCE),Haifa- Tel-Hanan,-1
+723,Seleucus IV;(187BCE - 175BCE)_Kison- T.,2,Seleucus IV;(187BCE - 175BCE),Kison- T.,-1
+724,Autonomous;(410BCE - 333BCE)_Gan Soreq (north),2,Autonomous;(410BCE - 333BCE),Gan Soreq (north),-1
+725,Late Roman_עזה  Gaza  Area,2,Late Roman,עזה  Gaza  Area,-1
+726,Alexander Jannaeus;(104BCE - 80BCE / 79BCE)_(+)Jerusalem- Old City (2921/0);Jerusalem- Har Ziyyon (2867/0);Jerusalem- Hinnom Valley (2868/0),2,Alexander Jannaeus;(104BCE - 80BCE / 79BCE),(+)Jerusalem- Old City (2921/0);Jerusalem- Har Ziyyon (2867/0);Jerusalem- Hinnom Valley (2868/0),-1
+727,Early Bronze IB_Sha`ar Efrayim (south) [north],2,Early Bronze IB,Sha`ar Efrayim (south) [north],-1
+728,Antiochus III;(198BCE - 187BCE)_(+)Maresha- Underground System No. 51 (1300/25);La`ada- H. (1249/0);Maresha- T. (1300/0),2,Antiochus III;(198BCE - 187BCE),(+)Maresha- Underground System No. 51 (1300/25);La`ada- H. (1249/0);Maresha- T. (1300/0),-1
+729,Early Islamic_יריחו  -  Nestorian  Hermitage  Jericho,2,Early Islamic,יריחו  -  Nestorian  Hermitage  Jericho,-1
+730,Ptolemy II;(285BCE - 246BCE)_Beth Zur,2,Ptolemy II;(285BCE - 246BCE),Beth Zur,-1
+731,Early Bronze III_Mizpah,2,Early Bronze III,Mizpah,-1
+732,Iron IIA_Megiddo- T.,2,Iron IIA,Megiddo- T.,-1
+733,Byzantine_Gov- H.,2,Byzantine,Gov- H.,-1
+734,Autonomous;(299BCE - 200BCE)_Mikhal- T.,2,Autonomous;(299BCE - 200BCE),Mikhal- T.,-1
+735,Ptolemy II;(285BCE - 246BCE)_Qedesh- T.,2,Ptolemy II;(285BCE - 246BCE),Qedesh- T.,-1
+736,Great Revolt;(68CE / 69CE)_(+)Jerusalem- Binyane ha-Umma (5444/0);Jerusalem- Binyane ha-Umma (2789/0);Jerusalem- Binyene ha-Umma (south) (27212/0),2,Great Revolt;(68CE / 69CE),(+)Jerusalem- Binyane ha-Umma (5444/0);Jerusalem- Binyane ha-Umma (2789/0);Jerusalem- Binyene ha-Umma (south) (27212/0),-1
+737,Jovian;(363CE - 364CE)_Rimmon- H.,2,Jovian;(363CE - 364CE),Rimmon- H.,-1
+738,Valerian I;(253CE - 260CE)_Meron,2,Valerian I;(253CE - 260CE),Meron,-1
+739,Epi-Paleolithic-Natufian-Epi-Palaeolithic_Me`arot Yonim,2,Epi-Paleolithic-Natufian-Epi-Palaeolithic,Me`arot Yonim,-1
+740,Alexander I Balas;(147BCE / 146BCE)_Mezad `Ateret,2,Alexander I Balas;(147BCE / 146BCE),Mezad `Ateret,-1
+741,Iron IIC_`Aro`er- T.,2,Iron IIC,`Aro`er- T.,-1
+742,Persian_Gezer- T.,2,Persian,Gezer- T.,-1
+743,Baalshalim II;(401BCE - 366BCE)_Mikhal- T.,2,Baalshalim II;(401BCE - 366BCE),Mikhal- T.,-1
+744,Antiochus IV;(173BCE / 172BCE - 168BCE)_(+)Jerusalem- Binyane ha-Umma (5444/0);Jerusalem- Binyane ha-Umma (2789/0);Jerusalem- Binyene ha-Umma (south) (27212/0),2,Antiochus IV;(173BCE / 172BCE - 168BCE),(+)Jerusalem- Binyane ha-Umma (5444/0);Jerusalem- Binyane ha-Umma (2789/0);Jerusalem- Binyene ha-Umma (south) (27212/0),-1
+745,Carus;(282CE - 283CE)_Parve- H.,2,Carus;(282CE - 283CE),Parve- H.,-1
+746,Late Neolithic_Hamadya,2,Late Neolithic,Hamadya,-1
+747,Byzantine_Nazor- H.,2,Byzantine,Nazor- H.,-1
+748,Nabatean_Jerusalem- Old City- Jewish Quarter- Area F- M,2,Nabatean,Jerusalem- Old City- Jewish Quarter- Area F- M,-1
+749,Persian_Giv`at Yasaf,2,Persian,Giv`at Yasaf,-1
+750,Middle Roman_על גדות ואדי אפתח,2,Middle Roman,על גדות ואדי אפתח,-1
+751,Iron IIC-Babylonian-Persian_Ashqelon- Afridar and Barnea`,2,Iron IIC-Babylonian-Persian,Ashqelon- Afridar and Barnea`,-1
+752,Crusader-Ayyubid_Arshaf- T.,2,Crusader-Ayyubid,Arshaf- T.,-1
+753,Plautilla;(202CE - 205CE)_`Alya- Kh.,2,Plautilla;(202CE - 205CE),`Alya- Kh.,-1
+754,Early Bronze II_Bet She'an- T.,2,Early Bronze II,Bet She'an- T.,-1
+755,Mamluk_`Akko,2,Mamluk,`Akko,-1
+756,Autonomous;(152CE / 153CE)_Akhziv,2,Autonomous;(152CE / 153CE),Akhziv,-1
+757,Antiochus III;(202BCE - 187BCE)_Sha`ar ha-`Amaqim,2,Antiochus III;(202BCE - 187BCE),Sha`ar ha-`Amaqim,-1
+758,Pre-Pottery Neolithic C_Abu Ghosh,2,Pre-Pottery Neolithic C,Abu Ghosh,-1
+759,Demetrius II;(129BCE / 128BCE)_Burnat- Kh.,2,Demetrius II;(129BCE / 128BCE),Burnat- Kh.,-1
+760,Late Hellenistic_Jerusalem- Ramot C+D,2,Late Hellenistic,Jerusalem- Ramot C+D,-1
+761,Alexander the Great;(323BCE - 315BCE)_Mikhal- T.,2,Alexander the Great;(323BCE - 315BCE),Mikhal- T.,-1
+762,Late Chalcolithic_Nahal Gerar,2,Late Chalcolithic,Nahal Gerar,-1
+763,Ayyubid-Mamluk_Yafo,2,Ayyubid-Mamluk,Yafo,-1
+764,Ptolemy VI;(159BCE / 158BCE - 155BCE / 154BCE)_Gezer- T.,2,Ptolemy VI;(159BCE / 158BCE - 155BCE / 154BCE),Gezer- T.,-1
+765,Constantine I;(330CE - 337CE)_Zippori,2,Constantine I;(330CE - 337CE),Zippori,-1
+766,Late Chalcolithic_איזור היספין 647,2,Late Chalcolithic,איזור היספין 647,-1
+767,Constantine II;(321CE - 321CE)_Korazim,2,Constantine II;(321CE - 321CE),Korazim,-1
+768,Demetrius II;(145BCE / 144BCE)_Bethsaida,2,Demetrius II;(145BCE / 144BCE),Bethsaida,-1
+769,Autonomous;(372BCE - 333BCE / 332BCE)_Gan Soreq (north),2,Autonomous;(372BCE - 333BCE / 332BCE),Gan Soreq (north),-1
+770,Late Bronze_Sharuhen- T.,2,Late Bronze,Sharuhen- T.,-1
+771,Autonomous;(401BCE - 358BCE)_Mikhal- T.,2,Autonomous;(401BCE - 358BCE),Mikhal- T.,-1
+772,Valerian I;(253CE - 260CE)_Sasa,2,Valerian I;(253CE - 260CE),Sasa,-1
+773,Early Islamic_בורין  1935  (כביש  טולכרם)  Burin,2,Early Islamic,בורין  1935  (כביש  טולכרם)  Burin,-1
+774,Byzantine_Na`aran,2,Byzantine,Na`aran,-1
+775,Byzantine_Ma`alot-Tarshiha,2,Byzantine,Ma`alot-Tarshiha,-1
+776,Late Roman_Bet Natif- H.,2,Late Roman,Bet Natif- H.,-1
+777,Constantius II;(346CE - 350CE)_Meron,2,Constantius II;(346CE - 350CE),Meron,-1
+778,Late Bronze I_Bethel,2,Late Bronze I,Bethel,-1
+779,Maxentius;(309CE - 312CE)_Nahf,2,Maxentius;(309CE - 312CE),Nahf,-1
+780,Seleucus IV;(187BCE - 175BCE)_Afeq- T.,2,Seleucus IV;(187BCE - 175BCE),Afeq- T.,-1
+781,Vespasian;(69CE - 79CE)_Meron,2,Vespasian;(69CE - 79CE),Meron,-1
+782,Middle Bronze IIC_`Ujul- T. el-,2,Middle Bronze IIC,`Ujul- T. el-,-1
+783,Autonomous ( );(53BCE / 52BCE)_Gamla,2,Autonomous ( );(53BCE / 52BCE),Gamla,-1
+784,Early Islamic-Umayyad-Abbasid_Tinshemet- H.,2,Early Islamic-Umayyad-Abbasid,Tinshemet- H.,-1
+785,Middle Roman_Ha-Gosherim,2,Middle Roman,Ha-Gosherim,-1
+786,Elagabalus;(218CE - 222CE)_Fakhura-(Sheep pens),2,Elagabalus;(218CE - 222CE),Fakhura-(Sheep pens),-1
+787,Elagabalus;(218CE - 222CE)_Lod,2,Elagabalus;(218CE - 222CE),Lod,-1
+788,Early Roman (period)_Ben Shemen,2,Early Roman (period),Ben Shemen,-1
+789,Caracalla;(198CE - 217CE)_Iqrit,2,Caracalla;(198CE - 217CE),Iqrit,-1
+790,Julian II;(360CE - 363CE)_Kefar Nahum,2,Julian II;(360CE - 363CE),Kefar Nahum,-1
+791,Demetrius I;(162BCE - 150BCE)_Hadat- H.,2,Demetrius I;(162BCE - 150BCE),Hadat- H.,-1
+792,Byzantine_Kh.Raghwan  -Jerusalem  area,2,Byzantine,Kh.Raghwan  -Jerusalem  area,-1
+793,Byzantine_Jerusalem- Rockefeller Museum,2,Byzantine,Jerusalem- Rockefeller Museum,-1
+794,Persian_Mikhal- T.,2,Persian,Mikhal- T.,-1
+795,Iron II_Rehov- T.,2,Iron II,Rehov- T.,-1
+796,Herod;(37BCE - 4BCE)_Bet Guvrin,2,Herod;(37BCE - 4BCE),Bet Guvrin,-1
+797,Byzantine_`En Nashut- H.,2,Byzantine,`En Nashut- H.,-1
+798,Iron I_Tel Aviv- T. Qasila,2,Iron I,Tel Aviv- T. Qasila,-1
+799,Pottery Neolithic B / Pre-Ghassulian Chalcolithic_Ha-Gosherim- Nili (north),2,Pottery Neolithic B / Pre-Ghassulian Chalcolithic,Ha-Gosherim- Nili (north),-1
+800,Late Roman_Kafr Kama,2,Late Roman,Kafr Kama,-1
+801,Roman_Jerusalem- Rockefeller Museum,2,Roman,Jerusalem- Rockefeller Museum,-1
+802,Chalcolithic_Zaf- T.,2,Chalcolithic,Zaf- T.,-1
+803,Agrippa I;(41CE / 42CE)_Trig. point 568-N (north-west),2,Agrippa I;(41CE / 42CE),Trig. point 568-N (north-west),-1
+804,Herod Philip;(30CE / 31CE)_Qeren Naftali,2,Herod Philip;(30CE / 31CE),Qeren Naftali,-1
+805,Valentinian I;(364CE - 375CE)_Rimmon- H.,2,Valentinian I;(364CE - 375CE),Rimmon- H.,-1
+806,Early Roman (period)_Burnat- Kh (south-west),2,Early Roman (period),Burnat- Kh (south-west),-1
+807,Middle Roman_Nahariyya,2,Middle Roman,Nahariyya,-1
+808,Agrippa II;(67CE / 68CE)_Tiberias and Hammat,2,Agrippa II;(67CE / 68CE),Tiberias and Hammat,-1
+809,Late Byzantine_Jerusalem- Mamilla,2,Late Byzantine,Jerusalem- Mamilla,-1
+810,Agrippa I;(41CE / 42CE)_`En Gedi - Goren- Tell,2,Agrippa I;(41CE / 42CE),`En Gedi - Goren- Tell,-1
+811,Late Chalcolithic_Majami`- el-,2,Late Chalcolithic,Majami`- el-,-1
+812,Byzantine_'Asida- Kh.,2,Byzantine,'Asida- Kh.,-1
+813,Bar Kokhba;(134CE - 135CE)_Ishwa`,2,Bar Kokhba;(134CE - 135CE),Ishwa`,-1
+814,Antiochus VIII (?);(125BCE - 96BCE)_Jerusalem- Giv`at Sha'ul,2,Antiochus VIII (?);(125BCE - 96BCE),Jerusalem- Giv`at Sha'ul,-1
+815,Pottery Neolithic_שמיר,2,Pottery Neolithic,שמיר,-1
+816,Ptolemy II;(275BCE / 274BCE - 246BCE)_Ashqelon- Afridar and Barnea` (east),2,Ptolemy II;(275BCE / 274BCE - 246BCE),Ashqelon- Afridar and Barnea` (east),-1
+817,Epi-Palaeolithic_Wadi Murabba`at- Cave 1,2,Epi-Palaeolithic,Wadi Murabba`at- Cave 1,-1
+818,Late Roman_`Akko,2,Late Roman,`Akko,-1
+819,Late Roman_Or `Aqiva,2,Late Roman,Or `Aqiva,-1
+820,Autonomous;(110BCE - 64BCE)_`Akko (north),2,Autonomous;(110BCE - 64BCE),`Akko (north),-1
+821,Antiochus III;(198BCE - 187BCE)_Bethsaida,2,Antiochus III;(198BCE - 187BCE),Bethsaida,-1
+822,Middle Palaeolithic_Me`arat `Amud,2,Middle Palaeolithic,Me`arat `Amud,-1
+823,Late Byzantine-Ummayad_Mafjar- Kh. el-,2,Late Byzantine-Ummayad,Mafjar- Kh. el-,-1
+824,Roman-Byzantine_Jerusalem- Derekh Shkhem-pinat Rehov Zalah ed-Din,2,Roman-Byzantine,Jerusalem- Derekh Shkhem-pinat Rehov Zalah ed-Din,-1
+825,Iron IIA_Yoqne`am- T.,2,Iron IIA,Yoqne`am- T.,-1
+826,Alexander the Great;(317BCE - 311BCE)_Mikhal- T.,2,Alexander the Great;(317BCE - 311BCE),Mikhal- T.,-1
+827,Caracalla;(206CE / 207CE)_Bethsaida,2,Caracalla;(206CE / 207CE),Bethsaida,-1
+828,Autonomous;(100CE - 200CE)_Meron,2,Autonomous;(100CE - 200CE),Meron,-1
+829,Antiochus IV;(175BCE - 164BCE)_Gan Soreq (south),2,Antiochus IV;(175BCE - 164BCE),Gan Soreq (south),-1
+830,Early Bronze II-III_Lakhish- T.,2,Early Bronze II-III,Lakhish- T.,-1
+831,Byzantine_Ma`on- H.,2,Byzantine,Ma`on- H.,-1
+832,Early Roman (period)_Jerusalem- Broad Wall,2,Early Roman (period),Jerusalem- Broad Wall,-1
+833,Ayyubid-Mamluk_Jerusalem- Old City- Jewish Quarter- Cardo,2,Ayyubid-Mamluk,Jerusalem- Old City- Jewish Quarter- Cardo,-1
+834,Late Hellenistic_Rasm- Kh. er-,2,Late Hellenistic,Rasm- Kh. er-,-1
+835,Agrippa I;(41CE / 42CE)_Burnat- Kh.,2,Agrippa I;(41CE / 42CE),Burnat- Kh.,-1
+836,Julia Maesa;(218CE - 222CE)_Iqrit,2,Julia Maesa;(218CE - 222CE),Iqrit,-1
+837,Elagabalus;(218CE - 222CE)_Iqrit,2,Elagabalus;(218CE - 222CE),Iqrit,-1
+838,Late Hellenistic - Early Roman_Horevot Mazada,2,Late Hellenistic - Early Roman,Horevot Mazada,-1
+839,Autonomous;(550BCE - 520BCE)_Jerusalem- Giv`at Sha'ul,2,Autonomous;(550BCE - 520BCE),Jerusalem- Giv`at Sha'ul,-1
+840,Roman_Jerusalem- Hinnom Valley- lower,2,Roman,Jerusalem- Hinnom Valley- lower,-1
+841,Early Bronze IB_`Arad- T.,2,Early Bronze IB,`Arad- T.,-1
+842,Late Chalcolithic_Nahal David- Me`arat ha-Berekha,2,Late Chalcolithic,Nahal David- Me`arat ha-Berekha,-1
+843,Great Revolt;(68CE / 69CE)_Jerusalem- Old City- Western and Southern Walls,2,Great Revolt;(68CE / 69CE),Jerusalem- Old City- Western and Southern Walls,-1
+844,Archelaus;(4BCE - 6CE)_Jerusalem- Shikkunei Nuseiba,2,Archelaus;(4BCE - 6CE),Jerusalem- Shikkunei Nuseiba,-1
+845,Late Byzantine_Jerusalem- Old City,2,Late Byzantine,Jerusalem- Old City,-1
+846,Persian_Moza,2,Persian,Moza,-1
+847,Late Chalcolithic_נחל ישי,2,Late Chalcolithic,נחל ישי,-1
+848,Byzantine_`En Dmumit,2,Byzantine,`En Dmumit,-1
+849,Middle Bronze I_Matlul Zurim,2,Middle Bronze I,Matlul Zurim,-1
+850,Great Revolt;(69CE / 70CE)_Horevot Mazada,2,Great Revolt;(69CE / 70CE),Horevot Mazada,-1
+851,Late Bronze_Jericho- T.,2,Late Bronze,Jericho- T.,-1
+852,Antiochus IV;(175BCE - 164BCE)_Zeror- T.,2,Antiochus IV;(175BCE - 164BCE),Zeror- T.,-1
+853,Antiochus VII;(131BCE / 130BCE)_Jerusalem- Old City- Citadel,2,Antiochus VII;(131BCE / 130BCE),Jerusalem- Old City- Citadel,-1
+854,Byzantine_Burqa,2,Byzantine,Burqa,-1
+855,Byzantine_Bet Guvrin,2,Byzantine,Bet Guvrin,-1
+856,Ayyubid-Mamluk_Bet She'an,2,Ayyubid-Mamluk,Bet She'an,-1
+857,Iron IIA_Bet-Shemesh- T.,2,Iron IIA,Bet-Shemesh- T.,-1
+858,Autonomous;(449BCE - 411BCE)_Dalton,2,Autonomous;(449BCE - 411BCE),Dalton,-1
+859,Late Bronze IIB-Iron I_Lakhish- T.,2,Late Bronze IIB-Iron I,Lakhish- T.,-1
+860,Byzantine_Umm el-Qanatir,2,Byzantine,Umm el-Qanatir,-1
+861,Antiochus IX;(112BCE / 110BCE)_Jerusalem- Giv`at Sha'ul,2,Antiochus IX;(112BCE / 110BCE),Jerusalem- Giv`at Sha'ul,-1
+862,Autonomous;(453BCE - 411BCE)_(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),2,Autonomous;(453BCE - 411BCE),(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),-1
+863,Autonomous;(140BCE - 200CE)_`Akko,2,Autonomous;(140BCE - 200CE),`Akko,-1
+864,Middle Palaeolithic_Me`arat ha-Nahal,2,Middle Palaeolithic,Me`arat ha-Nahal,-1
+865,Islamic_Mafjar- Kh. el-,2,Islamic,Mafjar- Kh. el-,-1
+866,Late Bronze II_ואדי אל בירה. אזור הר תבור,2,Late Bronze II,ואדי אל בירה. אזור הר תבור,-1
+867,Autonomous;(332BCE - 275BCE)_Kison- T.,2,Autonomous;(332BCE - 275BCE),Kison- T.,-1
+868,Ptolemy XI;(112BCE / 111BCE)_Bet Se'an T.- Iztabba (north),2,Ptolemy XI;(112BCE / 111BCE),Bet Se'an T.- Iztabba (north),-1
+869,Late Roman_Jerusalem- Derekh Shkhem-pinat Rehov Zalah ed-Din,2,Late Roman,Jerusalem- Derekh Shkhem-pinat Rehov Zalah ed-Din,-1
+870,Demetrius II;(127BCE / 126BCE)_Hadat- H.,2,Demetrius II;(127BCE / 126BCE),Hadat- H.,-1
+871,Ptolemy II;(267BCE)_Mikhal- T.,2,Ptolemy II;(267BCE),Mikhal- T.,-1
+872,Iron I_Ashdod Yam- H.,2,Iron I,Ashdod Yam- H.,-1
+873,Hadrian;(119CE - 120CE)_Meron,2,Hadrian;(119CE - 120CE),Meron,-1
+874,Late Roman - Byzantine_Ashqelon- T. Ashqelon,2,Late Roman - Byzantine,Ashqelon- T. Ashqelon,-1
+875,Byzantine_Ashkelon,2,Byzantine,Ashkelon,-1
+876,Late Bronze (?)_Gamma- T.,2,Late Bronze (?),Gamma- T.,-1
+877,Middle Bronze II_Lakhish- T.,2,Middle Bronze II,Lakhish- T.,-1
+878,Heraclius;(639CE - 641CE)_Bata- H.,2,Heraclius;(639CE - 641CE),Bata- H.,-1
+879,Baldwin III;(1143CE - 1163CE)_Caesarea,2,Baldwin III;(1143CE - 1163CE),Caesarea,-1
+880,Umayyad (post reform);(697CE - 750CE)_Caesarea,2,Umayyad (post reform);(697CE - 750CE),Caesarea,-1
+881,Autonomous;(399BCE - 333BCE)_Dalton,2,Autonomous;(399BCE - 333BCE),Dalton,-1
+882,Constantine I;(324CE / 325CE)_Korazim,2,Constantine I;(324CE / 325CE),Korazim,-1
+883,Autonomous;(350BCE - 332BCE)_Nahariyya,2,Autonomous;(350BCE - 332BCE),Nahariyya,-1
+884,Natufian_Me`arat Hillazon Tahtit,2,Natufian,Me`arat Hillazon Tahtit,-1
+885,Roman_Mezad Sha`ar Ramon,2,Roman,Mezad Sha`ar Ramon,-1
+886,Hellenistic (?)_Samaria,2,Hellenistic (?),Samaria,-1
+887,Ottoman_Tel Aviv- Ramat Aviv,2,Ottoman,Tel Aviv- Ramat Aviv,-1
+888,Late Bronze I_Lakhish- T.,2,Late Bronze I,Lakhish- T.,-1
+889,Agrippa II;(73CE / 74CE)_Jerusalem- Shikkunei Nuseiba,2,Agrippa II;(73CE / 74CE),Jerusalem- Shikkunei Nuseiba,-1
+890,Valence (bishopric);(1101CE - 1200CE)_Caesarea,2,Valence (bishopric);(1101CE - 1200CE),Caesarea,-1
+891,Antiochus VII;(135BCE / 134BCE)_Bethsaida,2,Antiochus VII;(135BCE / 134BCE),Bethsaida,-1
+892,Late Bronze II_Haifa- Nemal ha-Qishon,2,Late Bronze II,Haifa- Nemal ha-Qishon,-1
+893,Late Roman_Ashqelon- Afridar and Barnea` (east),2,Late Roman,Ashqelon- Afridar and Barnea` (east),-1
+894,Late Hellenistic - Early Roman_Ha-Gosherim,2,Late Hellenistic - Early Roman,Ha-Gosherim,-1
+895,Ottoman_Jerusalem- Old City- Jewish Quarter- Cardo,2,Ottoman,Jerusalem- Old City- Jewish Quarter- Cardo,-1
+896,Upper Palaeolithic_Me`arat ha-Gulgolet,2,Upper Palaeolithic,Me`arat ha-Gulgolet,-1
+897,Middle Bronze II_אשקלון,2,Middle Bronze II,אשקלון,-1
+898,Theodosius II;(408CE - 450CE)_Rimmon- H.,2,Theodosius II;(408CE - 450CE),Rimmon- H.,-1
+899,Late Chalcolithic_Musha`an,2,Late Chalcolithic,Musha`an,-1
+900,Autonomous;(136CE / 137CE)_Akhziv,2,Autonomous;(136CE / 137CE),Akhziv,-1
+901,Early Byzantine_Bet She'an- T.,2,Early Byzantine,Bet She'an- T.,-1
+902,Iron IIC-Babylonian-Persian_Gelilot,2,Iron IIC-Babylonian-Persian,Gelilot,-1
+903,Early Roman - Middle Roman_Jerusalem- Old City- Western and Southern Walls,2,Early Roman - Middle Roman,Jerusalem- Old City- Western and Southern Walls,-1
+904,Hellenistic_Jerusalem- Nabi `Akasha (north),2,Hellenistic,Jerusalem- Nabi `Akasha (north),-1
+905,Lower Palaeolithic_Tirat Karmel,2,Lower Palaeolithic,Tirat Karmel,-1
+906,Justinian I;(527CE - 565CE)_Rimmon- H.,2,Justinian I;(527CE - 565CE),Rimmon- H.,-1
+907,Roman_Darkemon- H.,2,Roman,Darkemon- H.,-1
+908,Ptolemy III;(246BCE - 221BCE / 220BCE)_Samaria,2,Ptolemy III;(246BCE - 221BCE / 220BCE),Samaria,-1
+909,Herod Philip;(8CE / 9CE)_Panias- H.,2,Herod Philip;(8CE / 9CE),Panias- H.,-1
+910,Arab-Byzantine 1 (coin type);(645CE - 670CE)_Jerusalem- Third Wall Area,2,Arab-Byzantine 1 (coin type);(645CE - 670CE),Jerusalem- Third Wall Area,-1
+911,Lower Palaeolithic_Jerusalem- `Emeq Refaim,2,Lower Palaeolithic,Jerusalem- `Emeq Refaim,-1
+912,Iron II_Goded- T.,2,Iron II,Goded- T.,-1
+913,Antiochus III;(198BCE - 187BCE)_Ramla- Mahzevot Nesher (north),2,Antiochus III;(198BCE - 187BCE),Ramla- Mahzevot Nesher (north),-1
+914,Persian_Akhziv,2,Persian,Akhziv,-1
+915,Alexander I Balas;(150BCE - 145BCE)_Ashqelon- Afridar and Barnea` (east),2,Alexander I Balas;(150BCE - 145BCE),Ashqelon- Afridar and Barnea` (east),-1
+916,Iron I_Trig. point 112-S,2,Iron I,Trig. point 112-S,-1
+917,Demetrius II;(141BCE)_Mishmar ha-`Emeq,2,Demetrius II;(141BCE),Mishmar ha-`Emeq,-1
+918,Roman_Makr- el-,2,Roman,Makr- el-,-1
+919,Islamic_Kokhav ha-Yarden,2,Islamic,Kokhav ha-Yarden,-1
+920,Antiochus VII;(133BCE / 132BCE)_Hani- H.,2,Antiochus VII;(133BCE / 132BCE),Hani- H.,-1
+921,Agrippa II;(85CE / 86CE)_Karm er-Ras,2,Agrippa II;(85CE / 86CE),Karm er-Ras,-1
+922,John of Ibelin;(1200CE - 1236CE)_Jerusalem- Har Hozvim,2,John of Ibelin;(1200CE - 1236CE),Jerusalem- Har Hozvim,-1
+923,Ptolemy II;(285BCE - 246BCE)_Burnat- Kh.,2,Ptolemy II;(285BCE - 246BCE),Burnat- Kh.,-1
+924,Ptolemy II;(256BCE)_Mikhal- T.,2,Ptolemy II;(256BCE),Mikhal- T.,-1
+925,Antiochus III;(198BCE - 187BCE)_(+)Shoham (north) (15125/0);Trig. point 200-Z (south) (13259/0);Shoham (east) (25101/0),2,Antiochus III;(198BCE - 187BCE),(+)Shoham (north) (15125/0);Trig. point 200-Z (south) (13259/0);Shoham (east) (25101/0),-1
+926,Late Roman - Byzantine_קבר  אל  בסה  El  Basseh,2,Late Roman - Byzantine,קבר  אל  בסה  El  Basseh,-1
+927,Late Hellenistic-Hasmonean-Early Nabatea_Khirba- el-,2,Late Hellenistic-Hasmonean-Early Nabatea,Khirba- el-,-1
+928,Ayyubid-Mamluk_Kokhav ha-Yarden,2,Ayyubid-Mamluk,Kokhav ha-Yarden,-1
+929,Autonomous;(64CE / 65CE - 68CE / 69CE)_Lod- Maqam esh-Sheikh `Abd er-Rahman,2,Autonomous;(64CE / 65CE - 68CE / 69CE),Lod- Maqam esh-Sheikh `Abd er-Rahman,-1
+930,Iron IIB_Batash- T.,2,Iron IIB,Batash- T.,-1
+931,Elagabalus;(218CE - 222CE)_Zippori,2,Elagabalus;(218CE - 222CE),Zippori,-1
+932,Early Bronze II-III_Qashish- T.,2,Early Bronze II-III,Qashish- T.,-1
+933,Byzantine_`Isfiya,2,Byzantine,`Isfiya,-1
+934,Ptolemy II;(285BCE - 246BCE)_Ramla- Mahzevot Nesher (north),2,Ptolemy II;(285BCE - 246BCE),Ramla- Mahzevot Nesher (north),-1
+935,Antipas ( );(29CE / 30CE)_Gamla,2,Antipas ( );(29CE / 30CE),Gamla,-1
+936,Early Byzantine_Eshtemo`a,2,Early Byzantine,Eshtemo`a,-1
+937,Marcian;(450CE - 457CE)_דקלה,2,Marcian;(450CE - 457CE),דקלה,-1
+938,Mazday;(343BCE - 333BCE)_Gan Soreq (north),2,Mazday;(343BCE - 333BCE),Gan Soreq (north),-1
+939,Gallienus;(253CE - 268CE)_Zippori,2,Gallienus;(253CE - 268CE),Zippori,-1
+940,Autonomous;(399BCE - 300BCE)_Gan Soreq (north),2,Autonomous;(399BCE - 300BCE),Gan Soreq (north),-1
+941,Late Byzantine_חולות אשדוד,2,Late Byzantine,חולות אשדוד,-1
+942,Autonomous;(410BCE - 331BCE)_Gan Soreq (north),2,Autonomous;(410BCE - 331BCE),Gan Soreq (north),-1
+943,Antiochus IV;(175BCE - 164BCE)_Ashqelon- Afridar and Barnea` (east),2,Antiochus IV;(175BCE - 164BCE),Ashqelon- Afridar and Barnea` (east),-1
+944,Archelaus;(4BCE - 6CE)_Jerusalem- Old City- Western and Southern Walls,2,Archelaus;(4BCE - 6CE),Jerusalem- Old City- Western and Southern Walls,-1
+945,Roman_Acre  Museum  collection,2,Roman,Acre  Museum  collection,-1
+946,Late Bronze_Yoqne`am- T.,2,Late Bronze,Yoqne`am- T.,-1
+947,Roman-Byzantine_זבלי- ח' )שובל)?,2,Roman-Byzantine,זבלי- ח' )שובל)?,-1
+948,Constantius II;(335CE - 337CE)_Meron,2,Constantius II;(335CE - 337CE),Meron,-1
+949,Great Revolt;(67CE / 68CE)_Horevot Mazada,2,Great Revolt;(67CE / 68CE),Horevot Mazada,-1
+950,Hellenistic_Antioch??? סוריה,2,Hellenistic,Antioch??? סוריה,-1
+951,Antoninus Pius;(188CE)_Haifa- Shiqmona- Underwater site,2,Antoninus Pius;(188CE),Haifa- Shiqmona- Underwater site,-1
+952,Roman_Brit Ahim,2,Roman,Brit Ahim,-1
+953,Antiochus IX;(114BCE / 113BCE - 111BCE)_Bet She'an,2,Antiochus IX;(114BCE / 113BCE - 111BCE),Bet She'an,-1
+954,Herod;(37BCE - 4BCE)_Jerusalem- Binyane ha-Umma,2,Herod;(37BCE - 4BCE),Jerusalem- Binyane ha-Umma,-1
+955,Poppaea;(65CE - 65CE)_Nahariyya- Giv`at Katzenelson,2,Poppaea;(65CE - 65CE),Nahariyya- Giv`at Katzenelson,-1
+956,Geta;(198CE - 205CE)_Akhziv,2,Geta;(198CE - 205CE),Akhziv,-1
+957,Constantine I;(307CE)_Bet She'an- Shikkun Waw,2,Constantine I;(307CE),Bet She'an- Shikkun Waw,-1
+958,Vespasian;(69CE - 79CE)_Qasrin,2,Vespasian;(69CE - 79CE),Qasrin,-1
+959,Elagabalus;(218CE - 222CE)_Shema`- H.,2,Elagabalus;(218CE - 222CE),Shema`- H.,-1
+960,Byzantine_Baqa el-Gharbiya (south),2,Byzantine,Baqa el-Gharbiya (south),-1
+961,Autonomous;(475BCE - 440BCE)_Jerusalem- City of David,2,Autonomous;(475BCE - 440BCE),Jerusalem- City of David,-1
+962,Alexander Jannaeus;(104BCE - 76BCE)_Zippori,2,Alexander Jannaeus;(104BCE - 76BCE),Zippori,-1
+963,Roman-Byzantine_Manawat- el-,2,Roman-Byzantine,Manawat- el-,-1
+964,Frederick II;(1249CE / 1249CE)_Shema`- H.,2,Frederick II;(1249CE / 1249CE),Shema`- H.,-1
+965,Pre-Pottery Neolithic_Haruzim (east),2,Pre-Pottery Neolithic,Haruzim (east),-1
+966,Early Roman (period)_Ashqelon- el-Jura,2,Early Roman (period),Ashqelon- el-Jura,-1
+967,Early Bronze I_Sharuhen- T.,2,Early Bronze I,Sharuhen- T.,-1
+968,Late Chalcolithic_Bet She'an- T.,2,Late Chalcolithic,Bet She'an- T.,-1
+969,Iron I_`Azeqa- T.,2,Iron I,`Azeqa- T.,-1
+970,Agrippa II;(83CE / 84CE)_Shema`- H.,2,Agrippa II;(83CE / 84CE),Shema`- H.,-1
+971,Middle Bronze IIB_Afeq,2,Middle Bronze IIB,Afeq,-1
+972,Roman-Byzantine_Jerusalem- Old City- Jewish Quarter- Cardo,2,Roman-Byzantine,Jerusalem- Old City- Jewish Quarter- Cardo,-1
+973,Autonomous;(399BCE - 336BCE)_Yafo,2,Autonomous;(399BCE - 336BCE),Yafo,-1
+974,Late Roman_ירושלים-  בית  יתומים  הסורי  Syrian  Orphanage-Jerusalem,2,Late Roman,ירושלים-  בית  יתומים  הסורי  Syrian  Orphanage-Jerusalem,-1
+975,Antiochus IV;(175BCE - 164BCE)_Burnat- Kh.,2,Antiochus IV;(175BCE - 164BCE),Burnat- Kh.,-1
+976,Judah Aristobulus I;(104BCE - 104BCE)_Jerualem- Old City Wall,2,Judah Aristobulus I;(104BCE - 104BCE),Jerualem- Old City Wall,-1
+977,Elagabalus;(219CE - 222CE)_Iqrit,2,Elagabalus;(219CE - 222CE),Iqrit,-1
+978,Umayyad (post reform);(700CE - 715CE)_Tiberias and Hammat,2,Umayyad (post reform);(700CE - 715CE),Tiberias and Hammat,-1
+979,Antiochus VII;(138BCE - 129BCE)_`Eqed,2,Antiochus VII;(138BCE - 129BCE),`Eqed,-1
+980,Archelaus;(4BCE - 6CE)_Jerusalem- City of David- Pool of Shiloah,2,Archelaus;(4BCE - 6CE),Jerusalem- City of David- Pool of Shiloah,-1
+981,Late Bronze II_Kefar Ruppin,2,Late Bronze II,Kefar Ruppin,-1
+982,Judah Aristobulus I;(104BCE - 103BCE)_Burnat- Kh.,2,Judah Aristobulus I;(104BCE - 103BCE),Burnat- Kh.,-1
+983,Iron IIC-Babylonian-Persian (?)_Ashkelon  1933,2,Iron IIC-Babylonian-Persian (?),Ashkelon  1933,-1
+984,Late Roman_Samaria,2,Late Roman,Samaria,-1
+985,Antiochus III;(198BCE - 187BCE)_(+)Jerualem- Old City Wall (2921/108);Jerusalem- Old City (2921/0);Jerusalem- City of David (2922/0),2,Antiochus III;(198BCE - 187BCE),(+)Jerualem- Old City Wall (2921/108);Jerusalem- Old City (2921/0);Jerusalem- City of David (2922/0),-1
+986,Persian_Megiddo- T.,2,Persian,Megiddo- T.,-1
+987,Persian_Akhziv- T,2,Persian,Akhziv- T,-1
+988,Roman-Byzantine (?)_Ashqelon- Migdal Ashqelon,2,Roman-Byzantine (?),Ashqelon- Migdal Ashqelon,-1
+989,Demetrius II;(128BCE / 127BCE)_Gush Halav,2,Demetrius II;(128BCE / 127BCE),Gush Halav,-1
+990,John Hyrcanus I;(130BCE - 104BCE)_Burnat- Kh.,2,John Hyrcanus I;(130BCE - 104BCE),Burnat- Kh.,-1
+991,Late Byzantine-Ummayad_(+) (1579/0);Kefar Sava- Trig. point 11-R (1578/0); (25070/0),2,Late Byzantine-Ummayad,(+) (1579/0);Kefar Sava- Trig. point 11-R (1578/0); (25070/0),-1
+992,Iron II_Maresha- T.,2,Iron II,Maresha- T.,-1
+993,Iron IIA_Yin`am- T.,2,Iron IIA,Yin`am- T.,-1
+994,Iron IIA-Iron I_Bet She'an- T.,2,Iron IIA-Iron I,Bet She'an- T.,-1
+995,Middle Palaeolithic_Rosh `En Mor,2,Middle Palaeolithic,Rosh `En Mor,-1
+996,Bar Kokhba;(134CE - 135CE)_Hemda- H.,2,Bar Kokhba;(134CE - 135CE),Hemda- H.,-1
+997,Late Bronze I (?)_Bet She'an- T.,2,Late Bronze I (?),Bet She'an- T.,-1
+998,Antiochus VII;(138BCE - 129BCE)_Yafo,2,Antiochus VII;(138BCE - 129BCE),Yafo,-1
+999,Leo I;(457CE - 474CE)_דקלה,2,Leo I;(457CE - 474CE),דקלה,-1
+1000,Alexander the Great;(336BCE - 323BCE)_Ashqelon- Abu Qutuf,2,Alexander the Great;(336BCE - 323BCE),Ashqelon- Abu Qutuf,-1
+1001,Seleucus III;(224BCE - 222BCE)_(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),2,Seleucus III;(224BCE - 222BCE),(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),-1
+1002,Antiochus VII;(138BCE - 129BCE)_Maresha- T.,2,Antiochus VII;(138BCE - 129BCE),Maresha- T.,-1
+1003,Ptolemy II;(248BCE)_Mikhal- T.,2,Ptolemy II;(248BCE),Mikhal- T.,-1
+1004,Early Islamic_Be'er Shema`- H.,2,Early Islamic,Be'er Shema`- H.,-1
+1005,Late Roman 1 (coin);(330CE - 337CE)_Korazim,2,Late Roman 1 (coin);(330CE - 337CE),Korazim,-1
+1006,Alexander Jannaeus;(80BCE / 79BCE - 76BCE)_Burnat- Kh.,2,Alexander Jannaeus;(80BCE / 79BCE - 76BCE),Burnat- Kh.,-1
+1007,Late Chalcolithic_Be'er Sheva`- H. Betar,2,Late Chalcolithic,Be'er Sheva`- H. Betar,-1
+1008,Crusader (?)_Gush Halav,2,Crusader (?),Gush Halav,-1
+1009,Alexander Jannaeus;(104BCE - 76BCE)_Burnat- Kh.,2,Alexander Jannaeus;(104BCE - 76BCE),Burnat- Kh.,-1
+1010,Demetrius II;(145BCE - 125BCE)_Burnat- Kh.,2,Demetrius II;(145BCE - 125BCE),Burnat- Kh.,-1
+1011,Constantine II;(324CE - 325CE)_Zippori,2,Constantine II;(324CE - 325CE),Zippori,-1
+1012,Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE)_Nahariyya,2,Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE),Nahariyya,-1
+1013,Late Bronze II_יבנה- קבר מס' 4,2,Late Bronze II,יבנה- קבר מס' 4,-1
+1014,Severus Alexander;(222CE - 235CE)_Nevoraya- H.,2,Severus Alexander;(222CE - 235CE),Nevoraya- H.,-1
+1015,Early Bronze_Bet She'an- T.,2,Early Bronze,Bet She'an- T.,-1
+1016,Nero;(63CE)_Jerusalem- Meqor Hayyim,2,Nero;(63CE),Jerusalem- Meqor Hayyim,-1
+1017,Late Bronze II_Mor- T,2,Late Bronze II,Mor- T,-1
+1018,Hadrian;(117CE - 138CE)_Meron,2,Hadrian;(117CE - 138CE),Meron,-1
+1019,Agrippa I;(41CE / 42CE)_Jerusalem- Giv`at Sha'ul,2,Agrippa I;(41CE / 42CE),Jerusalem- Giv`at Sha'ul,-1
+1020,Ptolemy IV (?);(221BCE / 220BCE - 204BCE / 203BCE)_(+)`Akko- T. (2328/0);`Akko (2266/0),2,Ptolemy IV (?);(221BCE / 220BCE - 204BCE / 203BCE),(+)`Akko- T. (2328/0);`Akko (2266/0),-1
+1021,Byzantine_Shoham,2,Byzantine,Shoham,-1
+1022,Autonomous;(360BCE - 300BCE)_Ashqelon- Afridar and Barnea` (east),2,Autonomous;(360BCE - 300BCE),Ashqelon- Afridar and Barnea` (east),-1
+1023,Ptolemy II;(285BCE - 246BCE)_`En Gedi - Goren- Tell,2,Ptolemy II;(285BCE - 246BCE),`En Gedi - Goren- Tell,-1
+1024,Middle Bronze II_Sharuhen- T.,2,Middle Bronze II,Sharuhen- T.,-1
+1025,Late Bronze IIB-Iron I_Gezer- T.,2,Late Bronze IIB-Iron I,Gezer- T.,-1
+1026,Herod;(37BCE - 4BCE)_Burnat- Kh.,2,Herod;(37BCE - 4BCE),Burnat- Kh.,-1
+1027,Late Roman_Zippori,2,Late Roman,Zippori,-1
+1028,Seleucus IV;(187BCE - 175BCE)_Maresha- T.,2,Seleucus IV;(187BCE - 175BCE),Maresha- T.,-1
+1029,Late Roman_Acre  Museum  Collection,2,Late Roman,Acre  Museum  Collection,-1
+1030,Alexander Jannaeus;(104BCE - 76BCE)_Ben Shemen,2,Alexander Jannaeus;(104BCE - 76BCE),Ben Shemen,-1
+1031,Constantine I;(324CE - 330CE)_Be'er Sheva`,2,Constantine I;(324CE - 330CE),Be'er Sheva`,-1
+1032,Mamluk_`En Gedi,2,Mamluk,`En Gedi,-1
+1033,Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE)_Kison- T.,2,Ptolemy I;(305BCE / 304BCE - 283BCE / 282BCE),Kison- T.,-1
+1034,Demetrius I;(161BCE - 150BCE)_(+)Jerualem- Old City Wall (2921/108);Jerusalem- Old City (2921/0);Jerusalem- City of David (2922/0),2,Demetrius I;(161BCE - 150BCE),(+)Jerualem- Old City Wall (2921/108);Jerusalem- Old City (2921/0);Jerusalem- City of David (2922/0),-1
+1035,Antiochus VII;(132BCE / 131BCE - 131BCE / 130BCE)_Jerusalem- Qiryat ha-Yovel,2,Antiochus VII;(132BCE / 131BCE - 131BCE / 130BCE),Jerusalem- Qiryat ha-Yovel,-1
+1036,Herod;(37BCE - 4BCE)_Karm er-Ras,2,Herod;(37BCE - 4BCE),Karm er-Ras,-1
+1037,Late Bronze IIB-Iron I_Yoqne`am- T.,2,Late Bronze IIB-Iron I,Yoqne`am- T.,-1
+1038,Iron IIC-Babylonian-Persian_Megiddo- T.,2,Iron IIC-Babylonian-Persian,Megiddo- T.,-1
+1039,Ptolemy VI;(164BCE / 163BCE)_`Akko- Underwater Site,2,Ptolemy VI;(164BCE / 163BCE),`Akko- Underwater Site,-1
+1040,Florentine (Rulers);(1252CE - 1533CE)_`Akko,2,Florentine (Rulers);(1252CE - 1533CE),`Akko,-1
+1041,Antiochus IV;(175BCE - 164BCE)_Bethsaida,2,Antiochus IV;(175BCE - 164BCE),Bethsaida,-1
+1042,Persian_Haifa- T. Shiqmona,2,Persian,Haifa- T. Shiqmona,-1
+1043,Lower Palaeolithic_Holon- Industry Zone,2,Lower Palaeolithic,Holon- Industry Zone,-1
+1044,Pottery Neolithic_Dalhamiya,2,Pottery Neolithic,Dalhamiya,-1
+1045,Early Bronze_Megiddo- T.,2,Early Bronze,Megiddo- T.,-1
+1046,Galerius Maximianus;(305CE - 311CE)_Nahf,2,Galerius Maximianus;(305CE - 311CE),Nahf,-1
+1047,Ptolemy II;(285BCE - 246BCE)_Tel Aviv- T. el-Hashshash,2,Ptolemy II;(285BCE - 246BCE),Tel Aviv- T. el-Hashshash,-1
+1048,Late Chalcolithic_Bet-Shemesh- T.,2,Late Chalcolithic,Bet-Shemesh- T.,-1
+1049,Demetrius II;(144BCE / 143BCE)_Qedesh- T.,2,Demetrius II;(144BCE / 143BCE),Qedesh- T.,-1
+1050,Trajan Decius;(249CE - 250CE)_Rafah- Kh.,2,Trajan Decius;(249CE - 250CE),Rafah- Kh.,-1
+1051,Byzantine_Jerusalem- Old City- Western and Southern Walls,2,Byzantine,Jerusalem- Old City- Western and Southern Walls,-1
+1052,Middle Roman_מערות צבר- מפת עין גדי- חפירות 1972- פסח בר אדון,2,Middle Roman,מערות צבר- מפת עין גדי- חפירות 1972- פסח בר אדון,-1
+1053,Antiochus III;(222BCE - 187BCE)_Ramat Yishay,2,Antiochus III;(222BCE - 187BCE),Ramat Yishay,-1
+1054,Iron Age_Nemal Akhziv,2,Iron Age,Nemal Akhziv,-1
+1055,Herod Philip;(29CE / 30CE)_Meron,2,Herod Philip;(29CE / 30CE),Meron,-1
+1056,Middle Bronze IIC_Bet She'an- T.,2,Middle Bronze IIC,Bet She'an- T.,-1
+1057,Ptolemy III;(246BCE - 221BCE / 220BCE)_Bethsaida,2,Ptolemy III;(246BCE - 221BCE / 220BCE),Bethsaida,-1
+1058,Late Roman - Early Byzantine_Bet She`arim- H.,2,Late Roman - Early Byzantine,Bet She`arim- H.,-1
+1059,Iron II_Rosh ha-`Ayin,2,Iron II,Rosh ha-`Ayin,-1
+1060,Seleucus IV;(187BCE - 175BCE)_(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),2,Seleucus IV;(187BCE - 175BCE),(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),-1
+1061,Antiochus III;(222BCE - 187BCE)_(+)Maresha- Underground System No. 61 (1300/3);Hemda- H. (1299/0);Maresha- T. (1300/0),2,Antiochus III;(222BCE - 187BCE),(+)Maresha- Underground System No. 61 (1300/3);Hemda- H. (1299/0);Maresha- T. (1300/0),-1
+1062,Byzantine_Jerusalem- Third Wall Area,2,Byzantine,Jerusalem- Third Wall Area,-1
+1063,Trajan Decius;(249CE - 251CE)_Jerusalem- Old City- Western and Southern Walls,2,Trajan Decius;(249CE - 251CE),Jerusalem- Old City- Western and Southern Walls,-1
+1064,Middle Bronze IIA_`Idham- T. el-,2,Middle Bronze IIA,`Idham- T. el-,-1
+1065,Hellenistic_Zippori,2,Hellenistic,Zippori,-1
+1066,Alexander I Balas;(152BCE - 145BCE)_Jerusalem- City of David,2,Alexander I Balas;(152BCE - 145BCE),Jerusalem- City of David,-1
+1067,Byzantine_Jerusalem- City of David,2,Byzantine,Jerusalem- City of David,-1
+1068,Ptolemy II;(285BCE - 246BCE)_(+)Maresha- Underground System No. 61 (1300/3);Hemda- H. (1299/0);Maresha- T. (1300/0),2,Ptolemy II;(285BCE - 246BCE),(+)Maresha- Underground System No. 61 (1300/3);Hemda- H. (1299/0);Maresha- T. (1300/0),-1
+1069,Middle Bronze II-Late Bronze_Bet She'an- T.,2,Middle Bronze II-Late Bronze,Bet She'an- T.,-1
+1070,Agrippa II;(84CE / 85CE)_Bethsaida,2,Agrippa II;(84CE / 85CE),Bethsaida,-1
+1071,Heraclius;(613CE - 618CE)_Ziqim,2,Heraclius;(613CE - 618CE),Ziqim,-1
+1072,Ptolemy VIII;(146BCE / 145BCE - 116BCE)_Gan Soreq (north),2,Ptolemy VIII;(146BCE / 145BCE - 116BCE),Gan Soreq (north),-1
+1073,Byzantine_Bustan- H.,2,Byzantine,Bustan- H.,-1
+1074,Galba;(68CE - 69CE)_Jerusalem- Meqor Hayyim,2,Galba;(68CE - 69CE),Jerusalem- Meqor Hayyim,-1
+1075,Ptolemy II;(246BCE - 241BCE)_Nahariyya,2,Ptolemy II;(246BCE - 241BCE),Nahariyya,-1
+1076,Seleucus III;(224BCE - 222BCE)_Sha`ar ha-`Amaqim,2,Seleucus III;(224BCE - 222BCE),Sha`ar ha-`Amaqim,-1
+1077,Hadrian;(117CE - 138CE)_`Alya- Kh.,2,Hadrian;(117CE - 138CE),`Alya- Kh.,-1
+1078,Early Roman (period)_Gat- T.,2,Early Roman (period),Gat- T.,-1
+1079,Antiochus VIII;(122BCE / 121BCE)_Yafo,2,Antiochus VIII;(122BCE / 121BCE),Yafo,-1
+1080,Augustus;(9CE / 10CE)_Jerusalem- Old City- Western and Southern Walls,2,Augustus;(9CE / 10CE),Jerusalem- Old City- Western and Southern Walls,-1
+1081,Septimius Severus;(193CE - 211CE)_Iqrit,2,Septimius Severus;(193CE - 211CE),Iqrit,-1
+1082,Roman_Shechem (Ancient Site),2,Roman,Shechem (Ancient Site),-1
+1083,Crusader_Shalem- T.,2,Crusader,Shalem- T.,-1
+1084,Roman (?)_Nazerat,2,Roman (?),Nazerat,-1
+1085,Elagabalus;(218CE - 222CE)_Bethsaida,2,Elagabalus;(218CE - 222CE),Bethsaida,-1
+1086,Agrippa II;(74CE / 75CE - 83CE / 84CE)_Karm er-Ras,2,Agrippa II;(74CE / 75CE - 83CE / 84CE),Karm er-Ras,-1
+1087,Crusader_Tiberias and Hammat- Thermae,2,Crusader,Tiberias and Hammat- Thermae,-1
+1088,Heraclius;(611CE / 612CE)_Jerusalem- Third Wall Area,2,Heraclius;(611CE / 612CE),Jerusalem- Third Wall Area,-1
+1089,Antiochus I;(281BCE - 261BCE)_(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),2,Antiochus I;(281BCE - 261BCE),(+)Gan Soreq (north) (4398/0);Gan Soreq (south) (839/0);Gan Soreq (south) [west] (36119/0),-1
+1090,Roman_Qazyon- H.,2,Roman,Qazyon- H.,-1
+1091,Neolithic_Ha-Zorea`- T. Qira,1,Neolithic,Ha-Zorea`- T. Qira,-1
+1092,Roman_Bet Guvrin,1,Roman,Bet Guvrin,-1
+1093,Late Neolithic_Nahal Barqos,1,Late Neolithic,Nahal Barqos,-1
+1094,Late Roman - Byzantine_Shubeika- Kh. esh-,1,Late Roman - Byzantine,Shubeika- Kh. esh-,-1
+1095,Iron II_Jerusalem- Qiryat Moriah,1,Iron II,Jerusalem- Qiryat Moriah,-1
+1096,Byzantine_Caesarea- Synagogue,1,Byzantine,Caesarea- Synagogue,-1
+1097,Byzantine_Merot- H.,1,Byzantine,Merot- H.,-1
+1098,Early Bronze I_Kfar Monash,1,Early Bronze I,Kfar Monash,-1
+1099,Iron I_`Ar`ara (south-west),1,Iron I,`Ar`ara (south-west),-1
+1100,Byzantine_Tel Aviv- T. Qasila,1,Byzantine,Tel Aviv- T. Qasila,-1
+1101,Iron I (?)_Mizpah,1,Iron I (?),Mizpah,-1
+1102,Late Roman - Early Byzantine_Jerusalem- Old City,1,Late Roman - Early Byzantine,Jerusalem- Old City,-1
+1103,Mamluk_Tiberias and Hammat,1,Mamluk,Tiberias and Hammat,-1
+1104,Middle Hellenistic_Ashqelon- Afridar and Barnea` (east),1,Middle Hellenistic,Ashqelon- Afridar and Barnea` (east),-1
+1105,Early Roman (period)_ירושלים-  סילואן,1,Early Roman (period),ירושלים-  סילואן,-1
+1106,Late Roman - Early Byzantine_Jerusalem- City of David,1,Late Roman - Early Byzantine,Jerusalem- City of David,-1
+1107,Late Bronze II_Gerisa- T.,1,Late Bronze II,Gerisa- T.,-1
+1108,Roman_טבריה- קבר רומי בעיר,1,Roman,טבריה- קבר רומי בעיר,-1
+1109,Roman_Evlayim,1,Roman,Evlayim,-1
+1110,Late Roman - Early Byzantine_Ha-Gosherim,1,Late Roman - Early Byzantine,Ha-Gosherim,-1
+1111,Late Hellenistic - Early Roman_Ashqelon- Afridar and Barnea`,1,Late Hellenistic - Early Roman,Ashqelon- Afridar and Barnea`,-1
+1112,Roman_Nahal Arbel,1,Roman,Nahal Arbel,-1
+1113,Roman_Mafjar- Kh. el-,1,Roman,Mafjar- Kh. el-,-1
+1114,Early Roman (period)_`Alya- Kh.,1,Early Roman (period),`Alya- Kh.,-1
+1115,Roman_מאמאס- ליד אמת המים של קיסריה Mamas next to Caesarea Aqueduct,1,Roman,מאמאס- ליד אמת המים של קיסריה Mamas next to Caesarea Aqueduct,-1
+1116,Byzantine_Huldah Area. 4231-4831,1,Byzantine,Huldah Area. 4231-4831,-1
+1117,Iron Age (?)_Mizpah,1,Iron Age (?),Mizpah,-1
+1118,Early Roman (period) (?)_BURNT HOUSE,1,Early Roman (period) (?),BURNT HOUSE,-1
+1119,Byzantine_Shefar`am,1,Byzantine,Shefar`am,-1
+1120,Iron IIA-Iron I_Tel Aviv- T. Qasila,1,Iron IIA-Iron I,Tel Aviv- T. Qasila,-1
+1121,Iron IIC_`En Gedi - Goren- Tell,1,Iron IIC,`En Gedi - Goren- Tell,-1
+1122,Late Bronze_Bet-Shemesh- T.,1,Late Bronze,Bet-Shemesh- T.,-1
+1123,Late Roman_Bet She'an,1,Late Roman,Bet She'an,-1
+1124,Byzantine (?)_Zuq el-Fauqani ez-,1,Byzantine (?),Zuq el-Fauqani ez-,-1
+1125,Late Byzantine_Jerusalem- Old City- Western and Southern Walls,1,Late Byzantine,Jerusalem- Old City- Western and Southern Walls,-1
+1126,Middle Roman - Late Roman_Jerusalem- `En Rogel,1,Middle Roman - Late Roman,Jerusalem- `En Rogel,-1
+1127,Late Bronze IIB_Lakhish- T.,1,Late Bronze IIB,Lakhish- T.,-1
+1128,Roman_איזור  חברון  Dura  Hebron  District,1,Roman,איזור  חברון  Dura  Hebron  District,-1
+1129,Late Roman_`Ein Yabrud,1,Late Roman,`Ein Yabrud,-1
+1130,Iron II (?)_Bet She'an- T.,1,Iron II (?),Bet She'an- T.,-1
+1131,Byzantine_Sawafir esh-Sharqiya- es-,1,Byzantine,Sawafir esh-Sharqiya- es-,-1
+1132,Ottoman_Hasi- T.,1,Ottoman,Hasi- T.,-1
+1133,Pre-Ghassulian Chalcolithic_Turmus- T.,1,Pre-Ghassulian Chalcolithic,Turmus- T.,-1
+1134,Late Roman - Byzantine (?)_Jerusalem- City of David,1,Late Roman - Byzantine (?),Jerusalem- City of David,-1
+1135,Early Bronze II_Kryat Ata- Shekhunat Moler,1,Early Bronze II,Kryat Ata- Shekhunat Moler,-1
+1136,Kebaran_`En Nevel,1,Kebaran,`En Nevel,-1
+1137,Roman_שכם  -  Nablus,1,Roman,שכם  -  Nablus,-1
+1138,Late Roman_טבריה  TIBERIAS,1,Late Roman,טבריה  TIBERIAS,-1
+1139,Early Roman (period)_Baqa el-Gharbiya (south),1,Early Roman (period),Baqa el-Gharbiya (south),-1
+1140,Roman_BURNT HOUSE,1,Roman,BURNT HOUSE,-1
+1141,Early Bronze III (?)_Bet Yerah- T.,1,Early Bronze III (?),Bet Yerah- T.,-1
+1142,Early Roman (period)_Jerusalem- Old City- St. Stephan's Gate,1,Early Roman (period),Jerusalem- Old City- St. Stephan's Gate,-1
+1143,Late Roman_Shuni,1,Late Roman,Shuni,-1
+1144,Roman_מורדות  הר  עיבל  Slopes  of  Mt.Ebal,1,Roman,מורדות  הר  עיבל  Slopes  of  Mt.Ebal,-1
+1145,Late Bronze IIA_Bet-Shemesh- T.,1,Late Bronze IIA,Bet-Shemesh- T.,-1
+1146,Early Islamic_`Illin- H.,1,Early Islamic,`Illin- H.,-1
+1147,Late Roman_Qannir- Kh.,1,Late Roman,Qannir- Kh.,-1
+1148,Middle Roman_Nahal Mishmar- Cave of the Treasure,1,Middle Roman,Nahal Mishmar- Cave of the Treasure,-1
+1149,Late Hellenistic_גזר,1,Late Hellenistic,גזר,-1
+1150,Roman_Nahal Ze`elim,1,Roman,Nahal Ze`elim,-1
+1151,Persian_I Yonim,1,Persian,I Yonim,-1
+1152,Roman_Shechem (Town),1,Roman,Shechem (Town),-1
+1153,Late Roman - Byzantine_Jerusalem- Old City,1,Late Roman - Byzantine,Jerusalem- Old City,-1
+1154,Roman_ג'פנא  (ליד  רמאללה)  Jifna,1,Roman,ג'פנא  (ליד  רמאללה)  Jifna,-1
+1155,Iron IIC_Moza,1,Iron IIC,Moza,-1
+1156,Middle Roman_Shalem- T.,1,Middle Roman,Shalem- T.,-1
+1157,Roman_ליד  חדיתה  -קבר  מצוייר  Haditha  Painted  Tomb,1,Roman,ליד  חדיתה  -קבר  מצוייר  Haditha  Painted  Tomb,-1
+1158,Byzantine_Haifa- T. Shiqmona,1,Byzantine,Haifa- T. Shiqmona,-1
+1159,Early Bronze I_`Erani- T.,1,Early Bronze I,`Erani- T.,-1
+1160,Early Roman (period)_Jerusalem- Ya`ar Ha-Shalom,1,Early Roman (period),Jerusalem- Ya`ar Ha-Shalom,-1
+1161,Early Byzantine_Zippori,1,Early Byzantine,Zippori,-1
+1162,Ottoman (?)_Jerusalem- Har Ziyyon,1,Ottoman (?),Jerusalem- Har Ziyyon,-1
+1163,Byzantine_Haluza,1,Byzantine,Haluza,-1
+1164,Byzantine_`Ujul- T. el-,1,Byzantine,`Ujul- T. el-,-1
+1165,Pre-Pottery Neolithic_Turmus- T.,1,Pre-Pottery Neolithic,Turmus- T.,-1
+1166,Pre-Pottery Neolithic_Sha`ar Efrayim (south) [north],1,Pre-Pottery Neolithic,Sha`ar Efrayim (south) [north],-1
+1167,Iron II_`Erani- T.,1,Iron II,`Erani- T.,-1
+1168,Late Roman_Tirya- H.,1,Late Roman,Tirya- H.,-1
+1169,Roman-Byzantine_Zuq el-Fauqani ez-,1,Roman-Byzantine,Zuq el-Fauqani ez-,-1
+1170,Early Bronze I-II_Mizpah,1,Early Bronze I-II,Mizpah,-1
+1171,Iron II_Akhziv (north),1,Iron II,Akhziv (north),-1
+1172,Byzantine_Shubeika- Kh. esh-,1,Byzantine,Shubeika- Kh. esh-,-1
+1173,Umayyad-Abbasid_Shoham,1,Umayyad-Abbasid,Shoham,-1
+1174,Late Byzantine_Jerusalem- `En Rogel,1,Late Byzantine,Jerusalem- `En Rogel,-1
+1175,Early Roman (period)_Jerusalem- Shmuel ha-Navi,1,Early Roman (period),Jerusalem- Shmuel ha-Navi,-1
+1176,Roman_Samakh  T.  -  Haifa  Region,1,Roman,Samakh  T.  -  Haifa  Region,-1
+1177,Hellenistic_`Atlit,1,Hellenistic,`Atlit,-1
+1178,Early Hellenistic_Jerusalem- Old City- Western and Southern Walls,1,Early Hellenistic,Jerusalem- Old City- Western and Southern Walls,-1
+1179,Hellenistic_Brit Ahim,1,Hellenistic,Brit Ahim,-1
+1180,Iron I_קבר בבית סחור,1,Iron I,קבר בבית סחור,-1
+1181,Persian-Hellenistic_Jerusalem- Old City,1,Persian-Hellenistic,Jerusalem- Old City,-1
+1182,Roman_Jerusalem- `En Kerem,1,Roman,Jerusalem- `En Kerem,-1
+1183,Late Roman - Early Byzantine_`Utsa- H.,1,Late Roman - Early Byzantine,`Utsa- H.,-1
+1184,Byzantine_Istabul- Kh.,1,Byzantine,Istabul- Kh.,-1
+1185,Late Roman_Acre  Museum  collection,1,Late Roman,Acre  Museum  collection,-1
+1186,Middle Roman_Nahal Hever. Cave 2,1,Middle Roman,Nahal Hever. Cave 2,-1
+1187,Late Chalcolithic_Sea  of  Galilee-  North  of  Tiberias,1,Late Chalcolithic,Sea  of  Galilee-  North  of  Tiberias,-1
+1188,Mamluk_`Ujul- T. el-,1,Mamluk,`Ujul- T. el-,-1
+1189,Arab-Byzantine_Karkor `Illit- H.,1,Arab-Byzantine,Karkor `Illit- H.,-1
+1190,Middle Bronze II (?)_Afeq,1,Middle Bronze II (?),Afeq,-1
+1191,Roman_El  Basseh  Tomb,1,Roman,El  Basseh  Tomb,-1
+1192,Late Byzantine_Nazor- H.,1,Late Byzantine,Nazor- H.,-1
+1193,Early Bronze_Kfar Monash,1,Early Bronze,Kfar Monash,-1
+1194,Hellenistic_מערה    ט'הרייה    Dhaheriah    Cave,1,Hellenistic,מערה    ט'הרייה    Dhaheriah    Cave,-1
+1195,Late Roman_Jerusalem- Ketef Hinnom,1,Late Roman,Jerusalem- Ketef Hinnom,-1
+1196,Late Bronze_Miqne- T.,1,Late Bronze,Miqne- T.,-1
+1197,Early Bronze III_Lakhish- T.,1,Early Bronze III,Lakhish- T.,-1
+1198,Late Hellenistic-Early Roman (period)_Jerusalem- Old City- Jewish Quarter- Area F- M,1,Late Hellenistic-Early Roman (period),Jerusalem- Old City- Jewish Quarter- Area F- M,-1
+1199,Iron IIC_Mizpah,1,Iron IIC,Mizpah,-1
+1200,Late Roman - Early Byzantine_Baqa el-Gharbiya (south),1,Late Roman - Early Byzantine,Baqa el-Gharbiya (south),-1
+1201,Late Chalcolithic_Nahal `Arugot,1,Late Chalcolithic,Nahal `Arugot,-1
+1202,Iron IIC-Babylonian-Persian_Beth Zur,1,Iron IIC-Babylonian-Persian,Beth Zur,-1
+1203,Early Bronze II_Jericho- T.,1,Early Bronze II,Jericho- T.,-1
+1204,Early Roman (period)_Tirya- H.,1,Early Roman (period),Tirya- H.,-1
+1205,Antiochus III;(198BCE - 187BCE)_Sha`ar ha-`Amaqim,1,Antiochus III;(198BCE - 187BCE),Sha`ar ha-`Amaqim,-1
+1206,Early Roman (period)_Jerusalem- Rockefeller Museum,1,Early Roman (period),Jerusalem- Rockefeller Museum,-1
+1207,Late Roman - Byzantine_Mishmar ha-`Emeq,1,Late Roman - Byzantine,Mishmar ha-`Emeq,-1
+1208,Late Roman_Qiryat Ata,1,Late Roman,Qiryat Ata,-1
+1209,Late Roman_קבר  אל  בסה  El  Basseh,1,Late Roman,קבר  אל  בסה  El  Basseh,-1
+1210,Late Roman - Byzantine_Bet She`arim- H.,1,Late Roman - Byzantine,Bet She`arim- H.,-1
+1211,Crusader_Tiberias and Hammat,1,Crusader,Tiberias and Hammat,-1
+1212,Iron Age (?)_Gamma- T.,1,Iron Age (?),Gamma- T.,-1
+1213,Early Roman (period)_Haifa- T. Abu Hawwam,1,Early Roman (period),Haifa- T. Abu Hawwam,-1
+1214,Early Roman (period)_Jerusalem North- Mahanayim- Cave 22,1,Early Roman (period),Jerusalem North- Mahanayim- Cave 22,-1
+1215,Middle Roman - Late Roman_Bet Neqofa,1,Middle Roman - Late Roman,Bet Neqofa,-1
+1216,Late Roman_Hauran  Area  -Jordan ירדן,1,Late Roman,Hauran  Area  -Jordan ירדן,-1
+1217,Byzantine_Mafjar- Kh. el-,1,Byzantine,Mafjar- Kh. el-,-1
+1218,Byzantine_Yafia`,1,Byzantine,Yafia`,-1
+1219,Persian_Hasi- T.,1,Persian,Hasi- T.,-1
+1220,Iron Age_Megiddo- T.,1,Iron Age,Megiddo- T.,-1
+1221,Hellenistic_תעלת  עכו  -  Moat  of  Acre,1,Hellenistic,תעלת  עכו  -  Moat  of  Acre,-1
+1222,Byzantine_חירבת  ערה  Ara  Horvat,1,Byzantine,חירבת  ערה  Ara  Horvat,-1
+1223,Late Bronze II_`Azeqa- T.,1,Late Bronze II,`Azeqa- T.,-1
+1224,Late Hellenistic - Early Roman_Jerusalem- Har ha-Zofim,1,Late Hellenistic - Early Roman,Jerusalem- Har ha-Zofim,-1
+1225,Byzantine_Jerusalem- Old City- St. Stephan's Gate,1,Byzantine,Jerusalem- Old City- St. Stephan's Gate,-1
+1226,Byzantine_Beit Nuba,1,Byzantine,Beit Nuba,-1
+1227,Roman_Sokho- Horevot,1,Roman,Sokho- Horevot,-1
+1228,"Neolithic (?)_12  ק""מ  מערבית    ל-Khalasa",1,Neolithic (?),"12  ק""מ  מערבית    ל-Khalasa",-1
+1229,Pre-Pottery Neolithic_Minha- H.,1,Pre-Pottery Neolithic,Minha- H.,-1
+1230,Early Roman (period)_Kafr Kanna (east),1,Early Roman (period),Kafr Kanna (east),-1
+1231,Persian-Hellenistic_Samaria,1,Persian-Hellenistic,Samaria,-1
+1232,Pre-Pottery Neolithic A_Sha`ar ha-Golan,1,Pre-Pottery Neolithic A,Sha`ar ha-Golan,-1
+1233,Roman_Mazor,1,Roman,Mazor,-1
+1234,Byzantine_Mamshit- H.,1,Byzantine,Mamshit- H.,-1
+1235,Roman_עכו-בית  קברות  Sheikh  'Izz  ed-Din,1,Roman,עכו-בית  קברות  Sheikh  'Izz  ed-Din,-1
+1236,Late Roman_Rama- er-,1,Late Roman,Rama- er-,-1
+1237,Early Byzantine_Gaza Harbour,1,Early Byzantine,Gaza Harbour,-1
+1238,Iron IIC-Babylonian-Persian_`En Gedi - Goren- T.,1,Iron IIC-Babylonian-Persian,`En Gedi - Goren- T.,-1
+1239,Early Islamic-Late Byzantine_Jerusalem- Old City,1,Early Islamic-Late Byzantine,Jerusalem- Old City,-1
+1240,Iron I_`Eton- T.,1,Iron I,`Eton- T.,-1
+1241,Roman_לא ידוע- ירושלים,1,Roman,לא ידוע- ירושלים,-1
+1242,Crusader (?)_Bet-Shemesh- T.,1,Crusader (?),Bet-Shemesh- T.,-1
+1243,Roman_נהריה,1,Roman,נהריה,-1
+1244,Roman_`Asafna- Kh.,1,Roman,`Asafna- Kh.,-1
+1245,Middle Roman_Jerusalem- Old City- Western and Southern Walls,1,Middle Roman,Jerusalem- Old City- Western and Southern Walls,-1
+1246,Arab-Byzantine_Gush Halav,1,Arab-Byzantine,Gush Halav,-1
+1247,Upper Palaeolithic (?)_Me`arat Amira,1,Upper Palaeolithic (?),Me`arat Amira,-1
+1248,Late Hellenistic - Early Roman (?)_Jerusalem- Old City- Jewish Quarter- Area F- M,1,Late Hellenistic - Early Roman (?),Jerusalem- Old City- Jewish Quarter- Area F- M,-1
+1249,Byzantine_Korazim,1,Byzantine,Korazim,-1
+1250,Late Byzantine_Lod,1,Late Byzantine,Lod,-1
+1251,Byzantine_Jerusalem- Derekh Shkhem-pinat Rehov Zalah ed-Din,1,Byzantine,Jerusalem- Derekh Shkhem-pinat Rehov Zalah ed-Din,-1
+1252,Early Roman (period)_Abu  Tor  cleared  in  1932,1,Early Roman (period),Abu  Tor  cleared  in  1932,-1
+1253,Hellenistic_Ashqelon- Afridar and Barnea`,1,Hellenistic,Ashqelon- Afridar and Barnea`,-1
+1254,Roman-Byzantine_El-Bineh  1932,1,Roman-Byzantine,El-Bineh  1932,-1
+1255,Late Roman_Jerusalem- Old City- Western and Southern Walls,1,Late Roman,Jerusalem- Old City- Western and Southern Walls,-1
+1256,Early Roman (period)_Shechem (Town),1,Early Roman (period),Shechem (Town),-1
+1257,Byzantine_Jerusalem- Ymca--Keren ha-Yesod Street,1,Byzantine,Jerusalem- Ymca--Keren ha-Yesod Street,-1
+1258,Byzantine_Jerusalem- Har ha-Zofim (east),1,Byzantine,Jerusalem- Har ha-Zofim (east),-1
+1259,Byzantine_Jerusalem- Hinnom Valley,1,Byzantine,Jerusalem- Hinnom Valley,-1
+1260,Late Roman_Herzeliyya Bet,1,Late Roman,Herzeliyya Bet,-1
+1261,Byzantine_ירושלים-  הכביש  ליד  גת  שמנים  Road  near  Gethsemane,1,Byzantine,ירושלים-  הכביש  ליד  גת  שמנים  Road  near  Gethsemane,-1
+1262,Late Roman - Byzantine_Korazim,1,Late Roman - Byzantine,Korazim,-1
+1263,Early Roman (period)_Jerusalem north- Sanhedriyya- Cave 12,1,Early Roman (period),Jerusalem north- Sanhedriyya- Cave 12,-1
+1264,Late Hellenistic_Nahal Yarmut,1,Late Hellenistic,Nahal Yarmut,-1
+1265,Late Roman - Early Byzantine_Shelomi (Soush),1,Late Roman - Early Byzantine,Shelomi (Soush),-1
+1266,Late Byzantine-Ummayad (?)_Hoga- H.,1,Late Byzantine-Ummayad (?),Hoga- H.,-1
+1267,Iron II_`Atlit,1,Iron II,`Atlit,-1
+1268,Byzantine_Shave Ziyyon,1,Byzantine,Shave Ziyyon,-1
+1269,Byzantine_Ghadariyya,1,Byzantine,Ghadariyya,-1
