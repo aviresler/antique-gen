@@ -89,10 +89,14 @@ class CosLosModel(BaseModel):
     def coss_loss_wrapper(self, alpha, scale):
         def coss_loss1(y_true, y_pred):
             y_true_casted = K.cast(y_true, dtype='int32')
-            y_true_casted_ = y_true_casted[:, 0]
-            #y_true_casted = K.argmax(y_true_casted, axis= 1)
-            #y_true_casted = self.model.input[1]
-            return models.cos_face_loss.cos_loss(y_pred, y_true_casted_, self.config.data_loader.num_of_classes, alpha=alpha, scale=scale, reuse=True)
+            y_true_cls = y_true_casted[:, 0]
+            y_true_period = y_true_casted[:, 1]
+            cls_loss = models.cos_face_loss.cos_loss(y_pred, y_true_cls, self.config.data_loader.num_of_classes, alpha=alpha, scale=scale, reuse=False, name='cls')
+            period_loss = models.cos_face_loss.cos_loss(y_pred, y_true_period, self.config.data_loader.num_of_periods,
+                                                     alpha=alpha, scale=scale, reuse=False, name='periods')
+
+            ratio = self.config.model.cosface_loss_cls_period_ratio
+            return ratio*cls_loss + (1-ratio)*period_loss
         return coss_loss1
 
     def triplet_loss_wrapper(self, margin, is_squared):

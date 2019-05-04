@@ -47,20 +47,26 @@ class CosFaceGenerator(keras.utils.Sequence,):
         # Initialization
         X = np.empty((len(images_path), *self.dim, self.n_channels),dtype=np.float32)
         labels_list = []
+        priod_label_list = []
 
         # generate data
         for i, file_path in enumerate(images_path):
             self.images_path_list.remove(file_path)
             X[i, ] = self.read_and_preprocess_images(file_path)
 
-            match = re.search('\/(\d*)\/\d*_\d*.jpg', file_path)
+            match = re.search('\/(\d*)_(\d*)\/\d*_\d*.jpg', file_path)
             labels_list.append(int(match.group(1)))
+            priod_label_list.append(int(match.group(2)))
 
 
         # custom loss in keras requires the labels and predictions to be in the same size
-        temp_labels = np.zeros((len(labels_list), 1),dtype=np.int32)
-        temp_labels[:,0] = np.array(labels_list, dtype=np.int32)
-        labels = np.tile(temp_labels, (1, int(self.config.model.embedding_dim)))
+        labels = np.zeros((len(labels_list), int(self.config.model.embedding_dim)),dtype=np.int32)
+        labels[:,0] = np.array(labels_list, dtype=np.int32)
+        labels[:, 1] = np.array(priod_label_list, dtype=np.int32)
+
+        #temp_labels = np.zeros((len(labels_list), 1),dtype=np.int32)
+        #temp_labels[:,0] = np.array(labels_list, dtype=np.int32)
+        #labels = np.tile(temp_labels, (1, int(self.config.model.embedding_dim)))
 
 
         return X, labels
