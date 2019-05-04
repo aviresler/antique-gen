@@ -206,9 +206,27 @@ def print_classes_for_artifacts():
 
 
 #print_classes_for_artifacts()
-create_directories()
-copy_images_to_calses_folders()
-split_into_train_valid_top_200()
+#create_directories()
+#copy_images_to_calses_folders()
+#split_into_train_valid_top_200()
+
+cnt = 0
+period_id = {}
+with open('classes_top200.csv', 'r') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        if cnt == 0:
+            print(row)
+        if cnt > 0:
+            period_id[row[0]] = row[5]
+        cnt = cnt + 1
+# r=root, d=directories, f = files
+for r, d, f in os.walk('data/site_period_top_200/valid'):
+    if len(d) != 0:
+        for folder in d:
+            os.rename('data/site_period_top_200/valid/' + folder,'data/site_period_top_200/valid/' + folder + '_' + period_id[folder])
+            print(folder)
+
 #set_period = set(period_list)
 #set_sites = set(site_list)
 #set_class = set(class_list)
