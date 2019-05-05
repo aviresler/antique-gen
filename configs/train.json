@@ -46,7 +46,7 @@
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",
-    "num_epochs": 2,
+    "num_epochs": 30,
     "learning_rate_values": [0.0001, 0.000001, 0.000001],
     "learning_rate_schedule_type": "ReduceLROnPlateau",
     "learning_rate": 0.000226,
