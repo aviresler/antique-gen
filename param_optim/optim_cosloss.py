@@ -28,10 +28,10 @@ def main():
     # then process the json configuration fill
     try:
         MAX_ITR = 150
-        test_file = 'test_triplet_after_indicative'
+        test_file = 'test_cosface_multiple_loss'
         param_csv_path = test_file + '.csv'
-        params_start_col = 6
-        loss_col = 3
+        params_start_col = 7
+        loss_col = 4
         if not os.path.exists('params_jsons'):
             os.mkdir('params_jsons')
 
@@ -98,14 +98,15 @@ def main():
                 r = csv.reader(f3)
                 lines = list(r)
 
-            lines[int(experiment)+1][2] =  '{0:.3f}'.format(trainer.val_loss[-1])
-            lines[int(experiment) + 1][3] = '{0:.3f}'.format(trainer.loss[-1])
-            lines[int(experiment) + 1][4] = str(len(trainer.loss))
-            lines[int(experiment) + 1][5] = time.strftime("%Y-%m-%d",time.localtime())
+            lines[int(experiment)+1][3] =  '{0:.3f}'.format(trainer.val_loss[-1])
+            lines[int(experiment) + 1][4] = '{0:.3f}'.format(trainer.loss[-1])
+            lines[int(experiment) + 1][5] = str(len(trainer.loss))
+            lines[int(experiment) + 1][6] = time.strftime("%Y-%m-%d",time.localtime())
 
-            accuracy = trainer.get_accuracy()
+            accuracy, period_accuracy = trainer.get_accuracy()
 
             lines[int(experiment) + 1][1] = '{0:.3f}'.format(accuracy)
+            lines[int(experiment) + 1][2] = '{0:.3f}'.format(period_accuracy)
 
 
             with open(param_csv_path, 'w') as f4:
@@ -157,6 +158,8 @@ def update_config(config, param_csv_path, params_start_col, loss_col, test_file)
                         config['data_loader']['data_dir_valid'] = '../' + config['data_loader']['data_dir_valid']
                         config['data_loader']['data_dir_train_test'] = '../' + config['data_loader']['data_dir_train_test']
                         config['data_loader']['data_dir_valid_test'] = '../' + config['data_loader']['data_dir_valid_test']
+                        config['data_loader']['classes_info_csv_file'] = '../' + config['data_loader'][
+                            'classes_info_csv_file']
 
                     # save run json for future inquiries
                     json1 = json.dumps(config.toDict(), indent=4)

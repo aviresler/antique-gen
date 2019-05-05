@@ -1,16 +1,17 @@
 {
   "exp": {
-    "name": "triplet_all_greater200"
+    "name": "cosface_param_optim"
   },
   "data_loader": {
     "data_dir_train": "data_loader/data/site_period_top_200/train",
     "data_dir_valid": "data_loader/data/site_period_top_200/valid",
     "info_line_below": "in triplet loss testing is done with 200 classes",
-    "data_dir_train_test": "data_loader/data/site_period_top_200/valid",
-    "data_dir_valid_test": "data_loader/data/site_period_top_200/valid",
+    "data_dir_train_test": "data_loader/data/site_period_top_200_testing/train",
+    "data_dir_valid_test": "data_loader/data/site_period_top_200_testing/valid",
     "info_line_below1": "valid only for cosface loss",
     "num_of_classes": 200,
     "num_of_periods": 52,
+    "classes_info_csv_file": "data_loader/classes_top200.csv",
     "horizontal_flip": true,
     "fill_mode": "nearest",
     "zoom_range": 0.15,
@@ -39,7 +40,7 @@
     "cosface_loss_cls_period_ratio":  0.5,
     "is_use_relu_on_embeddings": false,
     "embedding_dim": 328,
-    "is_use_dummy_model": true,
+    "is_use_dummy_model": false,
     "pretraind_model": "None",
     "is_batch_all_consider_only_200": true
   },
@@ -48,12 +49,12 @@
     "num_epochs": 2,
     "learning_rate_values": [0.0001, 0.000001, 0.000001],
     "learning_rate_schedule_type": "ReduceLROnPlateau",
-    "learning_rate": 5E-7,
-    "lr_decrease_factor": 0.2,
+    "learning_rate": 0.000226,
+    "lr_decrease_factor": 0.365,
     "learning_rate_epoch_change": [3,9],
     "verbose_training": true,
-    "is_change_lr": false,
-    "is_early_stop": false
+    "is_change_lr": true,
+    "is_early_stop": true
   },
   "callbacks":{
     "checkpoint_monitor": "val_loss",
