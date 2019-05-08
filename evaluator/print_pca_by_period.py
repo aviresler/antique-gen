@@ -6,19 +6,19 @@ from sklearn import decomposition
 import csv
 
 
-labels = np.genfromtxt('labels/coss_loss_indicative_valid_valid.tsv', delimiter=',')
-embeddings = np.genfromtxt('embeddings/coss_loss_indicative_valid_valid.csv', delimiter=',')
+labels = np.genfromtxt('labels/triplet_all_smaller200_lr_5e-6_valid_29_acc_56.1.tsv', delimiter=',')
+embeddings = np.genfromtxt('embeddings/triplet_all_smaller200_lr_5e-6_valid_29_acc_56.1.csv', delimiter=',')
 
 cnt = 0
 cls_dict = {}
-with open('../data_loader/classes.csv', 'r') as f:
+with open('../data_loader/classes_top200.csv', 'r') as f:
     reader = csv.reader(f)
     for row in reader:
         if cnt == 0:
             print(row)
         if cnt > 0:
             site, period = row[1].split('_')
-            cls_dict[int(row[0])] = int(row[4])
+            cls_dict[int(row[0])] = int(row[5])
         if cnt > 201:
             break
         cnt = cnt + 1

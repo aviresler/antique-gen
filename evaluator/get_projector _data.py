@@ -38,7 +38,7 @@ def invert_grayscale(mnist_digits):
 cnt = 0
 labels_list = []
 class_names = []
-with open('classes.csv', 'r') as f:
+with open('../data_loader/classes.csv', 'r') as f:
     reader = csv.reader(f)
     for row in reader:
         if cnt == 0:
@@ -50,9 +50,9 @@ with open('classes.csv', 'r') as f:
 
 
 
-experient = 'indicative_cosloss_52.5acc'
-labels = np.genfromtxt('labels/coss_loss_indicative_valid_valid.tsv', delimiter=',')
-embeddings_numpy = np.genfromtxt('embeddings/coss_loss_indicative_valid_valid.csv', delimiter=',')
+experient = 'triplet_8_5'
+labels = np.genfromtxt('labels/triplet_all_smaller200_lr_5e-6_valid_29_acc_56.1.tsv', delimiter=',')
+embeddings_numpy = np.genfromtxt('embeddings/triplet_all_smaller200_lr_5e-6_valid_29_acc_56.1.csv', delimiter=',')
 
 LABELS = os.path.join(os.getcwd(), "labels_names.tsv")
 LOGDIR = 'projector/' + experient

@@ -18,35 +18,58 @@ def findEuclideanDistance(source_representation, test_representation):
 
 
 
-#experiment = 'triplet2'
-# False for euclidean nearest neighbor, True for cosine similarity distance
-#is_use_cosine_similarity = True
-#train_labels_tsv = 'labels/triplet2_train.tsv'
-#valid_labels_tsv = 'labels/triplet2_valid.tsv'
-#train_embedding_csv = 'embeddings/triplet2_train.csv'
-#valid_embedding_csv = 'embeddings/triplet2_valid.csv'
+# experiment = 'triplet2_sites'
+# #False for euclidean nearest neighbor, True for cosine similarity distance
+# is_use_cosine_similarity = True
+# train_labels_tsv = 'labels/triplet_all_smaller200_lr_5e-6_train_29_acc_56.1.tsv'
+# valid_labels_tsv = 'labels/triplet_all_smaller200_lr_5e-6_valid_29_acc_56.1.tsv'
+# train_embedding_csv = 'embeddings/triplet_all_smaller200_lr_5e-6_train_29_acc_56.1.csv'
+# valid_embedding_csv = 'embeddings/triplet_all_smaller200_lr_5e-6_valid_29_acc_56.1.csv'
+#
+#
+# train_embeddings = np.genfromtxt(train_embedding_csv, delimiter=',')
+# valid_embeddings = np.genfromtxt(valid_embedding_csv, delimiter=',')
+# train_labels = np.genfromtxt(train_labels_tsv, delimiter='\t')
+# valid_labels = np.genfromtxt(valid_labels_tsv, delimiter='\t')
+#
+# train_labels_mod = np.zeros_like(train_labels,dtype=np.int32)
+# valid_labels_mod = np.zeros_like(valid_labels,dtype=np.int32)
 
+# cnt = 0
+# cls_dict = {}
+# with open('../data_loader/classes_top200.csv', 'r') as f:
+#     reader = csv.reader(f)
+#     for row in reader:
+#         if cnt == 0:
+#             print(row)
+#         if cnt > 0:
+#             #site, period = row[1].split('_')
+#             cls_dict[int(row[0])] = int(row[6])
+#         cnt = cnt + 1
+#
+# for i,val_label in enumerate(valid_labels):
+#     valid_labels_mod[i] = cls_dict[val_label]
+#
+# for i,tr_label in enumerate(train_labels):
+#     train_labels_mod[i] = cls_dict[tr_label]
 
-#train_embeddings = np.genfromtxt(train_embedding_csv, delimiter=',')
-#valid_embeddings = np.genfromtxt(valid_embedding_csv, delimiter=',')
-#train_labels = np.genfromtxt(train_labels_tsv, delimiter='\t')
-#valid_labels = np.genfromtxt(valid_labels_tsv, delimiter='\t')
 
 
 def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, experiment, is_save_files = True ):
     cnt = 0
     labels_list = []
-    clasee_names = []
-
+    #clasee_names = []
+    clasee_names = {}
     if is_save_files:
-        with open('evaluator/classes.csv', 'r') as f:
+        with open('../data_loader/classes_top200.csv', 'r') as f:
             reader = csv.reader(f)
             for row in reader:
                 if cnt == 0:
                     print(row)
                 if cnt > 0:
-                    labels_list.append(row[0])
-                    clasee_names.append(row[1])
+                    clasee_names[int(row[6])] = row[4]
+                    #labels_list.append(row[0])
+                    #clasee_names.append(row[1])
                 cnt = cnt + 1
 
     similaity_mat = cosine_similarity(valid_embeddings, train_embeddings, dense_output=True)
@@ -68,18 +91,17 @@ def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, exp
     confusion_mat_data[:, 1] = np.squeeze(vec1)
 
     if is_save_files:
-        # in the following file classes are represented by numbers
-        np.savetxt('evaluator/conf_mat_data/' + experiment + '_data.csv', confusion_mat_data, delimiter=",")
+        # in the following file classes are represented by numbersevaluator/
+        np.savetxt('conf_mat_data/' + experiment + '_data.csv', confusion_mat_data, delimiter=",")
 
         lines = 'valid \t train\n'
         for k in range(N_valid):
             valid_class = clasee_names[np.int(confusion_mat_data[k, 0])].replace(',', '_')
             train_class = clasee_names[np.int(confusion_mat_data[k, 1])].replace(',', '_')
             lines = lines + '{} \t {}\n'.format(valid_class, train_class)
-
-        with open('evaluator/conf_mat_data/' + experiment + '_labels.csv', "w") as text_file:
+        #evaluator /
+        with open('conf_mat_data/' + experiment + '_labels.csv', "w") as text_file:
             text_file.write(lines)
 
     return accuracy
-
-
+#eval_model(train_embeddings,valid_embeddings,train_labels_mod, valid_labels_mod, 'final_sites', is_save_files = True )

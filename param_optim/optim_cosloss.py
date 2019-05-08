@@ -28,10 +28,10 @@ def main():
     # then process the json configuration fill
     try:
         MAX_ITR = 150
-        test_file = 'test_cosface_multiple_loss'
+        test_file = 'test_cosface_3_losses'
         param_csv_path = test_file + '.csv'
-        params_start_col = 7
-        loss_col = 4
+        params_start_col = 8
+        loss_col = 5
         if not os.path.exists('params_jsons'):
             os.mkdir('params_jsons')
 
@@ -98,15 +98,16 @@ def main():
                 r = csv.reader(f3)
                 lines = list(r)
 
-            lines[int(experiment)+1][3] =  '{0:.3f}'.format(trainer.val_loss[-1])
-            lines[int(experiment) + 1][4] = '{0:.3f}'.format(trainer.loss[-1])
-            lines[int(experiment) + 1][5] = str(len(trainer.loss))
-            lines[int(experiment) + 1][6] = time.strftime("%Y-%m-%d",time.localtime())
+            lines[int(experiment)+1][4] =  '{0:.3f}'.format(trainer.val_loss[-1])
+            lines[int(experiment) + 1][5] = '{0:.3f}'.format(trainer.loss[-1])
+            lines[int(experiment) + 1][6] = str(len(trainer.loss))
+            lines[int(experiment) + 1][7] = time.strftime("%Y-%m-%d",time.localtime())
 
-            accuracy, period_accuracy = trainer.get_accuracy()
+            accuracy, period_accuracy, site_accuracy = trainer.get_accuracy()
 
             lines[int(experiment) + 1][1] = '{0:.3f}'.format(accuracy)
             lines[int(experiment) + 1][2] = '{0:.3f}'.format(period_accuracy)
+            lines[int(experiment) + 1][3] = '{0:.3f}'.format(site_accuracy)
 
 
             with open(param_csv_path, 'w') as f4:

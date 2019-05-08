@@ -210,53 +210,89 @@ def print_classes_for_artifacts():
 #copy_images_to_calses_folders()
 #split_into_train_valid_top_200()
 
-cnt = 0
-period_id = {}
-with open('classes_top200.csv', 'r') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        if cnt == 0:
-            print(row)
-        if cnt > 0:
-            period_id[row[0]] = row[5]
-        cnt = cnt + 1
-# r=root, d=directories, f = files
-for r, d, f in os.walk('data/site_period_top_200/valid'):
-    if len(d) != 0:
-        for folder in d:
-            os.rename('data/site_period_top_200/valid/' + folder,'data/site_period_top_200/valid/' + folder + '_' + period_id[folder])
-            print(folder)
-
-#set_period = set(period_list)
-#set_sites = set(site_list)
-#set_class = set(class_list)
-#num_of_images = {}
-#for cls in set_class:
-#    num_of_images[cls] = 0
-    #print(cls)
-
-# count how many artifacts in class
 # cnt = 0
+# period_id = {}
 # site_list = []
-# period_list = []
-# class_list = []
-# with open('artifacts.csv', 'r') as f:
+# with open('classes_top200.csv', 'r') as f:
 #     reader = csv.reader(f)
 #     for row in reader:
 #         if cnt == 0:
 #             print(row)
 #         if cnt > 0:
-#             is_valid = row[5]
-#             if is_valid == '1':
-#                 site = row[1]
-#                 site = site.replace(',','-')
-#                 period = row[2]
-#                 period = period.replace(',','-')
-#                 cls = site + '_' + period
-#
-#                 additional_look = row[3]
-#                 num_of_images[cls] = num_of_images[cls] + 1 + int(additional_look)
+#             period_id[row[0]] = row[5]
+#             site_list.append(row[4])
 #         cnt = cnt + 1
+# site_set = set(site_list)
+# site_set_list = list(site_set)
+# print(len(site_set_list))
+#
+# cnt = 0
+# with open('classes_top200.csv', 'r') as f:
+#     reader = csv.reader(f)
+#     for row in reader:
+#         if cnt == 0:
+#             print(row)
+#         if cnt > 0:
+#             site = row[4]
+#             #print(site_set_list.index(site))
+#
+#
+#         cnt = cnt + 1
+# r=root, d=directories, f = files
+# for r, d, f in os.walk('data/site_period_top_200/valid'):
+#     if len(d) != 0:
+#         for folder in d:
+#             os.rename('data/site_period_top_200/valid/' + folder,'data/site_period_top_200/valid/' + folder + '_' + period_id[folder])
+#             print(folder)
+
+#set_period = set(period_list)
+#set_sites = set(site_list)
+#set_class = set(class_list)
+cnt = 0
+class_list = []
+with open('classes.csv', 'r') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        if cnt == 0:
+            print(row)
+        if cnt > 0:
+            class_list.append(int(row[0]))
+        cnt = cnt + 1
+
+
+num_of_images = {}
+for cls in class_list:
+    num_of_images[cls] = 0
+
+#count how many artifacts in class
+cnt = 0
+site_list = []
+period_list = []
+class_list = []
+with open('artifacts.csv', 'r') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        if cnt == 0:
+            print(row)
+        if cnt > 0:
+            is_valid = row[5]
+            indicative = row[6]
+            if is_valid == '1'and indicative == 'yes':
+                cls = int(row[4])
+                # site = row[1]
+                # site = site.replace(',','-')
+                # period = row[2]
+                # period = period.replace(',','-')
+                # cls = site + '_' + period
+
+                additional_look = row[3]
+                num_of_images[cls] = num_of_images[cls] + 1
+                #num_of_images[cls] = num_of_images[cls] + 1 + int(additional_look)
+        cnt = cnt + 1
+#print(num_of_images)
+for k in range(1270):
+    print(num_of_images[k])
+
 #
 # for k, v in num_of_images.items():
 #     print(k + ',' +  str(v))

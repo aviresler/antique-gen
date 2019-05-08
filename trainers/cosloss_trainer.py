@@ -24,11 +24,13 @@ class CosLossModelTrainer(BaseTrain):
 
         cnt = 0
         self.period_dict = {}
+        self.site_dict = {}
         with open(self.config.data_loader.classes_info_csv_file, 'r') as f:
             reader = csv.reader(f)
             for row in reader:
                 if cnt > 0:
                     self.period_dict[int(row[0])] = int(row[5])
+                    self.site_dict[int(row[0])] = int(row[6])
                 cnt = cnt + 1
 
 
@@ -131,6 +133,7 @@ class CosLossModelTrainer(BaseTrain):
             num_of_images = len(generator) * (batch_size)
             labels = np.zeros((num_of_images, 1), dtype=np.int)
             labels_period = np.zeros((num_of_images, 1), dtype=np.int)
+            labels_site = np.zeros((num_of_images, 1), dtype=np.int)
             predication = np.zeros((num_of_images, int(self.config.model.embedding_dim)), dtype=np.float32)
 
             label_map = (generator.class_indices)
@@ -155,16 +158,20 @@ class CosLossModelTrainer(BaseTrain):
 
             for kk in range(labels.shape[0]):
                 labels_period[kk,0] = self.period_dict[labels[kk,0]]
+                labels_site[kk, 0] = self.site_dict[labels[kk, 0]]
 
             labels_period = labels_period[:cur_ind, :]
+            labels_site = labels_site[:cur_ind, :]
 
             if m == 0:
                 train_labels = labels
                 train_labels_period = labels_period
+                train_labels_site = labels_site
                 train_prediction = predication
             else:
                 valid_labels = labels
                 valid_labels_period = labels_period
+                valid_labels_site = labels_site
                 valid_prediction = predication
 
             if isSaveEmbeddings:
@@ -179,26 +186,31 @@ class CosLossModelTrainer(BaseTrain):
 
         accuracy_period = eval_model(train_prediction, valid_prediction, train_labels_period, valid_labels_period, self.config.exp.name,
                               is_save_files=False)
-        print('accuracy_period = {0:.3f}'.format(accuracy_period))
+        print('accuracy_periods = {0:.3f}'.format(accuracy_period))
 
-        return accuracy,accuracy_period
+
+        accuracy_site = eval_model(train_prediction, valid_prediction, train_labels_site, valid_labels_site, self.config.exp.name,
+                              is_save_files=False)
+        print('accuracy_sites = {0:.3f}'.format(accuracy_site))
+
+        return accuracy, accuracy_period, accuracy_site
 
 
     def custom_epoch_end(self,epoch,logs,type):
-        acc, acc_period = self.get_accuracy()
+        acc, acc_period, acc_site = self.get_accuracy()
         if type == 'cosface':
             self.json_log.write(
                 json.dumps(
                     {'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'],
-                     'acc': acc, 'acc_period': acc_period}) + '\n')
+                     'acc': acc, 'acc_period': acc_period , 'acc_site': acc_site}) + '\n')
         elif type == 'triplet_all':
             self.json_log.write(
                 json.dumps(
                     {'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'], 'acc': acc, 'acc_period': acc_period,
-                     'positive_fraction': logs['positive_fraction'],
+                     'acc_site': acc_site, 'positive_fraction': logs['positive_fraction'],
                      'val_positive_fraction': logs['val_positive_fraction']}) + '\n')
         elif type == 'triplet_hard':
             self.json_log.write(
                 json.dumps(
                     {'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'], 'acc': acc,'acc_period': acc_period,
-                     'hard_pos_dist': logs['hardest_pos_dist'], 'hard_neg_dist': logs['hardest_neg_dist']}) + '\n'),
+                     'acc_site': acc_site, 'hard_pos_dist': logs['hardest_pos_dist'], 'hard_neg_dist': logs['hardest_neg_dist']}) + '\n'),

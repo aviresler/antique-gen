@@ -7,7 +7,7 @@ import itertools
 
 def plot_confusion_matrix(cm, classes,experient,
                           normalize=False,
-                          title='Confusion matrix',
+                          title='Confusion matrix, labels are sites',
                           cmap=plt.cm.Blues,):
     """
     This function prints and plots the confusion matrix.
@@ -43,24 +43,28 @@ def plot_confusion_matrix(cm, classes,experient,
     plt.savefig('results/' + experient + '.png')
     return cm
 
-experient = 'cosloss_15_69_no_relu'
-data = np.genfromtxt('conf_mat_data/cosloss_15_69_cutOut_cosine_data.csv', delimiter=',')
+experient = 'final_site'
+data = np.genfromtxt('conf_mat_data/final_sites_data.csv', delimiter=',')
 cnt = 0
+period_list = []
 labels_list = []
-weight_list = []
-class_names = []
-with open('classes.csv', 'r') as f:
+class_names = {}
+with open('../data_loader/classes_top200.csv', 'r') as f:
     reader = csv.reader(f)
     for row in reader:
         if cnt == 0:
             print(row)
         if cnt > 0:
+            class_names[int(row[6])] = row[4]
+            #period_list.append(row[3])
 
-            labels_list.append(row[0])
-            weight_list.append(row[4])
-            class_names.append(row[7])
+            #labels_list.append(row[0])
+            #class_names.append()
         cnt = cnt + 1
 
+# period_set = set(period_list)
+# for prd in period_set:
+#     print(prd)
 
 y_true = data[:,0]
 y_pred = data[:,1]
@@ -70,7 +74,7 @@ conf_norm = plot_confusion_matrix(conf,labels_list,experient,normalize=True)
 
 N = 10
 lines = ''
-for k in range(200):
+for k in range(120):
     vec = conf_norm[k,:]
     ind_max = np.flip(np.argsort(vec), axis=0)
     ind_max = ind_max[:N]
@@ -78,16 +82,21 @@ for k in range(200):
     scores = vec[ind_max]
     scores = np.trim_zeros(scores, 'b')
 
-    site, period = class_names[k].split('_')
-    site = site.replace(',','_')
-    period = period.replace(',', '_')
+    #period, site  = class_names[k].split('_')
+    period = ' '
+    #site = site.replace(',','_')
+    site = class_names[k]
+    #period = period.replace(',', '_')
     lines = lines + 'true_id, {}, true_site, {}, true_period, {}\n'.format(k, site, period)
 
     for m in range(scores.shape[0]):
         pred_id = ind_max[m]
-        site, period = class_names[pred_id].split('_')
-        site = site.replace(',', '_')
-        period = period.replace(',', '_')
+        #period, site = class_names[pred_id].split('_')
+        #period = class_names[pred_id]
+        period = ' '
+        #site = site.replace(',', '_')
+        site = class_names[pred_id]
+        #period = period.replace(',', '_')
         temp_str = 'pred_id, {}, pred_site, {}, pred_period, {}, pred_score, {:0.3f}\n'.format(pred_id, site, period, scores[m])
         lines = lines + temp_str
 

@@ -7,6 +7,7 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing import image
 from data_loader.preprocess_images import get_random_eraser, preprocess_input
 import re
+import csv
 
 class CosFaceGenerator(keras.utils.Sequence,):
     'Generates data for Keras'
@@ -22,6 +23,17 @@ class CosFaceGenerator(keras.utils.Sequence,):
             self.data_folder = config.data_loader.data_dir_train
         else:
             self.data_folder = config.data_loader.data_dir_valid
+
+        self.period_dict = {}
+        self.site_dict = {}
+        cnt = 0
+        with open(self.config.data_loader.classes_info_csv_file, 'r') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                if cnt > 0:
+                    self.period_dict[int(row[0])] = int(row[5])
+                    self.site_dict[int(row[0])] = int(row[6])
+                cnt = cnt + 1
 
         self.n_channels = n_channels
         self.images_path_list = []
@@ -48,6 +60,7 @@ class CosFaceGenerator(keras.utils.Sequence,):
         X = np.empty((len(images_path), *self.dim, self.n_channels),dtype=np.float32)
         labels_list = []
         priod_label_list = []
+        site_label_list = []
 
         # generate data
         for i, file_path in enumerate(images_path):
@@ -55,14 +68,17 @@ class CosFaceGenerator(keras.utils.Sequence,):
             X[i, ] = self.read_and_preprocess_images(file_path)
 
             match = re.search('\/(\d*)_(\d*)\/\d*_\d*.jpg', file_path)
-            labels_list.append(int(match.group(1)))
-            priod_label_list.append(int(match.group(2)))
+            label_ = int(match.group(1))
+            labels_list.append(label_)
+            priod_label_list.append(self.period_dict[label_])
+            site_label_list.append(self.site_dict[label_])
 
 
         # custom loss in keras requires the labels and predictions to be in the same size
         labels = np.zeros((len(labels_list), int(self.config.model.embedding_dim)),dtype=np.int32)
         labels[:,0] = np.array(labels_list, dtype=np.int32)
         labels[:, 1] = np.array(priod_label_list, dtype=np.int32)
+        labels[:, 2] = np.array(site_label_list, dtype=np.int32)
 
         #temp_labels = np.zeros((len(labels_list), 1),dtype=np.int32)
         #temp_labels[:,0] = np.array(labels_list, dtype=np.int32)

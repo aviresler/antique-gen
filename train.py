@@ -20,6 +20,7 @@ from data_loader.cosface_data_loader import CosFaceGenerator
 import tensorflow as tf
 from keras import backend as K
 import time
+import numpy as np
 
 
 
