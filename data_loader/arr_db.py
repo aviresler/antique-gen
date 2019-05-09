@@ -206,10 +206,10 @@ def print_classes_for_artifacts():
 
 
 #print_classes_for_artifacts()
-#create_directories()
-#copy_images_to_calses_folders()
-#split_into_train_valid_top_200()
-
+create_directories()
+copy_images_to_calses_folders()
+split_into_train_valid_top_200()
+#
 # cnt = 0
 # period_id = {}
 # site_list = []
@@ -219,7 +219,7 @@ def print_classes_for_artifacts():
 #         if cnt == 0:
 #             print(row)
 #         if cnt > 0:
-#             period_id[row[0]] = row[5]
+#             #period_id[row[0]] = row[5]
 #             site_list.append(row[4])
 #         cnt = cnt + 1
 # site_set = set(site_list)
@@ -234,9 +234,7 @@ def print_classes_for_artifacts():
 #             print(row)
 #         if cnt > 0:
 #             site = row[4]
-#             #print(site_set_list.index(site))
-#
-#
+#             print(site_set_list.index(site))
 #         cnt = cnt + 1
 # r=root, d=directories, f = files
 # for r, d, f in os.walk('data/site_period_top_200/valid'):
@@ -248,54 +246,93 @@ def print_classes_for_artifacts():
 #set_period = set(period_list)
 #set_sites = set(site_list)
 #set_class = set(class_list)
-cnt = 0
-class_list = []
-with open('classes.csv', 'r') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        if cnt == 0:
-            print(row)
-        if cnt > 0:
-            class_list.append(int(row[0]))
-        cnt = cnt + 1
-
-
-num_of_images = {}
-for cls in class_list:
-    num_of_images[cls] = 0
+# cnt = 0
+# class_list = []
+# with open('classes.csv', 'r') as f:
+#     reader = csv.reader(f)
+#     for row in reader:
+#         if cnt == 0:
+#             print(row)
+#         if cnt > 0:
+#             class_list.append(int(row[0]))
+#         cnt = cnt + 1
+#
+#
+# num_of_images = {}
+# for cls in class_list:
+#     num_of_images[cls] = 0
 
 #count how many artifacts in class
-cnt = 0
-site_list = []
-period_list = []
-class_list = []
-with open('artifacts.csv', 'r') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        if cnt == 0:
-            print(row)
-        if cnt > 0:
-            is_valid = row[5]
-            indicative = row[6]
-            if is_valid == '1'and indicative == 'yes':
-                cls = int(row[4])
-                # site = row[1]
-                # site = site.replace(',','-')
-                # period = row[2]
-                # period = period.replace(',','-')
-                # cls = site + '_' + period
-
-                additional_look = row[3]
-                num_of_images[cls] = num_of_images[cls] + 1
-                #num_of_images[cls] = num_of_images[cls] + 1 + int(additional_look)
-        cnt = cnt + 1
-#print(num_of_images)
-for k in range(1270):
-    print(num_of_images[k])
-
 #
+# #!!!!!!creat classes!!!!!
+# cnt = 0
+# site_list = []
+# period_list = []
+# class_list = []
+# with open('artifacts.csv', 'r') as f:
+#     reader = csv.reader(f)
+#     for row in reader:
+#         if cnt == 0:
+#             print(row)
+#         if cnt > 0:
+#             is_valid = row[5]
+#             indicative = row[6]
+#             if is_valid == '1'and indicative == 'yes':
+#                 #cls = int(row[4])
+#                 site = row[1]
+#                 site = site.replace(',','-')
+#                 period = row[2]
+#                 period = period.replace(',','-')
+#                 cls = period + '_' + site
+#                 class_list.append(cls)
+#
+#                 #additional_look = row[3]
+#                 #num_of_images[cls] = num_of_images[cls] + 1
+#                 #num_of_images[cls] = num_of_images[cls] + 1 + int(additional_look)
+#         cnt = cnt + 1
+# num_of_images = {}
+# num_of_artifacts = {}
+# cls_set = set(class_list)
+# for cls in cls_set:
+#     num_of_images[cls] = 0
+#     num_of_artifacts[cls] = 0
+#
+# #     print(cls)
+#
+# cnt = 0
+# site_list = []
+# period_list = []
+# class_list = []
+# with open('artifacts.csv', 'r') as f:
+#     reader = csv.reader(f)
+#     for row in reader:
+#         if cnt == 0:
+#             print(row)
+#         if cnt > 0:
+#             is_valid = row[5]
+#             indicative = row[6]
+#             if is_valid == '1'and indicative == 'yes':
+#                 #cls = int(row[4])
+#                 site = row[1]
+#                 site = site.replace(',','-')
+#                 period = row[2]
+#                 period = period.replace(',','-')
+#                 cls = period + '_' + site
+#                 #class_list.append(cls)
+#
+#                 additional_look = row[3]
+#                 num_of_artifacts[cls] = num_of_artifacts[cls] + 1
+#                 #num_of_images[cls] = num_of_images[cls] + 1
+#                 num_of_images[cls] = num_of_images[cls] + 1 + int(additional_look)
+#         cnt = cnt + 1
+# #print(num_of_images)
+# #for k in range(1270):
+# #    print(num_of_images[k])
+#
+# #
 # for k, v in num_of_images.items():
-#     print(k + ',' +  str(v))
+#     period, site = k.split('_')
+#     print( k + ',' + str(v) + ',' + period  + ',' + site + ',' + str(num_of_artifacts[k]) )
 
 #print(set(period_list))
 #print(set(site_list))

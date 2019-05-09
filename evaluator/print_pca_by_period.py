@@ -11,7 +11,7 @@ embeddings = np.genfromtxt('embeddings/triplet_all_smaller200_lr_5e-6_valid_29_a
 
 cnt = 0
 cls_dict = {}
-with open('../data_loader/classes_top200.csv', 'r') as f:
+with open('classes_top200.csv', 'r') as f:
     reader = csv.reader(f)
     for row in reader:
         if cnt == 0:

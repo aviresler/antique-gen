@@ -10,7 +10,7 @@
     "data_dir_valid_test": "data_loader/data/site_period_top_200_testing/valid",
     "info_line_below1": "valid only for cosface loss",
     "num_of_classes": 200,
-    "num_of_periods": 52,
+    "num_of_periods": 51,
     "num_of_sites": 120,
     "classes_info_csv_file": "data_loader/classes_top200.csv",
     "horizontal_flip": true,
