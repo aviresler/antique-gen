@@ -2,6 +2,8 @@
 import numpy as np
 import csv
 from sklearn.metrics.pairwise import cosine_similarity
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 
 def findCosineSimilarity(source_representation, test_representation):
     a = np.matmul(np.transpose(source_representation), test_representation)
@@ -55,7 +57,7 @@ def eval_model_from_csv_files(train_embeddings_csv, valid_embeddings_csv, train_
         train_labels_site[i] = site_dict[tr_label]
 
     accuracy = eval_model_topk(train_embeddings, valid_embeddings, train_labels, valid_labels, experiment + '_site_period',
-                          is_save_files=True, classes_csv_file=classes_csv_file, class_mode='site_period')
+                          is_save_files=True, classes_csv_file=classes_csv_file, class_mode='site_period',is_save_pair_images=True)
 
     print('accuracy_site_period top_1_3_5= {0:.3f}, {1:.3f}, {2:.3f}'.format(accuracy[0],accuracy[1],accuracy[2]))
 
@@ -70,9 +72,8 @@ def eval_model_from_csv_files(train_embeddings_csv, valid_embeddings_csv, train_
     print('accuracy_site top_1_3_5= {0:.3f}, {1:.3f}, {2:.3f}'.format(accuracy_site[0],accuracy_site[1],accuracy_site[2]))
 
 
-
-
-def eval_model_topk(train_embeddings,valid_embeddings,train_labels, valid_labels, experiment, is_save_files = True, classes_csv_file = '',class_mode = 'site_period' ):
+def eval_model_topk(train_embeddings,valid_embeddings,train_labels, valid_labels, experiment, is_save_files = True,
+                    classes_csv_file = '',class_mode = 'site_period', is_save_pair_images = False ):
     cnt = 0
     clasee_names = {}
     if is_save_files:
@@ -102,8 +103,58 @@ def eval_model_topk(train_embeddings,valid_embeddings,train_labels, valid_labels
     arg_sort_similaity = np.argsort(similaity_mat, axis=1)
     arg_sort_similaity = np.flip(arg_sort_similaity,axis =1)
 
+    if is_save_pair_images:
+        valid_files = []
+        train_files = []
+        with open('train_file_names_15_5.csv', 'r') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                train_files.append(row[0])
+
+        with open('valid_file_names_15_5.csv', 'r') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                valid_files.append(row[0])
+
+
     for k in range(valid_embeddings.shape[0]):
         neighbours_mat[k,:] = train_labels[arg_sort_similaity[k,:N_neighbours]]
+        if is_save_pair_images:
+            print(k)
+            img_valid = mpimg.imread('../data_loader/data/site_period_top_200/valid/' + valid_files[k])
+            img_train = mpimg.imread('../data_loader/data/site_period_top_200/train/' + train_files[arg_sort_similaity[k,0]])
+            f, (ax1, ax2) = plt.subplots(1, 2)
+            ax1.get_xaxis().set_visible(False)
+            ax1.get_yaxis().set_visible(False)
+            ax2.get_xaxis().set_visible(False)
+            ax2.get_yaxis().set_visible(False)
+
+            ax1.imshow(img_valid)
+            period, site = clasee_names[int(valid_labels[k])].split('_')
+            if ( len(site) > 20):
+                site = site[:20]
+            valid_title = 'valid\n' + str(int(valid_labels[k])) + '\n' + period + '\n' + site
+            ax1.set_title(valid_title)
+            ax2.imshow(img_train)
+            period, site = clasee_names[neighbours_mat[k,0]].split('_')
+            if ( len(site) > 20):
+                site = site[:20]
+            train_title = 'train\n' + str(int(neighbours_mat[k,0])) + '\n' + period + '\n' + site
+            ax2.set_title(train_title)
+
+            #plt.tight_layout()
+            #plt.show()
+
+            #plt.tight_layout()
+            if neighbours_mat[k,0] == int(valid_labels[k]):
+                plt.savefig('results/pairs/correct_' + str(k) +  '_'+ clasee_names[int(valid_labels[k])] + '_' + clasee_names[neighbours_mat[k,0]] + '.png')
+            else:
+                plt.savefig('results/pairs/wrong_' + str(k) + '_'+ clasee_names[int(valid_labels[k])] + '_' + clasee_names[neighbours_mat[k, 0]] + '.png')
+
+            #np.testing.assert_almost_equal(0,1)
+
+
+
 
     confusion_mat_data = np.zeros((valid_embeddings.shape[0],N_neighbours+1), dtype=np.int)
     confusion_mat_data[:, 0] = np.squeeze(valid_labels)
