@@ -67,7 +67,7 @@ class CosFaceGenerator(keras.utils.Sequence,):
             self.images_path_list.remove(file_path)
             X[i, ] = self.read_and_preprocess_images(file_path)
 
-            match = re.search('\/(\d*)_(\d*)\/\d*_\d*.jpg', file_path)
+            match = re.search('\/(\d*)\/\d*_\d*.jpg', file_path)
             label_ = int(match.group(1))
             labels_list.append(label_)
             priod_label_list.append(self.period_dict[label_])
