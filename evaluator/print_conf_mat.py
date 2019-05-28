@@ -21,7 +21,7 @@ def plot_confusion_matrix(cm, classes,experient,
 
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
-    plt.colorbar()
+    #plt.colorbar()
 
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
@@ -52,6 +52,7 @@ def get_confusion_matrix(experiment,data,class_mode,classes_csv_file = ''):
     if classes_csv_file == '':
         classes_csv_file = '../data_loader/classes_top200.csv'
 
+
     with open(classes_csv_file, 'r') as f:
         reader = csv.reader(f)
         for row in reader:
@@ -71,12 +72,29 @@ def get_confusion_matrix(experiment,data,class_mode,classes_csv_file = ''):
 
     y_true = data[:,0]
     y_pred = data[:,1]
-
-    #classes = list(class_names.keys())
-    #classes = np.sort(classes)
-
     conf = confusion_matrix(y_true, y_pred)
-    conf_norm = plot_confusion_matrix(conf,[],experiment,title='Confusion matrix, label mode is ' + class_mode ,normalize=True)
+
+    if class_mode == 'site_period':
+        class_names[int(row[0])] = row[1]
+        conf_norm = plot_confusion_matrix(conf, [], experiment, title='label = ' + class_mode,
+                                          normalize=True)
+    elif class_mode == 'site_period_sorted':
+        class_names[int(row[8])] = row[1]
+        conf_norm = plot_confusion_matrix(conf, [], experiment, title='label = ' + 'site_period, sorted by period',
+                                          normalize=True)
+    elif class_mode == 'period_sorted':
+        class_names[int(row[5])] = row[3]
+        conf_norm = plot_confusion_matrix(conf, [], experiment, title='label = ' + 'period, sorted',
+                                          normalize=True)
+    elif class_mode == 'site':
+        class_names[int(row[6])] = row[4]
+        conf_norm = plot_confusion_matrix(conf, [], experiment, title='label = ' + class_mode,
+                                        normalize=True)
+    else:
+        print('invalid class mode')
+        raise
+
+
 
     plt.show()
 
@@ -105,6 +123,8 @@ def get_confusion_matrix(experiment,data,class_mode,classes_csv_file = ''):
     with open('results/summary_' + experient + '.csv', "w") as text_file:
         text_file.write(lines)
 
+    return conf_norm
+
 
 
 
@@ -124,16 +144,31 @@ for i in range(data.shape[0]):
         data_period_sorted[i,j] = class_dict[data[i,j]]
 
 
-get_confusion_matrix(experient,data_period_sorted,'site_period_sorted')
+cm_site_period_sorted = get_confusion_matrix(experient,data_period_sorted,'site_period_sorted')
 
 experient = 'site_period_14_5_57.8'
 data = np.genfromtxt('conf_mat_data/triplet_14_5_57.8_site_period_data.csv', delimiter=',')
-get_confusion_matrix(experient,data,'site_period')
+cm_site_period = get_confusion_matrix(experient,data,'site_period')
 
 experient = 'period_14_5_57.8'
 data = np.genfromtxt('conf_mat_data/triplet_14_5_57.8_period_data.csv', delimiter=',')
-get_confusion_matrix(experient,data,'period_sorted')
+cm_period_sorted = get_confusion_matrix(experient,data,'period_sorted')
 
 experient = 'site_14_5_57.8'
 data = np.genfromtxt('conf_mat_data/triplet_14_5_57.8_site_data.csv', delimiter=',')
-get_confusion_matrix(experient,data,'site')
+cm_site = get_confusion_matrix(experient,data,'site')
+
+fig, (ax1, ax2, ax3, ax4) = plt.subplots(1, 4)
+ax1.imshow(cm_site_period, interpolation='nearest',cmap=plt.cm.Blues)
+ax1.set_title('label = site_period')
+ax1.set(xlabel='Predicted label\n\n(a)', ylabel='True label')
+ax2.imshow(cm_site_period_sorted, interpolation='nearest',cmap=plt.cm.Blues)
+ax2.set_title('label = site_period, sorted by period')
+ax2.set(xlabel='Predicted label\n\n(b)', ylabel='True label')
+ax3.imshow(cm_period_sorted, interpolation='nearest',cmap=plt.cm.Blues)
+ax3.set_title('label = period, sorted')
+ax3.set(xlabel='Predicted label\n\n(c)', ylabel='True label')
+ax4.imshow(cm_site, interpolation='nearest',cmap=plt.cm.Blues)
+ax4.set_title('label = site')
+ax4.set(xlabel='Predicted label\n\n(d)', ylabel='True label')
+plt.show()

@@ -13,7 +13,7 @@ with open('periods_order.csv', 'r') as f:
 
 
 cnt = 0
-with open('../data_loader/classes_top200.csv', 'r') as f:
+with open('../data_loader/classes.csv', 'r') as f:
     reader = csv.reader(f)
     for row in reader:
         if cnt == 0:
