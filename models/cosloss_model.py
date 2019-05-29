@@ -8,10 +8,12 @@ from keras import optimizers
 from keras import backend as K
 import models.cos_face_loss
 import models.triplet_loss
+import numpy as np
 
 class CosLosModel(BaseModel):
     def __init__(self, config):
         super(CosLosModel, self).__init__(config)
+
         self.build_model()
 
     def build_model(self):
@@ -74,7 +76,10 @@ class CosLosModel(BaseModel):
                                                                                          self.config.model.is_squared)
                 metrics.append(pos_fraction)
         elif self.config.model.loss == 'cosface':
-            loss_func = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+            if self.config.model.is_use_prior_weights:
+                loss_func = self.weighted_coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+            else:
+                loss_func = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
         else:
             print('invalid loss type')
             raise
@@ -104,6 +109,18 @@ class CosLosModel(BaseModel):
             w2 = self.config.model.cosface_period_weight
             w3 = self.config.model.cosface_site_weight
             return w1*cls_loss + w2*period_loss + w3*site_loss
+        return coss_loss1
+
+    def weighted_coss_loss_wrapper(self, alpha, scale):
+        def coss_loss1(y_true, y_pred):
+            y_true_cls = K.argmax(y_true,axis=1)
+            num_cls = self.config.data_loader.num_of_classes
+            labels_probabilty = y_true[:,:num_cls]
+
+            cls_loss = models.cos_face_loss.weighted_cos_loss(y_pred, y_true_cls, num_cls,labels_probabilty,
+                                                     alpha=alpha, scale=scale, reuse=False, name='cls')
+
+            return cls_loss
         return coss_loss1
 
     def triplet_loss_wrapper(self, margin, is_squared):

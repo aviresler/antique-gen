@@ -56,10 +56,8 @@ def eval_model_from_csv_files(train_embeddings_csv, valid_embeddings_csv, train_
         train_labels_period[i] = period_dict[tr_label]
         train_labels_site[i] = site_dict[tr_label]
 
-    accuracy = print_example_images(train_embeddings, valid_embeddings, train_labels, valid_labels, experiment + '_site_period',
-                          is_save_files=True, classes_csv_file=classes_csv_file, class_mode='site_period',is_save_pair_images=True)
-
-    np.testing.assert_equal(0,1)
+    accuracy = eval_model_topk(train_embeddings, valid_embeddings, train_labels, valid_labels, experiment + '_site_period',
+                          is_save_files=True, classes_csv_file=classes_csv_file, class_mode='site_period')
 
 
 

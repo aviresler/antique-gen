@@ -1,6 +1,6 @@
 {
   "exp": {
-    "name": "cosface_param_optim2"
+    "name": "confusion_prior"
   },
   "data_loader": {
     "data_dir_train": "data_loader/data/site_period_top_200/train",
@@ -10,7 +10,7 @@
     "data_dir_valid_test": "data_loader/data/site_period_top_200/valid",
     "info_line_below1": "valid only for cosface loss",
     "num_of_classes": 200,
-    "num_of_periods": 51,
+    "num_of_periods": 53,
     "num_of_sites": 120,
     "classes_info_csv_file": "data_loader/classes_top200.csv",
     "horizontal_flip": true,
@@ -29,6 +29,8 @@
   "model":{
     "name": "cosloss.CosLosModel",
     "optimizer": "adam",
+    "is_use_prior_weights": true,
+    "classes_confusion_prior": "data_loader/class_prior_num_images.csv",
     "img_width": 299,
     "img_height": 299,
     "alpha": 0.25,
@@ -38,12 +40,12 @@
     "batch_type": "all",
     "loss": "cosface",
     "info line below 2": "relevant in cosface loss, when using 2 losses",
-    "cosface_site_period_weight": 0.33,
-    "cosface_period_weight": 0.33,
-    "cosface_site_weight": 0.33,
+    "cosface_site_period_weight": 1.0,
+    "cosface_period_weight": 0.0,
+    "cosface_site_weight": 0.0,
     "is_use_relu_on_embeddings": false,
     "embedding_dim": 328,
-    "is_use_dummy_model": true,
+    "is_use_dummy_model": false,
     "pretraind_model": "None",
     "is_batch_all_consider_only_200": true
   },

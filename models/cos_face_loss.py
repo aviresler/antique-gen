@@ -132,7 +132,57 @@ def cos_loss(x, y,  num_cls, reuse=False, alpha=0.25, scale=64,name = 'cos_loss'
     y = tf.squeeze(y)
     cos_loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=value))
 
-    return cos_loss 
+    return cos_loss
+
+
+def weighted_cos_loss(x, y, num_cls, labels_probabilty, reuse=False, alpha=0.25, scale=64, name='weighted_cos_loss'):
+    '''
+    x: B x D - features
+    y: B x 1 - labels
+    prior_likelihood: BxC weights that should be used in th cross entropy
+    num_cls: 1 - total class number
+    alpah: 1 - margin
+    scale: 1 - scaling paramter
+    '''
+    # define the classifier weights
+    print('herererre111')
+    xs = x.get_shape()
+    # print(xs)
+    # print(y.get_shape())
+    # print(y)
+    # tf.AUTO_REUSE
+    with tf.variable_scope('centers_var_' + name, reuse=False) as center_scope:
+        w = tf.get_variable('centers_' + name, [xs[1], num_cls], dtype=tf.float32,
+                            initializer=tf.contrib.layers.xavier_initializer(), trainable=True)
+    # print(w.get_shape())
+
+    # normalize the feature and weight
+    # (N,D)
+    x_feat_norm = tf.nn.l2_normalize(x, 1, 1e-10)
+    # (D,C)
+    w_feat_norm = tf.nn.l2_normalize(w, 0, 1e-10)
+
+    # get the scores after normalization
+    # (N,C)
+    xw_norm = tf.matmul(x_feat_norm, w_feat_norm)
+    # implemented by py_func
+    # value = tf.identity(xw)
+    # substract the marigin and scale it
+    value = coco_func(xw_norm, y, alpha) * scale
+
+    # implemented by tf api
+    # margin_xw_norm = xw_norm - alpha
+    # label_onehot = tf.one_hot(y,num_cls)
+    # value = scale*tf.where(tf.equal(label_onehot,1), margin_xw_norm, xw_norm)
+    print('hererere')
+    print(value.get_shape)
+
+    # compute the loss as softmax loss
+    # cos_loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=value)
+    y = tf.squeeze(y)
+    cos_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=labels_probabilty, logits=value))
+
+    return cos_loss
 
 
 def softmax_loss(prelogits,labels,nrof_classes,weight_decay,reuse):

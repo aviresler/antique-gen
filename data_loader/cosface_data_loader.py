@@ -35,6 +35,12 @@ class CosFaceGenerator(keras.utils.Sequence,):
                     self.site_dict[int(row[0])] = int(row[6])
                 cnt = cnt + 1
 
+        if self.config.model.is_use_prior_weights:
+            # read prior class confusion matrix
+            T = np.genfromtxt(self.config.model.classes_confusion_prior,delimiter=',')
+            # normalize matrix so each row will represent probability
+            self.T = T / np.linalg.norm(T, ord=2, axis=1, keepdims=True)
+
         self.n_channels = n_channels
         self.images_path_list = []
         self.num_of_images = []
@@ -75,10 +81,15 @@ class CosFaceGenerator(keras.utils.Sequence,):
 
 
         # custom loss in keras requires the labels and predictions to be in the same size
-        labels = np.zeros((len(labels_list), int(self.config.model.embedding_dim)),dtype=np.int32)
-        labels[:,0] = np.array(labels_list, dtype=np.int32)
-        labels[:, 1] = np.array(priod_label_list, dtype=np.int32)
-        labels[:, 2] = np.array(site_label_list, dtype=np.int32)
+        if self.config.model.is_use_prior_weights:
+            labels = np.zeros((len(labels_list), int(self.config.model.embedding_dim)), dtype=np.float)
+            labels_arr = np.array(labels_list, dtype=np.int32)
+            labels[:,:self.config.data_loader.num_of_classes] = self.T[labels_arr,:]
+        else:
+            labels = np.zeros((len(labels_list), int(self.config.model.embedding_dim)), dtype=np.int)
+            labels[:,0] = np.array(labels_list, dtype=np.int32)
+            labels[:, 1] = np.array(priod_label_list, dtype=np.int32)
+            labels[:, 2] = np.array(site_label_list, dtype=np.int32)
 
         #temp_labels = np.zeros((len(labels_list), 1),dtype=np.int32)
         #temp_labels[:,0] = np.array(labels_list, dtype=np.int32)
