@@ -38,8 +38,11 @@ class CosFaceGenerator(keras.utils.Sequence,):
         if self.config.model.is_use_prior_weights:
             # read prior class confusion matrix
             T = np.genfromtxt(self.config.model.classes_confusion_prior,delimiter=',')
+            rows_sum = np.sum(T,axis=1)
+            self.T = T / rows_sum[:, np.newaxis]
+            #print(np.sum(self.T,axis=1))
             # normalize matrix so each row will represent probability
-            self.T = T / np.linalg.norm(T, ord=2, axis=1, keepdims=True)
+            #self.T = T / np.linalg.norm(T, ord=2, axis=1, keepdims=True)
 
         self.n_channels = n_channels
         self.images_path_list = []
