@@ -180,9 +180,15 @@ def weighted_cos_loss(x, y, num_cls, labels_probabilty, reuse=False, alpha=0.25,
     # compute the loss as softmax loss
     # cos_loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=value)
     y = tf.squeeze(y)
-    cos_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=labels_probabilty, logits=value))
+    output_prob = tf.nn.softmax(value)
+    weighted_prob = tf.math.multiply(output_prob,labels_probabilty)
+    sum_weighted_prob = tf.reduce_sum(weighted_prob,axis=1)
+    weighted_cos_loss = tf.reduce_mean(-tf.math.log(sum_weighted_prob))
 
-    return cos_loss
+
+    #cos_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=labels_probabilty, logits=value))
+
+    return weighted_cos_loss
 
 
 def softmax_loss(prelogits,labels,nrof_classes,weight_decay,reuse):

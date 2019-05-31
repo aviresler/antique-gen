@@ -27,9 +27,9 @@ class CosLosModel(BaseModel):
             x = self.model.layers[-1].output
 
             if self.config.model.is_use_relu_on_embeddings:
-                x = Dense(int(self.config.model.embedding_dim), activation="relu", kernel_regularizer=regularizers.l2(0.0001))(x)
+                x = Dense(int(self.config.model.embedding_dim), activation="relu", kernel_regularizer=regularizers.l2(self.config.model.final_layer_regularization))(x)
             else:
-                x = Dense(int(self.config.model.embedding_dim), kernel_regularizer=regularizers.l2(0.0001))(x)
+                x = Dense(int(self.config.model.embedding_dim), kernel_regularizer=regularizers.l2(self.config.model.final_layer_regularization))(x)
 
             x = Dropout(0.5)(x)
             self.model = Model(input=self.model.input, output=x)

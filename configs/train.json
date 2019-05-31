@@ -38,6 +38,7 @@
     "margin": 0.2,
     "is_squared": false,
     "batch_type": "all",
+    "final_layer_regularization": 0.0001,
     "loss": "cosface",
     "info line below 2": "relevant in cosface loss, when using 2 losses",
     "cosface_site_period_weight": 1.0,
