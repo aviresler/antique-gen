@@ -26,6 +26,9 @@ for k in range(num_of_periods):
     gauss = signal.gaussian(num_of_periods, std=sigma_vec[k])
     #blurred_row = scipy.ndimage.filters.gaussian_filter1d(orig_row, sigma_vec[k])
     blurred_row = np.convolve(orig_row,gauss, mode='same')
+    if k == 1:
+        plt.plot(blurred_row)
+        plt.show()
     blurred_periods_mat[k,:] = np.around(100*blurred_row)
 
 print(blurred_periods_mat)
@@ -56,8 +59,8 @@ for i in range(num_of_classes):
         class_mat[i,j] = blurred_periods_mat[ priod_dict[i], priod_dict[j]]
         class_mat_num_images[i, j] = blurred_periods_mat[priod_dict_num_of_images[i], priod_dict_num_of_images[j]]
         if i == j:
-            class_mat[i, j] *= 1.1
-            class_mat_num_images[i, j] *= 1.1
+            class_mat[i, j] *= 1.3
+            class_mat_num_images[i, j] *= 1.3
 
 plt.imshow(class_mat, interpolation='nearest', cmap=plt.cm.Blues)
 plt.show()
@@ -66,7 +69,7 @@ plt.imshow(class_mat_num_images, interpolation='nearest', cmap=plt.cm.Blues)
 plt.show()
 
 np.savetxt("class_prior.csv", class_mat, delimiter=",")
-np.savetxt("class_prior_num_images.csv", class_mat_num_images, delimiter=",")
+np.savetxt("../data_loader/class_prior_num_images.csv", class_mat_num_images, delimiter=",")
 
 
 
