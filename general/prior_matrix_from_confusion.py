@@ -50,6 +50,7 @@ with open('site_period_errors_aviad.csv', 'r') as f:
                 class_mat_num_images[train_id,valid_id] = ambigous_level
             if indication == 3:
                 class_mat_num_images[train_id, valid_id] = simial_level
+                class_mat_num_images[valid_id,train_id ] = simial_level
 
 
 
