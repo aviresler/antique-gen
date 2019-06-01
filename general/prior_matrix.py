@@ -56,8 +56,8 @@ class_mat = np.zeros((num_of_classes,num_of_classes))
 class_mat_num_images = np.zeros((num_of_classes,num_of_classes))
 for i in range(num_of_classes):
     for j in range(num_of_classes):
-        class_mat[i,j] = blurred_periods_mat[ priod_dict[i], priod_dict[j]]
-        class_mat_num_images[i, j] = blurred_periods_mat[priod_dict_num_of_images[i], priod_dict_num_of_images[j]]
+        class_mat[i,j] = periods_mat[ priod_dict[i], priod_dict[j]]
+        class_mat_num_images[i, j] = periods_mat[priod_dict_num_of_images[i], priod_dict_num_of_images[j]]
         if i == j:
             class_mat[i, j] *= 1.3
             class_mat_num_images[i, j] *= 1.3
