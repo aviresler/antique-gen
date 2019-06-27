@@ -60,7 +60,6 @@ def eval_model_from_csv_files(train_embeddings_csv, valid_embeddings_csv, train_
                           is_save_files=True, classes_csv_file=classes_csv_file, class_mode='site_period')
 
 
-
     print('accuracy_site_period top_1_3_5= {0:.3f}, {1:.3f}, {2:.3f}'.format(accuracy[0],accuracy[1],accuracy[2]))
 
     accuracy_period = eval_model_topk(train_embeddings, valid_embeddings, train_labels_period, valid_labels_period, experiment + '_period',
@@ -386,10 +385,107 @@ def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, exp
 
     return accuracy
 
-if __name__ == '__main__':
-    eval_model_from_csv_files('embeddings/triplet_sample_reg_lr5e-6_train13_57.8.csv',
-                              'embeddings/triplet_sample_reg_lr5e-6_valid13_57.8.csv',
-                              'labels/triplet_sample_reg_lr5e-6_train13_57.8.tsv',
-                              'labels/triplet_sample_reg_lr5e-6_valid13_57.8.tsv',
-                              )
+def test_model_on_query_img_csv(train_embeddings_csv, valid_embeddings_csv, train_labels_tsv, valid_labels_tsv):
+    train_embeddings = np.genfromtxt(train_embeddings_csv, delimiter=',')
+    valid_embeddings = np.genfromtxt(valid_embeddings_csv, delimiter=',')
+    train_labels = np.genfromtxt(train_labels_tsv, delimiter='\t')
+    valid_labels = np.genfromtxt(valid_labels_tsv, delimiter='\t')
 
+    img_ind = 151
+    query_embeddings = valid_embeddings[img_ind,:]
+    query_embeddings = query_embeddings[np.newaxis,:]
+    query_label = valid_labels[img_ind]
+
+    test_model_on_query_imgages(train_embeddings,train_labels, query_embeddings,query_label,200,
+                            classes_csv_file='', class_mode='site_period', isPrint=True)
+
+
+
+def test_model_on_query_imgages(train_embeddings, train_labels, query_embeddings, query_label, num_of_classes,
+                    classes_csv_file = '',class_mode = 'site_period', isPrint = False):
+
+
+
+    N_neighbours = 10
+    num_of_sampels = query_embeddings.shape[0]
+    probability = np.zeros((num_of_sampels, num_of_classes),dtype=np.float32)
+
+    similaity_mat = cosine_similarity(query_embeddings, train_embeddings, dense_output=True)
+    arg_sort_similaity = np.argsort(similaity_mat, axis=1)
+    arg_sort_similaity = np.flip(arg_sort_similaity,axis =1)
+    neighbours_ind = arg_sort_similaity[:,:N_neighbours]
+
+    for k in range(num_of_sampels):
+        neighbours_cls = train_labels[neighbours_ind[k,:]]
+        neighbours_similarity = similaity_mat[k,neighbours_ind]
+
+        unique_cls = np.unique(neighbours_cls)
+
+        for cls in unique_cls:
+            ind_cls = np.where(neighbours_cls == cls)
+            ind_cls = ind_cls[0]
+            num_of_neighbours = ind_cls.shape[0]
+            cls_similarity_score = np.sum(neighbours_similarity[k,ind_cls])
+            probability[k,int(cls)] = cls_similarity_score
+
+        probability[k,:] = probability[k,:]/np.sum(probability[k,:])
+
+
+        if isPrint:
+            pred_string = get_prediction_string(probability[k,:], query_label, classes_csv_file = classes_csv_file,class_mode = class_mode)
+            print(pred_string)
+
+
+
+    return probability
+
+def get_prediction_string(probability, query_label, classes_csv_file = '',class_mode = 'site_period'):
+
+    cnt = 0
+    clasee_names = {}
+    if classes_csv_file == '':
+        classes_csv_file = '../data_loader/classes_top200.csv'
+
+    with open(classes_csv_file, 'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if cnt > 0:
+                if class_mode == 'site_period':
+                    clasee_names[int(row[0])] = row[1]
+                elif class_mode == 'period':
+                    clasee_names[int(row[5])] = row[3]
+                elif class_mode == 'site':
+                    clasee_names[int(row[6])] = row[4]
+                else:
+                    raise
+            cnt = cnt + 1
+
+    arg_sort_probability = np.argsort(probability)
+    arg_sort_probability = np.flip(arg_sort_probability)
+    lines = 'query: \n'
+    temp_str = str(int(query_label)) + ' ' + clasee_names[query_label] + '\n'
+
+    lines += temp_str
+    lines += 'predictions: \n'
+    for ind in arg_sort_probability:
+        if probability[ ind] > 0:
+            period, site = clasee_names[ind].split('_')
+            if ( len(site) > 20):
+                site = site[:20]
+            lines += str(ind) + ' {0:0.3}'.format(probability[ind]) + ' ' +  period  + '_' + site + '\n'
+
+    return lines
+
+
+
+
+
+if __name__ == '__main__':
+    train_embeddings_csv = 'embeddings/cosface_no_background_no_cutout_triplet_5e-6_cutOut_train26.csv'
+    valid_embeddings_csv = 'embeddings/cosface_no_background_no_cutout_triplet_5e-6_cutOut_valid26.csv'
+    train_labesl_tsv = 'labels/cosface_no_background_no_cutout_triplet_5e-6_cutOut_train26.tsv'
+    valid_labesl_tsv = 'labels/cosface_no_background_no_cutout_triplet_5e-6_cutOut_valid26.tsv'
+
+    #eval_model_from_csv_files(train_embeddings_csv,valid_embeddings_csv,train_labesl_tsv,valid_labesl_tsv)
+
+    test_model_on_query_img_csv(train_embeddings_csv,valid_embeddings_csv,train_labesl_tsv,valid_labesl_tsv)

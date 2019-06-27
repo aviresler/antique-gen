@@ -128,8 +128,12 @@ class CosLossModelTrainer(BaseTrain):
         generators_id = ['_train', '_valid']
 
         for m, generator in enumerate(generators):
-            batch_size = self.config['data_loader']['batch_size']
 
+            # print(generators_id[m])
+            # for filename in generator.filenames:
+            #     print(filename)
+
+            batch_size = self.config['data_loader']['batch_size']
             num_of_images = len(generator) * (batch_size)
             labels = np.zeros((num_of_images, 1), dtype=np.int)
             labels_period = np.zeros((num_of_images, 1), dtype=np.int)

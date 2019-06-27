@@ -1,0 +1,56 @@
+{
+  "exp": {
+    "name": "test"
+  },
+  "data_loader": {
+    "query_images_folder": "data_loader/data/site_period_top_200/bg_removed/test",
+    "output_folder": "data_loader/data/site_period_top_200/bg_removed/test_results",
+    "train_embbedings_csv": "data_loader/train_embeddings.csv",
+    "train_labels_tsv": "data_loader/train_labels.tsv",
+    "train_files_csv": "data_loader/data/site_period_top_200/bg_removed/test",
+    "info_line_below1": "valid only for cosface loss",
+    "num_of_classes": 200,
+    "num_of_periods": 53,
+    "num_of_sites": 120,
+    "classes_info_csv_file": "data_loader/classes_top200.csv",
+    "class_mode": "sparse",
+    "batch_size": 1
+  },
+  "model":{
+    "name": "cosloss.CosLosModel",
+    "optimizer": "adam",
+    "is_use_prior_weights": false,
+    "classes_confusion_prior": "data_loader/class_prior_num_images.csv",
+    "img_width": 299,
+    "img_height": 299,
+    "alpha": 0.25,
+    "scale": 64,
+    "margin": 0.2,
+    "is_squared": false,
+    "batch_type": "all",
+    "final_layer_regularization": 0.0001,
+    "loss": "cosface",
+    "info line below 2": "relevant in cosface loss, when using 2 losses",
+    "cosface_site_period_weight": 1.0,
+    "cosface_period_weight": 0.0,
+    "cosface_site_weight": 0.0,
+    "is_use_relu_on_embeddings": false,
+    "embedding_dim": 328,
+    "is_use_dummy_model": true,
+    "pretraind_model": "None",
+    "is_batch_all_consider_only_200": true
+  },
+    "trainer":{
+    "name": "cosface.SimpleMnistModelTrainer",
+    "num_epochs": 2,
+    "learning_rate_values": [0.0001, 0.000001, 0.000001],
+    "learning_rate_schedule_type": "ReduceLROnPlateau",
+    "learning_rate": 0.000226,
+    "lr_decrease_factor": 0.365,
+    "learning_rate_epoch_change": [3,9],
+    "verbose_training": true,
+    "is_change_lr": true,
+    "is_early_stop": true
+  }
+}
+

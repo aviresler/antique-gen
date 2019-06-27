@@ -1,6 +1,6 @@
 {
   "exp": {
-    "name": "confusion_prior"
+    "name": "train"
   },
   "data_loader": {
     "data_dir_train": "data_loader/data/site_period_top_200/train",
@@ -29,7 +29,7 @@
   "model":{
     "name": "cosloss.CosLosModel",
     "optimizer": "adam",
-    "is_use_prior_weights": true,
+    "is_use_prior_weights": false,
     "classes_confusion_prior": "data_loader/class_prior_num_images.csv",
     "img_width": 299,
     "img_height": 299,

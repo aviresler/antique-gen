@@ -65,6 +65,8 @@ def main():
         print('Create the trainer')
         trainer = CosLossModelTrainer(model.model, train_generator ,valid_generator, config)
 
+        trainer.get_accuracy()
+
         print('Start training the model.')
         trainer.train()
 

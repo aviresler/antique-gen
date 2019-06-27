@@ -156,6 +156,7 @@ def update_config(config, param_csv_path, params_start_col, loss_col, test_file)
                     config['callbacks']['is_save_model'] = False
                     if not str.startswith(config['data_loader']['data_dir_train'], '../'):
                         config['data_loader']['data_dir_train'] = '../' + config['data_loader']['data_dir_train']
+                        config['model']['classes_confusion_prior'] = '../' + config['model']['classes_confusion_prior']
                         config['data_loader']['data_dir_valid'] = '../' + config['data_loader']['data_dir_valid']
                         config['data_loader']['data_dir_train_test'] = '../' + config['data_loader']['data_dir_train_test']
                         config['data_loader']['data_dir_valid_test'] = '../' + config['data_loader']['data_dir_valid_test']
