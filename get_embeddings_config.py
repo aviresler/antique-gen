@@ -24,6 +24,10 @@ def main():
 
         print('Create the model.')
         model = CosLosModel(config)
+
+        print('loading pretrained model')
+        if not config.model.pretraind_model == 'None':
+            model.load(config.model.pretraind_model)
         #model = factory.create("models."+config.model.name)(config)
 
         print('loading pretrained model')
@@ -44,7 +48,8 @@ def main():
 
             cur_ind = 0
             for k in range(len(generator)):
-                print(k)
+                if k % 10 == 0:
+                    print(k)
                 x, y_true_ = generator.__getitem__(k)
                 y_true = [label_map[x] for x in y_true_]
                 y_pred = model.model.predict(x)
@@ -69,8 +74,7 @@ def main():
             np.savetxt('evaluator/labels/' + config.exp.name + generators_id[m] + '.tsv', labels, delimiter=',')
             np.savetxt('evaluator/embeddings/' + config.exp.name + generators_id[m] + '.csv', predication, delimiter=',')
 
-        accuracy = eval_model(train_prediction, valid_prediction, train_labels, valid_labels, config.exp.name,
-                              is_save_files=True)
+        accuracy = eval_model(train_prediction, valid_prediction, train_labels, valid_labels, config.exp.name, is_save_files= True)
         print('accuracy = {0:.3f}'.format(accuracy))
 
 

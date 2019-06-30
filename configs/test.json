@@ -3,16 +3,18 @@
     "name": "test"
   },
   "data_loader": {
-    "query_images_folder": "data_loader/data/site_period_top_200/bg_removed/test",
-    "output_folder": "data_loader/data/site_period_top_200/bg_removed/test_results",
-    "train_embbedings_csv": "data_loader/train_embeddings.csv",
-    "train_labels_tsv": "data_loader/train_labels.tsv",
+    "query_images_folder": "data_loader/data/data_16_6/internal_less_than_4_images_classes",
+    "is_interpret": false,
+    "is_external_set": false,
+    "output_folder": "data_loader/data/data_16_6/internal_less_than_4_images_classes_results",
+    "train_embbedings_csv": "evaluator/embeddings/no_bg_train.csv",
+    "train_labels_tsv": "evaluator/labels/no_bg_train.tsv",
     "train_files_csv": "data_loader/data/site_period_top_200/bg_removed/test",
     "info_line_below1": "valid only for cosface loss",
     "num_of_classes": 200,
     "num_of_periods": 53,
     "num_of_sites": 120,
-    "classes_info_csv_file": "data_loader/classes_top200.csv",
+    "classes_info_csv_file": "data_loader/classes.csv",
     "class_mode": "sparse",
     "batch_size": 1
   },
@@ -36,8 +38,8 @@
     "cosface_site_weight": 0.0,
     "is_use_relu_on_embeddings": false,
     "embedding_dim": 328,
-    "is_use_dummy_model": true,
-    "pretraind_model": "None",
+    "is_use_dummy_model": false,
+    "pretraind_model": "experiments/2019-06-22/cosface_no_background_no_cutout/checkpoints/cosface_no_background_no_cutout.hdf5",
     "is_batch_all_consider_only_200": true
   },
     "trainer":{

@@ -41,7 +41,6 @@ def main():
         if not config.model.pretraind_model == 'None':
             model.load(config.model.pretraind_model)
 
-        # lime interpret
         explainer = lime_image.LimeImageExplainer()
 
         label_map = (test_generator.class_indices)
@@ -50,13 +49,20 @@ def main():
         train_labels = np.genfromtxt(config.data_loader.train_labels_tsv, delimiter='\t')
 
 
+        f, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
+        ax1.get_xaxis().set_visible(False)
+        ax1.get_yaxis().set_visible(False)
 
         for k in range(len(test_generator)):
             img, y_true_ = test_generator.__getitem__(k)
             y_true = [label_map[x] for x in y_true_]
 
             img = np.squeeze(img)
-            y_true = int(y_true[0])
+            if not config.data_loader.is_external_set:
+                y_true = int(y_true[0])
+            else:
+                y_true = y_true[0]
+
 
             predict_fn = predict_wrapper(train_embeddings,train_labels,model,y_true, config.data_loader.num_of_classes,
                                          class_mode='site_period',isPrint= False,classes_csv_file= config.data_loader.classes_info_csv_file)
@@ -70,27 +76,31 @@ def main():
             arg_sort_probability = np.argsort(prob)
             arg_sort_probability = np.flip(arg_sort_probability)
 
+            if config.data_loader.is_interpret:
+                explanation = explainer.explain_instance(img, predict_fn, top_labels=5, hide_color=0, num_samples=1000)
+                temp, mask = explanation.get_image_and_mask(arg_sort_probability[0], positive_only=True, num_features=5, hide_rest=False)
 
-            explanation = explainer.explain_instance(img, predict_fn, top_labels=5, hide_color=0, num_samples=1000)
+            if '/' in test_generator.filenames[k]:
+                folder,file_name = test_generator.filenames[k].split('/')
+                folder = config.data_loader.output_folder + '/' + folder
+                if not os.path.exists(folder):
+                    os.mkdir(folder)
 
-            temp, mask = explanation.get_image_and_mask(arg_sort_probability[0], positive_only=True, num_features=5, hide_rest=False)
 
-            folder,file_name = test_generator.filenames[k].split('/')
-            folder = config.data_loader.output_folder + '/' + folder
-            if not os.path.exists(folder):
-                os.mkdir(folder)
-
-            f, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
-            ax1.get_xaxis().set_visible(False)
-            ax1.get_yaxis().set_visible(False)
             ax2.axis([0, 10, 0, 10])
 
-
-            ax1.imshow(mark_boundaries(temp / 2 + 0.5, mask))
-            ax1.title.set_text('query image and significant pixels for the top prediction')
+            if config.data_loader.is_interpret:
+                ax1.imshow(mark_boundaries(temp / 2 + 0.5, mask))
+                ax1.title.set_text('query image and significant pixels for the top prediction')
+            else:
+                ax1.imshow(img / 2 + 0.5 )
+                ax1.title.set_text('query image')
             ax2.text(0.2,3,description,fontsize=14)
+            #plt.show()
 
             plt.savefig(folder + '/' + file_name)
+            ax1.cla()
+            ax2.cla()
 
 
     except Exception as e:

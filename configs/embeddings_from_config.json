@@ -1,28 +1,66 @@
 {
   "exp": {
-    "name": "cossloss_new_data_split_2"
+    "name": "no_bg"
   },
   "data_loader": {
-    "name": "testing_generator",
-    "data_dir_train": "data_loader/data/site_period_top_200/train",
-    "data_dir_valid": "data_loader/data/site_period_top_200/valid",
-    "class_mode": "sparse",
+    "data_dir_train": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train",
+    "data_dir_valid": "data_loader/data/data_16_6/site_period_top_200_bg_removed/valid",
+    "info_line_below": "in triplet loss testing is done with 200 classes",
+    "data_dir_train_test": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train",
+    "data_dir_valid_test": "data_loader/data/data_16_6/site_period_top_200_bg_removed/valid",
+    "info_line_below1": "valid only for cosface loss",
     "num_of_classes": 200,
-    "is_train": true,
-    "batch_size": 24
+    "num_of_periods": 53,
+    "num_of_sites": 120,
+    "classes_info_csv_file": "data_loader/classes_top200.csv",
+    "horizontal_flip": true,
+    "fill_mode": "nearest",
+    "zoom_range": 0.15,
+    "width_shift_range": 0.15,
+    "height_shift_range": 0.15,
+    "rotation_range": 30,
+    "is_use_cutOut": true,
+    "class_mode": "sparse",
+    "K": 4,
+    "P": 6,
+    "batch_size": 24,
+    "is_sample_each_cls_once": "TRUE"
   },
   "model":{
-    "name": "cosloss_model.CosLosModel",
-    "learning_rate": 0.001,
+    "name": "cosloss.CosLosModel",
     "optimizer": "adam",
+    "is_use_prior_weights": false,
+    "classes_confusion_prior": "data_loader/class_prior_num_images.csv",
     "img_width": 299,
     "img_height": 299,
     "alpha": 0.25,
     "scale": 64,
-    "is_use_triplet_loss": false,
-    "pretraind_model": "experiments/2019-04-14/cossloss_new_data_split_2/checkpoints/cossloss_new_data_split_2.hdf5",
-    "embedding_dim": 200,
-    "is_use_relu_on_embeddings": false
+    "margin": 0.2,
+    "is_squared": false,
+    "batch_type": "all",
+    "final_layer_regularization": 0.0001,
+    "loss": "cosface",
+    "info line below 2": "relevant in cosface loss, when using 2 losses",
+    "cosface_site_period_weight": 1.0,
+    "cosface_period_weight": 0.0,
+    "cosface_site_weight": 0.0,
+    "is_use_relu_on_embeddings": false,
+    "embedding_dim": 328,
+    "is_use_dummy_model": false,
+    "pretraind_model": "experiments/2019-06-22/cosface_no_background_no_cutout/checkpoints/cosface_no_background_no_cutout.hdf5",
+    "is_batch_all_consider_only_200": true
+  },
+    "trainer":{
+    "name": "cosface.SimpleMnistModelTrainer",
+    "num_epochs": 2,
+    "learning_rate_values": [0.0001, 0.000001, 0.000001],
+    "learning_rate_schedule_type": "ReduceLROnPlateau",
+    "learning_rate": 0.000226,
+    "lr_decrease_factor": 0.365,
+    "learning_rate_epoch_change": [3,9],
+    "verbose_training": true,
+    "is_change_lr": true,
+    "is_early_stop": true
   }
 }
 

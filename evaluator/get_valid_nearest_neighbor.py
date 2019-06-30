@@ -25,7 +25,7 @@ def findEuclideanDistance(source_representation, test_representation):
 def eval_model_from_csv_files(train_embeddings_csv, valid_embeddings_csv, train_labels_tsv, valid_labels_tsv):
 
     experiment = 'test'
-    classes_csv_file = '../data_loader/classes_top200.csv'
+    classes_csv_file = 'data_loader/classes_top200.csv'
 
     train_embeddings = np.genfromtxt(train_embeddings_csv, delimiter=',')
     valid_embeddings = np.genfromtxt(valid_embeddings_csv, delimiter=',')
@@ -335,7 +335,7 @@ def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, exp
     clasee_names = {}
     if is_save_files:
         if classes_csv_file == '':
-            classes_csv_file = '../data_loader/classes_top200.csv'
+            classes_csv_file = 'data_loader/classes_top200.csv'
 
         with open(classes_csv_file, 'r') as f:
             reader = csv.reader(f)
@@ -463,7 +463,11 @@ def get_prediction_string(probability, query_label, classes_csv_file = '',class_
     arg_sort_probability = np.argsort(probability)
     arg_sort_probability = np.flip(arg_sort_probability)
     lines = 'query: \n'
-    temp_str = str(int(query_label)) + ' ' + clasee_names[query_label] + '\n'
+    print(query_label)
+    if isinstance(query_label, str):
+        temp_str = query_label + '\n'
+    else:
+        temp_str = str(int(query_label)) + ' ' + clasee_names[query_label] + '\n'
 
     lines += temp_str
     lines += 'predictions: \n'
@@ -476,7 +480,22 @@ def get_prediction_string(probability, query_label, classes_csv_file = '',class_
 
     return lines
 
+def get_class_centroid_embeddings(train_embeddings, train_labels):
+    unique_labels = np.unique(train_labels)
+    num_of_classes = unique_labels.shape[0]
+    mean_embeddings = np.zeros((num_of_classes,train_embeddings.shape[1]),dtype=np.float32)
+    new_labels = np.zeros((num_of_classes, ), dtype=np.int32)
+    for k, label in enumerate(unique_labels):
+        ind = np.where(train_labels==label)
+        ind = ind[0]
+        class_embbed = train_embeddings[ind,:]
+        mean_embeddings[k, :] = np.mean(class_embbed,axis=0)
+        new_labels[k] = label
 
+    #np.savetxt('labels/cosface_no_background_no_cutout_triplet_5e-6_cutOut_train26_mean.tsv', new_labels, delimiter=',')
+    #np.savetxt('embeddings/cosface_no_background_no_cutout_triplet_5e-6_cutOut_train26_mean.csv', mean_embeddings,delimiter=',')
+
+    return mean_embeddings,new_labels
 
 
 
