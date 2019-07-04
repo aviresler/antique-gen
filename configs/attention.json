@@ -4,8 +4,8 @@
   },
   "data_loader": {
     "name": "default_generator",
-    "data_dir_train": "data_loader/data/site_period_top_200/bg_removed/train",
-    "data_dir_valid": "data_loader/data/site_period_top_200/bg_removed/valid",
+    "data_dir_train": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train",
+    "data_dir_valid": "data_loader/data/data_16_6/site_period_top_200_bg_removed/valid",
     "horizontal_flip": true,
     "fill_mode": "nearest",
     "zoom_range": 0.15,
@@ -14,7 +14,7 @@
     "rotation_range": 30,
     "is_use_cutOut": false,
     "class_mode": "categorical",
-    "batch_size": 24
+    "batch_size": 6
   },
   "model":{
     "name": "softmax_model.SoftMaxModel",

@@ -1,13 +1,13 @@
 {
   "exp": {
-    "name": "train"
+    "name": "bg_removed"
   },
   "data_loader": {
-    "data_dir_train": "data_loader/data/site_period_top_200/train",
-    "data_dir_valid": "data_loader/data/site_period_top_200/valid",
+    "data_dir_train": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train",
+    "data_dir_valid": "data_loader/data/data_16_6/site_period_top_200_bg_removed/valid",
     "info_line_below": "in triplet loss testing is done with 200 classes",
-    "data_dir_train_test": "data_loader/data/site_period_top_200/train",
-    "data_dir_valid_test": "data_loader/data/site_period_top_200/valid",
+    "data_dir_train_test": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train",
+    "data_dir_valid_test": "data_loader/data/data_16_6/site_period_top_200_bg_removed/valid",
     "info_line_below1": "valid only for cosface loss",
     "num_of_classes": 200,
     "num_of_periods": 53,
@@ -38,7 +38,7 @@
     "margin": 0.2,
     "is_squared": false,
     "batch_type": "all",
-    "final_layer_regularization": 0.0001,
+    "final_layer_regularization": 0.00001,
     "loss": "cosface",
     "info line below 2": "relevant in cosface loss, when using 2 losses",
     "cosface_site_period_weight": 1.0,
@@ -52,7 +52,7 @@
   },
   "trainer":{
     "name": "cosface.SimpleMnistModelTrainer",
-    "num_epochs": 2,
+    "num_epochs": 30,
     "learning_rate_values": [0.0001, 0.000001, 0.000001],
     "learning_rate_schedule_type": "ReduceLROnPlateau",
     "learning_rate": 0.000226,

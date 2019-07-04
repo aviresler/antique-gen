@@ -18,7 +18,10 @@ class BaseModel(object):
             raise Exception("You have to build the model first.")
 
         print("Loading model checkpoint {} ...\n".format(checkpoint_path))
-        self.model.load_weights(checkpoint_path)
+        if self.config.model.type == 'vgg_attention':
+            self.model.load_weights(checkpoint_path, by_name=True)
+        else:
+            self.model.load_weights(checkpoint_path)
         print("Model loaded")
 
     def build_model(self):

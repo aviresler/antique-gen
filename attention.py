@@ -17,7 +17,7 @@ import math
 from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 from sklearn.utils import class_weight
 import os
-import cv2
+#import cv2
 from data_loader.default_generator import get_default_generator
 from utils.args import get_args
 from utils.config import process_config
@@ -136,7 +136,7 @@ if __name__ == '__main__':
     args = get_args()
     config = process_config(args.config)
 
-    batch_size = 24
+    batch_size = 8
     img_rows, img_cols = 224, 224 # Resolution of inputs
     num_channels = 3
     num_classes = 200
@@ -144,6 +144,12 @@ if __name__ == '__main__':
 
     training_generator = get_default_generator(config, True)
     validation_generator = get_default_generator(config, False)
+
+    x,y = training_generator.__getitem__(0)
+    print(x.shape)
+    print(y.shape)
+    print(x.dtype)
+    print(y.dtype)
 
     #print(np.sort(np.unique(training_generator.classes)))
     sorted_labels = np.sort(training_generator.classes)
@@ -153,6 +159,8 @@ if __name__ == '__main__':
     (g, local1, local2, local3) = vgg_attention(inp)
     out, alpha = att_block(g, local1, local2, local3, num_classes)
     model = Model(inputs=inp, outputs=out)
+
+    #print(model.summary())
 
     #model.load_weights('weights-improvement_vgg-26-0.87.hdf5', by_name=True)
 
