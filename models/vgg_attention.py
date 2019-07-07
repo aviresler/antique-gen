@@ -14,56 +14,54 @@ def vgg_attention(inp):
     x = ZeroPadding2D((1, 1))(inp)
     x = Conv2D(64, (3, 3), activation='relu', name='block1_conv1')(x)
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(64, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(64, (3, 3), activation='relu', name='block1_conv2')(x)
 
     # block 2
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(128, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(128, (3, 3), activation='relu', name='block2_conv1')(x)
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(128, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(128, (3, 3), activation='relu', name='block2_conv3')(x)
 
     # block 3
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(256, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(256, (3, 3), activation='relu', name='block3_conv1')(x)
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(256, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(256, (3, 3), activation='relu', name='block3_conv2')(x)
     x = ZeroPadding2D((1, 1))(x)
-    local1 = Conv2D(256, (3, 3), activation='relu', name='block1_conv1')(x)
+    local1 = Conv2D(256, (3, 3), activation='relu', name='block3_conv3')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2))(local1)
 
     # block 4
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(512, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(512, (3, 3), activation='relu', name='block4_conv1')(x)
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(512, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(512, (3, 3), activation='relu', name='block4_conv2')(x)
     x = ZeroPadding2D((1, 1))(x)
-    local2 = Conv2D(512, (3, 3), activation='relu', name='block1_conv1')(x)
+    local2 = Conv2D(512, (3, 3), activation='relu', name='block4_conv3')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2))(local2)
 
     # block 5
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(512, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(512, (3, 3), activation='relu', name='block5_conv1')(x)
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(512, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(512, (3, 3), activation='relu', name='block5_conv2')(x)
     x = ZeroPadding2D((1, 1))(x)
-    local3 = Conv2D(512, (3, 3), activation='relu', name='block1_conv1')(x)
+    local3 = Conv2D(512, (3, 3), activation='relu', name='block5_conv3')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2))(local3)
 
     # Add Fully Connected Layer
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(512, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(512, (3, 3), activation='relu', name='block6_conv1')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2))(x)
     x = ZeroPadding2D((1, 1))(x)
-    x = Conv2D(512, (3, 3), activation='relu', name='block1_conv1')(x)
+    x = Conv2D(512, (3, 3), activation='relu', name='block6_conv2')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2))(x)
     x = Reshape([int(x.shape[1]) * int(x.shape[2]) * int(x.shape[3])])(x)
     g = Dense(512, activation='relu', name='g')(x)  # batch*512
 
     return (g, local1, local2, local3)
 
-def att_block( g, local1, local2, local3, outputclasses):
-    weight_decay = 0.0005
-    regularizer = keras.regularizers.l2(weight_decay)
+def att_block( g, local1, local2, local3,outputclasses, regularizer, isSoftMax = True ):
 
     l1 = Dense(512, kernel_regularizer=regularizer, name='l1connectordense')(local1)  # batch*x*y*512
     c1 = ParametrisedCompatibility(kernel_regularizer=regularizer, name='cpc1')([l1, g])  # batch*x*y
@@ -92,8 +90,10 @@ def att_block( g, local1, local2, local3, outputclasses):
     glist.append(g1)
     predictedG = concatenate([glist[0], glist[1], glist[2]], axis=1)
     x = Dense(outputclasses, kernel_regularizer=regularizer, name=str(outputclasses) + 'ConcatG')(predictedG)
-    out = Activation("softmax", name='concatsoftmaxout')(x)
-
+    if isSoftMax:
+        out = Activation("softmax", name='concatsoftmaxout')(x)
+    else:
+        out = x
     return out, Reshape([int(l1.shape[1]), int(l1.shape[1])])(a1)
 
 class ParametrisedCompatibility(Layer):

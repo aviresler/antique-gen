@@ -1,5 +1,5 @@
 from base.base_model import BaseModel
-from keras.layers import Dense, Dropout, Conv2D, Activation, MaxPooling2D, Flatten
+from keras.layers import Dense, Dropout, Conv2D, Activation, MaxPooling2D, Flatten, GlobalAveragePooling2D, Input
 from keras.models import Sequential
 from keras import applications
 from keras.models import Model
@@ -9,6 +9,8 @@ from keras import backend as K
 import models.cos_face_loss
 import models.triplet_loss
 import numpy as np
+from models.vgg_attention import vgg_attention, att_block
+import keras
 
 class CosLosModel(BaseModel):
     def __init__(self, config):
@@ -17,8 +19,9 @@ class CosLosModel(BaseModel):
         self.build_model()
 
     def build_model(self):
+        regularizer = keras.regularizers.l2(self.config.model.weight_decay)
 
-        if not self.config.model.is_use_dummy_model:
+        if self.config.model.type == "inceptionResnetV2":
 
             self.model = applications.inception_resnet_v2.InceptionResNetV2(include_top=True, weights='imagenet',
                                                                        input_shape=(self.config.model.img_width, self.config.model.img_height, 3))
@@ -27,14 +30,31 @@ class CosLosModel(BaseModel):
             x = self.model.layers[-1].output
 
             if self.config.model.is_use_relu_on_embeddings:
-                x = Dense(int(self.config.model.embedding_dim), activation="relu", kernel_regularizer=regularizers.l2(self.config.model.final_layer_regularization))(x)
+                x = Dense(int(self.config.model.embedding_dim), activation="relu", kernel_regularizer=regularizer)(x)
             else:
-                x = Dense(int(self.config.model.embedding_dim), kernel_regularizer=regularizers.l2(self.config.model.final_layer_regularization))(x)
+                x = Dense(int(self.config.model.embedding_dim), kernel_regularizer=regularizer)(x)
 
             x = Dropout(0.5)(x)
             self.model = Model(input=self.model.input, output=x)
 
-        else:
+        elif self.config.model.type == "vgg":
+            base_model = applications.vgg16.VGG16(include_top=False, weights='imagenet',
+                                                  input_shape=(
+                                                  self.config.model.img_width, self.config.model.img_height, 3))
+
+            print('here')
+            x = base_model.output
+            x = GlobalAveragePooling2D()(x)
+            x = Dense(int(self.config.model.embedding_dim),kernel_regularizer=regularizer)(x)
+            print('here')
+            x = Dropout(0.5)(x)
+            self.model = Model(inputs=base_model.input, outputs=x)
+        elif self.config.model.type == "vgg_attention":
+            inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
+            (g, local1, local2, local3) = vgg_attention(inp)
+            out, alpha = att_block(g, local1, local2, local3, int(self.config.model.embedding_dim), regularizer)
+            self.model = Model(inputs=inp, outputs=out)
+        elif self.config.model.type == "dummy":
             input_shape = (299, 299, 3)
             self.model = Sequential()
             self.model.add(Conv2D(32, (3, 3), input_shape=input_shape))
@@ -53,6 +73,9 @@ class CosLosModel(BaseModel):
             self.model.add(Dense(int(self.config.model.embedding_dim), activation="relu"))
 
             self.model = Model(input=self.model.input, output=self.model.output)
+        else:
+            print('model type is not supported')
+            raise
 
         if self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
             adam1 = optimizers.Adam(lr=0.0)
