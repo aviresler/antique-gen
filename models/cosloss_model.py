@@ -49,11 +49,12 @@ class CosLosModel(BaseModel):
             x = Dense(int(self.config.data_loader.num_of_classes),kernel_regularizer=regularizer)(x)
             out = Activation("softmax", name='out')(x)
             self.model = Model(inputs=base_model.input, outputs=[embeddings,out])
+            #print(self.model.summary())
         elif self.config.model.type == "vgg_attention":
             inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
             (g, local1, local2, local3) = vgg_attention(inp)
-            out, alpha = att_block(g, local1, local2, local3, int(self.config.model.embedding_dim), regularizer, isSoftMax=False)
-            self.model = Model(inputs=inp, outputs=out)
+            out, alpha = att_block(g, local1, local2, local3, int(self.config.model.embedding_dim), regularizer)
+            self.model = Model(inputs=inp, outputs=[g,out,alpha])
         elif self.config.model.type == "dummy":
             input_shape = (299, 299, 3)
             self.model = Sequential()
@@ -86,6 +87,7 @@ class CosLosModel(BaseModel):
             print('invalid learning rate configuration')
             raise
 
+        ### loss ###
         metrics = []
         if self.config.model.loss == 'triplet':
             loss_func = self.triplet_loss_wrapper(self.config.model.margin, self.config.model.is_squared)
@@ -99,24 +101,28 @@ class CosLosModel(BaseModel):
                                                                                          self.config.model.is_squared)
                 metrics.append(pos_fraction)
         elif self.config.model.loss == 'cosface' or self.config.model.loss == 'softmax' :
-            if self.config.model.is_use_prior_weights:
-                loss_func1 = self.weighted_coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
-            else:
-                loss_func1 = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+            if self.config.model.type == "vgg":
+                if self.config.model.is_use_prior_weights:
+                    loss_func1 = self.weighted_coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+                else:
+                    loss_func1 = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
 
-            loss_func2 = self.softmax_loss_wrapper()
-            if self.config.model.loss == 'cosface':
-                loss_weights = {"embeddings": 1.0, "out": 0.0}
-            else:
-                loss_weights = {"embeddings": 0.0, "out": 1.0}
+                loss_func2 = self.softmax_loss_wrapper()
+                if self.config.model.loss == 'cosface':
+                    loss_weights = {"embeddings": 1.0, "out": 0.0}
+                else:
+                    loss_weights = {"embeddings": 0.0, "out": 1.0}
 
-            loss_func = {"embeddings": loss_func1, "out": loss_func2}
-
-
+                loss_func = {"embeddings": loss_func1, "out": loss_func2}
+            elif self.config.model.type == "vgg_attention":
+                loss_func1 = self.empty_loss_wrapper()
+                loss_func2 = self.softmax_loss_wrapper()
+                loss_func3 = self.empty_loss_wrapper()
+                loss_weights = {"g": 0.0, "out": 1.0, "alpha": 0.0}
+                loss_func = {"g": loss_func1, "out": loss_func2, "alpha": loss_func3}
         else:
             print('invalid loss type')
             raise
-
 
         self.model.compile(
               loss=loss_func,
@@ -125,11 +131,18 @@ class CosLosModel(BaseModel):
               metrics= metrics
         )
 
+
+
     def softmax_loss_wrapper(self):
         def softmax_loss1(y_true, y_pred):
             y_true_casted = K.cast(y_true, dtype='int32')
             y_true_cls = y_true_casted[:, 0]
             return K.sparse_categorical_crossentropy(y_true_cls,y_pred)
+        return softmax_loss1
+
+    def empty_loss_wrapper(self):
+        def softmax_loss1(y_true, y_pred):
+            return K.constant(0)
         return softmax_loss1
 
     def coss_loss_wrapper(self, alpha, scale):

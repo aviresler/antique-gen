@@ -57,11 +57,11 @@ def vgg_attention(inp):
     x = Conv2D(512, (3, 3), activation='relu', name='block6_conv2')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2))(x)
     x = Reshape([int(x.shape[1]) * int(x.shape[2]) * int(x.shape[3])])(x)
-    g = Dense(512, activation='relu', name='g')(x)  # batch*512
+    g = Dense(512, name='g')(x)  # batch*512
 
     return (g, local1, local2, local3)
 
-def att_block( g, local1, local2, local3,outputclasses, regularizer, isSoftMax = True ):
+def att_block( g, local1, local2, local3,outputclasses, regularizer, loss_type = 'softmax' ):
 
     l1 = Dense(512, kernel_regularizer=regularizer, name='l1connectordense')(local1)  # batch*x*y*512
     c1 = ParametrisedCompatibility(kernel_regularizer=regularizer, name='cpc1')([l1, g])  # batch*x*y
@@ -88,13 +88,13 @@ def att_block( g, local1, local2, local3,outputclasses, regularizer, isSoftMax =
     glist = [g3]
     glist.append(g2)
     glist.append(g1)
-    predictedG = concatenate([glist[0], glist[1], glist[2]], axis=1)
+    predictedG = concatenate([glist[0], glist[1], glist[2]],name='predictedG', axis=1)
     x = Dense(outputclasses, kernel_regularizer=regularizer, name=str(outputclasses) + 'ConcatG')(predictedG)
-    if isSoftMax:
-        out = Activation("softmax", name='concatsoftmaxout')(x)
+    if loss_type == 'softmax':
+        out = Activation("softmax", name='out')(x)
     else:
-        out = x
-    return out, Reshape([int(l1.shape[1]), int(l1.shape[1])])(a1)
+        out = predictedG
+    return out, Reshape([int(l1.shape[1]), int(l1.shape[1])],name='alpha')(a1)
 
 class ParametrisedCompatibility(Layer):
 

@@ -1,6 +1,6 @@
 {
   "exp": {
-    "name": "vgg_bg_removed"
+    "name": "vgg_attention_bg_removed"
   },
   "data_loader": {
     "data_dir_train": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train",
@@ -29,12 +29,13 @@
   "model":{
     "optimizer": "adam",
     "info_line_below": "can be: vgg / vgg_attention/  inceptionResnetV2 / dummy",
-    "type": "vgg",
+    "type": "vgg_attention",
+    "num_of_outputs": 3,
     "info_line_below2": "can be: cosface / softmax/  triplet ",
     "loss": "softmax",
     "is_use_relu_on_embeddings": false,
-    "embedding_dim": 328,
-    "pretraind_model": "None",
+    "embedding_dim": 512,
+    "pretraind_model": "experiments/2019-07-09/vgg_bg_removed_cos_face/checkpoints/vgg_bg_removed_cos_face.hdf5",
     "img_width": 224,
     "img_height": 224,
     "alpha": 0.25,
