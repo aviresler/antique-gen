@@ -42,17 +42,17 @@ class CosLosModel(BaseModel):
                                                   input_shape=(
                                                   self.config.model.img_width, self.config.model.img_height, 3))
 
-            print('here')
             x = base_model.output
             x = GlobalAveragePooling2D()(x)
-            x = Dense(int(self.config.model.embedding_dim),kernel_regularizer=regularizer)(x)
-            print('here')
-            x = Dropout(0.5)(x)
-            self.model = Model(inputs=base_model.input, outputs=x)
+            embeddings = Dense(int(self.config.model.embedding_dim),kernel_regularizer=regularizer, name='embeddings')(x)
+            x = Dropout(0.5)(embeddings)
+            x = Dense(int(self.config.data_loader.num_of_classes),kernel_regularizer=regularizer)(x)
+            out = Activation("softmax", name='out')(x)
+            self.model = Model(inputs=base_model.input, outputs=[embeddings,out])
         elif self.config.model.type == "vgg_attention":
             inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
             (g, local1, local2, local3) = vgg_attention(inp)
-            out, alpha = att_block(g, local1, local2, local3, int(self.config.model.embedding_dim), regularizer)
+            out, alpha = att_block(g, local1, local2, local3, int(self.config.model.embedding_dim), regularizer, isSoftMax=False)
             self.model = Model(inputs=inp, outputs=out)
         elif self.config.model.type == "dummy":
             input_shape = (299, 299, 3)
@@ -98,11 +98,21 @@ class CosLosModel(BaseModel):
                 pos_fraction = self.triplet_loss_wrapper_batch_all_positive_fraction(self.config.model.margin,
                                                                                          self.config.model.is_squared)
                 metrics.append(pos_fraction)
-        elif self.config.model.loss == 'cosface':
+        elif self.config.model.loss == 'cosface' or self.config.model.loss == 'softmax' :
             if self.config.model.is_use_prior_weights:
-                loss_func = self.weighted_coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+                loss_func1 = self.weighted_coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
             else:
-                loss_func = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+                loss_func1 = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+
+            loss_func2 = self.softmax_loss_wrapper()
+            if self.config.model.loss == 'cosface':
+                loss_weights = {"embeddings": 1.0, "out": 0.0}
+            else:
+                loss_weights = {"embeddings": 0.0, "out": 1.0}
+
+            loss_func = {"embeddings": loss_func1, "out": loss_func2}
+
+
         else:
             print('invalid loss type')
             raise
@@ -110,9 +120,17 @@ class CosLosModel(BaseModel):
 
         self.model.compile(
               loss=loss_func,
+              loss_weights=loss_weights,
               optimizer=adam1,
               metrics= metrics
         )
+
+    def softmax_loss_wrapper(self):
+        def softmax_loss1(y_true, y_pred):
+            y_true_casted = K.cast(y_true, dtype='int32')
+            y_true_cls = y_true_casted[:, 0]
+            return K.sparse_categorical_crossentropy(y_true_cls,y_pred)
+        return softmax_loss1
 
     def coss_loss_wrapper(self, alpha, scale):
         def coss_loss1(y_true, y_pred):

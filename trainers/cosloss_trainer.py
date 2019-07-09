@@ -62,7 +62,7 @@ class CosLossModelTrainer(BaseTrain):
         if self.config.trainer.is_early_stop:
             self.callbacks.append(
                 EarlyStopping(
-                    monitor='val_loss', min_delta=0.1, patience=4, verbose=1, mode='auto')
+                    monitor='val_loss', min_delta=0.1, patience=5, verbose=1, mode='auto')
             )
 
         if self.config.trainer.is_change_lr:
@@ -150,6 +150,7 @@ class CosLossModelTrainer(BaseTrain):
                 x, y_true_ = generator.__getitem__(k)
                 y_true = [label_map[x] for x in y_true_]
                 y_pred = self.model.predict(x)
+                y_pred = y_pred[0]
 
                 num_of_items = y_pred.shape[0]
 

@@ -44,7 +44,7 @@ def main():
                             zoom_range=config.data_loader.zoom_range,
                             horizontal_flip=config.data_loader.horizontal_flip)
 
-        if config.model.loss == 'cosface':
+        if config.model.loss == 'cosface' or config.model.loss == 'softmax' :
             train_generator = CosFaceGenerator(config, datagen_args, True)
             valid_generator = CosFaceGenerator(config, datagen_args, False)
         elif config.model.loss == 'triplet':

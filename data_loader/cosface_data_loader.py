@@ -99,7 +99,7 @@ class CosFaceGenerator(keras.utils.Sequence,):
         #labels = np.tile(temp_labels, (1, int(self.config.model.embedding_dim)))
 
 
-        return X, labels
+        return X, [labels,labels]
 
 
     def on_epoch_end(self):
