@@ -93,6 +93,11 @@ class CosLossModelTrainer(BaseTrain):
                 LambdaCallback(on_epoch_end=lambda epoch, logs: self.custom_epoch_end(epoch,logs, 'cosface'),
                                on_train_end=lambda logs: self.json_log.close())
             )
+        elif self.config.model.loss == 'softmax':
+            self.callbacks.append(
+                LambdaCallback(on_epoch_end=lambda epoch, logs: self.custom_epoch_end(epoch,logs, 'softmax'),
+                               on_train_end=lambda logs: self.json_log.close())
+            )
 
 
         #if hasattr(self.config,"comet_api_key"):
@@ -206,7 +211,12 @@ class CosLossModelTrainer(BaseTrain):
         if type == 'cosface':
             self.json_log.write(
                 json.dumps(
-                    {'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'],
+                    {'epoch': epoch, 'loss': logs['embeddings_loss'], 'val_loss': logs['val_loss'],
+                     'acc': acc, 'acc_period': acc_period , 'acc_site': acc_site}) + '\n')
+        elif type == 'softmax':
+            self.json_log.write(
+                json.dumps(
+                    {'epoch': epoch, 'loss': logs['out_loss'], 'val_loss': logs['val_loss'],
                      'acc': acc, 'acc_period': acc_period , 'acc_site': acc_site}) + '\n')
         elif type == 'triplet_all':
             self.json_log.write(
