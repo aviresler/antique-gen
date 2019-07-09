@@ -155,13 +155,15 @@ class CosLossModelTrainer(BaseTrain):
                 x, y_true_ = generator.__getitem__(k)
                 y_true = [label_map[x] for x in y_true_]
                 y_pred = self.model.predict(x)
-                y_pred = y_pred[0]
+
+                if self.config.model.num_of_outputs > 1:
+                    y_pred = y_pred[0]
 
                 num_of_items = y_pred.shape[0]
-
                 predication[cur_ind: cur_ind + num_of_items, :] = y_pred
                 labels[cur_ind: cur_ind + num_of_items, :] = np.expand_dims(y_true, axis=1)
                 cur_ind = cur_ind + num_of_items
+
 
             predication = predication[:cur_ind, :]
             labels = labels[:cur_ind, :]

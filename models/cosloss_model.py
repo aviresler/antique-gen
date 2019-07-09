@@ -34,8 +34,9 @@ class CosLosModel(BaseModel):
             else:
                 x = Dense(int(self.config.model.embedding_dim), kernel_regularizer=regularizer)(x)
 
-            x = Dropout(0.5)(x)
+            x = Dropout(0.5,name='embeddings')(x)
             self.model = Model(input=self.model.input, output=x)
+            print(self.model.summary())
 
         elif self.config.model.type == "vgg":
             base_model = applications.vgg16.VGG16(include_top=False, weights='imagenet',
@@ -49,12 +50,13 @@ class CosLosModel(BaseModel):
             x = Dense(int(self.config.data_loader.num_of_classes),kernel_regularizer=regularizer)(x)
             out = Activation("softmax", name='out')(x)
             self.model = Model(inputs=base_model.input, outputs=[embeddings,out])
-            #print(self.model.summary())
+            print(self.model.summary())
         elif self.config.model.type == "vgg_attention":
             inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
             (g, local1, local2, local3) = vgg_attention(inp)
             out, alpha = att_block(g, local1, local2, local3, int(self.config.model.embedding_dim), regularizer)
             self.model = Model(inputs=inp, outputs=[g,out,alpha])
+            print(self.model.summary())
         elif self.config.model.type == "dummy":
             input_shape = (299, 299, 3)
             self.model = Sequential()
@@ -120,6 +122,13 @@ class CosLosModel(BaseModel):
                 loss_func3 = self.empty_loss_wrapper()
                 loss_weights = {"g": 0.0, "out": 1.0, "alpha": 0.0}
                 loss_func = {"g": loss_func1, "out": loss_func2, "alpha": loss_func3}
+            elif self.config.model.type == "inceptionResnetV2":
+                if self.config.model.is_use_prior_weights:
+                    loss_func = self.weighted_coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+                else:
+                    loss_func = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+                loss_weights = {"embeddings": 1.0}
+
         else:
             print('invalid loss type')
             raise

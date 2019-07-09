@@ -49,7 +49,9 @@ def vgg_attention(inp):
     local3 = Conv2D(512, (3, 3), activation='relu', name='block5_conv3')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2))(local3)
 
-    # Add Fully Connected Layer
+    #g = GlobalAveragePooling2D(name='g')(x)
+
+    #Add Fully Connected Layer
     x = ZeroPadding2D((1, 1))(x)
     x = Conv2D(512, (3, 3), activation='relu', name='block6_conv1')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2))(x)
