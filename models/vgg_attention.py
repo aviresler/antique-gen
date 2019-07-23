@@ -47,11 +47,12 @@ def vgg_attention(inp):
     x = Conv2D(512, (3, 3), activation='relu', name='block5_conv2')(x)
     x = ZeroPadding2D((1, 1))(x)
     local3 = Conv2D(512, (3, 3), activation='relu', name='block5_conv3')(x)
+    #local3 = Conv2D(512, (3, 3), name='block5_conv3')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2))(local3)
 
     #g = GlobalAveragePooling2D(name='g')(x)
 
-    #Add Fully Connected Layer
+    # #Add Fully Connected Layer
     x = ZeroPadding2D((1, 1))(x)
     x = Conv2D(512, (3, 3), activation='relu', name='block6_conv1')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2))(x)
@@ -91,12 +92,13 @@ def att_block( g, local1, local2, local3,outputclasses, regularizer, loss_type =
     glist.append(g2)
     glist.append(g1)
     predictedG = concatenate([glist[0], glist[1], glist[2]],name='predictedG', axis=1)
+    #xp = Dense(328, kernel_regularizer=regularizer, name='embeddings1')(predictedG)
     x = Dense(outputclasses, kernel_regularizer=regularizer, name=str(outputclasses) + 'ConcatG')(predictedG)
     if loss_type == 'softmax':
         out = Activation("softmax", name='out')(x)
     else:
         out = predictedG
-    return out, Reshape([int(l1.shape[1]), int(l1.shape[1])],name='alpha')(a1)
+    return out, Reshape([int(l1.shape[1]), int(l1.shape[1])],name='alpha')(a1),predictedG
 
 class ParametrisedCompatibility(Layer):
 

@@ -11,6 +11,7 @@ import models.triplet_loss
 import numpy as np
 from models.vgg_attention import vgg_attention, att_block
 import keras
+import tensorflow as tf
 
 class CosLosModel(BaseModel):
     def __init__(self, config):
@@ -54,8 +55,9 @@ class CosLosModel(BaseModel):
         elif self.config.model.type == "vgg_attention":
             inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
             (g, local1, local2, local3) = vgg_attention(inp)
-            out, alpha = att_block(g, local1, local2, local3, int(self.config.model.embedding_dim), regularizer)
+            out, alpha, G = att_block(g, local1, local2, local3, int(self.config.data_loader.num_of_classes), regularizer)
             self.model = Model(inputs=inp, outputs=[g,out,alpha])
+            #self.model = Model(inputs=inp, outputs=[g, out])
             print(self.model.summary())
         elif self.config.model.type == "dummy":
             input_shape = (299, 299, 3)
@@ -122,6 +124,9 @@ class CosLosModel(BaseModel):
                 loss_func3 = self.empty_loss_wrapper()
                 loss_weights = {"g": 0.0, "out": 1.0, "alpha": 0.0}
                 loss_func = {"g": loss_func1, "out": loss_func2, "alpha": loss_func3}
+                metrics = {"g": self.empty_loss_wrapper(), "out": "acc", "alpha": self.empty_loss_wrapper()}
+                #loss_weights = {"g": 0.0, "out": 1.0}
+                #loss_func = {"g": loss_func1, "out": loss_func2}
             elif self.config.model.type == "inceptionResnetV2":
                 if self.config.model.is_use_prior_weights:
                     loss_func = self.weighted_coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
@@ -132,12 +137,13 @@ class CosLosModel(BaseModel):
         else:
             print('invalid loss type')
             raise
-
+        #run_opts = tf.RunOptions(report_tensor_allocations_upon_oom=True)
         self.model.compile(
               loss=loss_func,
               loss_weights=loss_weights,
               optimizer=adam1,
               metrics= metrics
+              #options=run_opts
         )
 
 

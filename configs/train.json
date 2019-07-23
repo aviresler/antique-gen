@@ -1,6 +1,6 @@
 {
   "exp": {
-    "name": "vgg_attention_bg_removed"
+    "name": "vgg_attentionf2_1e-7_32_100"
   },
   "data_loader": {
     "data_dir_train": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train",
@@ -19,11 +19,11 @@
     "width_shift_range": 0.15,
     "height_shift_range": 0.15,
     "rotation_range": 30,
-    "is_use_cutOut": true,
+    "is_use_cutOut": false,
     "class_mode": "sparse",
     "K": 4,
     "P": 6,
-    "batch_size": 64,
+    "batch_size": 32,
     "is_sample_each_cls_once": "TRUE"
   },
   "model":{
@@ -36,14 +36,14 @@
     "is_use_relu_on_embeddings": false,
     "embedding_dim": 512,
     "pretraind_model": "experiments/2019-07-09/vgg_bg_removed_cos_face/checkpoints/vgg_bg_removed_cos_face.hdf5",
-    "img_width": 224,
-    "img_height": 224,
+    "img_width": 100,
+    "img_height": 100,
     "alpha": 0.25,
     "scale": 64,
     "margin": 0.2,
     "is_squared": false,
     "batch_type": "all",
-    "weight_decay": 0.00001,
+    "weight_decay": 0.000001,
     "info line below 2": "relevant in cosface loss, when using 2 losses",
     "cosface_site_period_weight": 1.0,
     "cosface_period_weight": 0.0,
@@ -53,24 +53,24 @@
     "classes_confusion_prior": "data_loader/class_prior_num_images.csv"
   },
   "trainer":{
-    "num_epochs": 30,
-    "learning_rate_values": [0.0001, 0.000001, 0.000001],
+    "num_epochs": 50,
+    "learning_rate_values": [1E-6, 1E-8, 1E-8],
     "learning_rate_schedule_type": "ReduceLROnPlateau",
-    "learning_rate": 2E-5,
+    "learning_rate": 1E-7,
     "lr_decrease_factor": 0.5,
-    "learning_rate_epoch_change": [3,9],
+    "learning_rate_epoch_change": [2,10],
     "verbose_training": true,
     "is_change_lr": true,
-    "is_early_stop": true
+    "is_early_stop": false
   },
   "callbacks":{
-    "checkpoint_monitor": "val_loss",
+    "checkpoint_monitor": "val_out_acc",
     "checkpoint_mode": "min",
     "checkpoint_save_best_only": true,
     "checkpoint_save_weights_only": true,
     "checkpoint_verbose": true,
     "tensorboard_write_graph": true,
-    "is_save_model": false
+    "is_save_model": true
   }
 }
 

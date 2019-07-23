@@ -103,8 +103,8 @@ class CosFaceGenerator(keras.utils.Sequence,):
         elif self.config.model.num_of_outputs == 2:
             labels_out = [labels,labels]
         elif self.config.model.num_of_outputs == 3:
-            g_out = np.zeros((len(labels_list), int(self.config.model.embedding_dim)), dtype=np.int)
-            alpha_out = np.zeros((len(labels_list), self.config.model.img_width, self.config.model.img_height), dtype=np.int)
+            g_out = np.zeros((len(labels_list), int(self.config.model.embedding_dim)), dtype=np.int16)
+            alpha_out = np.zeros((len(labels_list), self.config.model.img_width, self.config.model.img_height), dtype=np.int16)
             labels_out = [g_out, labels, alpha_out]
 
         return X, labels_out
@@ -131,9 +131,10 @@ class CosFaceGenerator(keras.utils.Sequence,):
         img = image.img_to_array(img)
 
         if self.config.data_loader.is_use_cutOut:
-            preprocess_function = preprocess_input
-        else:
             preprocess_function = get_random_eraser(v_l=0, v_h=1)
+        else:
+            preprocess_function = preprocess_input
+
 
         img = preprocess_function(img)
 

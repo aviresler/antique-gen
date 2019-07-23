@@ -43,7 +43,8 @@ class CosLossModelTrainer(BaseTrain):
         if self.config.callbacks.is_save_model:
             self.callbacks.append(
                 ModelCheckpoint(
-                    filepath=os.path.join(self.config.callbacks.checkpoint_dir, self.config.exp.name + '.hdf5'),
+                    #self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_loss:.2f}.hdf5' % self.config.exp.name
+                    filepath=os.path.join(self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_out_acc:.2f}.hdf5' % self.config.exp.name),
                     monitor=self.config.callbacks.checkpoint_monitor,
                     mode=self.config.callbacks.checkpoint_mode,
                     save_best_only=self.config.callbacks.checkpoint_save_best_only,
@@ -69,7 +70,7 @@ class CosLossModelTrainer(BaseTrain):
             if self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
                 self.callbacks.append(
                     ReduceLROnPlateau(monitor='val_loss', factor=self.config.trainer.lr_decrease_factor,
-                                                patience=2, min_lr=1e-12)
+                                                patience=3, min_lr=1e-12)
                 )
             elif self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
                 self.callbacks.append(
@@ -115,6 +116,9 @@ class CosLossModelTrainer(BaseTrain):
             steps_per_epoch=len(self.generator),
             validation_data=self.valid_generator,
             validation_steps=len(self.valid_generator),
+            use_multiprocessing = True,
+            max_queue_size=10,
+            workers=5,
             callbacks=self.callbacks,
             verbose=1)
 
@@ -210,6 +214,9 @@ class CosLossModelTrainer(BaseTrain):
 
     def custom_epoch_end(self,epoch,logs,type):
         acc, acc_period, acc_site = self.get_accuracy()
+        #acc = 0
+        #acc_period = 0
+        #acc_site = 0
         if type == 'cosface':
             self.json_log.write(
                 json.dumps(
@@ -219,6 +226,7 @@ class CosLossModelTrainer(BaseTrain):
             self.json_log.write(
                 json.dumps(
                     {'epoch': epoch, 'loss': logs['out_loss'], 'val_loss': logs['val_loss'],
+                     'acc_out': logs['out_acc'],'acc_out_val': logs['val_out_acc'],
                      'acc': acc, 'acc_period': acc_period , 'acc_site': acc_site}) + '\n')
         elif type == 'triplet_all':
             self.json_log.write(

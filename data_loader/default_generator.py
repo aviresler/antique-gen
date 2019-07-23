@@ -3,9 +3,10 @@ from data_loader.preprocess_images import get_random_eraser, preprocess_input
 
 def get_default_generator(config, is_train = True):
     if config.data_loader.is_use_cutOut:
-        preprocess_function = preprocess_input
-    else:
         preprocess_function = get_random_eraser(v_l=0, v_h=1)
+    else:
+        preprocess_function = preprocess_input
+
 
     if is_train:
         data_dir = config.data_loader.data_dir_train
