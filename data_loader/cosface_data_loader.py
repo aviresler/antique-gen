@@ -47,6 +47,7 @@ class CosFaceGenerator(keras.utils.Sequence,):
         self.n_channels = n_channels
         self.images_path_list = []
         self.num_of_images = []
+        self.total_labels = 0
         self.on_epoch_end()
 
     def __len__(self):
@@ -113,16 +114,20 @@ class CosFaceGenerator(keras.utils.Sequence,):
     def on_epoch_end(self):
         'initialize indicators arrays '
         self.images_path_list = []
+        total_labels = []
         # r=root, d=directories, f = files
         for r, d, f in os.walk(self.data_folder):
             for file in f:
                 if '.jpg' in file:
                     self.images_path_list.append(os.path.join(r, file))
+                    folders = r.split('/')
+                    total_labels.append(folders[-1])
+
 
         random.shuffle(self.images_path_list)
 
         self.num_of_images = len(self.images_path_list)
-
+        self.total_labels = np.asarray(total_labels, dtype=np.int)
 
 
     def read_and_preprocess_images(self, image_path):

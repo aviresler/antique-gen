@@ -8,6 +8,7 @@ from evaluator.get_valid_nearest_neighbor import eval_model
 import json
 import csv
 from json import encoder
+from sklearn.utils import class_weight
 
 
 
@@ -63,7 +64,7 @@ class CosLossModelTrainer(BaseTrain):
         if self.config.trainer.is_early_stop:
             self.callbacks.append(
                 EarlyStopping(
-                    monitor='val_loss', min_delta=0.1, patience=5, verbose=1, mode='auto')
+                    monitor='val_loss', min_delta=0.05, patience=9, verbose=1, mode='auto')
             )
 
         if self.config.trainer.is_change_lr:
@@ -110,6 +111,14 @@ class CosLossModelTrainer(BaseTrain):
 
     def train(self):
         self.json_log = open(self.config.callbacks.tensorboard_log_dir + '/loss_log.json', mode='wt', buffering=1)
+        #sorted_labels = sorted(self.generator.total_labels)
+        #class_weights = class_weight.compute_class_weight('balanced', np.unique(sorted_labels), sorted_labels)
+        #class_weights_list = []
+        #class_weights_list.append(class_weights)
+        #class_weights_list.append(class_weights)
+        #print(class_weights_list)
+
+
         history = self.model.fit_generator(
             self.generator,
             epochs=self.config.trainer.num_epochs,
@@ -120,6 +129,7 @@ class CosLossModelTrainer(BaseTrain):
             max_queue_size=10,
             workers=5,
             callbacks=self.callbacks,
+            #class_weight=class_weights_list,
             verbose=1)
 
         self.loss.extend(history.history['loss'])
@@ -213,6 +223,8 @@ class CosLossModelTrainer(BaseTrain):
 
 
     def custom_epoch_end(self,epoch,logs,type):
+        #print(np.dtype(logs['lr']))
+        #print(np.dtype(logs['val_loss']))
         acc, acc_period, acc_site = self.get_accuracy()
         #acc = 0
         #acc_period = 0
@@ -221,7 +233,7 @@ class CosLossModelTrainer(BaseTrain):
             self.json_log.write(
                 json.dumps(
                     {'epoch': epoch, 'loss': logs['embeddings_loss'], 'val_loss': logs['val_loss'],
-                     'acc': acc, 'acc_period': acc_period , 'acc_site': acc_site}) + '\n')
+                     'acc': acc, 'acc_period': acc_period , 'acc_site': acc_site, 'lr': logs['lr'].astype('float64')}) + '\n')
         elif type == 'softmax':
             self.json_log.write(
                 json.dumps(
@@ -232,8 +244,8 @@ class CosLossModelTrainer(BaseTrain):
             self.json_log.write(
                 json.dumps(
                     {'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'], 'acc': acc, 'acc_period': acc_period,
-                     'acc_site': acc_site, 'positive_fraction': logs['positive_fraction'],
-                     'val_positive_fraction': logs['val_positive_fraction']}) + '\n')
+                     'acc_site': acc_site, 'positive_fraction': logs['embeddings_positive_fraction'],
+                     'val_positive_fraction': logs['val_embeddings_positive_fraction']}) + '\n')
         elif type == 'triplet_hard':
             self.json_log.write(
                 json.dumps(

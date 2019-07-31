@@ -122,7 +122,13 @@ class TripletGenerator(keras.utils.Sequence,):
         temp_labels = np.zeros((len(labels_list), 1),dtype=np.int32)
         temp_labels[:,0] = np.array(labels_list, dtype=np.int32)
         labels = np.tile(temp_labels, (1, int(self.config.model.embedding_dim)))
-        return X, labels
+
+        if self.config.model.num_of_outputs == 1:
+            labels_out = labels
+        elif self.config.model.num_of_outputs == 2:
+            labels_out = [labels,labels]
+
+        return X, labels_out
 
     def on_epoch_end(self):
         'initialize indicators arrays '

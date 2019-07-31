@@ -12,6 +12,9 @@ import numpy as np
 from models.vgg_attention import vgg_attention, att_block
 import keras
 import tensorflow as tf
+from keras_efficientnets import EfficientNetB3
+from tensorflow.contrib.opt import AdamWOptimizer
+from models.adamW import AdamW
 
 class CosLosModel(BaseModel):
     def __init__(self, config):
@@ -59,6 +62,16 @@ class CosLosModel(BaseModel):
             self.model = Model(inputs=inp, outputs=[g,out,alpha])
             #self.model = Model(inputs=inp, outputs=[g, out])
             print(self.model.summary())
+        elif self.config.model.type == "efficientNet":
+            base_model = EfficientNetB3((self.config.model.img_width, self.config.model.img_height, 3), include_top=False, weights='imagenet')
+            x = base_model.output
+            x = GlobalAveragePooling2D(name='gpa_f')(x)
+            x = Dropout(0.5)(x)
+            embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
+            x = Dense(int(self.config.data_loader.num_of_classes),)(embeddings)
+            out = Activation("softmax", name='out')(x)
+            self.model = Model(inputs=base_model.input, outputs=[embeddings, out])
+            #print(self.model.summary())
         elif self.config.model.type == "dummy":
             input_shape = (299, 299, 3)
             self.model = Sequential()
@@ -90,6 +103,10 @@ class CosLosModel(BaseModel):
         else:
             print('invalid learning rate configuration')
             raise
+        #adam1 = AdamWOptimizer(weight_decay=self.config.model.weight_decay, learning_rate=self.config.trainer.learning_rate)
+        adam1 = AdamW(lr=self.config.trainer.learning_rate, beta_1=0.9, beta_2=0.999, epsilon=None, decay=self.config.trainer.learning_rate_decay,
+                      weight_decay=self.config.model.weight_decay, batch_size=self.config.data_loader.batch_size,
+                      samples_per_epoch=365, epochs=30)
 
         ### loss ###
         metrics = []
@@ -104,8 +121,9 @@ class CosLosModel(BaseModel):
                 pos_fraction = self.triplet_loss_wrapper_batch_all_positive_fraction(self.config.model.margin,
                                                                                          self.config.model.is_squared)
                 metrics.append(pos_fraction)
+            loss_weights = {"embeddings": 1.0, "out": 0.0}
         elif self.config.model.loss == 'cosface' or self.config.model.loss == 'softmax' :
-            if self.config.model.type == "vgg":
+            if self.config.model.type == "vgg" or self.config.model.type == "efficientNet":
                 if self.config.model.is_use_prior_weights:
                     loss_func1 = self.weighted_coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
                 else:
@@ -116,6 +134,8 @@ class CosLosModel(BaseModel):
                     loss_weights = {"embeddings": 1.0, "out": 0.0}
                 else:
                     loss_weights = {"embeddings": 0.0, "out": 1.0}
+
+                metrics = {"embeddings ": self.empty_loss_wrapper(), "out": "acc"}
 
                 loss_func = {"embeddings": loss_func1, "out": loss_func2}
             elif self.config.model.type == "vgg_attention":
@@ -145,7 +165,6 @@ class CosLosModel(BaseModel):
               metrics= metrics
               #options=run_opts
         )
-
 
 
     def softmax_loss_wrapper(self):
