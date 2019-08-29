@@ -28,7 +28,7 @@ def main():
     # then process the json configuration fill
     try:
         MAX_ITR = 150
-        test_file = 'test_cosface_bg_removed_EfficientNetB3_adamw_keras'
+        test_file = 'test_triplet_EfficentNet_bg_removed'
         param_csv_path = test_file + '.csv'
         params_start_col = 8
         loss_col = 5

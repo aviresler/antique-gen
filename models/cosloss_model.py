@@ -64,14 +64,22 @@ class CosLosModel(BaseModel):
             print(self.model.summary())
         elif self.config.model.type == "efficientNet":
             base_model = EfficientNetB3((self.config.model.img_width, self.config.model.img_height, 3), include_top=False, weights='imagenet')
-            x = base_model.output
-            x = GlobalAveragePooling2D(name='gpa_f')(x)
-            x = Dropout(0.5)(x)
-            embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
-            x = Dense(int(self.config.data_loader.num_of_classes),)(embeddings)
-            out = Activation("softmax", name='out')(x)
-            self.model = Model(inputs=base_model.input, outputs=[embeddings, out])
-            #print(self.model.summary())
+            if self.config.model.num_of_fc_at_net_end == 2:
+                x = base_model.output
+                x = GlobalAveragePooling2D(name='gpa_f')(x)
+                x = Dropout(0.5)(x)
+                embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
+                x = Dense(int(self.config.data_loader.num_of_classes),)(embeddings)
+                out = Activation("softmax", name='out')(x)
+                self.model = Model(inputs=base_model.input, outputs=[embeddings, out])
+            else:
+                x = base_model.output
+                embeddings = GlobalAveragePooling2D(name='embeddings')(x)
+                #x = Dropout(0.5)(embeddings)
+                #embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
+                x = Dense(int(self.config.data_loader.num_of_classes),)(embeddings)
+                out = Activation("softmax", name='out')(x)
+                self.model = Model(inputs=base_model.input, outputs=[embeddings, out])
         elif self.config.model.type == "dummy":
             input_shape = (299, 299, 3)
             self.model = Sequential()
