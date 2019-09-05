@@ -1,5 +1,5 @@
 from base.base_model import BaseModel
-from keras.layers import Dense, Dropout, Conv2D, Activation, MaxPooling2D, Flatten, GlobalAveragePooling2D, Input
+from keras.layers import Dense, Dropout, Conv2D, Activation, MaxPooling2D, Flatten, GlobalAveragePooling2D, Input,MaxPool2D
 from keras.models import Sequential
 from keras import applications
 from keras.models import Model
@@ -15,6 +15,11 @@ import tensorflow as tf
 from keras_efficientnets import EfficientNetB3
 from tensorflow.contrib.opt import AdamWOptimizer
 from models.adamW import AdamW
+from models.spatial_transformer import SpatialTransformer
+
+from models.STN.utils import get_initial_weights
+from models.STN.layers import BilinearInterpolation
+
 
 class CosLosModel(BaseModel):
     def __init__(self, config):
@@ -63,23 +68,44 @@ class CosLosModel(BaseModel):
             #self.model = Model(inputs=inp, outputs=[g, out])
             print(self.model.summary())
         elif self.config.model.type == "efficientNet":
-            base_model = EfficientNetB3((self.config.model.img_width, self.config.model.img_height, 3), include_top=False, weights='imagenet')
+            base_model = EfficientNetB3((self.config.model.img_width, self.config.model.img_height, 3),
+                                        include_top=False, weights='imagenet')
+            inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
+            if self.config.model.is_use_STN:
+
+                locnet = MaxPool2D(pool_size=(2, 2))(inp)
+                locnet = Conv2D(100, (5, 5))(locnet) #20
+                locnet = MaxPool2D(pool_size=(2, 2))(locnet)
+                locnet = Conv2D(200, (5, 5))(locnet) #20
+                locnet = Flatten()(locnet)
+                locnet = Dense(20)(locnet) #50
+                locnet = Activation('relu')(locnet)
+                weights = get_initial_weights(20) #50
+                locnet = Dense(6, weights=weights)(locnet)
+                stn = BilinearInterpolation((300, 300),name='stn')([inp, locnet])
+                x = base_model(stn)
+                #bb = self.loc_net(loc_input_shape)
+                #print(bb.summary())
+            else:
+                x = base_model(inp)
+
             if self.config.model.num_of_fc_at_net_end == 2:
-                x = base_model.output
                 x = GlobalAveragePooling2D(name='gpa_f')(x)
                 x = Dropout(0.5)(x)
                 embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
                 x = Dense(int(self.config.data_loader.num_of_classes),)(embeddings)
                 out = Activation("softmax", name='out')(x)
-                self.model = Model(inputs=base_model.input, outputs=[embeddings, out])
             else:
-                x = base_model.output
                 embeddings = GlobalAveragePooling2D(name='embeddings')(x)
-                #x = Dropout(0.5)(embeddings)
-                #embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
                 x = Dense(int(self.config.data_loader.num_of_classes),)(embeddings)
                 out = Activation("softmax", name='out')(x)
-                self.model = Model(inputs=base_model.input, outputs=[embeddings, out])
+
+            if self.config.model.is_use_STN:
+                self.model = Model(inputs=inp, outputs=[stn, embeddings, out])
+            else:
+                self.model = Model(inputs=inp, outputs=[embeddings, out])
+
+            print(self.model.summary())
         elif self.config.model.type == "dummy":
             input_shape = (299, 299, 3)
             self.model = Sequential()
@@ -114,7 +140,7 @@ class CosLosModel(BaseModel):
         #adam1 = AdamWOptimizer(weight_decay=self.config.model.weight_decay, learning_rate=self.config.trainer.learning_rate)
         adam1 = AdamW(lr=self.config.trainer.learning_rate, beta_1=0.9, beta_2=0.999, epsilon=None, decay=self.config.trainer.learning_rate_decay,
                       weight_decay=self.config.model.weight_decay, batch_size=self.config.data_loader.batch_size,
-                      samples_per_epoch=365, epochs=30)
+                      samples_per_epoch=401, epochs=30)
 
         ### loss ###
         metrics = []
@@ -138,14 +164,21 @@ class CosLosModel(BaseModel):
                     loss_func1 = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
 
                 loss_func2 = self.softmax_loss_wrapper()
+                loss_func3 = self.empty_loss_wrapper()
                 if self.config.model.loss == 'cosface':
-                    loss_weights = {"embeddings": 1.0, "out": 0.0}
+                    if self.config.model.is_use_STN:
+                        loss_weights = {"stn": 0.0,"embeddings": 1.0, "out": 0.0}
+                    else:
+                        loss_weights = { "embeddings": 1.0, "out": 0.0}
                 else:
-                    loss_weights = {"embeddings": 0.0, "out": 1.0}
+                    if self.config.model.is_use_STN:
+                        loss_weights = {"stn": 0.0, "embeddings": 0.0, "out": 1.0}
+                    else:
+                        loss_weights = {"embeddings": 0.0, "out": 1.0}
 
-                metrics = {"embeddings ": self.empty_loss_wrapper(), "out": "acc"}
+                metrics = {"stn": self.empty_loss_wrapper(), "embeddings ": self.empty_loss_wrapper(), "out": "acc"}
 
-                loss_func = {"embeddings": loss_func1, "out": loss_func2}
+                loss_func = {"stn": loss_func3 , "embeddings": loss_func1, "out": loss_func2}
             elif self.config.model.type == "vgg_attention":
                 loss_func1 = self.empty_loss_wrapper()
                 loss_func2 = self.softmax_loss_wrapper()
@@ -173,6 +206,38 @@ class CosLosModel(BaseModel):
               metrics= metrics
               #options=run_opts
         )
+
+    # localization network for the STN
+    def loc_net(self,input_shape):
+        #print(input_shape)
+        b = np.zeros((2, 3), dtype='float32')
+        b[0, 0] = 1
+        b[1, 1] = 1
+        w = np.zeros((50, 6), dtype='float32')
+        weights = [w, b.flatten()]
+
+        loc_input = Input(input_shape)
+
+        locnet = MaxPool2D(pool_size=(2, 2))(loc_input)
+        locnet = Conv2D(20, (5, 5))(locnet)
+        locnet = MaxPool2D(pool_size=(2, 2))(locnet)
+        locnet = Conv2D(20, (5, 5))(locnet)
+        locnet = Flatten()(locnet)
+        locnet = Dense(50)(locnet)
+        locnet = Activation('relu')(locnet)
+        #weights = get_initial_weights(50)
+        locnet = Dense(6, weights=weights)(locnet)
+
+        #loc_conv_1 = Conv2D(16, (5, 5), padding='same', activation='relu')(loc_input)
+        #loc_conv_2 = Conv2D(32, (5, 5), padding='same', activation='relu')(loc_conv_1)
+        #loc_fla = Flatten()(loc_conv_2)
+        #loc_fc_1 = Dense(6, activation='relu')(loc_fla)
+        #loc_fc_2 = Dense(6, weights=weights)(loc_fc_1)
+        #output = Model(inputs=loc_input, outputs=loc_fla)
+
+        #output = Model(inputs=loc_input, outputs=locnet)
+
+        return locnet
 
 
     def softmax_loss_wrapper(self):

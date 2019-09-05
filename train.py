@@ -54,7 +54,6 @@ def main():
             print('invalid loss type')
             raise
 
-
         print('Create the model.')
         model = CosLosModel(config)
 
@@ -64,8 +63,6 @@ def main():
 
         print('Create the trainer')
         trainer = CosLossModelTrainer(model.model, train_generator ,valid_generator, config)
-
-        #trainer.get_accuracy()
 
         print('Start training the model.')
         trainer.train()

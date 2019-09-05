@@ -104,9 +104,16 @@ class CosFaceGenerator(keras.utils.Sequence,):
         elif self.config.model.num_of_outputs == 2:
             labels_out = [labels,labels]
         elif self.config.model.num_of_outputs == 3:
-            g_out = np.zeros((len(labels_list), int(self.config.model.embedding_dim)), dtype=np.int16)
-            alpha_out = np.zeros((len(labels_list), self.config.model.img_width, self.config.model.img_height), dtype=np.int16)
-            labels_out = [g_out, labels, alpha_out]
+            if self.config.model.is_use_STN:
+                stn_out = np.zeros((len(labels_list), self.config.model.img_width, self.config.model.img_height, 3),
+                                   dtype=np.int16)
+
+
+                labels_out = [stn_out, labels, labels[:,:self.config.data_loader.num_of_classes]]
+            else:
+                g_out = np.zeros((len(labels_list), int(self.config.model.embedding_dim)), dtype=np.int16)
+                alpha_out = np.zeros((len(labels_list), self.config.model.img_width, self.config.model.img_height), dtype=np.int16)
+                labels_out = [g_out, labels, alpha_out]
 
         return X, labels_out
 

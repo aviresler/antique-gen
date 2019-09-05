@@ -9,6 +9,7 @@ import json
 import csv
 from json import encoder
 from sklearn.utils import class_weight
+import matplotlib.pyplot as plt
 
 
 
@@ -45,7 +46,7 @@ class CosLossModelTrainer(BaseTrain):
             self.callbacks.append(
                 ModelCheckpoint(
                     #self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_loss:.2f}.hdf5' % self.config.exp.name
-                    filepath=os.path.join(self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_out_acc:.2f}.hdf5' % self.config.exp.name),
+                    filepath=os.path.join(self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_embeddings_loss:.2f}.hdf5' % self.config.exp.name),
                     monitor=self.config.callbacks.checkpoint_monitor,
                     mode=self.config.callbacks.checkpoint_mode,
                     save_best_only=self.config.callbacks.checkpoint_save_best_only,
@@ -71,7 +72,7 @@ class CosLossModelTrainer(BaseTrain):
             if self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
                 self.callbacks.append(
                     ReduceLROnPlateau(monitor='val_loss', factor=self.config.trainer.lr_decrease_factor,
-                                                patience=3, min_lr=1e-12)
+                                                patience=2, min_lr=1e-12)
                 )
             elif self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
                 self.callbacks.append(
@@ -80,7 +81,7 @@ class CosLossModelTrainer(BaseTrain):
 
 
         if self.config.model.loss == 'triplet':
-            if self.config.mode.batch_type == 'hard':
+            if self.config.model.batch_type == 'hard':
                 self.callbacks.append(
                     LambdaCallback(on_epoch_end=lambda epoch, logs: self.custom_epoch_end(epoch,logs,'triplet_hard'),
                         on_train_end=lambda logs: self.json_log.close())
@@ -137,7 +138,7 @@ class CosLossModelTrainer(BaseTrain):
 
 
 
-    def get_accuracy(self, isSaveEmbeddings = False ):
+    def get_accuracy(self,epoch, isSaveEmbeddings = False ):
         # get accuracy, using default generators
         self.config['data_loader']['data_dir_train'] = self.config['data_loader']['data_dir_train_test']
         self.config['data_loader']['data_dir_valid'] = self.config['data_loader']['data_dir_valid_test']
@@ -171,7 +172,7 @@ class CosLossModelTrainer(BaseTrain):
                 y_pred = self.model.predict(x)
 
                 if self.config.model.num_of_outputs > 1:
-                    y_pred = y_pred[0]
+                    y_pred = y_pred[1]
 
                 num_of_items = y_pred.shape[0]
                 predication[cur_ind: cur_ind + num_of_items, :] = y_pred
@@ -201,8 +202,8 @@ class CosLossModelTrainer(BaseTrain):
                 valid_prediction = predication
 
             if isSaveEmbeddings:
-                np.savetxt('evaluator/labels/' + self.config.exp.name + generators_id[m] + '.tsv', labels, delimiter=',')
-                np.savetxt('evaluator/embeddings/' + self.config.exp.name + generators_id[m] + '.csv', predication,
+                np.savetxt('evaluator/labels/' + self.config.exp.name + generators_id[m] + str(epoch) +  '.tsv', labels, delimiter=',')
+                np.savetxt('evaluator/embeddings/' + self.config.exp.name + generators_id[m] + str(epoch) + '.csv', predication,
                        delimiter=',')
 
         accuracy = eval_model(train_prediction, valid_prediction, train_labels, valid_labels, self.config.exp.name,
@@ -225,7 +226,7 @@ class CosLossModelTrainer(BaseTrain):
     def custom_epoch_end(self,epoch,logs,type):
         #print(np.dtype(logs['lr']))
         #print(np.dtype(logs['val_loss']))
-        acc, acc_period, acc_site = self.get_accuracy()
+        acc, acc_period, acc_site = self.get_accuracy(epoch)
         #acc = 0
         #acc_period = 0
         #acc_site = 0
@@ -239,7 +240,7 @@ class CosLossModelTrainer(BaseTrain):
                 json.dumps(
                     {'epoch': epoch, 'loss': logs['out_loss'], 'val_loss': logs['val_loss'],
                      'acc_out': logs['out_acc'],'acc_out_val': logs['val_out_acc'],
-                     'acc': acc, 'acc_period': acc_period , 'acc_site': acc_site}) + '\n')
+                     'acc': acc, 'acc_period': acc_period , 'acc_site': acc_site, 'lr': logs['lr'].astype('float64')}) + '\n')
         elif type == 'triplet_all':
             self.json_log.write(
                 json.dumps(
@@ -249,5 +250,5 @@ class CosLossModelTrainer(BaseTrain):
         elif type == 'triplet_hard':
             self.json_log.write(
                 json.dumps(
-                    {'epoch': epoch, 'loss': logs['loss'], 'val_loss': logs['val_loss'], 'acc': acc,'acc_period': acc_period,
-                     'acc_site': acc_site, 'hard_pos_dist': logs['hardest_pos_dist'], 'hard_neg_dist': logs['hardest_neg_dist']}) + '\n'),
+                    {'epoch': epoch, 'loss': logs['embeddings_loss'], 'val_loss': logs['val_embeddings_loss'], 'acc': acc,'acc_period': acc_period,
+                     'acc_site': acc_site, 'hard_pos_dist': logs['embeddings_hardest_pos_dist'], 'hard_neg_dist': logs['embeddings_hardest_neg_dist']}) + '\n'),
