@@ -24,187 +24,61 @@ from models.STN.layers import BilinearInterpolation
 class CosLosModel(BaseModel):
     def __init__(self, config):
         super(CosLosModel, self).__init__(config)
-
+        self.regularizer = keras.regularizers.l2(self.config.model.weight_decay)
+        self.metrics = []
+        self.loss_weights = []
+        self.loss_func = []
         self.build_model()
 
     def build_model(self):
-        regularizer = keras.regularizers.l2(self.config.model.weight_decay)
 
+        # build net
         if self.config.model.type == "inceptionResnetV2":
-
-            self.model = applications.inception_resnet_v2.InceptionResNetV2(include_top=True, weights='imagenet',
-                                                                       input_shape=(self.config.model.img_width, self.config.model.img_height, 3))
-
-            self.model.layers.pop()
-            x = self.model.layers[-1].output
-
-            if self.config.model.is_use_relu_on_embeddings:
-                x = Dense(int(self.config.model.embedding_dim), activation="relu", kernel_regularizer=regularizer)(x)
-            else:
-                x = Dense(int(self.config.model.embedding_dim), kernel_regularizer=regularizer)(x)
-
-            x = Dropout(0.5,name='embeddings')(x)
-            self.model = Model(input=self.model.input, output=x)
-            print(self.model.summary())
-
+            self.build_inceptionResNetV2()
         elif self.config.model.type == "vgg":
-            base_model = applications.vgg16.VGG16(include_top=False, weights='imagenet',
-                                                  input_shape=(
-                                                  self.config.model.img_width, self.config.model.img_height, 3))
-
-            x = base_model.output
-            x = GlobalAveragePooling2D()(x)
-            embeddings = Dense(int(self.config.model.embedding_dim),kernel_regularizer=regularizer, name='embeddings')(x)
-            x = Dropout(0.5)(embeddings)
-            x = Dense(int(self.config.data_loader.num_of_classes),kernel_regularizer=regularizer)(x)
-            out = Activation("softmax", name='out')(x)
-            self.model = Model(inputs=base_model.input, outputs=[embeddings,out])
-            print(self.model.summary())
+            self.build_vgg()
         elif self.config.model.type == "vgg_attention":
-            inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
-            (g, local1, local2, local3) = vgg_attention(inp)
-            out, alpha, G = att_block(g, local1, local2, local3, int(self.config.data_loader.num_of_classes), regularizer)
-            self.model = Model(inputs=inp, outputs=[g,out,alpha])
-            #self.model = Model(inputs=inp, outputs=[g, out])
-            print(self.model.summary())
+            self.build_vgg_attention()
         elif self.config.model.type == "efficientNet":
-            base_model = EfficientNetB3((self.config.model.img_width, self.config.model.img_height, 3),
-                                        include_top=False, weights='imagenet')
-            inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
-            if self.config.model.is_use_STN:
-
-                locnet = MaxPool2D(pool_size=(2, 2))(inp)
-                locnet = Conv2D(100, (5, 5))(locnet) #20
-                locnet = MaxPool2D(pool_size=(2, 2))(locnet)
-                locnet = Conv2D(200, (5, 5))(locnet) #20
-                locnet = Flatten()(locnet)
-                locnet = Dense(20)(locnet) #50
-                locnet = Activation('relu')(locnet)
-                weights = get_initial_weights(20) #50
-                locnet = Dense(6, weights=weights)(locnet)
-                stn = BilinearInterpolation((300, 300),name='stn')([inp, locnet])
-                x = base_model(stn)
-                #bb = self.loc_net(loc_input_shape)
-                #print(bb.summary())
-            else:
-                x = base_model(inp)
-
-            if self.config.model.num_of_fc_at_net_end == 2:
-                x = GlobalAveragePooling2D(name='gpa_f')(x)
-                x = Dropout(0.5)(x)
-                embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
-                x = Dense(int(self.config.data_loader.num_of_classes),)(embeddings)
-                out = Activation("softmax", name='out')(x)
-            else:
-                embeddings = GlobalAveragePooling2D(name='embeddings')(x)
-                x = Dense(int(self.config.data_loader.num_of_classes),)(embeddings)
-                out = Activation("softmax", name='out')(x)
-
-            if self.config.model.is_use_STN:
-                self.model = Model(inputs=inp, outputs=[stn, embeddings, out])
-            else:
-                self.model = Model(inputs=inp, outputs=[embeddings, out])
-
-            print(self.model.summary())
+            self.build_efficientNet()
+        elif self.config.model.type == "efficientNetSTN":
+            self.build_efficientNetSTN()
         elif self.config.model.type == "dummy":
-            input_shape = (299, 299, 3)
-            self.model = Sequential()
-            self.model.add(Conv2D(32, (3, 3), input_shape=input_shape))
-            self.model.add(Activation('relu'))
-            self.model.add(MaxPooling2D(pool_size=(2, 2)))
-
-            self.model.add(Conv2D(32, (3, 3)))
-            self.model.add(Activation('relu'))
-            self.model.add(MaxPooling2D(pool_size=(2, 2)))
-
-            self.model.add(Conv2D(64, (3, 3)))
-            self.model.add(Activation('relu'))
-            self.model.add(MaxPooling2D(pool_size=(2, 2)))
-
-            self.model.add(Flatten())
-            self.model.add(Dense(int(self.config.model.embedding_dim), activation="relu"))
-
-            self.model = Model(input=self.model.input, output=self.model.output)
+            self.build_dummy_model()
         else:
             print('model type is not supported')
             raise
 
+        # configure optimizer
         if self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
-            adam1 = optimizers.Adam(lr=0.0)
+            lr_ = 0.0
+            # adam1 = optimizers.Adam(lr=0.0)
         elif self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
             print('decrease_platue')
-            adam1 = optimizers.Adam(lr=self.config.trainer.learning_rate)
+            lr_ = self.config.trainer.learning_rate
+            # adam1 = optimizers.Adam(lr=self.config.trainer.learning_rate)
         else:
             print('invalid learning rate configuration')
             raise
-        #adam1 = AdamWOptimizer(weight_decay=self.config.model.weight_decay, learning_rate=self.config.trainer.learning_rate)
-        adam1 = AdamW(lr=self.config.trainer.learning_rate, beta_1=0.9, beta_2=0.999, epsilon=None, decay=self.config.trainer.learning_rate_decay,
+
+        adam1 = AdamW(lr=lr_, beta_1=0.9, beta_2=0.999, epsilon=None, decay=self.config.trainer.learning_rate_decay,
                       weight_decay=self.config.model.weight_decay, batch_size=self.config.data_loader.batch_size,
                       samples_per_epoch=401, epochs=30)
 
-        ### loss ###
-        metrics = []
+        # configure loss and metrics
         if self.config.model.loss == 'triplet':
-            loss_func = self.triplet_loss_wrapper(self.config.model.margin, self.config.model.is_squared)
-            if self.config.model.batch_type == 'hard':
-                hardest_pos_dist = self.triplet_loss_wrapper_batch_hard_hardest_pos_dist(self.config.model.margin, self.config.model.is_squared)
-                metrics.append(hardest_pos_dist)
-                hardest_neg_dist = self.triplet_loss_wrapper_batch_hard_hardest_neg_dist(self.config.model.margin, self.config.model.is_squared)
-                metrics.append(hardest_neg_dist)
-            if self.config.model.batch_type == 'all':
-                pos_fraction = self.triplet_loss_wrapper_batch_all_positive_fraction(self.config.model.margin,
-                                                                                         self.config.model.is_squared)
-                metrics.append(pos_fraction)
-            loss_weights = {"embeddings": 1.0, "out": 0.0}
-        elif self.config.model.loss == 'cosface' or self.config.model.loss == 'softmax' :
-            if self.config.model.type == "vgg" or self.config.model.type == "efficientNet":
-                if self.config.model.is_use_prior_weights:
-                    loss_func1 = self.weighted_coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
-                else:
-                    loss_func1 = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
-
-                loss_func2 = self.softmax_loss_wrapper()
-                loss_func3 = self.empty_loss_wrapper()
-                if self.config.model.loss == 'cosface':
-                    if self.config.model.is_use_STN:
-                        loss_weights = {"stn": 0.0,"embeddings": 1.0, "out": 0.0}
-                    else:
-                        loss_weights = { "embeddings": 1.0, "out": 0.0}
-                else:
-                    if self.config.model.is_use_STN:
-                        loss_weights = {"stn": 0.0, "embeddings": 0.0, "out": 1.0}
-                    else:
-                        loss_weights = {"embeddings": 0.0, "out": 1.0}
-
-                metrics = {"stn": self.empty_loss_wrapper(), "embeddings ": self.empty_loss_wrapper(), "out": "acc"}
-
-                loss_func = {"stn": loss_func3 , "embeddings": loss_func1, "out": loss_func2}
-            elif self.config.model.type == "vgg_attention":
-                loss_func1 = self.empty_loss_wrapper()
-                loss_func2 = self.softmax_loss_wrapper()
-                loss_func3 = self.empty_loss_wrapper()
-                loss_weights = {"g": 0.0, "out": 1.0, "alpha": 0.0}
-                loss_func = {"g": loss_func1, "out": loss_func2, "alpha": loss_func3}
-                metrics = {"g": self.empty_loss_wrapper(), "out": "acc", "alpha": self.empty_loss_wrapper()}
-                #loss_weights = {"g": 0.0, "out": 1.0}
-                #loss_func = {"g": loss_func1, "out": loss_func2}
-            elif self.config.model.type == "inceptionResnetV2":
-                if self.config.model.is_use_prior_weights:
-                    loss_func = self.weighted_coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
-                else:
-                    loss_func = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
-                loss_weights = {"embeddings": 1.0}
-
+            self.configure_triplet_loss()
+        elif self.config.model.loss == 'cosface' or self.config.model.loss == 'softmax':
+            self.configure_cosface_or_softmax_loss()
         else:
             print('invalid loss type')
             raise
-        #run_opts = tf.RunOptions(report_tensor_allocations_upon_oom=True)
+
         self.model.compile(
-              loss=loss_func,
-              loss_weights=loss_weights,
+              loss=self.loss_func,
+              loss_weights=self.loss_weights,
               optimizer=adam1,
-              metrics= metrics
-              #options=run_opts
+              metrics=self.metrics
         )
 
     # localization network for the STN
@@ -228,16 +102,153 @@ class CosLosModel(BaseModel):
         #weights = get_initial_weights(50)
         locnet = Dense(6, weights=weights)(locnet)
 
-        #loc_conv_1 = Conv2D(16, (5, 5), padding='same', activation='relu')(loc_input)
-        #loc_conv_2 = Conv2D(32, (5, 5), padding='same', activation='relu')(loc_conv_1)
-        #loc_fla = Flatten()(loc_conv_2)
-        #loc_fc_1 = Dense(6, activation='relu')(loc_fla)
-        #loc_fc_2 = Dense(6, weights=weights)(loc_fc_1)
-        #output = Model(inputs=loc_input, outputs=loc_fla)
-
-        #output = Model(inputs=loc_input, outputs=locnet)
 
         return locnet
+
+    def build_inceptionResNetV2(self):
+        self.model = applications.inception_resnet_v2.InceptionResNetV2(include_top=True, weights='imagenet',
+                                                                        input_shape=(self.config.model.img_width,
+                                                                                     self.config.model.img_height, 3))
+        self.model.layers.pop()
+        x = self.model.layers[-1].output
+
+        if self.config.model.is_use_relu_on_embeddings:
+            x = Dense(int(self.config.model.embedding_dim), activation="relu", kernel_regularizer=self.regularizer)(x)
+        else:
+            x = Dense(int(self.config.model.embedding_dim), kernel_regularizer=self.regularizer)(x)
+
+        x = Dropout(0.5, name='embeddings')(x)
+        self.model = Model(input=self.model.input, output=x)
+
+    def build_vgg(self):
+        base_model = applications.vgg16.VGG16(include_top=False, weights='imagenet',
+                                              input_shape=(
+                                                  self.config.model.img_width, self.config.model.img_height, 3))
+        x = base_model.output
+        x = GlobalAveragePooling2D()(x)
+        embeddings = Dense(int(self.config.model.embedding_dim), kernel_regularizer=self.regularizer, name='embeddings')(x)
+        x = Dropout(0.5)(embeddings)
+        x = Dense(int(self.config.data_loader.num_of_classes), kernel_regularizer=self.regularizer)(x)
+        out = Activation("softmax", name='out')(x)
+        self.model = Model(inputs=base_model.input, outputs=[embeddings, out])
+
+    def build_dummy_model(self):
+        input_shape = (299, 299, 3)
+        self.model = Sequential()
+        self.model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+        self.model.add(Activation('relu'))
+        self.model.add(MaxPooling2D(pool_size=(2, 2)))
+
+        self.model.add(Conv2D(32, (3, 3)))
+        self.model.add(Activation('relu'))
+        self.model.add(MaxPooling2D(pool_size=(2, 2)))
+
+        self.model.add(Conv2D(64, (3, 3)))
+        self.model.add(Activation('relu'))
+        self.model.add(MaxPooling2D(pool_size=(2, 2)))
+
+        self.model.add(Flatten())
+        self.model.add(Dense(int(self.config.model.embedding_dim), activation="relu"))
+
+        self.model = Model(input=self.model.input, output=self.model.output)
+
+    def build_vgg_attention(self):
+        inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
+        (g, local1, local2, local3) = vgg_attention(inp)
+        out, alpha, G = att_block(g, local1, local2, local3, int(self.config.data_loader.num_of_classes), self.regularizer)
+        self.model = Model(inputs=inp, outputs=[g, out, alpha])
+
+    def build_efficientNet(self):
+        base_model = EfficientNetB3((self.config.model.img_width, self.config.model.img_height, 3),
+                                    include_top=False, weights='imagenet')
+        inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
+        x = base_model(inp)
+
+        if self.config.model.num_of_fc_at_net_end == 2:
+            x = GlobalAveragePooling2D(name='gpa_f')(x)
+            x = Dropout(0.5)(x)
+            embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
+            x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
+            out = Activation("softmax", name='out')(x)
+        else:
+            embeddings = GlobalAveragePooling2D(name='embeddings')(x)
+            x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
+            out = Activation("softmax", name='out')(x)
+
+        self.model = Model(inputs=inp, outputs=[embeddings, out])
+
+    def build_efficientNetSTN(self):
+        base_model = EfficientNetB3((self.config.model.img_width, self.config.model.img_height, 3),
+                                    include_top=False, weights='imagenet')
+        inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
+        locnet = MaxPool2D(pool_size=(2, 2))(inp)
+        locnet = Conv2D(100, (5, 5))(locnet)  # 20
+        locnet = MaxPool2D(pool_size=(4, 4))(locnet)  # 2, 2
+        locnet = Conv2D(200, (5, 5))(locnet)  # 20
+        # locnet = MaxPool2D(pool_size=(2, 2))(locnet)
+        locnet = Flatten()(locnet)
+        locnet = Dense(80)(locnet)  # 50
+        locnet = Activation('relu')(locnet)
+        weights = get_initial_weights(80)  # 50
+        locnet = Dense(6, weights=weights)(locnet)
+        stn = BilinearInterpolation((300, 300), name='stn')([inp, locnet])
+        x = base_model(stn)
+
+        if self.config.model.num_of_fc_at_net_end == 2:
+            x = GlobalAveragePooling2D(name='gpa_f')(x)
+            x = Dropout(0.5)(x)
+            embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
+            x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
+            out = Activation("softmax", name='out')(x)
+        else:
+            embeddings = GlobalAveragePooling2D(name='embeddings')(x)
+            x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
+            out = Activation("softmax", name='out')(x)
+
+        self.model = Model(inputs=inp, outputs=[stn, embeddings, out])
+
+    def configure_triplet_loss(self):
+        self.loss_func = self.triplet_loss_wrapper(self.config.model.margin, self.config.model.is_squared)
+        if self.config.model.batch_type == 'hard':
+            hardest_pos_dist = self.triplet_loss_wrapper_batch_hard_hardest_pos_dist(self.config.model.margin,
+                                                                                     self.config.model.is_squared)
+            self.metrics.append(hardest_pos_dist)
+            hardest_neg_dist = self.triplet_loss_wrapper_batch_hard_hardest_neg_dist(self.config.model.margin,
+                                                                                     self.config.model.is_squared)
+            self.metrics.append(hardest_neg_dist)
+        if self.config.model.batch_type == 'all':
+            pos_fraction = self.triplet_loss_wrapper_batch_all_positive_fraction(self.config.model.margin,
+                                                                                 self.config.model.is_squared)
+            self.metrics.append(pos_fraction)
+        self.loss_weights = {"embeddings": 1.0, "out": 0.0}
+
+    def configure_cosface_or_softmax_loss(self):
+        loss_func_cos = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
+        loss_func_softmax = self.softmax_loss_wrapper()
+        loss_func_empty = self.empty_loss_wrapper()
+
+        if self.config.model.type == "efficientNetSTN":
+            self.metrics = {"stn": loss_func_empty, "embeddings ": loss_func_empty, "out": "acc"}
+            self.loss_func = {"stn": loss_func_empty, "embeddings": loss_func_cos, "out": loss_func_softmax}
+            if self.config.model.loss == 'cosface':
+                self.loss_weights = {"stn": 0.0, "embeddings": 1.0, "out": 0.0}
+            else:
+                self.loss_weights = {"stn": 0.0, "embeddings": 0.0, "out": 1.0}
+        elif self.config.model.type == "efficientNet" or self.config.model.type == "vgg":
+            self.metrics = {"embeddings ": loss_func_empty, "out": "acc"}
+            self.loss_func = {"embeddings": loss_func_cos, "out": loss_func_softmax}
+            if self.config.model.loss == 'cosface':
+                self.loss_weights = {"embeddings": 1.0, "out": 0.0}
+            else:
+                self.loss_weights = {"embeddings": 0.0, "out": 1.0}
+        elif self.config.model.type == "inceptionResnetV2":
+            self.loss_func = loss_func_cos
+            self.loss_weights = {"embeddings": 1.0}
+        elif self.config.model.type == "vgg_attention":
+            self.loss_weights = {"g": 0.0, "out": 1.0, "alpha": 0.0}
+            self.loss_func = {"g": loss_func_cos, "out": loss_func_softmax, "alpha": loss_func_empty}
+            self.metrics = {"g": loss_func_empty, "out": "acc", "alpha": loss_func_empty}
+
 
 
     def softmax_loss_wrapper(self):

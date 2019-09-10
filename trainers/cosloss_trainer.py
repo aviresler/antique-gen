@@ -39,6 +39,7 @@ class CosLossModelTrainer(BaseTrain):
         self.init_callbacks()
 
 
+
     def init_callbacks(self):
         #filepath = os.path.join(self.config.callbacks.checkpoint_dir,
         #                        '%s-{epoch:02d}-{val_loss:.2f}.hdf5' % self.config.exp.name)
@@ -46,7 +47,7 @@ class CosLossModelTrainer(BaseTrain):
             self.callbacks.append(
                 ModelCheckpoint(
                     #self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_loss:.2f}.hdf5' % self.config.exp.name
-                    filepath=os.path.join(self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_embeddings_loss:.2f}.hdf5' % self.config.exp.name),
+                    filepath=os.path.join(self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_out_acc:.2f}.hdf5' % self.config.exp.name),
                     monitor=self.config.callbacks.checkpoint_monitor,
                     mode=self.config.callbacks.checkpoint_mode,
                     save_best_only=self.config.callbacks.checkpoint_save_best_only,
@@ -138,13 +139,13 @@ class CosLossModelTrainer(BaseTrain):
 
 
 
-    def get_accuracy(self,epoch, isSaveEmbeddings = False ):
+    def get_accuracy(self,epoch, isSaveEmbeddings = False, isSaveSTN = False):
         # get accuracy, using default generators
         self.config['data_loader']['data_dir_train'] = self.config['data_loader']['data_dir_train_test']
         self.config['data_loader']['data_dir_valid'] = self.config['data_loader']['data_dir_valid_test']
-        train_generator = get_testing_generator(self.config, True)
-        valid_generator = get_testing_generator(self.config, False)
-        generators = [train_generator, valid_generator]
+        self.train_generator = get_testing_generator(self.config, True)
+        self.valid_generator = get_testing_generator(self.config, False)
+        generators = [self.train_generator, self.valid_generator]
         generators_id = ['_train', '_valid']
 
         for m, generator in enumerate(generators):
@@ -171,8 +172,15 @@ class CosLossModelTrainer(BaseTrain):
                 y_true = [label_map[x] for x in y_true_]
                 y_pred = self.model.predict(x)
 
+                if isSaveSTN:
+                    self.save_STN_images(x,generators_id[m],y_pred[0],cur_ind)
+
                 if self.config.model.num_of_outputs > 1:
-                    y_pred = y_pred[1]
+                    if self.config.model.type == "efficientNetSTN":
+                        y_pred = y_pred[1]
+                    else:
+                        y_pred = y_pred[0]
+
 
                 num_of_items = y_pred.shape[0]
                 predication[cur_ind: cur_ind + num_of_items, :] = y_pred
@@ -252,3 +260,49 @@ class CosLossModelTrainer(BaseTrain):
                 json.dumps(
                     {'epoch': epoch, 'loss': logs['embeddings_loss'], 'val_loss': logs['val_embeddings_loss'], 'acc': acc,'acc_period': acc_period,
                      'acc_site': acc_site, 'hard_pos_dist': logs['embeddings_hardest_pos_dist'], 'hard_neg_dist': logs['embeddings_hardest_neg_dist']}) + '\n'),
+
+
+    def save_STN_images(self, orig_images,generator_type, images_batch, generator_index):
+        out_folder = ''
+        if generator_type == '_train':
+            out_folder = 'experiments/2019-09-05/efficientNetB3_adamwKeras_no_bg_STNbig_save_model/STN/train'
+            generartor = self.train_generator
+        else:
+            out_folder = 'experiments/2019-09-05/efficientNetB3_adamwKeras_no_bg_STNbig_save_model/STN/valid'
+            generartor = self.valid_generator
+
+        print(generator_index)
+        for k in range(images_batch.shape[0]):
+            stn_image = (images_batch[k] +1)*0.5
+            file_name = generartor.filenames[generator_index + k]
+            orig_image = (orig_images[k] +1)*0.5
+            folder, file = file_name.split(('/'))
+            print(file_name)
+            #print(out_folder + '/' + folder + '/' + file + '.png')
+            #print(os.path.isfile(out_folder + '/' + folder + '/' + file + '.png'))
+            if os.path.isfile(out_folder + '/' + folder + '/' + file + '.png'):
+                continue
+
+            f, (ax1, ax2) = plt.subplots(1, 2)
+            ax1.get_yaxis().set_visible(False)
+            ax1.get_xaxis().set_visible(False)
+            ax2.get_xaxis().set_visible(False)
+            ax2.get_yaxis().set_visible(False)
+
+            ax1.imshow(orig_image)
+            ax1.set_title('input')
+            ax2.imshow(stn_image)
+            ax2.set_title('stn')
+
+
+            if not os.path.isdir(out_folder + '/' + folder):
+                os.mkdir(out_folder + '/' + folder)
+            plt.savefig(out_folder + '/' + folder + '/' + file + '.png')
+
+            #plt.savefig('.png')
+
+            #plt.show()
+            #print(file_name)
+            #print(stn_image.shape)
+
+            #np.testing.assert_equal(0,1)

@@ -1,13 +1,13 @@
 {
   "exp": {
-    "name": "efficientNetB3_adamwKeras_no_bg_STNbig"
+    "name": "efficientNetB3_adamwKeras_nobg_"
   },
   "data_loader": {
-    "data_dir_train": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train",
-    "data_dir_valid": "data_loader/data/data_16_6/site_period_top_200_bg_removed/valid",
+    "data_dir_train": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train_resize_448",
+    "data_dir_valid": "data_loader/data/data_16_6/site_period_top_200_bg_removed/valid_resize_448",
     "info_line_below": "in triplet loss testing is done with 200 classes",
-    "data_dir_train_test": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train",
-    "data_dir_valid_test": "data_loader/data/data_16_6/site_period_top_200_bg_removed/valid",
+    "data_dir_train_test": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train_resize_448",
+    "data_dir_valid_test": "data_loader/data/data_16_6/site_period_top_200_bg_removed/valid_resize_448",
     "info_line_below1": "valid only for cosface loss",
     "num_of_classes": 200,
     "num_of_periods": 53,
@@ -28,13 +28,12 @@
   },
   "model":{
     "optimizer": "adam",
-    "info_line_below": "can be: vgg / vgg_attention/  inceptionResnetV2 / dummy / efficientNet",
+    "info_line_below": "can be: vgg / vgg_attention/  inceptionResnetV2 / dummy / efficientNet / efficientNetSTN",
     "type": "efficientNet",
-    "num_of_outputs": 3,
+    "num_of_outputs": 2,
     "info_line_below2": "can be: cosface / softmax/  triplet ",
     "loss": "softmax",
     "is_use_relu_on_embeddings": false,
-    "is_use_STN": true,
     "num_of_fc_at_net_end": 1,
     "embedding_dim": 1536,
     "pretraind_model": "None",
@@ -58,7 +57,7 @@
     "num_epochs": 50,
     "learning_rate_values": [3E-5, 3E-6, 3E-6],
     "learning_rate_schedule_type": "ReduceLROnPlateau",
-    "learning_rate":3E-5,
+    "learning_rate":3E-4,
     "learning_rate_decay": 0,
     "lr_decrease_factor": 0.13,
     "learning_rate_epoch_change": [6,10],
