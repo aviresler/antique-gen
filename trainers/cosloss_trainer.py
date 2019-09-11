@@ -10,6 +10,7 @@ import csv
 from json import encoder
 from sklearn.utils import class_weight
 import matplotlib.pyplot as plt
+import matplotlib.patches as patches
 
 
 
@@ -168,19 +169,20 @@ class CosLossModelTrainer(BaseTrain):
             for k in range(len(generator)):
                 if (k % 10) == 0:
                     print(k)
+
+
                 x, y_true_ = generator.__getitem__(k)
                 y_true = [label_map[x] for x in y_true_]
                 y_pred = self.model.predict(x)
 
                 if isSaveSTN:
-                    self.save_STN_images(x,generators_id[m],y_pred[0],cur_ind)
+                    self.save_STN_images(x,generators_id[m],y_pred[0],cur_ind, y_pred[3])
 
                 if self.config.model.num_of_outputs > 1:
                     if self.config.model.type == "efficientNetSTN":
                         y_pred = y_pred[1]
                     else:
                         y_pred = y_pred[0]
-
 
                 num_of_items = y_pred.shape[0]
                 predication[cur_ind: cur_ind + num_of_items, :] = y_pred
@@ -218,11 +220,9 @@ class CosLossModelTrainer(BaseTrain):
                               is_save_files=False)
         print('accuracy_class = {0:.3f}'.format(accuracy))
 
-
         accuracy_period = eval_model(train_prediction, valid_prediction, train_labels_period, valid_labels_period, self.config.exp.name,
                               is_save_files=False)
         print('accuracy_periods = {0:.3f}'.format(accuracy_period))
-
 
         accuracy_site = eval_model(train_prediction, valid_prediction, train_labels_site, valid_labels_site, self.config.exp.name,
                               is_save_files=False)
@@ -262,17 +262,18 @@ class CosLossModelTrainer(BaseTrain):
                      'acc_site': acc_site, 'hard_pos_dist': logs['embeddings_hardest_pos_dist'], 'hard_neg_dist': logs['embeddings_hardest_neg_dist']}) + '\n'),
 
 
-    def save_STN_images(self, orig_images,generator_type, images_batch, generator_index):
+    def save_STN_images(self, orig_images,generator_type, images_batch, generator_index, transform_mat):
         out_folder = ''
         if generator_type == '_train':
-            out_folder = 'experiments/2019-09-05/efficientNetB3_adamwKeras_no_bg_STNbig_save_model/STN/train'
+            out_folder = 'experiments/2019-09-10/efficientNetB3_adamwKeras_nobg_STN_448/STN/train'
             generartor = self.train_generator
         else:
-            out_folder = 'experiments/2019-09-05/efficientNetB3_adamwKeras_no_bg_STNbig_save_model/STN/valid'
+            out_folder = 'experiments/2019-09-10/efficientNetB3_adamwKeras_nobg_STN_448/STN/valid'
             generartor = self.valid_generator
 
         print(generator_index)
         for k in range(images_batch.shape[0]):
+            transform = transform_mat[k]
             stn_image = (images_batch[k] +1)*0.5
             file_name = generartor.filenames[generator_index + k]
             orig_image = (orig_images[k] +1)*0.5
@@ -280,8 +281,8 @@ class CosLossModelTrainer(BaseTrain):
             print(file_name)
             #print(out_folder + '/' + folder + '/' + file + '.png')
             #print(os.path.isfile(out_folder + '/' + folder + '/' + file + '.png'))
-            if os.path.isfile(out_folder + '/' + folder + '/' + file + '.png'):
-                continue
+            #if os.path.isfile(out_folder + '/' + folder + '/' + file + '.png'):
+            #    continue
 
             f, (ax1, ax2) = plt.subplots(1, 2)
             ax1.get_yaxis().set_visible(False)
@@ -294,6 +295,12 @@ class CosLossModelTrainer(BaseTrain):
             ax2.imshow(stn_image)
             ax2.set_title('stn')
 
+            print(transform)
+            x_offset = int(0.5*self.config.model.img_width*(transform[2]+0.5))
+            y_offset = int(0.5*self.config.model.img_height*(transform[5]+0.5))
+            rect = patches.Rectangle((x_offset, y_offset ), 224, 224, linewidth=1, edgecolor='r', facecolor='none')
+            ax1.add_patch(rect)
+
 
             if not os.path.isdir(out_folder + '/' + folder):
                 os.mkdir(out_folder + '/' + folder)
@@ -301,7 +308,7 @@ class CosLossModelTrainer(BaseTrain):
 
             #plt.savefig('.png')
 
-            #plt.show()
+            plt.show()
             #print(file_name)
             #print(stn_image.shape)
 

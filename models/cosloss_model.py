@@ -1,5 +1,5 @@
 from base.base_model import BaseModel
-from keras.layers import Dense, Dropout, Conv2D, Activation, MaxPooling2D, Flatten, GlobalAveragePooling2D, Input,MaxPool2D
+from keras.layers import Dense, Dropout, Conv2D, Activation, MaxPooling2D, Flatten, GlobalAveragePooling2D, Input,MaxPool2D, Lambda
 from keras.models import Sequential
 from keras import applications
 from keras.models import Model
@@ -13,11 +13,13 @@ from models.vgg_attention import vgg_attention, att_block
 import keras
 import tensorflow as tf
 from keras_efficientnets import EfficientNetB3
+from keras_efficientnets import EfficientNetB0
 from tensorflow.contrib.opt import AdamWOptimizer
 from models.adamW import AdamW
 from models.spatial_transformer import SpatialTransformer
 
 from models.STN.utils import get_initial_weights
+from models.STN.utils import get_initial_weights_translation_only
 from models.STN.layers import BilinearInterpolation
 
 
@@ -177,8 +179,9 @@ class CosLosModel(BaseModel):
 
         self.model = Model(inputs=inp, outputs=[embeddings, out])
 
+
     def build_efficientNetSTN(self):
-        base_model = EfficientNetB3((self.config.model.img_width, self.config.model.img_height, 3),
+        base_model = EfficientNetB0((self.config.model.img_width, self.config.model.img_height, 3),
                                     include_top=False, weights='imagenet')
         inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
         locnet = MaxPool2D(pool_size=(2, 2))(inp)
@@ -187,11 +190,14 @@ class CosLosModel(BaseModel):
         locnet = Conv2D(200, (5, 5))(locnet)  # 20
         # locnet = MaxPool2D(pool_size=(2, 2))(locnet)
         locnet = Flatten()(locnet)
-        locnet = Dense(80)(locnet)  # 50
+        locnet = Dense(20)(locnet)  # 50
         locnet = Activation('relu')(locnet)
-        weights = get_initial_weights(80)  # 50
-        locnet = Dense(6, weights=weights)(locnet)
-        stn = BilinearInterpolation((300, 300), name='stn')([inp, locnet])
+        weights = get_initial_weights_translation_only(20)  # 50
+        locnet = Dense(2, weights=weights)(locnet)
+
+        transform = Lambda(self.convert_to_transform_matrix)([locnet,inp])
+
+        stn = BilinearInterpolation((int(0.5*self.config.model.img_width), int(0.5*self.config.model.img_height)), name='stn')([inp, transform])
         x = base_model(stn)
 
         if self.config.model.num_of_fc_at_net_end == 2:
@@ -205,7 +211,33 @@ class CosLosModel(BaseModel):
             x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
             out = Activation("softmax", name='out')(x)
 
-        self.model = Model(inputs=inp, outputs=[stn, embeddings, out])
+        self.model = Model(inputs=inp, outputs=[stn, embeddings, out, transform])
+        print(self.model.summary())
+
+    def convert_to_transform_matrix(self,input ):
+        locnet = input[0]
+        input_batch = input[1]
+        np_base_transform = np.array([0.5, 0, 0, 0, 0.5, 0], dtype=np.float32)
+        np_base_transform = np.expand_dims(np_base_transform, axis=0)
+        base_transform = K.constant(np_base_transform, dtype='float32')
+        const_transform = K.tile(base_transform,(K.shape(input_batch)[0], 1))
+
+        np_base_tx = np.array([0, 0, 1, 0, 0, 0], dtype=np.float32)
+        np_base_tx = np.expand_dims(np_base_tx, axis=0)
+        base_tx = K.constant(np_base_tx, dtype='float32')
+        mask_tx = K.tile(base_tx, (K.shape(input_batch)[0], 1))
+
+        np_base_ty = np.array([0, 0, 0, 0, 0, 1], dtype=np.float32)
+        np_base_ty = np.expand_dims(np_base_ty, axis=0)
+        base_ty = K.constant(np_base_ty, dtype='float32')
+        mask_ty = K.tile(base_ty, (K.shape(input_batch)[0], 1))
+
+        tx = locnet[:, 0]
+        tx = K.expand_dims(tx, axis=1)
+        ty = locnet[:, 1]
+        ty = K.expand_dims(ty, axis=1)
+        return const_transform + mask_tx * tx + mask_ty * ty
+
 
     def configure_triplet_loss(self):
         self.loss_func = self.triplet_loss_wrapper(self.config.model.margin, self.config.model.is_squared)
@@ -234,7 +266,7 @@ class CosLosModel(BaseModel):
                 self.loss_weights = {"stn": 0.0, "embeddings": 1.0, "out": 0.0}
             else:
                 self.loss_weights = {"stn": 0.0, "embeddings": 0.0, "out": 1.0}
-        elif self.config.model.type == "efficientNet" or self.config.model.type == "vgg":
+        elif self.config.model.type == "efficientNet" or self.config.model.type == "vgg" or 'efficientNetSTN' :
             self.metrics = {"embeddings ": loss_func_empty, "out": "acc"}
             self.loss_func = {"embeddings": loss_func_cos, "out": loss_func_softmax}
             if self.config.model.loss == 'cosface':
@@ -248,8 +280,6 @@ class CosLosModel(BaseModel):
             self.loss_weights = {"g": 0.0, "out": 1.0, "alpha": 0.0}
             self.loss_func = {"g": loss_func_cos, "out": loss_func_softmax, "alpha": loss_func_empty}
             self.metrics = {"g": loss_func_empty, "out": "acc", "alpha": loss_func_empty}
-
-
 
     def softmax_loss_wrapper(self):
         def softmax_loss1(y_true, y_pred):
