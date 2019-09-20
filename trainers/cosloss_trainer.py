@@ -67,14 +67,14 @@ class CosLossModelTrainer(BaseTrain):
         if self.config.trainer.is_early_stop:
             self.callbacks.append(
                 EarlyStopping(
-                    monitor='val_loss', min_delta=0.05, patience=9, verbose=1, mode='auto')
+                    monitor='val_loss', min_delta=self.config.trainer.EarlyStopping_min_delta, patience=self.config.trainer.EarlyStopping_patience, verbose=1, mode='auto')
             )
 
         if self.config.trainer.is_change_lr:
             if self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
                 self.callbacks.append(
                     ReduceLROnPlateau(monitor='val_loss', factor=self.config.trainer.lr_decrease_factor,
-                                                patience=2, min_lr=1e-12)
+                                                patience=self.config.trainer.ReduceLROnPlateau_patience, min_lr=1e-9)
                 )
             elif self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
                 self.callbacks.append(
@@ -170,19 +170,15 @@ class CosLossModelTrainer(BaseTrain):
                 if (k % 10) == 0:
                     print(k)
 
-
                 x, y_true_ = generator.__getitem__(k)
                 y_true = [label_map[x] for x in y_true_]
                 y_pred = self.model.predict(x)
 
                 if isSaveSTN:
-                    self.save_STN_images(x,generators_id[m],y_pred[0],cur_ind, y_pred[3])
+                    self.save_STN_images(x,generators_id[m],cur_ind,y_pred[2], y_pred[3], y_pred[4], y_pred[5])
 
                 if self.config.model.num_of_outputs > 1:
-                    if self.config.model.type == "efficientNetSTN":
-                        y_pred = y_pred[1]
-                    else:
-                        y_pred = y_pred[0]
+                    y_pred = y_pred[0]
 
                 num_of_items = y_pred.shape[0]
                 predication[cur_ind: cur_ind + num_of_items, :] = y_pred
@@ -262,19 +258,21 @@ class CosLossModelTrainer(BaseTrain):
                      'acc_site': acc_site, 'hard_pos_dist': logs['embeddings_hardest_pos_dist'], 'hard_neg_dist': logs['embeddings_hardest_neg_dist']}) + '\n'),
 
 
-    def save_STN_images(self, orig_images,generator_type, images_batch, generator_index, transform_mat):
+    def save_STN_images(self, orig_images,generator_type, generator_index, transform_mat,transform_mat2, stn1, stn2):
         out_folder = ''
         if generator_type == '_train':
-            out_folder = 'experiments/2019-09-10/efficientNetB3_adamwKeras_nobg_STN_448/STN/train'
+            out_folder = 'experiments/2019-09-17/efficientNetB0_optim_stn_no_overlap_medium_mul/STN/train'
             generartor = self.train_generator
         else:
-            out_folder = 'experiments/2019-09-10/efficientNetB3_adamwKeras_nobg_STN_448/STN/valid'
+            out_folder = 'experiments/2019-09-17/efficientNetB0_optim_stn_no_overlap_medium_mul/STN/valid'
             generartor = self.valid_generator
 
         print(generator_index)
-        for k in range(images_batch.shape[0]):
+        for k in range(orig_images.shape[0]):
             transform = transform_mat[k]
-            stn_image = (images_batch[k] +1)*0.5
+            transform2 = transform_mat2[k]
+            stn_image1 = (stn1[k] +1) * 0.5
+            stn_image2 = (stn2[k] + 1) * 0.5
             file_name = generartor.filenames[generator_index + k]
             orig_image = (orig_images[k] +1)*0.5
             folder, file = file_name.split(('/'))
@@ -284,22 +282,29 @@ class CosLossModelTrainer(BaseTrain):
             #if os.path.isfile(out_folder + '/' + folder + '/' + file + '.png'):
             #    continue
 
-            f, (ax1, ax2) = plt.subplots(1, 2)
+            f, (ax1,ax2,ax3) = plt.subplots(1, 3)
             ax1.get_yaxis().set_visible(False)
             ax1.get_xaxis().set_visible(False)
-            ax2.get_xaxis().set_visible(False)
-            ax2.get_yaxis().set_visible(False)
+            #ax2.get_xaxis().set_visible(False)
+            #ax2.get_yaxis().set_visible(False)
 
             ax1.imshow(orig_image)
             ax1.set_title('input')
-            ax2.imshow(stn_image)
-            ax2.set_title('stn')
+            ax2.imshow(stn_image1)
+            ax3.imshow(stn_image2)
+            ax2.set_title('stn1')
+            ax3.set_title('stn2')
 
             print(transform)
+            print(transform2)
             x_offset = int(0.5*self.config.model.img_width*(transform[2]+0.5))
             y_offset = int(0.5*self.config.model.img_height*(transform[5]+0.5))
             rect = patches.Rectangle((x_offset, y_offset ), 224, 224, linewidth=1, edgecolor='r', facecolor='none')
+            x_offset2 = int(0.5*self.config.model.img_width*(transform2[2]+0.5))
+            y_offset2 = int(0.5*self.config.model.img_height*(transform2[5]+0.5))
+            rect2 = patches.Rectangle((x_offset2, y_offset2 ), 224, 224, linewidth=1, edgecolor='g', facecolor='none')
             ax1.add_patch(rect)
+            ax1.add_patch(rect2)
 
 
             if not os.path.isdir(out_folder + '/' + folder):
@@ -308,7 +313,7 @@ class CosLossModelTrainer(BaseTrain):
 
             #plt.savefig('.png')
 
-            plt.show()
+            #plt.show()
             #print(file_name)
             #print(stn_image.shape)
 

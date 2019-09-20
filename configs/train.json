@@ -1,6 +1,6 @@
 {
   "exp": {
-    "name": "efficientNetB3_adamwKeras_nobg_STN_448"
+    "name": "efficientNetB0_stn_no_overlap_param_optim"
   },
   "data_loader": {
     "data_dir_train": "data_loader/data/data_16_6/site_period_top_200_bg_removed/train_resize_448",
@@ -24,21 +24,25 @@
     "K": 4,
     "P": 5,
     "batch_size": 20,
+    "sampels_per_epcoh": 401,
     "is_sample_each_cls_once": "TRUE"
   },
   "model":{
     "optimizer": "adam",
     "info_line_below": "can be: vgg / vgg_attention/  inceptionResnetV2 / dummy / efficientNet / efficientNetSTN",
-    "type": "efficientNetSTN",
-    "num_of_outputs": 3,
+    "type": "efficientNet",
+    "info_line_below3": "can be 1 or 2, only relevant when using STN",
+    "STN_num_of_layers": 2,
+    "LR_multiplier_stn": 0.5,
+    "num_of_outputs": 2,
     "info_line_below2": "can be: cosface / softmax/  triplet ",
     "loss": "softmax",
     "is_use_relu_on_embeddings": false,
     "num_of_fc_at_net_end": 1,
-    "embedding_dim": 1280,
+    "embedding_dim": 1536,
     "pretraind_model": "None",
-    "img_width": 448,
-    "img_height": 448,
+    "img_width": 300,
+    "img_height": 300,
     "alpha": 0.25,
     "scale": 64,
     "margin": 0.2,
@@ -56,14 +60,18 @@
   "trainer":{
     "num_epochs": 50,
     "learning_rate_values": [3E-5, 3E-6, 3E-6],
+    "info_line_below": "can be: ReduceLROnPlateau / LearningRateScheduler",
     "learning_rate_schedule_type": "ReduceLROnPlateau",
-    "learning_rate":3E-4,
+    "learning_rate":1E-4,
+    "ReduceLROnPlateau_patience": 2,
     "learning_rate_decay": 0,
     "lr_decrease_factor": 0.13,
     "learning_rate_epoch_change": [6,10],
     "verbose_training": true,
     "is_change_lr": true,
-    "is_early_stop": true
+    "is_early_stop": true,
+    "EarlyStopping_patience": 5,
+    "EarlyStopping_min_delta": 0.05
   },
   "callbacks":{
     "checkpoint_monitor": "val_loss",

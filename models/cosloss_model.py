@@ -1,5 +1,5 @@
 from base.base_model import BaseModel
-from keras.layers import Dense, Dropout, Conv2D, Activation, MaxPooling2D, Flatten, GlobalAveragePooling2D, Input,MaxPool2D, Lambda
+from keras.layers import Dense, Dropout, Conv2D, Activation, MaxPooling2D, Flatten, GlobalAveragePooling2D, Input,MaxPool2D, Lambda, concatenate, AvgPool2D
 from keras.models import Sequential
 from keras import applications
 from keras.models import Model
@@ -21,6 +21,8 @@ from models.spatial_transformer import SpatialTransformer
 from models.STN.utils import get_initial_weights
 from models.STN.utils import get_initial_weights_translation_only
 from models.STN.layers import BilinearInterpolation
+from keras_lr_multiplier import LRMultiplier
+from keras.utils.vis_utils import plot_model
 
 
 class CosLosModel(BaseModel):
@@ -30,6 +32,7 @@ class CosLosModel(BaseModel):
         self.metrics = []
         self.loss_weights = []
         self.loss_func = []
+        self.STN_id = 1
         self.build_model()
 
     def build_model(self):
@@ -54,18 +57,22 @@ class CosLosModel(BaseModel):
         # configure optimizer
         if self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
             lr_ = 0.0
-            # adam1 = optimizers.Adam(lr=0.0)
+            adam1 = optimizers.Adam(lr=0.0)
         elif self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
             print('decrease_platue')
             lr_ = self.config.trainer.learning_rate
-            # adam1 = optimizers.Adam(lr=self.config.trainer.learning_rate)
+            adam1 = optimizers.Adam(lr=self.config.trainer.learning_rate)
         else:
             print('invalid learning rate configuration')
             raise
 
-        adam1 = AdamW(lr=lr_, beta_1=0.9, beta_2=0.999, epsilon=None, decay=self.config.trainer.learning_rate_decay,
+        adamW_ = AdamW(lr=lr_, beta_1=0.9, beta_2=0.999, epsilon=None, decay=self.config.trainer.learning_rate_decay,
                       weight_decay=self.config.model.weight_decay, batch_size=self.config.data_loader.batch_size,
-                      samples_per_epoch=401, epochs=30)
+                      samples_per_epoch=self.config.data_loader.sampels_per_epcoh, epochs=self.config.trainer.num_epochs)
+
+        if self.config.model.type == "efficientNetSTN":
+            lr_mult = self.config.model.LR_multiplier_stn
+            adamW_ = LRMultiplier(adamW_, {'model_3': lr_mult , 'loc2': lr_mult,'loc3': lr_mult,'loc4': lr_mult})
 
         # configure loss and metrics
         if self.config.model.loss == 'triplet':
@@ -79,7 +86,7 @@ class CosLosModel(BaseModel):
         self.model.compile(
               loss=self.loss_func,
               loss_weights=self.loss_weights,
-              optimizer=adam1,
+              optimizer=adamW_,
               metrics=self.metrics
         )
 
@@ -181,38 +188,68 @@ class CosLosModel(BaseModel):
 
 
     def build_efficientNetSTN(self):
-        base_model = EfficientNetB0((self.config.model.img_width, self.config.model.img_height, 3),
-                                    include_top=False, weights='imagenet')
         inp = Input(shape=(self.config.model.img_width, self.config.model.img_height, 3), name='main_input')
-        locnet = MaxPool2D(pool_size=(2, 2))(inp)
-        locnet = Conv2D(100, (5, 5))(locnet)  # 20
-        locnet = MaxPool2D(pool_size=(4, 4))(locnet)  # 2, 2
-        locnet = Conv2D(200, (5, 5))(locnet)  # 20
-        # locnet = MaxPool2D(pool_size=(2, 2))(locnet)
+        detedction_window_w = int(0.5*self.config.model.img_width)
+        detedction_window_h = int(0.5 * self.config.model.img_height)
+        base_model1 = EfficientNetB0((detedction_window_w, detedction_window_h, 3),
+                                    include_top=False, weights='imagenet')
+        base_model2 = EfficientNetB0((detedction_window_w, detedction_window_h, 3),
+                                     include_top=False, weights='imagenet')
+
+
+        base_model_loc = EfficientNetB0((detedction_window_w, detedction_window_h, 3),
+                                    include_top=False, weights='imagenet')
+
+        inp_downsize = AvgPool2D(pool_size=(2, 2))(inp)
+        locnet = base_model_loc(inp_downsize)
+        locnet = Conv2D(128, (1, 1), activation='relu',name='loc2', kernel_regularizer=self.regularizer)(locnet)
         locnet = Flatten()(locnet)
-        locnet = Dense(20)(locnet)  # 50
-        locnet = Activation('relu')(locnet)
-        weights = get_initial_weights_translation_only(20)  # 50
-        locnet = Dense(2, weights=weights)(locnet)
+        locnet = Dense(128,activation='relu', name='loc3', kernel_regularizer=self.regularizer)(locnet)
+        weights = get_initial_weights_translation_only(128)
+        locnet = Dense(4, weights=weights, name='loc4', kernel_regularizer=self.regularizer)(locnet)
 
-        transform = Lambda(self.convert_to_transform_matrix)([locnet,inp])
 
-        stn = BilinearInterpolation((int(0.5*self.config.model.img_width), int(0.5*self.config.model.img_height)), name='stn')([inp, transform])
-        x = base_model(stn)
+        # locnet = MaxPool2D(pool_size=(2, 2))(inp)
+        # locnet = Conv2D(100, (5, 5),activation='relu', name='loc1')(locnet)  # 20
+        # locnet = MaxPool2D(pool_size=(4, 4))(locnet)  # 2, 2
+        # locnet = Conv2D(200, (5, 5), activation='relu',name='loc2')(locnet)  # 20
+        # # locnet = MaxPool2D(pool_size=(2, 2))(locnet)
+        # locnet = Flatten()(locnet)
+        # locnet = Dense(20, name='loc3')(locnet)  # 50
+        # locnet = Activation('relu')(locnet)
+        # weights = get_initial_weights_translation_only(20)  # 50
+        # locnet = Dense(4, weights=weights, name='loc4')(locnet)
 
-        if self.config.model.num_of_fc_at_net_end == 2:
-            x = GlobalAveragePooling2D(name='gpa_f')(x)
-            x = Dropout(0.5)(x)
-            embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
-            x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
-            out = Activation("softmax", name='out')(x)
-        else:
-            embeddings = GlobalAveragePooling2D(name='embeddings')(x)
-            x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
-            out = Activation("softmax", name='out')(x)
+        self.STN_id = 1
+        transform1 = Lambda(self.convert_to_transform_matrix)([locnet,inp])
+        self.STN_id = 2
+        transform2 = Lambda(self.convert_to_transform_matrix)([locnet, inp])
 
-        self.model = Model(inputs=inp, outputs=[stn, embeddings, out, transform])
-        print(self.model.summary())
+        stn1 = BilinearInterpolation((detedction_window_w, detedction_window_h), name='stn1')([inp, transform1])
+        stn2 = BilinearInterpolation((detedction_window_w, detedction_window_h),
+                                     name='stn2')([inp, transform2])
+        x1 = base_model1(stn1)
+        x2 = base_model2(stn2)
+        embeddings1 = GlobalAveragePooling2D(name='embeddings1')(x1)
+        embeddings2 = GlobalAveragePooling2D(name='embeddings2')(x2)
+        embeddings = concatenate([embeddings1, embeddings2],axis= 1, name='embeddings')
+        x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
+        out = Activation("softmax", name='out')(x)
+
+        # if self.config.model.num_of_fc_at_net_end == 2:
+        #     x = GlobalAveragePooling2D(name='gpa_f')(x)
+        #     x = Dropout(0.5)(x)
+        #     embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
+        #     x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
+        #     out = Activation("softmax", name='out')(x)
+        # else:
+        #     embeddings = GlobalAveragePooling2D(name='embeddings')(x)
+        #     x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
+        #     out = Activation("softmax", name='out')(x)
+
+        self.model = Model(inputs=inp, outputs=[embeddings, out, transform1,transform2, stn1, stn2])
+        #print(self.model.summary())
+        #plot_model(self.model, to_file='model_plotnnn.png', show_shapes=True, show_layer_names=True)
 
     def convert_to_transform_matrix(self,input ):
         locnet = input[0]
@@ -232,11 +269,19 @@ class CosLosModel(BaseModel):
         base_ty = K.constant(np_base_ty, dtype='float32')
         mask_ty = K.tile(base_ty, (K.shape(input_batch)[0], 1))
 
-        tx = locnet[:, 0]
-        tx = K.expand_dims(tx, axis=1)
-        ty = locnet[:, 1]
-        ty = K.expand_dims(ty, axis=1)
-        return const_transform + mask_tx * tx + mask_ty * ty
+        if self.STN_id == 1:
+            tx = locnet[:, 0]
+            tx = K.expand_dims(tx, axis=1)
+            ty = locnet[:, 1]
+            ty = K.expand_dims(ty, axis=1)
+        else:
+            tx = locnet[:, 2]
+            tx = K.expand_dims(tx, axis=1)
+            ty = locnet[:, 3]
+            ty = K.expand_dims(ty, axis=1)
+
+        transform = const_transform + mask_tx * tx + mask_ty * ty
+        return transform
 
 
     def configure_triplet_loss(self):
@@ -260,12 +305,12 @@ class CosLosModel(BaseModel):
         loss_func_empty = self.empty_loss_wrapper()
 
         if self.config.model.type == "efficientNetSTN":
-            self.metrics = {"stn": loss_func_empty, "embeddings ": loss_func_empty, "out": "acc"}
-            self.loss_func = {"stn": loss_func_empty, "embeddings": loss_func_cos, "out": loss_func_softmax}
+            self.metrics = { "embeddings ": loss_func_empty, "out": "acc"}
+            self.loss_func = { "embeddings": loss_func_cos, "out": loss_func_softmax}
             if self.config.model.loss == 'cosface':
-                self.loss_weights = {"stn": 0.0, "embeddings": 1.0, "out": 0.0}
+                self.loss_weights = { "embeddings": 1.0, "out": 0.0}
             else:
-                self.loss_weights = {"stn": 0.0, "embeddings": 0.0, "out": 1.0}
+                self.loss_weights = {"embeddings": 0.0, "out": 1.0}
         elif self.config.model.type == "efficientNet" or self.config.model.type == "vgg" or 'efficientNetSTN' :
             self.metrics = {"embeddings ": loss_func_empty, "out": "acc"}
             self.loss_func = {"embeddings": loss_func_cos, "out": loss_func_softmax}

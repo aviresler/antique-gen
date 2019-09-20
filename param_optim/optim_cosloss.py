@@ -28,7 +28,7 @@ def main():
     # then process the json configuration fill
     try:
         MAX_ITR = 150
-        test_file = 'test_triplet_EfficentNet_bg_removed'
+        test_file = 'test_softmax_bg_removed_EfficientNetB0_adamw_STN'
         param_csv_path = test_file + '.csv'
         params_start_col = 8
         loss_col = 5
@@ -69,7 +69,7 @@ def main():
                                 zoom_range=config.data_loader.zoom_range,
                                 horizontal_flip=config.data_loader.horizontal_flip)
 
-            if config.model.loss == 'cosface':
+            if config.model.loss == 'cosface' or config.model.loss == 'softmax' :
                 train_generator = CosFaceGenerator(config, datagen_args, True)
                 valid_generator = CosFaceGenerator(config, datagen_args, False)
             elif config.model.loss == 'triplet':
@@ -103,7 +103,7 @@ def main():
             lines[int(experiment) + 1][6] = str(len(trainer.loss))
             lines[int(experiment) + 1][7] = time.strftime("%Y-%m-%d",time.localtime())
 
-            accuracy, period_accuracy, site_accuracy = trainer.get_accuracy()
+            accuracy, period_accuracy, site_accuracy = trainer.get_accuracy(0)
 
             lines[int(experiment) + 1][1] = '{0:.3f}'.format(accuracy)
             lines[int(experiment) + 1][2] = '{0:.3f}'.format(period_accuracy)

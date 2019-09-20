@@ -95,25 +95,14 @@ class CosFaceGenerator(keras.utils.Sequence,):
             labels[:, 1] = np.array(priod_label_list, dtype=np.int32)
             labels[:, 2] = np.array(site_label_list, dtype=np.int32)
 
-        #temp_labels = np.zeros((len(labels_list), 1),dtype=np.int32)
-        #temp_labels[:,0] = np.array(labels_list, dtype=np.int32)
-        #labels = np.tile(temp_labels, (1, int(self.config.model.embedding_dim)))
-
         if self.config.model.num_of_outputs == 1:
             labels_out = labels
         elif self.config.model.num_of_outputs == 2:
-            labels_out = [labels, labels]
-        elif self.config.model.num_of_outputs == 3:
-            if self.config.model.type == "efficientNetSTN":
-                stn_out = np.zeros((len(labels_list), self.config.model.img_width, self.config.model.img_height, 3),
-                                   dtype=np.int16)
-
-
-                labels_out = [stn_out, labels, labels[:,:self.config.data_loader.num_of_classes]]
-            else:
-                g_out = np.zeros((len(labels_list), int(self.config.model.embedding_dim)), dtype=np.int16)
-                alpha_out = np.zeros((len(labels_list), self.config.model.img_width, self.config.model.img_height), dtype=np.int16)
-                labels_out = [g_out, labels, alpha_out]
+            labels_out = [ labels, labels[:,:self.config.data_loader.num_of_classes]]
+        elif self.config.model.type == "vgg_attention":
+            g_out = np.zeros((len(labels_list), int(self.config.model.embedding_dim)), dtype=np.int16)
+            alpha_out = np.zeros((len(labels_list), self.config.model.img_width, self.config.model.img_height), dtype=np.int16)
+            labels_out = [g_out, labels, alpha_out]
 
         return X, labels_out
 

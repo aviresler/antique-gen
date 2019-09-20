@@ -67,7 +67,7 @@ def main():
         print('Start training the model.')
         trainer.train()
 
-        trainer.get_accuracy(0,isSaveSTN=False)
+        #trainer.get_accuracy(0,isSaveSTN=True)
 
 
 
