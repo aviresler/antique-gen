@@ -128,8 +128,8 @@ def get_confusion_matrix(experiment,data,class_mode,classes_csv_file = ''):
 
 
 
-experient = 'site_period_sorted_14_5_57.8'
-data = np.genfromtxt('conf_mat_data/triplet_14_5_57.8_site_period_data.csv', delimiter=',')
+experient = 'efficientNetB3_softmax_concat_rp_embeddings1500'
+data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_rp_embeddings1500_site_period_data.csv', delimiter=',')
 data_period_sorted = np.zeros_like(data, dtype=np.int32)
 cnt = 0
 class_dict = {}
@@ -146,16 +146,16 @@ for i in range(data.shape[0]):
 
 cm_site_period_sorted = get_confusion_matrix(experient,data_period_sorted,'site_period_sorted')
 
-experient = 'site_period_14_5_57.8'
-data = np.genfromtxt('conf_mat_data/triplet_14_5_57.8_site_period_data.csv', delimiter=',')
+experient = 'site_period_efficientNetB3_softmax_concat_rp_embeddings1500'
+data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_rp_embeddings1500_site_period_data.csv', delimiter=',')
 cm_site_period = get_confusion_matrix(experient,data,'site_period')
 
-experient = 'period_14_5_57.8'
-data = np.genfromtxt('conf_mat_data/triplet_14_5_57.8_period_data.csv', delimiter=',')
+experient = 'period_efficientNetB3_softmax_concat_rp_embeddings1500'
+data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_rp_embeddings1500_period_data.csv', delimiter=',')
 cm_period_sorted = get_confusion_matrix(experient,data,'period_sorted')
 
-experient = 'site_14_5_57.8'
-data = np.genfromtxt('conf_mat_data/triplet_14_5_57.8_site_data.csv', delimiter=',')
+experient = 'site_efficientNetB3_softmax_concat_rp_embeddings1500'
+data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_rp_embeddings1500_site_data.csv', delimiter=',')
 cm_site = get_confusion_matrix(experient,data,'site')
 
 fig, (ax1, ax2, ax3, ax4) = plt.subplots(1, 4)

@@ -50,13 +50,17 @@ with open('../data_loader/classes.csv', 'r') as f:
 
 
 
-experient = 'triplet_8_5'
-labels = np.genfromtxt('labels/triplet_all_smaller200_lr_5e-6_valid_29_acc_56.1.tsv', delimiter=',')
-embeddings_numpy = np.genfromtxt('embeddings/triplet_all_smaller200_lr_5e-6_valid_29_acc_56.1.csv', delimiter=',')
+#experient = 'triplet_8_5'
+#labels = np.genfromtxt('labels/triplet_all_smaller200_lr_5e-6_valid_29_acc_56.1.tsv', delimiter=',')
+#embeddings_numpy = np.genfromtxt('embeddings/triplet_all_smaller200_lr_5e-6_valid_29_acc_56.1.csv', delimiter=',')
+
+experient = 'efficientNetB3'
+labels = np.genfromtxt('labels/efficientNetB3_adamwKeras_1fc_triplet_noDropOut_cutoutf_valid4.tsv', delimiter=',')
+embeddings_numpy = np.genfromtxt('embeddings/efficientNetB3_adamwKeras_1fc_triplet_noDropOut_cutoutf_valid4.csv', delimiter=',')
 
 LABELS = os.path.join(os.getcwd(), "labels_names.tsv")
 LOGDIR = 'projector/' + experient
-#SPRITES = 'spritesheet.png'
+#SPRITES = 'spritesheet.png'eet.png'eet.png'eet.png'
 sess = tf.Session()
 
 
