@@ -6,6 +6,9 @@ from sklearn import random_projection
 from sklearn.random_projection import GaussianRandomProjection
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import pandas as pd
+import os
+import random
 
 def findCosineSimilarity(source_representation, test_representation):
     a = np.matmul(np.transpose(source_representation), test_representation)
@@ -21,17 +24,12 @@ def findEuclideanDistance(source_representation, test_representation):
     return euclidean_distance
 
 
-
-
-
 def eval_model_from_csv_files(train_embeddings_csv, valid_embeddings_csv, train_labels_tsv, valid_labels_tsv, experiment):
 
     classes_csv_file = '../data_loader/classes_top200.csv'
 
     train_embeddings = np.genfromtxt(train_embeddings_csv, delimiter=',')
-    print(train_embeddings.shape)
     valid_embeddings = np.genfromtxt(valid_embeddings_csv, delimiter=',')
-    print(valid_embeddings.shape)
     train_labels = np.genfromtxt(train_labels_tsv, delimiter='\t')
     valid_labels = np.genfromtxt(valid_labels_tsv, delimiter='\t')
 
@@ -209,9 +207,6 @@ def eval_model_topk(train_embeddings,valid_embeddings,train_labels, valid_labels
                             if sim_mat[bb,0] == label and sim_mat[bb,1] == pred:
                                 indicator_mat_include_sim[m, i] = 1
                                 indicator_mat_include_both[m, i] = 1
-
-
-
 
 
     accuracy = 100*np.sum(indicator_mat,axis=0)/valid_embeddings.shape[0]
@@ -401,7 +396,7 @@ def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, exp
     equal_elements = vec0.shape[0] - num_no_zero
     accuracy = 100*equal_elements/vec0.shape[0]
 
-    print('accuracy= {}'.format(accuracy))
+    #print('accuracy= {}'.format(accuracy))
 
     N_valid = valid_embeddings.shape[0]
     confusion_mat_data = np.zeros((N_valid,2), dtype=np.int)
@@ -424,6 +419,40 @@ def eval_model(train_embeddings,valid_embeddings,train_labels, valid_labels, exp
 
     return accuracy
 
+def eval_model_per_period_group(train_embeddings,valid_embeddings,train_labels, valid_labels, priod_group_column ):
+
+    similaity_mat = cosine_similarity(valid_embeddings, train_embeddings, dense_output=True)
+    max_ind = np.argmax(similaity_mat, axis=1)
+    vec0 = valid_labels
+    vec1 = train_labels[max_ind]
+
+    num_no_zero = np.count_nonzero(vec0 - vec1)
+    equal_elements = vec0.shape[0] - num_no_zero
+    accuracy = 100 * equal_elements / vec0.shape[0]
+
+    df = pd.read_csv('../data_loader/classes_top200.csv')
+    period_groups = df[priod_group_column]
+    uniqe_period_groups = np.unique(period_groups.values)
+
+    accuracy_per_period = []
+    for group in uniqe_period_groups:
+        # generate list of images files in each group
+        group_slice = df[period_groups == group]
+        periods_group_ids = group_slice['period id'].values
+        unique_group_period_ids = np.unique(periods_group_ids)
+        ind = []
+        for period in unique_group_period_ids:
+            temp = np.where(vec0 == period)
+            ind.extend(temp[0])
+
+        valid_per_group = vec0[ind]
+        train_per_group = vec1[ind]
+
+        num_no_zero = np.count_nonzero(valid_per_group-train_per_group)
+        equal_elements = valid_per_group.shape[0] - num_no_zero
+        accuracy_per_period.append(100*equal_elements/valid_per_group.shape[0])
+
+    return accuracy, accuracy_per_period, vec0, vec1
 
 def test_model_on_query_img_csv(train_embeddings_csv, valid_embeddings_csv, train_labels_tsv, valid_labels_tsv):
     train_embeddings = np.genfromtxt(train_embeddings_csv, delimiter=',')
@@ -562,6 +591,7 @@ def random_projection(train_embeddings_csv,valid_embeddings_csv ):
         np.savetxt('embeddings/efficientNetB3_softmax_concat10_rp_embeddings'  + str(size) + '_valid.csv', valid_embed_new,
                    delimiter=',')
 
+
 def get_similarity_matrix():
 
     classes_csv_file = '../data_loader/classes_top200.csv'
@@ -607,6 +637,7 @@ def get_similarity_matrix():
         plt.savefig('similarity_mat/similarity_mat_dis_' + data_sets[m] + '.png')
         plt.show()
 
+
 def get_similarity_summary():
     classes_csv_file = '../data_loader/classes_top200.csv'
     cnt = 0
@@ -645,6 +676,8 @@ def get_similarity_summary():
 
     with open('similarity_mat/summary_pair_dist_valid.csv', "w") as text_file:
         text_file.write(lines)
+
+
 
 
 

@@ -128,8 +128,8 @@ def get_confusion_matrix(experiment,data,class_mode,classes_csv_file = ''):
 
 
 
-experient = 'efficientNetB3_softmax_concat_rp_embeddings1500'
-data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_rp_embeddings1500_site_period_data.csv', delimiter=',')
+experient = 'efficientNetB3_softmax_concat_embeddings_10_rp1500'
+data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_embeddings_10_rp1500_site_period_data.csv', delimiter=',')
 data_period_sorted = np.zeros_like(data, dtype=np.int32)
 cnt = 0
 class_dict = {}
@@ -146,16 +146,16 @@ for i in range(data.shape[0]):
 
 cm_site_period_sorted = get_confusion_matrix(experient,data_period_sorted,'site_period_sorted')
 
-experient = 'site_period_efficientNetB3_softmax_concat_rp_embeddings1500'
-data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_rp_embeddings1500_site_period_data.csv', delimiter=',')
+experient = 'site_period_efficientNetB3_softmax_concat_embeddings_10_rp1500'
+data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_embeddings_10_rp1500_site_period_data.csv', delimiter=',')
 cm_site_period = get_confusion_matrix(experient,data,'site_period')
 
-experient = 'period_efficientNetB3_softmax_concat_rp_embeddings1500'
-data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_rp_embeddings1500_period_data.csv', delimiter=',')
+experient = 'period_efficientNetB3_softmax_concat_embeddings_10_rp1500'
+data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_embeddings_10_rp1500_period_data.csv', delimiter=',')
 cm_period_sorted = get_confusion_matrix(experient,data,'period_sorted')
 
-experient = 'site_efficientNetB3_softmax_concat_rp_embeddings1500'
-data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_rp_embeddings1500_site_data.csv', delimiter=',')
+experient = 'site_efficientNetB3_softmax_concat_embeddings_10_rp1500'
+data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_embeddings_10_rp1500_site_data.csv', delimiter=',')
 cm_site = get_confusion_matrix(experient,data,'site')
 
 fig, (ax1, ax2, ax3, ax4) = plt.subplots(1, 4)
@@ -163,6 +163,7 @@ ax1.imshow(cm_site_period, interpolation='nearest',cmap=plt.cm.Blues)
 ax1.set_title('label = site_period')
 ax1.set(xlabel='Predicted label\n\n(a)', ylabel='True label')
 ax2.imshow(cm_site_period_sorted, interpolation='nearest',cmap=plt.cm.Blues)
+#np.savetxt('confusion_ste_period_sorted.csv', cm_site_period_sorted, delimiter=",")
 ax2.set_title('label = site_period, sorted by period')
 ax2.set(xlabel='Predicted label\n\n(b)', ylabel='True label')
 ax3.imshow(cm_period_sorted, interpolation='nearest',cmap=plt.cm.Blues)
