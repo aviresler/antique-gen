@@ -69,39 +69,39 @@ def plot_periods_pca_tsne(embeddings, labels):
     print(tsne_pca_results.shape)
 
     #fig, ax = plt.subplots()
-    df = pd.DataFrame(tsne_pca_results)
-    df['tsne-pca50-one'] = tsne_pca_results[:,0]
-    df['tsne-pca50-two'] = tsne_pca_results[:,1]
-    df['y'] = color
+    # df = pd.DataFrame(tsne_pca_results)
+    # df['tsne-pca50-one'] = tsne_pca_results[:,0]
+    # df['tsne-pca50-two'] = tsne_pca_results[:,1]
+    # df['y'] = color
 
-    ax1 = plt.subplot()
-    sns.scatterplot(
-        x="tsne-pca50-one", y="tsne-pca50-two",
-        hue="y",
-        palette=sns.color_palette("hls", 200),
-        data=df,
-        legend=False,
-        alpha=0.8,
-        ax=ax1
-    )
+    # ax1 = plt.subplot()
+    # sns.scatterplot(
+    #     x="tsne-pca50-one", y="tsne-pca50-two",
+    #     hue="y",
+    #     palette=sns.color_palette("hls", 200),
+    #     data=df,
+    #     legend=False,
+    #     alpha=0.8,
+    #     ax=ax1
+    # )
 
     #plt.savefig('TSNE_perplexity=40.png')
 
-    df = pd.DataFrame(X_)
-    df['pca-one'] = X_[:, 0]
-    df['pca-two'] = X_[:, 1]
-    df['y'] = color
+    # df = pd.DataFrame(X_)
+    # df['pca-one'] = X_[:, 0]
+    # df['pca-two'] = X_[:, 1]
+    # df['y'] = color
 
-    fig, ax2 = plt.subplots()
-    sns.scatterplot(
-        x="pca-one", y="pca-two",
-        hue="y",
-        palette=sns.color_palette("hls", 200),
-        data=df,
-        legend=False,
-        alpha=0.8,
-        ax=ax2
-    )
+    # fig, ax2 = plt.subplots()
+    # sns.scatterplot(
+    #     x="pca-one", y="pca-two",
+    #     hue="y",
+    #     palette=sns.color_palette("hls", 200),
+    #     data=df,
+    #     legend=False,
+    #     alpha=0.8,
+    #     ax=ax2
+    # )
 
 
     fig3, ax3 = plt.subplots()
@@ -114,8 +114,82 @@ def plot_periods_pca_tsne(embeddings, labels):
     cbar = fig.colorbar(im, ax=ax)
     cbar.ax.set_yticklabels([color_dict[0], color_dict[40], color_dict[80], color_dict[119], color_dict[160], color_dict[199]])
     plt.tight_layout()
+    plt.show()
+
+def plot_train_validation_set_tsnes(train_embeddings, valid_embeddings, train_labels, valid_labels):
+    cnt = 0
+    cls_dict = {}
+    color_dict = {}
+    with open('../data_loader/classes_top200.csv', 'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if cnt == 0:
+                print(row)
+            if cnt > 0:
+                #site, period = row[1].split('_')
+                cls_dict[int(row[0])] = int(row[8])
+                color_dict[int(row[8])] = row[3]
+            cnt = cnt + 1
+
+
+    np.random.seed(7)
+    X1 = train_embeddings
+    X1 = X1 - np.mean(X1,axis=0)
+    X2 = valid_embeddings
+    X2 = X2 - np.mean(X2,axis=0)
+
+    color1 = np.zeros((X1.shape[0]), dtype=np.float)
+    for i,label in enumerate(train_labels):
+        color1[i] = cls_dict[label]
+    color1 /= np.max(color1)
+
+    color2 = np.zeros((X2.shape[0]), dtype=np.float)
+    for i,label in enumerate(valid_labels):
+        color2[i] = cls_dict[label]
+    color2 /= np.max(color2)
+
+    pca_50 = decomposition.PCA(n_components=50)
+    pca_result_50_1 = pca_50.fit_transform(X1)
+    pca_result_50_2 = pca_50.fit_transform(X2)
+
+    tsne = TSNE(n_components=2, verbose=0, perplexity=40, n_iter=300)
+    tsne_pca_results_1 = tsne.fit_transform(pca_result_50_1)
+    tsne_pca_results_2 = tsne.fit_transform(pca_result_50_2)
+
+    fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2)
+    ax1.scatter(tsne_pca_results_1[:, 0], tsne_pca_results_1[:, 1], s = 6, c= color1,cmap=plt.cm.nipy_spectral)
+    im = ax2.scatter(tsne_pca_results_2[:, 0], tsne_pca_results_2[:, 1], s = 6, c= color2,cmap=plt.cm.nipy_spectral)
+
+    fig.subplots_adjust(right=0.8)
+    cbar_ax = fig.add_axes([0.85, 0.1, 0.02, 0.8])
+    fig.colorbar(im, cax=cbar_ax)
+    cbar_ax.set_yticklabels(
+        [color_dict[0], color_dict[40], color_dict[80], color_dict[119], color_dict[160], color_dict[198]])
+
+    #ax1 = plt.gca()
+    ax1.get_xaxis().set_visible(False)
+    ax1.get_yaxis().set_visible(False)
+    ax2.get_xaxis().set_visible(False)
+    ax2.get_yaxis().set_visible(False)
+    ax1.set_title('Training set', fontsize=18)
+    ax2.set_title('Validation set', fontsize=18)
 
     plt.show()
+
+
+    #
+    # fig, (ax1,ax2) = plt.subplots(nrows=1, ncols=2)
+    # im = ax1.scatter(tsne_pca_results_1[:, 0], tsne_pca_results_1[:, 1], s = 6, c= color1,cmap=plt.cm.nipy_spectral)
+    # ax1 = plt.gca()
+    # ax1.get_xaxis().set_visible(False)
+    # ax1.get_yaxis().set_visible(False)
+    #
+    # #plt.colorbar(im, label="period")
+    # cbar = fig.colorbar(im, ax=ax)
+    # cbar.ax.set_yticklabels([color_dict[0], color_dict[40], color_dict[80], color_dict[119], color_dict[160], color_dict[199]])
+    # plt.tight_layout()
+    # plt.show()
+
 
 def plot_sites_in_periods_pca_tsne_old(embeddings, labels, type):
     out_dir = 'results/' + type
@@ -371,12 +445,14 @@ def concat_embbedings():
             np.savetxt('embeddings/efficientNetB3_softmax_concat_embeddings_' + str(run) + '_valid.csv', concat_embeddings_valid, delimiter=',')
 
 if __name__ == '__main__':
-    concat_embbedings()
+    #concat_embbedings()
     #average_embbedings()
 
-    # train_labels = np.genfromtxt('labels/efficientNetB3_softmax_averaged_embeddings_train.tsv', delimiter=',')
-    # valid_labels = np.genfromtxt('labels/efficientNetB3_softmax_averaged_embeddings_valid.tsv', delimiter=',')
-    # train_embeddings = np.genfromtxt('embeddings/efficientNetB3_softmax_concat_rp_embeddings500_train.csv',delimiter=',')
-    # valid_embeddings = np.genfromtxt('embeddings/efficientNetB3_softmax_concat_rp_embeddings500_valid.csv', delimiter=',')
+    train_labels = np.genfromtxt('labels/efficientNetB3_softmax_averaged_embeddings_train.tsv', delimiter=',')
+    valid_labels = np.genfromtxt('labels/efficientNetB3_softmax_averaged_embeddings_valid.tsv', delimiter=',')
+    train_embeddings = np.genfromtxt('embeddings/efficientNetB3_softmax_concat_embeddings_10_rp1500_train.csv',delimiter=',')
+    valid_embeddings = np.genfromtxt('embeddings/efficientNetB3_softmax_concat_embeddings_10_rp1500_valid.csv', delimiter=',')
     #
     # plot_sites_in_periods_pca_tsne(train_embeddings,valid_embeddings, train_labels, valid_labels, 'tsne_concat_random_projection_embed500_same_pca_3d', dim= 3 )
+    #plot_periods_pca_tsne(train_embeddings,train_labels)
+    plot_train_validation_set_tsnes(train_embeddings,valid_embeddings,train_labels,valid_labels)

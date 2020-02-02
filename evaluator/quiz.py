@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import random
-from get_valid_nearest_neighbor import eval_model_from_csv_files, eval_model_topk, eval_model, eval_model_per_period_group
+from get_valid_nearest_neighbor import eval_model_from_csv_files, eval_model_topk, eval_model, eval_model_per_period_group, eval_model_per_period_group_quiz_check
 import csv
 import matplotlib.pyplot as plt
 import shutil
@@ -55,8 +55,8 @@ def predict(sample, train_embeddings, valid_embeddings, train_labels, valid_labe
     ind = []
     for file in sample:
         ind.append(valid_files.index(file))
-    valid_embeddings = valid_embeddings[ind, :]
-    valid_labels = valid_labels[ind]
+    #valid_embeddings = valid_embeddings[ind, :]
+    #valid_labels = valid_labels[ind]
 
     classes_csv_file = '../data_loader/classes_top200.csv'
 
@@ -64,6 +64,8 @@ def predict(sample, train_embeddings, valid_embeddings, train_labels, valid_labe
     valid_labels_period = np.zeros_like(valid_labels, dtype=np.int32)
     train_labels_site = np.zeros_like(train_labels, dtype=np.int32)
     valid_labels_site = np.zeros_like(valid_labels, dtype=np.int32)
+    train_labels_fine_period = np.zeros_like(train_labels, dtype=np.int32)
+    valid_labels_fine_period = np.zeros_like(valid_labels, dtype=np.int32)
 
     cnt = 0
     period_dict = {}
@@ -75,7 +77,86 @@ def predict(sample, train_embeddings, valid_embeddings, train_labels, valid_labe
 
     site_dict = {}
     period_name_dict = {}
+    clasess_dict = {}
     with open(classes_csv_file, 'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if cnt > 0:
+                site_dict[int(row[0])] = int(row[6])
+                period_dict[int(row[0])] = int(row[5])
+                clasess_dict[int(row[0])] = int(row[10])
+                if not (int(row[col]) in  group_period_name_dict):
+                    group_period_name_dict[int(row[col])] = row[3]
+                if not (int(row[5]) in  period_name_dict):
+                    period_name_dict[int(row[5])] = row[3]
+            cnt = cnt + 1
+    group_period_name_list = [v for v in group_period_name_dict.values()]
+
+    for i, val_label in enumerate(valid_labels):
+        valid_labels_period[i] = period_dict[val_label]
+        valid_labels_site[i] = site_dict[val_label]
+        valid_labels_fine_period[i] = clasess_dict[val_label]
+
+    for i, tr_label in enumerate(train_labels):
+        train_labels_period[i] = period_dict[tr_label]
+        train_labels_site[i] = site_dict[tr_label]
+        train_labels_fine_period[i] = clasess_dict[tr_label]
+
+    #plt.figure(figsize=(14, 10))
+    accuracy, accuracy_per_period, true_label, pred_label = eval_model_per_period_group(train_embeddings, valid_embeddings, train_labels_fine_period, valid_labels_fine_period,period_group_col)
+
+
+    if is_print:
+        y_pos = np.arange(len(accuracy_per_period))
+        plt.bar(y_pos, accuracy_per_period, align='center', alpha=0.5)
+        plt.axhline(y=accuracy)
+        plt.legend(['test accuracy','group accuracy'],fontsize = 12)
+        plt.xticks(y_pos, group_period_name_list, rotation=90,fontsize = 14)
+        plt.tight_layout()
+
+        plt.ylabel('accuracy [%]',fontsize = 18)
+        plt.title('fine period group accuracy, test accuracy = ' + str(round(accuracy, 2)) + ' [%]'.format(accuracy),fontsize = 18)
+        plt.savefig('accuracy_per_period_complete_valid_set.jpg')
+
+        plt.show()
+
+
+
+    return accuracy
+
+def check_quiz_results(answers_csv, predictions_csv):
+    clasess_dict = {}
+    cnt = 0
+    with open('../data_loader/classes_top200.csv', 'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if cnt > 0:
+                clasess_dict[row[3]] = int(row[10])
+            cnt = cnt + 1
+
+    cnt = 0
+    answers = []
+    with open(answers_csv, 'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            answers.append(clasess_dict[row[0]])
+            cnt = cnt + 1
+
+    cnt = 0
+    predictions = []
+    with open(predictions_csv, 'r') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            predictions.append(clasess_dict[row[0]])
+            cnt = cnt + 1
+
+    cnt = 0
+    period_dict = {}
+    group_period_name_dict = {}
+    col = 10
+    site_dict = {}
+    period_name_dict = {}
+    with open('../data_loader/classes_top200.csv', 'r') as f:
         reader = csv.reader(f)
         for row in reader:
             if cnt > 0:
@@ -88,36 +169,31 @@ def predict(sample, train_embeddings, valid_embeddings, train_labels, valid_labe
             cnt = cnt + 1
     group_period_name_list = [v for v in group_period_name_dict.values()]
 
-    for i, val_label in enumerate(valid_labels):
-        valid_labels_period[i] = period_dict[val_label]
-        valid_labels_site[i] = site_dict[val_label]
-
-    for i, tr_label in enumerate(train_labels):
-        train_labels_period[i] = period_dict[tr_label]
-        train_labels_site[i] = site_dict[tr_label]
+    #print(answers)
+    #print(predictions)
 
 
 
-    accuracy, accuracy_per_period, true_label, pred_label = eval_model_per_period_group(train_embeddings, valid_embeddings, train_labels_period, valid_labels_period,period_group_col)
+    accuracy, accuracy_per_period, true_label, pred_label = eval_model_per_period_group_quiz_check(np.asarray(answers),np.asarray(predictions), 'period_group_fine' )
+    print(str(round(accuracy,2)))
 
 
-    if is_print:
-        y_pos = np.arange(len(accuracy_per_period))
-        plt.bar(y_pos, accuracy_per_period, align='center', alpha=0.5)
-        plt.axhline(y=68.25)
-        plt.legend(['test accuracy','period group accuracy'])
-        plt.xticks(y_pos, group_period_name_list, rotation=90)
-        plt.tight_layout()
+    y_pos = np.arange(len(accuracy_per_period))
+    plt.bar(y_pos, accuracy_per_period, align='center', alpha=0.5)
+    plt.axhline(y=accuracy)
+    #plt.axhline(y=69.84,color='r')
+    plt.legend(['test accuracy','group accuracy'],fontsize = 12)
+    plt.xticks(y_pos, group_period_name_list, rotation=90,fontsize = 14)
+    plt.tight_layout()
 
-        plt.ylabel('accuracy [%]')
-        plt.title('period accuracy for groups of similar periods, test accuracy = 68.25[%], 3 images in group')
-        plt.savefig('accuracy_per_period_complete_valid_set.jpg')
+    plt.ylabel('accuracy [%]',fontsize = 18)
+    plt.title('Quiz results: fine period group accuracy, average accuracy = ' + str(round(accuracy,2)) + ' [%]'.format(accuracy),fontsize = 18)
+    plt.savefig('accuracy_per_period_complete_valid_set.jpg')
 
-        plt.show()
+    plt.show()
 
 
 
-    return accuracy
 
 def run_many_random_samples():
     train_embeddings_csv = 'embeddings/efficientNetB3_softmax_concat_embeddings_10_rp1500_train.csv'
@@ -206,29 +282,40 @@ def generate_test_images(period_group):
     print(files)
     #for file in files:
 
-
+def plot_statistics():
+    data = np.genfromtxt('quiz/fine/check_hist.csv', delimiter=',', skip_header=True)
+    #bins = np.linspace(0, 3, 4)
+    plt.hist(data[:,0], [-0.5, 1.5, 2.5, 3.5], alpha=0.5, label='x')
+    print(np.where(data[:,4] == 3)[0].shape)
+    #pyplot.hist(y, bins, alpha=0.5, label='y')
+    #pyplot.legend(loc='upper right')
+    #plt.show()
+    #print(data.shape)
 
 
 if __name__ == '__main__':
     #run_many_random_samples()
     #files = pick_random_sample(63)
     #print(files)
-    #get_test_results('period_group_rough')
+    #get_test_results('period_group_fine')
+    #plot_statistics()
+    check_quiz_results('quiz/fine/check_answers.csv', 'quiz/fine/check_model.csv')
+
     #run_many_random_samples()
     #files = pick_random_sample(52)
     #print(files)
     #print(len(files))
     #generate_test_images('period_group_rough')
-    df = pd.read_csv('../data_loader/classes_top200.csv')
-    period_groups = df['period_group_fine']
-    uniqe_groups = np.unique(period_groups.values)
-    for group in uniqe_groups:
-        print(group)
-        df_slice = df[period_groups == group]
-        periods = df_slice['period'].values
-        period_list = list(set(periods))
-        for prd in period_list:
-            print(prd)
+    # df = pd.read_csv('../data_loader/classes_top200.csv')
+    # period_groups = df['period_group_fine']
+    # uniqe_groups = np.unique(period_groups.values)
+    # for group in uniqe_groups:
+    #     print(group)
+    #     df_slice = df[period_groups == group]
+    #     periods = df_slice['period'].values
+    #     period_list = list(set(periods))
+    #     for prd in period_list:
+    #         print(prd)
 
     # period_name_dict = {}
     # cnt = 0

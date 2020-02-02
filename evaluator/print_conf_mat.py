@@ -4,6 +4,27 @@ import csv
 import matplotlib.pyplot as plt
 import itertools
 
+def plot_2_conf_mat(cm1,cm2):
+    fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2)
+    ax1.imshow(cm1)
+    #ax1.imshow(cm1)
+    ax1.set_ylabel('True label', fontsize=18)
+    ax1.set_xlabel('Predicted label', fontsize=18)
+    ax1.set_title('sorted by number of images', fontsize=18)
+    im = ax2.imshow(cm2)
+    #im = ax2.imshow(cm2)
+    ax2.set_xlabel('Predicted label', fontsize=18)
+    ax2.set_title('sorted by periods', fontsize=18)
+    ax1.tick_params(labelsize=14)
+    ax2.tick_params(labelsize=14)
+
+
+    fig.subplots_adjust(right=0.8)
+    cbar_ax = fig.add_axes([0.85, 0.2, 0.02, 0.6])
+    fig.colorbar(im, cax=cbar_ax)
+    #plt.tight_layout()
+
+    plt.show()
 
 def plot_confusion_matrix(cm, classes,experient,
                           normalize=False,
@@ -20,11 +41,11 @@ def plot_confusion_matrix(cm, classes,experient,
         print('Confusion matrix, without normalization')
 
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
-    plt.title(title)
-    #plt.colorbar()
+    #plt.title(title)
+    plt.colorbar()
 
-    plt.ylabel('True label')
-    plt.xlabel('Predicted label')
+    plt.ylabel('True label', fontsize=14)
+    plt.xlabel('Predicted label', fontsize=14)
     plt.tight_layout()
     plt.savefig('results/' + experient + '.png')
     return cm
@@ -46,7 +67,7 @@ def get_site_period_str(class_name,class_mode):
 
     return period,site
 
-def get_confusion_matrix(experiment,data,class_mode,classes_csv_file = ''):
+def get_confusion_matrix(experiment,data,class_mode,classes_csv_file = '', num_of_relevant_neighbors = -1):
     cnt = 0
     class_names = {}
     if classes_csv_file == '':
@@ -69,9 +90,18 @@ def get_confusion_matrix(experiment,data,class_mode,classes_csv_file = ''):
                     print('invalid class mode')
                     raise
             cnt = cnt + 1
-
-    y_true = data[:,0]
-    y_pred = data[:,1]
+    if num_of_relevant_neighbors == -1:
+        y_true = data[:,0]
+        y_pred = data[:,1]
+    else:
+        N = data[:,0].shape[0]
+        y_true = np.zeros((N*num_of_relevant_neighbors, ), dtype=np.int32)
+        y_pred = np.zeros((N * num_of_relevant_neighbors,), dtype=np.int32)
+        for mm in range(num_of_relevant_neighbors):
+            y_true[mm*N:(mm+1)*N] = data[:,0]
+            y_pred[mm*N:(mm + 1) * N] = data[:, mm + 1]
+        print('aaa')
+        print(y_true.shape)
     conf = confusion_matrix(y_true, y_pred)
 
     if class_mode == 'site_period':
@@ -128,8 +158,8 @@ def get_confusion_matrix(experiment,data,class_mode,classes_csv_file = ''):
 
 
 
-experient = 'efficientNetB3_softmax_concat_embeddings_10_rp1500'
-data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_embeddings_10_rp1500_site_period_data.csv', delimiter=',')
+experient = 'sie_period_sorted_efficientNetB3_softmax_concat_embeddings_10_rp1500'
+data = np.genfromtxt('conf_mat_data/efficientNetB3_conc10_rp_full_neighbor_site_period__data.csv', delimiter=',')
 data_period_sorted = np.zeros_like(data, dtype=np.int32)
 cnt = 0
 class_dict = {}
@@ -144,15 +174,21 @@ for i in range(data.shape[0]):
         data_period_sorted[i,j] = class_dict[data[i,j]]
 
 
-cm_site_period_sorted = get_confusion_matrix(experient,data_period_sorted,'site_period_sorted')
+cm_site_period_sorted_1 = get_confusion_matrix(experient,data_period_sorted,'site_period_sorted')
+cm_site_period_sorted = get_confusion_matrix(experient,data_period_sorted,'site_period_sorted',num_of_relevant_neighbors=30)
+
 
 experient = 'site_period_efficientNetB3_softmax_concat_embeddings_10_rp1500'
-data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_embeddings_10_rp1500_site_period_data.csv', delimiter=',')
+data = np.genfromtxt('conf_mat_data/efficientNetB3_conc10_rp_full_neighbor_site_period__data.csv', delimiter=',')
 cm_site_period = get_confusion_matrix(experient,data,'site_period')
+plot_2_conf_mat(cm_site_period,cm_site_period_sorted_1)
+assert 0 == 1
 
 experient = 'period_efficientNetB3_softmax_concat_embeddings_10_rp1500'
 data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_embeddings_10_rp1500_period_data.csv', delimiter=',')
 cm_period_sorted = get_confusion_matrix(experient,data,'period_sorted')
+
+plot_2_conf_mat(cm_site_period,cm_site_period_sorted)
 
 experient = 'site_efficientNetB3_softmax_concat_embeddings_10_rp1500'
 data = np.genfromtxt('conf_mat_data/efficientNetB3_softmax_concat_embeddings_10_rp1500_site_data.csv', delimiter=',')
