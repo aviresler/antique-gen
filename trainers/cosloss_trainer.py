@@ -22,6 +22,7 @@ class CosLossModelTrainer(BaseTrain):
         self.callbacks = []
         self.loss = []
         self.val_loss = []
+        self.val_acc = []
         self.step_decay_function = step_decay_wrapper(self.config)
         encoder.FLOAT_REPR = lambda o: format(o, '.2f')
 
@@ -48,7 +49,7 @@ class CosLossModelTrainer(BaseTrain):
             self.callbacks.append(
                 ModelCheckpoint(
                     #self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_loss:.2f}.hdf5' % self.config.exp.name
-                    filepath=os.path.join(self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_out_acc:.2f}.hdf5' % self.config.exp.name),
+                    filepath=os.path.join(self.config.callbacks.checkpoint_dir, '%s-{epoch:02d}-{val_out_acc_1:.2f}.hdf5' % self.config.exp.name),
                     monitor=self.config.callbacks.checkpoint_monitor,
                     mode=self.config.callbacks.checkpoint_mode,
                     save_best_only=self.config.callbacks.checkpoint_save_best_only,
@@ -74,7 +75,7 @@ class CosLossModelTrainer(BaseTrain):
             if self.config.trainer.learning_rate_schedule_type == 'ReduceLROnPlateau':
                 self.callbacks.append(
                     ReduceLROnPlateau(monitor='val_loss', factor=self.config.trainer.lr_decrease_factor,
-                                                patience=self.config.trainer.ReduceLROnPlateau_patience, min_lr=1e-9)
+                                                patience=self.config.trainer.ReduceLROnPlateau_patience, min_lr=1e-8)
                 )
             elif self.config.trainer.learning_rate_schedule_type == 'LearningRateScheduler':
                 self.callbacks.append(
@@ -137,10 +138,11 @@ class CosLossModelTrainer(BaseTrain):
 
         self.loss.extend(history.history['loss'])
         self.val_loss.extend(history.history['val_loss'])
+        self.val_acc.extend(history.history['val_out_acc_1'])
 
 
 
-    def get_accuracy(self,epoch, isSaveEmbeddings = False, isSaveSTN = False):
+    def get_accuracy(self,epoch, isSaveEmbeddings = True, isSaveSTN = False):
         # get accuracy, using default generators
         self.config['data_loader']['data_dir_train'] = self.config['data_loader']['data_dir_train_test']
         self.config['data_loader']['data_dir_valid'] = self.config['data_loader']['data_dir_valid_test']
@@ -208,8 +210,8 @@ class CosLossModelTrainer(BaseTrain):
                 valid_prediction = predication
 
             if isSaveEmbeddings:
-                np.savetxt('evaluator/labels/' + self.config.exp.name + generators_id[m] + str(epoch) +  '.tsv', labels, delimiter=',')
-                np.savetxt('evaluator/embeddings/' + self.config.exp.name + generators_id[m] + str(epoch) + '.csv', predication,
+                np.savetxt('evaluator/labels/' + self.config.exp.name + '_' + generators_id[m]  +  str(epoch) + '.tsv', labels, delimiter=',')
+                np.savetxt('evaluator/embeddings/' + self.config.exp.name + '_' + generators_id[m] + str(epoch) +'.csv', predication,
                        delimiter=',')
 
         accuracy = eval_model(train_prediction, valid_prediction, train_labels, valid_labels, self.config.exp.name,
@@ -238,12 +240,13 @@ class CosLossModelTrainer(BaseTrain):
             self.json_log.write(
                 json.dumps(
                     {'epoch': epoch, 'loss': logs['embeddings_loss'], 'val_loss': logs['val_loss'],
-                     'acc': acc, 'acc_period': acc_period , 'acc_site': acc_site, 'lr': logs['lr'].astype('float64')}) + '\n')
+                     'acc_out': logs['out_acc_1'], 'acc_out_val': logs['val_out_acc_1'],
+                     'acc': acc,'acc_period': acc_period , 'acc_site': acc_site, 'lr': logs['lr'].astype('float64')}) + '\n')
         elif type == 'softmax':
             self.json_log.write(
                 json.dumps(
                     {'epoch': epoch, 'loss': logs['out_loss'], 'val_loss': logs['val_loss'],
-                     'acc_out': logs['out_acc'],'acc_out_val': logs['val_out_acc'],
+                     'acc_out': logs['out_acc_1'], 'acc_out_val': logs['val_out_acc_1'],
                      'acc': acc, 'acc_period': acc_period , 'acc_site': acc_site, 'lr': logs['lr'].astype('float64')}) + '\n')
         elif type == 'triplet_all':
             self.json_log.write(
