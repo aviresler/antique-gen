@@ -293,7 +293,7 @@ class CosLosModel(BaseModel):
             hardest_neg_dist = self.triplet_loss_wrapper_batch_hard_hardest_neg_dist(self.config.model.margin,
                                                                                      self.config.model.is_squared)
             #self.metrics.append(hardest_neg_dist)
-            self.metrics = {"embeddings": [hardest_neg_dist, hardest_pos_dist], "out": "acc", }
+            self.metrics = {"embeddings": [hardest_neg_dist, hardest_pos_dist], "out": self.acc_wrapper() }
         if self.config.model.batch_type == 'all':
             pos_fraction = self.triplet_loss_wrapper_batch_all_positive_fraction(self.config.model.margin,
                                                                                  self.config.model.is_squared)
@@ -307,7 +307,7 @@ class CosLosModel(BaseModel):
         acc_wrapper = self.acc_wrapper()
 
         if self.config.model.type == "efficientNetSTN":
-            self.metrics = { "embeddings ": loss_func_empty,"out": "acc" }
+            self.metrics = { "embeddings ": loss_func_empty,"out": self.acc_wrapper() }
             self.loss_func = { "embeddings": loss_func_cos, "out": loss_func_softmax}
             if self.config.model.loss == 'cosface':
                 self.loss_weights = { "embeddings": 1.0, "out": 0.0}
@@ -326,7 +326,7 @@ class CosLosModel(BaseModel):
         elif self.config.model.type == "vgg_attention":
             self.loss_weights = {"g": 0.0, "out": 1.0, "alpha": 0.0}
             self.loss_func = {"g": loss_func_cos, "out": loss_func_softmax, "alpha": loss_func_empty}
-            self.metrics = {"g": loss_func_empty, "out": "acc", "alpha": loss_func_empty}
+            self.metrics = {"g": loss_func_empty, "out": acc_wrapper, "alpha": loss_func_empty}
 
     def softmax_loss_wrapper(self):
         def softmax_loss1(y_true, y_pred):
