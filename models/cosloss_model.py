@@ -175,9 +175,9 @@ class CosLosModel(BaseModel):
 
         if self.config.model.num_of_fc_at_net_end == 2:
             x = GlobalAveragePooling2D(name='gpa_f')(x)
-            x = Dropout(0.5)(x)
             embeddings = Dense(int(self.config.model.embedding_dim), name='embeddings')(x)
-            x = Dense(int(self.config.data_loader.num_of_classes), )(embeddings)
+            x = Dropout(0.5)(embeddings)
+            x = Dense(int(self.config.data_loader.num_of_classes), )(x)
             out = Activation("softmax", name='out')(x)
         else:
             embeddings = GlobalAveragePooling2D(name='embeddings')(x)
@@ -289,10 +289,11 @@ class CosLosModel(BaseModel):
         if self.config.model.batch_type == 'hard':
             hardest_pos_dist = self.triplet_loss_wrapper_batch_hard_hardest_pos_dist(self.config.model.margin,
                                                                                      self.config.model.is_squared)
-            self.metrics.append(hardest_pos_dist)
+            #self.metrics.append(hardest_pos_dist)
             hardest_neg_dist = self.triplet_loss_wrapper_batch_hard_hardest_neg_dist(self.config.model.margin,
                                                                                      self.config.model.is_squared)
-            self.metrics.append(hardest_neg_dist)
+            #self.metrics.append(hardest_neg_dist)
+            self.metrics = {"embeddings": [hardest_neg_dist, hardest_pos_dist], "out": self.acc_wrapper() }
         if self.config.model.batch_type == 'all':
             pos_fraction = self.triplet_loss_wrapper_batch_all_positive_fraction(self.config.model.margin,
                                                                                  self.config.model.is_squared)
@@ -303,16 +304,17 @@ class CosLosModel(BaseModel):
         loss_func_cos = self.coss_loss_wrapper(self.config.model.alpha, self.config.model.scale)
         loss_func_softmax = self.softmax_loss_wrapper()
         loss_func_empty = self.empty_loss_wrapper()
+        acc_wrapper = self.acc_wrapper()
 
         if self.config.model.type == "efficientNetSTN":
-            self.metrics = { "embeddings ": loss_func_empty, "out": "acc"}
+            self.metrics = { "embeddings ": loss_func_empty,"out": self.acc_wrapper() }
             self.loss_func = { "embeddings": loss_func_cos, "out": loss_func_softmax}
             if self.config.model.loss == 'cosface':
                 self.loss_weights = { "embeddings": 1.0, "out": 0.0}
             else:
                 self.loss_weights = {"embeddings": 0.0, "out": 1.0}
         elif self.config.model.type == "efficientNet" or self.config.model.type == "vgg" or 'efficientNetSTN' :
-            self.metrics = {"embeddings ": loss_func_empty, "out": "acc"}
+            self.metrics = {"embeddings ": loss_func_empty, "out": acc_wrapper}
             self.loss_func = {"embeddings": loss_func_cos, "out": loss_func_softmax}
             if self.config.model.loss == 'cosface':
                 self.loss_weights = {"embeddings": 1.0, "out": 0.0}
@@ -324,7 +326,7 @@ class CosLosModel(BaseModel):
         elif self.config.model.type == "vgg_attention":
             self.loss_weights = {"g": 0.0, "out": 1.0, "alpha": 0.0}
             self.loss_func = {"g": loss_func_cos, "out": loss_func_softmax, "alpha": loss_func_empty}
-            self.metrics = {"g": loss_func_empty, "out": "acc", "alpha": loss_func_empty}
+            self.metrics = {"g": loss_func_empty, "out": acc_wrapper, "alpha": loss_func_empty}
 
     def softmax_loss_wrapper(self):
         def softmax_loss1(y_true, y_pred):
@@ -332,6 +334,15 @@ class CosLosModel(BaseModel):
             y_true_cls = y_true_casted[:, 0]
             return K.sparse_categorical_crossentropy(y_true_cls,y_pred)
         return softmax_loss1
+
+    def acc_wrapper(self):
+        def acc_1(y_true, y_pred):
+            #y_true_casted = K.cast(y_true, dtype='int32')
+            y_true = y_true[:, 0]
+            return K.cast(K.equal(K.flatten(y_true),
+                          K.cast(K.argmax(y_pred, axis=-1), K.floatx())),
+                          K.floatx())
+        return acc_1
 
     def empty_loss_wrapper(self):
         def softmax_loss1(y_true, y_pred):
