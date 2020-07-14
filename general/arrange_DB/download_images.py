@@ -3,7 +3,7 @@ import requests
 import re
 import csv
 
-offset = 5768
+offset = 0
 num_of_images = 7930-offset+1
 
 #num_of_images = 2000
