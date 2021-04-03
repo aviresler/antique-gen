@@ -1,201 +1,201 @@
-id,class_name,num_of_images,period,site,period id,site id,num_of_artifacts,id_period_sorted,period_group_rough,period_group_fine,latitude,longitude,x,y
-18,Lower Palaeolithic_Me`arat Tannur,98,Lower Palaeolithic,Me`arat Tannur,0,104,48,0,0,0,32.670993,34.966151,,
-30,Lower Palaeolithic_Gesher Benot Ya`aqov,82,Lower Palaeolithic,Gesher Benot Ya`aqov,0,57,38,1,0,0,33.010356,35.628262,,
-46,Lower Palaeolithic_Ma’yan Baruch,60,Lower Palaeolithic,Ma’yan Baruch,0,47,23,2,0,0,33.238132,35.60924,,
-92,Lower Palaeolithic_Magharat Umm Qatafa,34,Lower Palaeolithic,Magharat Umm Qatafa,0,58,17,3,0,0,31.648492,35.240133,,
-113,Lower Palaeolithic_`Ovadya- T.- Prehistoric site,28,Lower Palaeolithic,`Ovadya- T.- Prehistoric site,0,48,13,4,0,0,32.689081,35.562168,,
-141,Lower Palaeolithic_Me`arat ha-Gulgolet,22,Lower Palaeolithic,Me`arat ha-Gulgolet,0,12,11,5,0,0,32.855797,35.52721,,
-186,Lower Palaeolithic_Avel Bet Ma`akha- T.,16,Lower Palaeolithic,Avel Bet Ma`akha- T.,0,112,8,6,0,0,,,,
-37,Middle Palaeolithic_Me`arat Tannur,72,Middle Palaeolithic,Me`arat Tannur,1,104,37,7,1,1,32.670993,34.966151,,
-72,Middle Palaeolithic_Zif- Kh.,43,Middle Palaeolithic,Zif- Kh.,1,84,21,8,1,1,,,,
-130,Middle Palaeolithic_Me`arat ha-Gulgolet,25,Middle Palaeolithic,Me`arat ha-Gulgolet,1,12,12,9,1,1,32.855797,35.52721,,
-171,Middle Palaeolithic_Magharat Shuqba,18,Middle Palaeolithic,Magharat Shuqba,1,77,9,10,1,1,31.9823,35.04261,,
-177,Middle Palaeolithic_Har Qedumim,18,Middle Palaeolithic,Har Qedumim,1,50,9,11,1,1,32.688518,35.317998,,
-9,Upper Palaeolithic_Me`arat ha-Nahal,163,Upper Palaeolithic,Me`arat ha-Nahal,2,78,77,12,2,2,32.670761,34.966261,,
-11,Upper Palaeolithic_Nahal Zin,137,Upper Palaeolithic,Nahal Zin,2,100,59,13,2,2,,,,
-107,Upper Palaeolithic_Me`arat Kebara,29,Upper Palaeolithic,Me`arat Kebara,2,65,14,14,2,2,32.557719,34.936672,,
-135,Upper Palaeolithic_Me`arat Amira,24,Upper Palaeolithic,Me`arat Amira,2,34,12,15,2,2,32.865061,35.514721,,
-147,Upper Palaeolithic_Me`arot Yonim,21,Upper Palaeolithic,Me`arot Yonim,2,89,11,16,2,2,32.920089,35.218264,,
-7,Natufian_Me`arat Kebara,185,Natufian,Me`arat Kebara,3,65,89,17,3,3,32.557719,34.936672,,
-10,Natufian_Me`arat ha-Nahal,142,Natufian,Me`arat ha-Nahal,3,78,65,18,3,3,32.670761,34.966261,,
-16,Natufian_`Enot `Enan,106,Natufian,`Enot `Enan,3,86,53,19,3,3,33.081914,35.573677,,
-68,Natufian_Magharat Shuqba,45,Natufian,Magharat Shuqba,3,77,23,20,3,3,31.9823,35.04261,,
-80,Natufian_Me`arat Oren,39,Natufian,Me`arat Oren,3,61,20,21,3,3,32.715092,34.976737,,
-98,Natufian_Me`arot Yonim,32,Natufian,Me`arot Yonim,3,89,18,22,3,3,32.920089,35.218264,,
-20,Pottery Neolithic_Ha-Gosherim- Nili (north),96,Pottery Neolithic,Ha-Gosherim- Nili (north),4,51,40,23,4,4,33.226447,35.625181,,
-28,Pottery Neolithic_Besamon,84,Pottery Neolithic,Besamon,4,28,36,24,4,4,,,,
-75,Pottery Neolithic_Sha`ar ha-Golan,42,Pottery Neolithic,Sha`ar ha-Golan,4,96,21,25,4,4,32.691295,35.605715,,
-76,Pottery Neolithic_Minha- H.,42,Pottery Neolithic,Minha- H.,4,68,23,26,4,4,,,,
-90,Pottery Neolithic_Hamadya,34,Pottery Neolithic,Hamadya,4,41,17,27,4,4,32.524817,35.519487,,
-196,Pottery Neolithic_Ard es-Samrra,15,Pottery Neolithic,Ard es-Samrra,4,114,7,28,4,4,,,,
-8,Pottery Neolithic A_Sha`ar ha-Golan,183,Pottery Neolithic A,Sha`ar ha-Golan,5,96,90,29,4,4,32.691295,35.605715,,
-166,Pottery Neolithic A_Jericho- T.,19,Pottery Neolithic A,Jericho- T.,5,52,9,30,4,4,31.871719,35.444564,,
-14,Pre-Pottery Neolithic_Besamon,114,Pre-Pottery Neolithic,Besamon,6,28,48,31,5,5,,,254593,777247
-86,Pre-Pottery Neolithic A_Har Harif,36,Pre-Pottery Neolithic A,Har Harif,7,6,21,32,5,5,30.495556,34.559167,,
-5,Pre-Pottery Neolithic B_Nahal Hemar,198,Pre-Pottery Neolithic B,Nahal Hemar,8,55,111,33,5,5,31.156614,35.193354,,
-35,Pre-Pottery Neolithic B_Minha- H.,75,Pre-Pottery Neolithic B,Minha- H.,8,68,37,34,5,5,,,,
-62,Pre-Pottery Neolithic B_Yiftah'el- H.,50,Pre-Pottery Neolithic B,Yiftah'el- H.,8,71,25,35,5,5,,,,
-125,Pre-Pottery Neolithic B_Jericho- T.,26,Pre-Pottery Neolithic B,Jericho- T.,8,52,11,36,5,5,31.871719,35.444564,,
-2,Late Chalcolithic_Nahal Pattish (Gilat),253,Late Chalcolithic,Nahal Pattish (Gilat),9,91,141,37,6,6,,,,
-3,Late Chalcolithic_Nahal Mishmar- Cave of the Treasure,227,Late Chalcolithic,Nahal Mishmar- Cave of the Treasure,9,109,177,38,6,6,,,231300,588400
-129,Late Chalcolithic_Be'er Sheva`- H. Zafad,25,Late Chalcolithic,Be'er Sheva`- H. Zafad,9,0,13,39,6,6,,,,
-149,Late Chalcolithic_Shiqmim (Unofficial name),21,Late Chalcolithic,Shiqmim (Unofficial name),9,102,11,40,6,6,,,,
-176,Late Chalcolithic_Be'er Sheva`- H. Matar,18,Late Chalcolithic,Be'er Sheva`- H. Matar,9,107,12,41,6,6,,,,
-15,Pre-Ghassulian Chalcolithic_Ha-Gosherim,113,Pre-Ghassulian Chalcolithic,Ha-Gosherim,10,5,47,42,6,6,33.226447,35.625181,,
-114,Pre-Ghassulian Chalcolithic_Zaf- T.,28,Pre-Ghassulian Chalcolithic,Zaf- T.,10,74,15,43,6,6,,,,
-81,Early Bronze I_Megiddo- T.,38,Early Bronze I,Megiddo- T.,11,24,19,44,7,7,,,,
-104,Early Bronze I_Mizpah,30,Early Bronze I,Mizpah,11,9,15,45,7,7,,,,
-122,Early Bronze I_`Ai,26,Early Bronze I,`Ai,11,56,11,46,7,7,,,,
-175,Early Bronze II-III_`Ai,18,Early Bronze II-III,`Ai,12,56,9,47,7,8,,,,
-54,Early Bronze II_`Arad- T.,54,Early Bronze II,`Arad- T.,13,85,34,48,7,8,,,,
-23,Early Bronze III_Jericho- T.,88,Early Bronze III,Jericho- T.,14,52,38,49,7,8,,,,
-106,Middle Bronze I_Megiddo- T.,29,Middle Bronze I,Megiddo- T.,15,24,14,50,7,9,,,,
-22,Middle Bronze II_`Ujul- T. el-,93,Middle Bronze II,`Ujul- T. el-,16,113,53,51,7,9,,,,
-36,Middle Bronze II_Jericho- T.,74,Middle Bronze II,Jericho- T.,16,52,42,52,7,9,31.871719,35.444564,,
-50,Middle Bronze II_Bet She'an- T.,58,Middle Bronze II,Bet She'an- T.,16,118,28,53,7,9,,,,
-59,Middle Bronze II_Nahariyya- Canaanite Temple,51,Middle Bronze II,Nahariyya- Canaanite Temple,16,8,44,54,7,9,,,,
-66,Middle Bronze II_Bet Mirsham- T.,49,Middle Bronze II,Bet Mirsham- T.,16,39,24,55,7,9,,,,
-89,Middle Bronze II_Megiddo- T.,35,Middle Bronze II,Megiddo- T.,16,24,21,56,7,9,,,,
-146,Middle Bronze II_`Atlit,21,Middle Bronze II,`Atlit,16,111,7,57,7,9,,,,
-150,Middle Bronze II_Afeq,21,Middle Bronze II,Afeq,16,20,11,58,7,9,,,,
-164,Middle Bronze II_Neve Ur,19,Middle Bronze II,Neve Ur,16,16,14,59,7,9,,,,
-185,Middle Bronze II_Jisr- el-,16,Middle Bronze II,Jisr- el-,16,62,9,60,7,9,,,,
-191,Middle Bronze II_Bet-Shemesh- T.,16,Middle Bronze II,Bet-Shemesh- T.,16,17,6,61,7,9,,,,
-49,Early Bronze IB_`En Besor,58,Early Bronze IB,`En Besor,17,45,23,62,7,7,,,,
-65,Early Bronze IB_Kfar Monash,49,Early Bronze IB,Kfar Monash,17,110,32,63,7,7,,,,
-6,Middle Bronze II-Late Bronze_`Ujul- T. el-,188,Middle Bronze II-Late Bronze,`Ujul- T. el-,18,113,122,64,7,9,,,,
-187,Middle Bronze II-Late Bronze_Megiddo- T.,16,Middle Bronze II-Late Bronze,Megiddo- T.,18,24,8,65,7,9,,,,
-199,Middle Bronze IIA_Neve Ur,15,Middle Bronze IIA,Neve Ur,19,16,7,66,7,9,,,,
-168,Middle Bronze IIB_Barqai,18,Middle Bronze IIB,Barqai,20,33,6,67,7,9,,,,
-172,Middle Bronze IIB_Bet Mirsham- T.,18,Middle Bronze IIB,Bet Mirsham- T.,20,39,6,68,7,9,,,,
-182,Middle Bronze IIB_Bet She'an- T.,17,Middle Bronze IIB,Bet She'an- T.,20,118,6,69,7,9,,,,
-44,Late Bronze_Gezer- T.,61,Late Bronze,Gezer- T.,21,69,35,70,7,10,,,,
-93,Late Bronze_`Ujul- T. el-,33,Late Bronze,`Ujul- T. el-,21,113,20,71,7,10,,,,
-140,Late Bronze_Bet She'an- T.,22,Late Bronze,Bet She'an- T.,21,118,15,72,7,10,,,,
-179,Late Bronze_Megiddo- T.,17,Late Bronze,Megiddo- T.,21,24,10,73,7,10,,,,
-158,Late Bronze I_Bet She'an- T.,20,Late Bronze I,Bet She'an- T.,22,118,9,74,7,10,,,,
-163,Late Bronze I_`Ujul- T. el-,19,Late Bronze I,`Ujul- T. el-,22,113,13,75,7,10,,,,
-26,Late Bronze II_Bet She'an- T.,85,Late Bronze II,Bet She'an- T.,23,118,38,76,7,10,,,,
-27,Late Bronze II_Megiddo- T.,85,Late Bronze II,Megiddo- T.,23,24,45,77,7,10,,,,
-31,Late Bronze II_`Ujul- T. el-,82,Late Bronze II,`Ujul- T. el-,23,113,39,78,7,10,,,,
-34,Late Bronze II_Haifa- T. Abu Hawwam,75,Late Bronze II,Haifa- T. Abu Hawwam,23,106,33,79,7,10,,,,
-43,Late Bronze II_`Akko- Persian Garden,62,Late Bronze II,`Akko- Persian Garden,23,99,37,80,7,10,,,,
-63,Late Bronze II_Lakhish- T.,49,Late Bronze II,Lakhish- T.,23,63,26,81,7,10,,,,
-97,Late Bronze II_Dan- T.,32,Late Bronze II,Dan- T.,23,101,26,82,7,10,,,,
-101,Late Bronze II_Bet-Shemesh- T.,31,Late Bronze II,Bet-Shemesh- T.,23,17,15,83,7,10,,,,
-136,Late Bronze II_Hazor- T.,23,Late Bronze II,Hazor- T.,23,21,10,84,7,10,,,,
-162,Late Bronze II_Gezer- T.,19,Late Bronze II,Gezer- T.,23,69,13,85,7,10,,,,
-184,Late Bronze II_Afeq,17,Late Bronze II,Afeq,23,20,8,86,7,10,,,,
-33,Iron I_Megiddo- T.,75,Iron I,Megiddo- T.,24,24,34,87,8,11,,,,
-71,Iron I_Bet She'an- T.,44,Iron I,Bet She'an- T.,24,118,24,88,8,11,,,,
-118,Iron I_Bet-Shemesh- T.,27,Iron I,Bet-Shemesh- T.,24,17,11,89,8,11,,,,
-144,Iron I_Sharuhen- T.,21,Iron I,Sharuhen- T.,24,26,9,90,8,11,,,,
-25,Iron IA_Megiddo- T.,86,Iron IA,Megiddo- T.,25,24,40,91,8,11,,,,
-1,Iron II_Lakhish- T.,263,Iron II,Lakhish- T.,26,63,131,92,8,12,,,,
-4,Iron II_Jerusalem- City of David,212,Iron II,Jerusalem- City of David,26,115,120,93,8,12,,,,
-24,Iron II_Yavne (north-west),86,Iron II,Yavne (north-west),26,66,75,94,8,12,,,,
-40,Iron II_Ashqelon- T. Ashqelon,66,Iron II,Ashqelon- T. Ashqelon,26,37,31,95,8,12,,,,
-41,Iron II_Akhziv,66,Iron II,Akhziv,26,30,28,96,8,12,,,,
-53,Iron II_Samaria,57,Iron II,Samaria,26,76,32,97,8,12,,,,
-55,Iron II_Mezad Hazeva,53,Iron II,Mezad Hazeva,26,95,37,98,8,12,,,,
-56,Iron II_Megiddo- T.,53,Iron II,Megiddo- T.,26,24,24,99,8,12,,,,
-60,Iron II_Bet-Shemesh- T.,51,Iron II,Bet-Shemesh- T.,26,17,21,100,8,12,,,,
-61,Iron II_Bet Mirsham- T.,51,Iron II,Bet Mirsham- T.,26,39,21,101,8,12,,,,
-64,Iron II_Bet She'an- T.,49,Iron II,Bet She'an- T.,26,118,39,102,8,12,,,,
-67,Iron II_Ramat Rahel,45,Iron II,Ramat Rahel,26,44,26,103,8,12,,,,
-77,Iron II_`Arad- T.,41,Iron II,`Arad- T.,26,85,30,104,8,12,,,,
-82,Iron II_Nemal Akhziv,38,Iron II,Nemal Akhziv,26,70,13,105,8,12,,,,
-105,Iron II_Mizpah,29,Iron II,Mizpah,26,9,14,106,8,12,,,,
-115,Iron II_Jerusalem- Old City- Jewish Quarter- Area F- M,27,Iron II,Jerusalem- Old City- Jewish Quarter- Area F- M,26,94,10,107,8,12,,,,
-121,Iron II_Jerusalem- Old City- Western and Southern Walls,26,Iron II,Jerusalem- Old City- Western and Southern Walls,26,72,13,108,8,12,,,,
-124,Iron II_Bir er-Ruqeish,26,Iron II,Bir er-Ruqeish,26,11,12,109,8,12,,,,
-139,Iron II_Sharuhen- T.,23,Iron II,Sharuhen- T.,26,26,9,110,8,12,,,,
-152,Iron II_Hazor- T.,20,Iron II,Hazor- T.,26,21,8,111,8,12,,,,
-167,Iron II_Sheva`- T.,19,Iron II,Sheva`- T.,26,83,7,112,8,12,,,,
-133,Iron IIA_Yavne (north-west),24,Iron IIA,Yavne (north-west),27,66,11,113,8,12,,,,
-143,Iron IIA_Qeiyafa- Kh.,22,Iron IIA,Qeiyafa- Kh.,27,1,13,114,8,12,,,,
-165,Iron IIA_Rehov- T.,19,Iron IIA,Rehov- T.,27,38,8,115,8,12,,,,
-120,Iron IIB_Nemal Akhziv,27,Iron IIB,Nemal Akhziv,28,70,9,116,8,12,,,,
-32,Iron IIC_Ashqelon- T. Ashqelon,81,Iron IIC,Ashqelon- T. Ashqelon,29,37,44,117,8,12,,,,
-126,Iron IIC_Akhziv,26,Iron IIC,Akhziv,29,30,9,118,8,12,,,,
-88,Iron IIC-Babylonian_Jerusalem- Ketef Hinnom,35,Iron IIC-Babylonian,Jerusalem- Ketef Hinnom,30,31,29,119,8,12,,,,
-99,Iron IIC-Babylonian-Persian_Ashqelon- T. Ashqelon,32,Iron IIC-Babylonian-Persian,Ashqelon- T. Ashqelon,31,37,12,120,8,12,,,,
-39,Persian_Magharat Abu Shinja,70,Persian,Magharat Abu Shinja,32,29,54,121,9,13,,,,
-57,Persian_Jerusalem- City of David,52,Persian,Jerusalem- City of David,32,115,19,122,9,13,,,,
-83,Persian_`Atlit,37,Persian,`Atlit,32,111,20,123,9,13,,,,
-173,Persian_Zafit- T.,18,Persian,Zafit- T.,32,73,9,124,9,13,,,,
-188,Persian_Nahal tut,16,Persian,Nahal tut,32,117,13,125,9,13,,,,
-192,Persian_Lakhish- T.,16,Persian,Lakhish- T.,32,63,6,126,9,13,,,,
-21,Persian-Hellenistic_Maresha- T.,95,Persian-Hellenistic,Maresha- T.,33,43,84,127,9,13,,,,
-0,Hellenistic_Maresha- T.,298,Hellenistic,Maresha- T.,34,43,165,128,10,14,,,,
-19,Hellenistic_Jerusalem- City of David,98,Hellenistic,Jerusalem- City of David,34,115,62,129,10,14,,,,
-131,Hellenistic_Ha-Gosherim,25,Hellenistic,Ha-Gosherim,34,5,13,130,10,14,,,,
-153,Hellenistic_Bet She'an- T.,20,Hellenistic,Bet She'an- T.,34,118,12,131,10,14,,,,
-157,Hellenistic_Anafa- T.,20,Hellenistic,Anafa- T.,34,54,10,132,10,14,,,,
-174,Hellenistic_Samaria,18,Hellenistic,Samaria,34,76,10,133,10,14,,,,
-128,Late Hellenistic_Jerusalem- Old City,26,Late Hellenistic,Jerusalem- Old City,35,108,13,134,10,14,,,,
-38,Late Hellenistic - Early Roman_Jerusalem- Old City- Jewish Quarter- Area F- M,71,Late Hellenistic - Early Roman,Jerusalem- Old City- Jewish Quarter- Area F- M,36,94,38,135,10,14,,,,
-17,Early Roman_Horevot Mazada,104,Early Roman,Horevot Mazada,37,59,82,136,11,15,,,,
-29,Early Roman_Jerusalem- Old City- Jewish Quarter- Area F- M,84,Early Roman,Jerusalem- Old City- Jewish Quarter- Area F- M,37,94,51,137,11,15,,,,
-51,Early Roman_Jerusalem- Old City- Western and Southern Walls,58,Early Roman,Jerusalem- Old City- Western and Southern Walls,37,72,44,138,11,15,,,,
-69,Early Roman_Jerusalem- Old City,44,Early Roman,Jerusalem- Old City,37,108,25,139,11,15,,,,
-70,Early Roman_Jerusalem- City of David,44,Early Roman,Jerusalem- City of David,37,115,27,140,11,15,,,,
-73,Early Roman_Jerusalem- Har ha-Zofim (east),43,Early Roman,Jerusalem- Har ha-Zofim (east),37,80,19,141,11,15,,,,
-78,Early Roman_Jerusalem- `En Rogel,41,Early Roman,Jerusalem- `En Rogel,37,42,17,142,11,15,,,,
-79,Early Roman_Qumran Caves,40,Early Roman,Qumran Caves,37,14,22,143,11,15,,,,
-91,Early Roman_Jerusalem- Giv`at ha-Mivtar,34,Early Roman,Jerusalem- Giv`at ha-Mivtar,37,64,16,144,11,15,,,,
-109,Early Roman_Jerusalem- Mount Scopus (west),28,Early Roman,Jerusalem- Mount Scopus (west),37,27,14,145,11,15,,,,
-111,Early Roman_`En Gedi,28,Early Roman,`En Gedi,37,2,14,146,11,15,,,,
-116,Early Roman_BURNT HOUSE,27,Early Roman,BURNT HOUSE,37,90,19,147,11,15,,,,
-156,Early Roman_Caesarea,20,Early Roman,Caesarea,37,35,9,148,11,15,,,,
-159,Early Roman_Jerusalem- Pisgat Ze'ev,20,Early Roman,Jerusalem- Pisgat Ze'ev,37,92,11,149,11,15,,,,
-194,Early Roman_Mezad Rahel,16,Early Roman,Mezad Rahel,37,36,15,150,11,15,,,,
-52,Late Roman_Hurfeish,57,Late Roman,Hurfeish,38,32,27,151,11,16,,,,
-74,Late Roman_Jerusalem- Rehov Salah ed-Din- Ministry of Justice,42,Late Roman,Jerusalem- Rehov Salah ed-Din- Ministry of Justice,38,7,28,152,11,16,,,,
-84,Late Roman_Nahariyya- Giv`at Katzenelson,36,Late Roman,Nahariyya- Giv`at Katzenelson,38,88,25,153,11,16,,,,
-95,Late Roman_Makr- el-,33,Late Roman,Makr- el-,38,4,18,154,11,16,,,,
-110,Late Roman_Lidd- Kh.,28,Late Roman,Lidd- Kh.,38,10,13,155,11,16,,,,
-117,Late Roman_Palmahim,27,Late Roman,Palmahim,38,93,10,156,11,16,,,,
-132,Late Roman_Jerusalem- `En Rogel,24,Late Roman,Jerusalem- `En Rogel,38,42,12,157,11,16,,,,
-145,Late Roman_Hedera,21,Late Roman,Hedera,38,13,13,158,11,16,,,,
-170,Late Roman_Asherat,18,Late Roman,Asherat,38,46,11,159,11,16,,,,
-12,Middle Roman_Nahal Hever,137,Middle Roman,Nahal Hever,39,3,73,160,11,17,,,,
-13,Roman_Horevot Mazada,122,Roman,Horevot Mazada,40,59,104,161,11,18,,,,
-47,Roman_Jerusalem- `En Rogel,60,Roman,Jerusalem- `En Rogel,40,42,31,162,11,18,,,,
-48,Roman_Wadi Murabba,58,Roman,Wadi Murabba,40,119,52,163,11,18,,,,
-108,Roman_Jerusalem- Binyane ha-Umma,28,Roman,Jerusalem- Binyane ha-Umma,40,25,12,164,11,18,,,,
-123,Roman_'En Tamar,26,Roman,'En Tamar,40,75,16,165,11,18,,,,
-127,Roman_Nahal Hever,26,Roman,Nahal Hever,40,3,18,166,11,18,,,,
-134,Roman_Moa,24,Roman,Moa,40,18,20,167,11,18,,,,
-137,Roman_Mezad Rahel,23,Roman,Mezad Rahel,40,36,17,168,11,18,,,,
-161,Roman_`En Gedi,19,Roman,`En Gedi,40,2,10,169,11,18,,,,
-169,Roman_Bet She'an- T.,18,Roman,Bet She'an- T.,40,118,11,170,11,18,,,,
-183,Roman_Ma`yan Barukh,17,Roman,Ma`yan Barukh,40,23,12,171,11,18,,,,
-189,Roman_Christmas Cave- Nahal Qidron,16,Roman,Christmas Cave- Nahal Qidron,40,97,11,172,11,18,,,,
-190,Roman_`Alya- Kh.,16,Roman,`Alya- Kh.,40,53,10,173,11,18,,,,
-193,Roman_Nahal Mishmar- Cave of the Treasure,16,Roman,Nahal Mishmar- Cave of the Treasure,40,109,15,174,11,18,,,,
-195,Middle Roman_`En Gedi,15,Middle Roman,`En Gedi,41,2,10,175,11,17,,,,
-103,Late Roman - Byzantine_Holot Qesari (south),31,Late Roman - Byzantine,Holot Qesari (south),42,60,16,176,11,17,,,,
-154,Middle Roman - Late Roman_Jerusalem- Old City- Western and Southern Walls,20,Middle - Late Roman,Jerusalem- Old City- Western and Southern Walls,43,72,10,177,11,19,,,,
-138,Early Byzantine_Kavul,23,Early Byzantine,Kavul,44,87,11,178,12,19,,,,
-45,Byzantine_`En Gedi,61,Byzantine,`En Gedi,45,2,49,179,12,19,,,,
-100,Byzantine_Nizzana,32,Byzantine,Nizzana,45,82,23,180,12,19,,,,
-112,Byzantine_Caesarea,28,Byzantine,Caesarea,45,35,10,181,12,19,,,,
-151,Byzantine_Gush Halav,20,Byzantine,Gush Halav,45,15,16,182,12,19,,,,
-178,Byzantine_Bet She'an,18,Byzantine,Bet She'an,45,116,8,183,12,19,,,,
-180,Byzantine_Zuq el-Fauqani ez-,17,Byzantine,Zuq el-Fauqani ez-,45,19,13,184,12,19,,,,
-181,Byzantine_Mesad Boqeq,17,Byzantine,Mesad Boqeq,45,67,14,185,12,19,,,,
-58,Umayyad_Mafjar- Kh. el-,51,Umayyad,Mafjar- Kh. el-,46,105,38,186,12,19,,,,
-197,Late Byzantine_Nizzana,15,Late Byzantine,Nizzana,47,82,13,187,12,19,,,,
-42,Early Islamic_Ramla,64,Early Islamic,Ramla,48,98,36,188,12,19,,,,
-96,Early Islamic_Nahal Omer,32,Early Islamic,Nahal Omer,48,81,25,189,12,19,,,,
-102,Early Islamic_Caesarea,31,Early Islamic,Caesarea,48,35,13,190,12,19,,,,
-85,Fatimid_Caesarea,36,Fatimid,Caesarea,49,35,14,191,12,19,,,,
-87,Fatimid_Tiberias and Hammat,36,Fatimid,Tiberias and Hammat,49,22,12,192,12,19,,,,
-119,Fatimid_Hammat,27,Fatimid,Hammat,49,79,9,193,12,19,,,,
-94,Crusader_`Atlit,33,Crusader,`Atlit,50,111,25,194,12,20,,,,
-142,Crusader_`Akko,22,Crusader,`Akko,50,103,8,195,12,20,,,,
-148,Crusader_Caesarea,21,Crusader,Caesarea,50,35,9,196,12,20,,,,
-198,Crusader_Arshaf- T.,15,Crusader,Arshaf- T.,50,40,13,197,12,20,,,,
-155,Mamluk_Bet She'an,20,Mamluk,Bet She'an,51,116,9,198,12,20,,,,
-160,Ottoman_Panias- H.,20,Ottoman,Panias- H.,52,49,10,199,12,20,,,,
+id,class_name,num_of_images,period,site,period id,site id,num_of_artifacts,id_period_sorted,period_group_rough,period_group_fine,latitude,longitude,x,y,train_artifacts,valid_artifacts,total_artifacts,train_images,valid_images,total_images
+18,Lower Palaeolithic_Me`arat Tannur,98,Lower Palaeolithic,Me`arat Tannur,0,104,48,0,0,0,32.670993,34.966151,,,38,10,48,77,21,98
+30,Lower Palaeolithic_Gesher Benot Ya`aqov,82,Lower Palaeolithic,Gesher Benot Ya`aqov,0,57,38,1,0,0,33.010356,35.628262,,,31,7,38,68,14,82
+46,Lower Palaeolithic_Mayan Baruch,60,Lower Palaeolithic,Mayan Baruch,0,47,23,2,0,0,33.238132,35.60924,,,18,5,23,47,13,60
+92,Lower Palaeolithic_Magharat Umm Qatafa,34,Lower Palaeolithic,Magharat Umm Qatafa,0,58,17,3,0,0,31.648492,35.240133,,,14,3,17,28,6,34
+113,Lower Palaeolithic_`Ovadya- T.- Prehistoric site,28,Lower Palaeolithic,`Ovadya- T.- Prehistoric site,0,48,13,4,0,0,32.689081,35.562168,,,10,3,13,21,7,28
+141,Lower Palaeolithic_Me`arat ha-Gulgolet,22,Lower Palaeolithic,Me`arat ha-Gulgolet,0,12,11,5,0,0,32.855797,35.52721,,,9,2,11,18,4,22
+186,Lower Palaeolithic_Avel Bet Ma`akha- T.,16,Lower Palaeolithic,Avel Bet Ma`akha- T.,0,112,8,6,0,0,,,,,6,2,8,12,4,16
+37,Middle Palaeolithic_Me`arat Tannur,72,Middle Palaeolithic,Me`arat Tannur,1,104,37,7,1,1,32.670993,34.966151,,,30,7,37,58,14,72
+72,Middle Palaeolithic_Zif- Kh.,43,Middle Palaeolithic,Zif- Kh.,1,84,21,8,1,1,,,,,18,3,21,37,6,43
+130,Middle Palaeolithic_Me`arat ha-Gulgolet,25,Middle Palaeolithic,Me`arat ha-Gulgolet,1,12,12,9,1,1,32.855797,35.52721,,,10,2,12,20,5,25
+171,Middle Palaeolithic_Magharat Shuqba,18,Middle Palaeolithic,Magharat Shuqba,1,77,9,10,1,1,31.9823,35.04261,,,7,2,9,14,4,18
+177,Middle Palaeolithic_Har Qedumim,18,Middle Palaeolithic,Har Qedumim,1,50,9,11,1,1,32.688518,35.317998,,,7,2,9,14,4,18
+9,Upper Palaeolithic_Me`arat ha-Nahal,163,Upper Palaeolithic,Me`arat ha-Nahal,2,78,77,12,2,2,32.670761,34.966261,,,63,14,77,133,30,163
+11,Upper Palaeolithic_Nahal Zin,137,Upper Palaeolithic,Nahal Zin,2,100,59,13,2,2,,,,,47,12,59,109,28,137
+107,Upper Palaeolithic_Me`arat Kebara,29,Upper Palaeolithic,Me`arat Kebara,2,65,14,14,2,2,32.557719,34.936672,,,12,2,14,25,4,29
+135,Upper Palaeolithic_Me`arat Amira,24,Upper Palaeolithic,Me`arat Amira,2,34,12,15,2,2,32.865061,35.514721,,,11,1,12,22,2,24
+147,Upper Palaeolithic_Me`arot Yonim,21,Upper Palaeolithic,Me`arot Yonim,2,89,11,16,2,2,32.920089,35.218264,,,9,2,11,16,5,21
+7,Natufian_Me`arat Kebara,185,Natufian,Me`arat Kebara,3,65,89,17,3,3,32.557719,34.936672,,,71,18,89,148,37,185
+10,Natufian_Me`arat ha-Nahal,142,Natufian,Me`arat ha-Nahal,3,78,65,18,3,3,32.670761,34.966261,,,54,11,65,117,24,141
+16,Natufian_`Enot `Enan,106,Natufian,`Enot `Enan,3,86,53,19,3,3,33.081914,35.573677,,,42,11,53,83,23,106
+68,Natufian_Magharat Shuqba,45,Natufian,Magharat Shuqba,3,77,23,20,3,3,31.9823,35.04261,,,18,5,23,35,10,45
+80,Natufian_Me`arat Oren,39,Natufian,Me`arat Oren,3,61,20,21,3,3,32.715092,34.976737,,,16,4,20,31,8,39
+98,Natufian_Me`arot Yonim,32,Natufian,Me`arot Yonim,3,89,18,22,3,3,32.920089,35.218264,,,14,4,18,24,8,32
+20,Pottery Neolithic_Ha-Gosherim- Nili (north),96,Pottery Neolithic,Ha-Gosherim- Nili (north),4,51,40,23,4,4,33.226447,35.625181,,,32,8,40,77,19,96
+28,Pottery Neolithic_Besamon,84,Pottery Neolithic,Besamon,4,28,36,24,4,4,,,,,31,5,36,72,12,84
+75,Pottery Neolithic_Sha`ar ha-Golan,42,Pottery Neolithic,Sha`ar ha-Golan,4,96,21,25,4,4,32.691295,35.605715,,,17,4,21,34,8,42
+76,Pottery Neolithic_Minha- H.,42,Pottery Neolithic,Minha- H.,4,68,23,26,4,4,,,,,18,5,23,34,8,42
+90,Pottery Neolithic_Hamadya,34,Pottery Neolithic,Hamadya,4,41,17,27,4,4,32.524817,35.519487,,,14,3,17,28,6,34
+196,Pottery Neolithic_Ard es-Samrra,15,Pottery Neolithic,Ard es-Samrra,4,114,7,28,4,4,,,,,6,1,7,13,2,15
+8,Pottery Neolithic A_Sha`ar ha-Golan,183,Pottery Neolithic A,Sha`ar ha-Golan,5,96,90,29,4,4,32.691295,35.605715,,,73,17,90,146,37,183
+166,Pottery Neolithic A_Jericho- T.,19,Pottery Neolithic A,Jericho- T.,5,52,9,30,4,4,31.871719,35.444564,,,7,2,9,15,4,19
+14,Pre-Pottery Neolithic_Besamon,114,Pre-Pottery Neolithic,Besamon,6,28,48,31,5,5,,,254593,777247,39,9,48,91,23,114
+86,Pre-Pottery Neolithic A_Har Harif,36,Pre-Pottery Neolithic A,Har Harif,7,6,21,32,5,5,30.495556,34.559167,,,17,4,21,29,7,36
+5,Pre-Pottery Neolithic B_Nahal Hemar,198,Pre-Pottery Neolithic B,Nahal Hemar,8,55,111,33,5,5,31.156614,35.193354,,,89,22,111,163,35,198
+35,Pre-Pottery Neolithic B_Minha- H.,75,Pre-Pottery Neolithic B,Minha- H.,8,68,37,34,5,5,,,,,31,6,37,65,10,75
+62,Pre-Pottery Neolithic B_Yiftah'el- H.,50,Pre-Pottery Neolithic B,Yiftah'el- H.,8,71,25,35,5,5,,,,,21,4,25,40,10,50
+125,Pre-Pottery Neolithic B_Jericho- T.,26,Pre-Pottery Neolithic B,Jericho- T.,8,52,11,36,5,5,31.871719,35.444564,,,9,2,11,21,5,26
+2,Late Chalcolithic_Nahal Pattish (Gilat),253,Late Chalcolithic,Nahal Pattish (Gilat),9,91,141,37,6,6,,,,,114,27,141,205,48,253
+3,Late Chalcolithic_Nahal Mishmar- Cave of the Treasure,227,Late Chalcolithic,Nahal Mishmar- Cave of the Treasure,9,109,177,38,6,6,,,231300,588400,147,30,177,193,34,227
+129,Late Chalcolithic_Be'er Sheva`- H. Zafad,25,Late Chalcolithic,Be'er Sheva`- H. Zafad,9,0,13,39,6,6,,,,,10,3,13,19,6,25
+149,Late Chalcolithic_Shiqmim (Unofficial name),21,Late Chalcolithic,Shiqmim (Unofficial name),9,102,11,40,6,6,,,,,9,2,11,17,4,21
+176,Late Chalcolithic_Be'er Sheva`- H. Matar,18,Late Chalcolithic,Be'er Sheva`- H. Matar,9,107,12,41,6,6,,,,,10,2,12,14,4,18
+15,Pre-Ghassulian Chalcolithic_Ha-Gosherim,113,Pre-Ghassulian Chalcolithic,Ha-Gosherim,10,5,47,42,6,6,33.226447,35.625181,,,39,8,47,93,20,113
+114,Pre-Ghassulian Chalcolithic_Zaf- T.,28,Pre-Ghassulian Chalcolithic,Zaf- T.,10,74,15,43,6,6,,,,,13,2,15,22,6,28
+81,Early Bronze I_Megiddo- T.,38,Early Bronze I,Megiddo- T.,11,24,19,44,7,7,,,,,15,4,19,30,8,38
+104,Early Bronze I_Mizpah,30,Early Bronze I,Mizpah,11,9,15,45,7,7,,,,,12,3,15,23,7,30
+122,Early Bronze I_`Ai,26,Early Bronze I,`Ai,11,56,11,46,7,7,,,,,9,2,11,20,6,26
+175,Early Bronze II-III_`Ai,18,Early Bronze II-III,`Ai,12,56,9,47,7,8,,,,,7,2,9,14,4,18
+54,Early Bronze II_`Arad- T.,54,Early Bronze II,`Arad- T.,13,85,34,48,7,8,,,,,27,7,34,43,11,54
+23,Early Bronze III_Jericho- T.,88,Early Bronze III,Jericho- T.,14,52,38,49,7,8,,,,,30,8,38,68,20,88
+106,Middle Bronze I_Megiddo- T.,29,Middle Bronze I,Megiddo- T.,15,24,14,50,7,9,,,,,11,3,14,23,6,29
+22,Middle Bronze II_`Ujul- T. el-,93,Middle Bronze II,`Ujul- T. el-,16,113,53,51,7,9,,,,,43,10,53,78,15,93
+36,Middle Bronze II_Jericho- T.,74,Middle Bronze II,Jericho- T.,16,52,42,52,7,9,31.871719,35.444564,,,35,7,42,60,14,74
+50,Middle Bronze II_Bet She'an- T.,58,Middle Bronze II,Bet She'an- T.,16,118,28,53,7,9,,,,,22,6,28,45,13,58
+59,Middle Bronze II_Nahariyya- Canaanite Temple,51,Middle Bronze II,Nahariyya- Canaanite Temple,16,8,44,54,7,9,,,,,35,9,44,40,11,51
+66,Middle Bronze II_Bet Mirsham- T.,49,Middle Bronze II,Bet Mirsham- T.,16,39,24,55,7,9,,,,,19,5,24,40,9,49
+89,Middle Bronze II_Megiddo- T.,35,Middle Bronze II,Megiddo- T.,16,24,21,56,7,9,,,,,17,4,21,28,7,35
+146,Middle Bronze II_`Atlit,21,Middle Bronze II,`Atlit,16,111,7,57,7,9,,,,,6,1,7,18,3,21
+150,Middle Bronze II_Afeq,21,Middle Bronze II,Afeq,16,20,11,58,7,9,,,,,10,1,11,20,1,21
+164,Middle Bronze II_Neve Ur,19,Middle Bronze II,Neve Ur,16,16,14,59,7,9,,,,,12,2,14,15,4,19
+185,Middle Bronze II_Jisr- el-,16,Middle Bronze II,Jisr- el-,16,62,9,60,7,9,,,,,7,2,9,10,6,16
+191,Middle Bronze II_Bet-Shemesh- T.,16,Middle Bronze II,Bet-Shemesh- T.,16,17,6,61,7,9,,,,,5,1,6,14,2,16
+49,Early Bronze IB_`En Besor,58,Early Bronze IB,`En Besor,17,45,23,62,7,7,,,,,18,5,23,44,14,58
+65,Early Bronze IB_Kfar Monash,49,Early Bronze IB,Kfar Monash,17,110,32,63,7,7,,,,,26,6,32,40,9,49
+6,Middle Bronze II-Late Bronze_`Ujul- T. el-,188,Middle Bronze II-Late Bronze,`Ujul- T. el-,18,113,122,64,7,9,,,,,101,21,122,153,35,188
+187,Middle Bronze II-Late Bronze_Megiddo- T.,16,Middle Bronze II-Late Bronze,Megiddo- T.,18,24,8,65,7,9,,,,,7,1,8,14,2,16
+199,Middle Bronze IIA_Neve Ur,15,Middle Bronze IIA,Neve Ur,19,16,7,66,7,9,,,,,6,1,7,13,2,15
+168,Middle Bronze IIB_Barqai,18,Middle Bronze IIB,Barqai,20,33,6,67,7,9,,,,,5,1,6,15,3,18
+172,Middle Bronze IIB_Bet Mirsham- T.,18,Middle Bronze IIB,Bet Mirsham- T.,20,39,6,68,7,9,,,,,5,1,6,15,3,18
+182,Middle Bronze IIB_Bet She'an- T.,17,Middle Bronze IIB,Bet She'an- T.,20,118,6,69,7,9,,,,,5,1,6,14,3,17
+44,Late Bronze_Gezer- T.,61,Late Bronze,Gezer- T.,21,69,35,70,7,10,,,,,29,6,35,53,8,61
+93,Late Bronze_`Ujul- T. el-,33,Late Bronze,`Ujul- T. el-,21,113,20,71,7,10,,,,,16,4,20,29,4,33
+140,Late Bronze_Bet She'an- T.,22,Late Bronze,Bet She'an- T.,21,118,15,72,7,10,,,,,12,3,15,15,7,22
+179,Late Bronze_Megiddo- T.,17,Late Bronze,Megiddo- T.,21,24,10,73,7,10,,,,,9,1,10,14,3,17
+158,Late Bronze I_Bet She'an- T.,20,Late Bronze I,Bet She'an- T.,22,118,9,74,7,10,,,,,7,2,9,15,5,20
+163,Late Bronze I_`Ujul- T. el-,19,Late Bronze I,`Ujul- T. el-,22,113,13,75,7,10,,,,,10,3,13,14,5,19
+26,Late Bronze II_Bet She'an- T.,85,Late Bronze II,Bet She'an- T.,23,118,38,76,7,10,,,,,31,7,38,71,14,85
+27,Late Bronze II_Megiddo- T.,85,Late Bronze II,Megiddo- T.,23,24,45,77,7,10,,,,,36,9,45,68,17,85
+31,Late Bronze II_`Ujul- T. el-,82,Late Bronze II,`Ujul- T. el-,23,113,39,78,7,10,,,,,32,7,39,68,14,82
+34,Late Bronze II_Haifa- T. Abu Hawwam,75,Late Bronze II,Haifa- T. Abu Hawwam,23,106,33,79,7,10,,,,,26,7,33,58,17,75
+43,Late Bronze II_`Akko- Persian Garden,62,Late Bronze II,`Akko- Persian Garden,23,99,37,80,7,10,,,,,28,9,37,46,16,62
+63,Late Bronze II_Lakhish- T.,49,Late Bronze II,Lakhish- T.,23,63,26,81,7,10,,,,,21,5,26,38,11,49
+97,Late Bronze II_Dan- T.,32,Late Bronze II,Dan- T.,23,101,26,82,7,10,,,,,21,5,26,26,6,32
+101,Late Bronze II_Bet-Shemesh- T.,31,Late Bronze II,Bet-Shemesh- T.,23,17,15,83,7,10,,,,,12,3,15,23,8,31
+136,Late Bronze II_Hazor- T.,23,Late Bronze II,Hazor- T.,23,21,10,84,7,10,,,,,8,2,10,19,4,23
+162,Late Bronze II_Gezer- T.,19,Late Bronze II,Gezer- T.,23,69,13,85,7,10,,,,,10,3,13,15,4,19
+184,Late Bronze II_Afeq,17,Late Bronze II,Afeq,23,20,8,86,7,10,,,,,6,2,8,13,4,17
+33,Iron I_Megiddo- T.,75,Iron I,Megiddo- T.,24,24,34,87,8,11,,,,,27,7,34,61,14,75
+71,Iron I_Bet She'an- T.,44,Iron I,Bet She'an- T.,24,118,24,88,8,11,,,,,19,5,24,32,12,44
+118,Iron I_Bet-Shemesh- T.,27,Iron I,Bet-Shemesh- T.,24,17,11,89,8,11,,,,,9,2,11,22,5,27
+144,Iron I_Sharuhen- T.,21,Iron I,Sharuhen- T.,24,26,9,90,8,11,,,,,7,2,9,17,4,21
+25,Iron IA_Megiddo- T.,86,Iron IA,Megiddo- T.,25,24,40,91,8,11,,,,,33,7,40,70,16,86
+1,Iron II_Lakhish- T.,263,Iron II,Lakhish- T.,26,63,131,92,8,12,,,,,108,23,131,221,42,263
+4,Iron II_Jerusalem- City of David,212,Iron II,Jerusalem- City of David,26,115,120,93,8,12,,,,,97,23,120,172,40,212
+24,Iron II_Yavne (north-west),86,Iron II,Yavne (north-west),26,66,75,94,8,12,,,,,60,15,75,68,18,86
+40,Iron II_Ashqelon- T. Ashqelon,66,Iron II,Ashqelon- T. Ashqelon,26,37,31,95,8,12,,,,,25,6,31,57,9,66
+41,Iron II_Akhziv,66,Iron II,Akhziv,26,30,28,96,8,12,,,,,23,5,28,59,7,66
+53,Iron II_Samaria,57,Iron II,Samaria,26,76,32,97,8,12,,,,,26,6,32,46,11,57
+55,Iron II_Mezad Hazeva,53,Iron II,Mezad Hazeva,26,95,37,98,8,12,,,,,31,6,37,42,11,53
+56,Iron II_Megiddo- T.,53,Iron II,Megiddo- T.,26,24,24,99,8,12,,,,,19,5,24,40,13,53
+60,Iron II_Bet-Shemesh- T.,51,Iron II,Bet-Shemesh- T.,26,17,21,100,8,12,,,,,18,3,21,46,5,51
+61,Iron II_Bet Mirsham- T.,51,Iron II,Bet Mirsham- T.,26,39,21,101,8,12,,,,,16,5,21,41,10,51
+64,Iron II_Bet She'an- T.,49,Iron II,Bet She'an- T.,26,118,39,102,8,12,,,,,31,8,39,38,11,49
+67,Iron II_Ramat Rahel,45,Iron II,Ramat Rahel,26,44,26,103,8,12,,,,,21,5,26,37,8,45
+77,Iron II_`Arad- T.,41,Iron II,`Arad- T.,26,85,30,104,8,12,,,,,24,6,30,34,7,41
+82,Iron II_Nemal Akhziv,38,Iron II,Nemal Akhziv,26,70,13,105,8,12,,,,,11,2,13,33,5,38
+105,Iron II_Mizpah,29,Iron II,Mizpah,26,9,14,106,8,12,,,,,11,3,14,24,5,29
+115,Iron II_Jerusalem- Old City- Jewish Quarter- Area F- M,27,Iron II,Jerusalem- Old City- Jewish Quarter- Area F- M,26,94,10,107,8,12,,,,,8,2,10,21,6,27
+121,Iron II_Jerusalem- Old City- Western and Southern Walls,26,Iron II,Jerusalem- Old City- Western and Southern Walls,26,72,13,108,8,12,,,,,11,2,13,22,4,26
+124,Iron II_Bir er-Ruqeish,26,Iron II,Bir er-Ruqeish,26,11,12,109,8,12,,,,,10,2,12,21,5,26
+139,Iron II_Sharuhen- T.,23,Iron II,Sharuhen- T.,26,26,9,110,8,12,,,,,8,1,9,21,2,23
+152,Iron II_Hazor- T.,20,Iron II,Hazor- T.,26,21,8,111,8,12,,,,,6,2,8,14,6,20
+167,Iron II_Sheva`- T.,19,Iron II,Sheva`- T.,26,83,7,112,8,12,,,,,6,1,7,18,1,19
+133,Iron IIA_Yavne (north-west),24,Iron IIA,Yavne (north-west),27,66,11,113,8,12,,,,,9,2,11,20,4,24
+143,Iron IIA_Qeiyafa- Kh.,22,Iron IIA,Qeiyafa- Kh.,27,1,13,114,8,12,,,,,10,3,13,17,5,22
+165,Iron IIA_Rehov- T.,19,Iron IIA,Rehov- T.,27,38,8,115,8,12,,,,,7,1,8,15,4,19
+120,Iron IIB_Nemal Akhziv,27,Iron IIB,Nemal Akhziv,28,70,9,116,8,12,,,,,7,2,9,21,6,27
+32,Iron IIC_Ashqelon- T. Ashqelon,81,Iron IIC,Ashqelon- T. Ashqelon,29,37,44,117,8,12,,,,,36,8,44,66,15,81
+126,Iron IIC_Akhziv,26,Iron IIC,Akhziv,29,30,9,118,8,12,,,,,7,2,9,20,6,26
+88,Iron IIC-Babylonian_Jerusalem- Ketef Hinnom,35,Iron IIC-Babylonian,Jerusalem- Ketef Hinnom,30,31,29,119,8,12,,,,,23,6,29,26,9,35
+99,Iron IIC-Babylonian-Persian_Ashqelon- T. Ashqelon,32,Iron IIC-Babylonian-Persian,Ashqelon- T. Ashqelon,31,37,12,120,8,12,,,,,10,2,12,28,4,32
+39,Persian_Magharat Abu Shinja,70,Persian,Magharat Abu Shinja,32,29,54,121,9,13,,,,,44,10,54,57,13,70
+57,Persian_Jerusalem- City of David,52,Persian,Jerusalem- City of David,32,115,19,122,9,13,,,,,15,4,19,40,12,52
+83,Persian_`Atlit,37,Persian,`Atlit,32,111,20,123,9,13,,,,,16,4,20,29,8,37
+173,Persian_Zafit- T.,18,Persian,Zafit- T.,32,73,9,124,9,13,,,,,7,2,9,14,4,18
+188,Persian_Nahal tut,16,Persian,Nahal tut,32,117,13,125,9,13,,,,,10,3,13,12,4,16
+192,Persian_Lakhish- T.,16,Persian,Lakhish- T.,32,63,6,126,9,13,,,,,5,1,6,13,3,16
+21,Persian-Hellenistic_Maresha- T.,95,Persian-Hellenistic,Maresha- T.,33,43,84,127,9,13,,,,,68,16,84,76,19,95
+0,Hellenistic_Maresha- T.,298,Hellenistic,Maresha- T.,34,43,165,128,10,14,,,,,136,29,165,243,55,298
+19,Hellenistic_Jerusalem- City of David,98,Hellenistic,Jerusalem- City of David,34,115,62,129,10,14,,,,,51,11,62,78,20,98
+131,Hellenistic_Ha-Gosherim,25,Hellenistic,Ha-Gosherim,34,5,13,130,10,14,,,,,10,3,13,17,8,25
+153,Hellenistic_Bet She'an- T.,20,Hellenistic,Bet She'an- T.,34,118,12,131,10,14,,,,,10,2,12,16,4,20
+157,Hellenistic_Anafa- T.,20,Hellenistic,Anafa- T.,34,54,10,132,10,14,,,,,8,2,10,16,4,20
+174,Hellenistic_Samaria,18,Hellenistic,Samaria,34,76,10,133,10,14,,,,,8,2,10,15,3,18
+128,Late Hellenistic_Jerusalem- Old City,26,Late Hellenistic,Jerusalem- Old City,35,108,13,134,10,14,,,,,11,2,13,22,4,26
+38,Late Hellenistic - Early Roman_Jerusalem- Old City- Jewish Quarter- Area F- M,71,Late Hellenistic - Early Roman,Jerusalem- Old City- Jewish Quarter- Area F- M,36,94,38,135,10,14,,,,,30,8,38,55,16,71
+17,Early Roman_Horevot Mazada,104,Early Roman,Horevot Mazada,37,59,82,136,11,15,,,,,68,14,82,86,18,104
+29,Early Roman_Jerusalem- Old City- Jewish Quarter- Area F- M,84,Early Roman,Jerusalem- Old City- Jewish Quarter- Area F- M,37,94,51,137,11,15,,,,,44,7,51,75,9,84
+51,Early Roman_Jerusalem- Old City- Western and Southern Walls,58,Early Roman,Jerusalem- Old City- Western and Southern Walls,37,72,44,138,11,15,,,,,36,7,43,46,11,57
+69,Early Roman_Jerusalem- Old City,44,Early Roman,Jerusalem- Old City,37,108,25,139,11,15,,,,,20,5,25,36,8,44
+70,Early Roman_Jerusalem- City of David,44,Early Roman,Jerusalem- City of David,37,115,27,140,11,15,,,,,22,5,27,37,7,44
+73,Early Roman_Jerusalem- Har ha-Zofim (east),43,Early Roman,Jerusalem- Har ha-Zofim (east),37,80,19,141,11,15,,,,,15,4,19,33,10,43
+78,Early Roman_Jerusalem- `En Rogel,41,Early Roman,Jerusalem- `En Rogel,37,42,17,142,11,15,,,,,15,2,17,35,6,41
+79,Early Roman_Qumran Caves,40,Early Roman,Qumran Caves,37,14,22,143,11,15,,,,,18,4,22,34,6,40
+91,Early Roman_Jerusalem- Giv`at ha-Mivtar,34,Early Roman,Jerusalem- Giv`at ha-Mivtar,37,64,16,144,11,15,,,,,13,3,16,28,6,34
+109,Early Roman_Jerusalem- Mount Scopus (west),28,Early Roman,Jerusalem- Mount Scopus (west),37,27,14,145,11,15,,,,,11,3,14,22,6,28
+111,Early Roman_`En Gedi,28,Early Roman,`En Gedi,37,2,14,146,11,15,,,,,11,3,14,22,6,28
+116,Early Roman_BURNT HOUSE,27,Early Roman,BURNT HOUSE,37,90,19,147,11,15,,,,,16,2,18,23,3,26
+156,Early Roman_Caesarea,20,Early Roman,Caesarea,37,35,9,148,11,15,,,,,7,2,9,14,6,20
+159,Early Roman_Jerusalem- Pisgat Ze'ev,20,Early Roman,Jerusalem- Pisgat Ze'ev,37,92,11,149,11,15,,,,,9,2,11,17,3,20
+194,Early Roman_Mezad Rahel,16,Early Roman,Mezad Rahel,37,36,15,150,11,15,,,,,12,3,15,13,3,16
+52,Late Roman_Hurfeish,57,Late Roman,Hurfeish,38,32,27,151,11,16,,,,,23,4,27,48,9,57
+74,Late Roman_Jerusalem- Rehov Salah ed-Din- Ministry of Justice,42,Late Roman,Jerusalem- Rehov Salah ed-Din- Ministry of Justice,38,7,28,152,11,16,,,,,22,6,28,33,9,42
+84,Late Roman_Nahariyya- Giv`at Katzenelson,36,Late Roman,Nahariyya- Giv`at Katzenelson,38,88,25,153,11,16,,,,,20,5,25,29,7,36
+95,Late Roman_Makr- el-,33,Late Roman,Makr- el-,38,4,18,154,11,16,,,,,14,4,18,25,8,33
+110,Late Roman_Lidd- Kh.,28,Late Roman,Lidd- Kh.,38,10,13,155,11,16,,,,,10,3,13,22,6,28
+117,Late Roman_Palmahim,27,Late Roman,Palmahim,38,93,10,156,11,16,,,,,8,2,10,21,6,27
+132,Late Roman_Jerusalem- `En Rogel,24,Late Roman,Jerusalem- `En Rogel,38,42,12,157,11,16,,,,,10,2,12,20,4,24
+145,Late Roman_Hedera,21,Late Roman,Hedera,38,13,13,158,11,16,,,,,11,2,13,18,3,21
+170,Late Roman_Asherat,18,Late Roman,Asherat,38,46,11,159,11,16,,,,,9,2,11,13,5,18
+12,Middle Roman_Nahal Hever,137,Middle Roman,Nahal Hever,39,3,73,160,11,17,,,,,60,13,73,112,25,137
+13,Roman_Horevot Mazada,122,Roman,Horevot Mazada,40,59,104,161,11,18,,,,,84,20,104,99,23,122
+47,Roman_Jerusalem- `En Rogel,60,Roman,Jerusalem- `En Rogel,40,42,31,162,11,18,,,,,25,6,31,47,13,60
+48,Roman_Wadi Murabba,58,Roman,Wadi Murabba,40,119,52,163,11,18,,,,,43,9,52,49,9,58
+108,Roman_Jerusalem- Binyane ha-Umma,28,Roman,Jerusalem- Binyane ha-Umma,40,25,12,164,11,18,,,,,10,2,12,22,6,28
+123,Roman_'En Tamar,26,Roman,'En Tamar,40,75,16,165,11,18,,,,,13,3,16,21,5,26
+127,Roman_Nahal Hever,26,Roman,Nahal Hever,40,3,18,166,11,18,,,,,14,4,18,22,4,26
+134,Roman_Moa,24,Roman,Moa,40,18,20,167,11,18,,,,,16,4,20,19,5,24
+137,Roman_Mezad Rahel,23,Roman,Mezad Rahel,40,36,17,168,11,18,,,,,15,2,17,19,4,23
+161,Roman_`En Gedi,19,Roman,`En Gedi,40,2,10,169,11,18,,,,,8,2,10,14,5,19
+169,Roman_Bet She'an- T.,18,Roman,Bet She'an- T.,40,118,11,170,11,18,,,,,9,2,11,13,5,18
+183,Roman_Ma`yan Barukh,17,Roman,Ma`yan Barukh,40,23,12,171,11,18,,,,,10,2,12,14,3,17
+189,Roman_Christmas Cave- Nahal Qidron,16,Roman,Christmas Cave- Nahal Qidron,40,97,11,172,11,18,,,,,9,2,11,13,3,16
+190,Roman_`Alya- Kh.,16,Roman,`Alya- Kh.,40,53,10,173,11,18,,,,,8,2,10,13,3,16
+193,Roman_Nahal Mishmar- Cave of the Treasure,16,Roman,Nahal Mishmar- Cave of the Treasure,40,109,15,174,11,18,,,,,12,3,15,13,3,16
+195,Middle Roman_`En Gedi,15,Middle Roman,`En Gedi,41,2,10,175,11,17,,,,,8,2,10,12,3,15
+103,Late Roman - Byzantine_Holot Qesari (south),31,Late Roman - Byzantine,Holot Qesari (south),42,60,16,176,11,17,,,,,13,3,16,26,5,31
+154,Middle Roman - Late Roman_Jerusalem- Old City- Western and Southern Walls,20,Middle - Late Roman,Jerusalem- Old City- Western and Southern Walls,43,72,10,177,11,19,,,,,8,2,10,16,4,20
+138,Early Byzantine_Kavul,23,Early Byzantine,Kavul,44,87,11,178,12,19,,,,,9,2,11,18,5,23
+45,Byzantine_`En Gedi,61,Byzantine,`En Gedi,45,2,49,179,12,19,,,,,39,10,49,49,12,61
+100,Byzantine_Nizzana,32,Byzantine,Nizzana,45,82,23,180,12,19,,,,,19,4,23,26,5,31
+112,Byzantine_Caesarea,28,Byzantine,Caesarea,45,35,10,181,12,19,,,,,8,2,10,24,4,28
+151,Byzantine_Gush Halav,20,Byzantine,Gush Halav,45,15,16,182,12,19,,,,,14,2,16,16,4,20
+178,Byzantine_Bet She'an,18,Byzantine,Bet She'an,45,116,8,183,12,19,,,,,6,2,8,14,4,18
+180,Byzantine_Zuq el-Fauqani ez-,17,Byzantine,Zuq el-Fauqani ez-,45,19,13,184,12,19,,,,,10,3,13,13,4,17
+181,Byzantine_Mesad Boqeq,17,Byzantine,Mesad Boqeq,45,67,14,185,12,19,,,,,11,3,14,14,3,17
+58,Umayyad_Mafjar- Kh. el-,51,Umayyad,Mafjar- Kh. el-,46,105,38,186,12,19,,,,,31,7,38,42,9,51
+197,Late Byzantine_Nizzana,15,Late Byzantine,Nizzana,47,82,13,187,12,19,,,,,10,3,13,12,3,15
+42,Early Islamic_Ramla,64,Early Islamic,Ramla,48,98,36,188,12,19,,,,,31,5,36,55,9,64
+96,Early Islamic_Nahal Omer,32,Early Islamic,Nahal Omer,48,81,25,189,12,19,,,,,21,4,25,27,5,32
+102,Early Islamic_Caesarea,31,Early Islamic,Caesarea,48,35,13,190,12,19,,,,,10,3,13,22,9,31
+85,Fatimid_Caesarea,36,Fatimid,Caesarea,49,35,14,191,12,19,,,,,12,2,14,30,6,36
+87,Fatimid_Tiberias and Hammat,36,Fatimid,Tiberias and Hammat,49,22,12,192,12,19,,,,,10,2,12,30,6,36
+119,Fatimid_Hammat,27,Fatimid,Hammat,49,79,9,193,12,19,,,,,7,2,9,21,6,27
+94,Crusader_`Atlit,33,Crusader,`Atlit,50,111,25,194,12,20,,,,,20,5,25,27,6,33
+142,Crusader_`Akko,22,Crusader,`Akko,50,103,8,195,12,20,,,,,6,2,8,17,5,22
+148,Crusader_Caesarea,21,Crusader,Caesarea,50,35,9,196,12,20,,,,,7,2,9,16,5,21
+198,Crusader_Arshaf- T.,15,Crusader,Arshaf- T.,50,40,13,197,12,20,,,,,10,3,13,12,3,15
+155,Mamluk_Bet She'an,20,Mamluk,Bet She'an,51,116,9,198,12,20,,,,,7,2,9,14,6,20
+160,Ottoman_Panias- H.,20,Ottoman,Panias- H.,52,49,10,199,12,20,,,,,8,2,10,15,5,20
