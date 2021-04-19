@@ -16,7 +16,7 @@ from keras_efficientnets import EfficientNetB3
 from keras_efficientnets import EfficientNetB0
 from tensorflow.contrib.opt import AdamWOptimizer
 from models.adamW import AdamW
-from models.spatial_transformer import SpatialTransformer
+#from models.spatial_transformer import SpatialTransformer
 
 from models.STN.utils import get_initial_weights
 from models.STN.utils import get_initial_weights_translation_only
@@ -307,14 +307,14 @@ class CosLosModel(BaseModel):
         acc_wrapper = self.acc_wrapper()
 
         if self.config.model.type == "efficientNetSTN":
-            self.metrics = { "embeddings ": loss_func_empty,"out": self.acc_wrapper() }
+            self.metrics = { "embeddings": loss_func_empty,"out": self.acc_wrapper() }
             self.loss_func = { "embeddings": loss_func_cos, "out": loss_func_softmax}
             if self.config.model.loss == 'cosface':
                 self.loss_weights = { "embeddings": 1.0, "out": 0.0}
             else:
                 self.loss_weights = {"embeddings": 0.0, "out": 1.0}
         elif self.config.model.type == "efficientNet" or self.config.model.type == "vgg" or 'efficientNetSTN' :
-            self.metrics = {"embeddings ": loss_func_empty, "out": acc_wrapper}
+            self.metrics = {"embeddings": loss_func_empty, "out": acc_wrapper}
             self.loss_func = {"embeddings": loss_func_cos, "out": loss_func_softmax}
             if self.config.model.loss == 'cosface':
                 self.loss_weights = {"embeddings": 1.0, "out": 0.0}
