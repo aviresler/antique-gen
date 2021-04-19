@@ -1,8 +1,8 @@
 # Antique-gen
 A deep learning model for predictive archaeology and archaeological community detection.
 
-# Predictions demo
-In order to try our pretrained model, follow the following steps:
+# Prediction of archaeological period/site. 
+In order to try our pretrained model on your query image, follow the following steps:
 * Open "antique_pedia.ipynb", and press the following icon to launch it on the colab platform:
 
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/colab.png)
