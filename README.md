@@ -5,7 +5,7 @@ A deep learning model for predictive archaeology and archaeological community de
 In order to try our pretrained model, follow the following steps:
 * Open "antique_pedia.ipynb" in Colab:
 
-![alt text](https://github.com/aviresler/antique-gen/tree/master/misc/colb.png)
+![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/colab.png)
 
 
 # Installation
