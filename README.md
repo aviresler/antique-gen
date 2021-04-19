@@ -1,7 +1,7 @@
 # Antique-gen
 A deep learning model for predictive archaeology and archaeological community detection.
 
-# Prediction of archaeological period/site. 
+# Prediction of archaeological period / site. 
 In order to try our pretrained model on your query image, follow the following steps:
 * Open "antique_pedia.ipynb", and press the following icon to launch it on the colab platform:
 
