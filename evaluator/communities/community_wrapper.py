@@ -227,10 +227,19 @@ def print_conf_examples( full_confusion_csv, classes_csv_file, community,  choos
 
 
 if __name__ == '__main__':
-    # group of -1 means all classes
-    #summary = get_communities(6,True,[1, 2, 3, 4, 5],'efficientNetB3_conc10_rp_full_neighbor_site_period_id_period__data.csv','classes_top200.csv','period_group_rough','efficientNetB3_conc10_rp_full_neighbor_site_period_id_period__similarity_data.csv')
-    summary = get_communities(6, True, [1, 2, 3, 4, 5],'efficientNetB3_conc10_rp_full_neighbor_site_period_id_period__data.csv','classes_top200.csv', 'period_group_rough',)
+    # relevant_period_groups will correspond to peroid_group_column in info_file
+    peroid_group_column = 'period_group_rough'
+    # When using peroid_group_column = 'period_group_rough', this list can have numbers from 0 to 12
+    # put -1 for all classes
+    relevant_period_groups = [0, 1, 2, 3, 4, 5]
+    number_of_neighbours = 6
+    # In the following files, the first column correspond to validation set class.
+    # The rest of the 50 columns correspond to the training set nearest neighbours classes.
+    valid_train_neighbours_csv = 'efficientNetB3_conc10_rp_full_neighbor_site_period_id_period__data.csv'
+    info_file = '../../data_loader/classes_top200.csv'
+    is_self_loops = True
+
+    summary = get_communities(number_of_neighbours, is_self_loops, relevant_period_groups,valid_train_neighbours_csv,info_file, peroid_group_column)
 
     print(summary)
 
-    #print_conf_examples('efficientNetB3_conc10_rp_full_neighbor_site_period_data_id_period.csv', 'classes_top200.csv', [16,22,33], choosen_sprite_inde=-1)

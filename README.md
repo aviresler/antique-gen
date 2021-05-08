@@ -1,4 +1,4 @@
-# Antique-gen
+# Deep Antique
 A deep learning model for predictive archaeology and archaeological community detection.
 
 # Prediction of archaeological period / site. 
@@ -22,4 +22,22 @@ Create a conda environment based on environment.yaml file:
 
 # Data
 
-# train
+# Train
+train.json configuration file is placed in configs folder. Update the train/valid data paths and run:
+
+train.py -c configs/train.json
+
+# Community detection
+Run get_communities method in evaluator/communities/community_wrapper.py.
+It will generate communities based on modularity maximization, from model predictions.
+For each validation-set image, up to 50 training-set nearest neighbours are taken into account.
+
+    Args:
+        num_of_neighbors (int): number of neighbors to be considered, number between 1-50.
+        is_self_loops (bool): Whether to form a graph which has edges between nodes to themselves.
+        relevant_period_groups (list of int): period groups that should be considered when forming graph. if -1, all period
+        groups. The list of period groups is in classes_csv_file, at priod_group_column.
+        full_confusion_csv (str): path to csv file with the confusion data.
+        classes_csv_file (str): path to csv file with the classes data.
+        priod_group_column (str): relevant column for period_groups in classes_csv_file
+
