@@ -37,8 +37,8 @@ def get_communities(num_of_neighbors, is_self_loops, relevant_period_groups, ful
     Args:
         num_of_neighbors (int): number of neighbors to be considered, number between 1-50.
         is_self_loops (bool): Whether to form a graph which has edges between nodes to themselves.
-        relevant_period_groups (list of int): period groups that should be considered when forming graph. if -1, all period
-        groups. The list of period groups is in classes_csv_file, at priod_group_column.
+        relevant_period_groups (list of int): period groups that should be considered when forming graph. if -1, all periods
+        are taken into account. The list of period groups is in classes_csv_file, at priod_group_column.
         full_confusion_csv (str): path to csv file with the confusion data.
         classes_csv_file (str): path to csv file with the classes data.
         priod_group_column (str): relevant column for period_groups in classes_csv_file
