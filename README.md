@@ -59,7 +59,7 @@ For example, folder '37' correspond to (\<period>_\<site>): Middle Palaeolithic_
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/data_info.png)
 
 
-In order to get the original images that were used, 
+In order to get the original images, for research purpose, please contact us: aviresler@gmail.com 
 
 # Train
 train.json configuration file is placed in configs folder. Update the train/valid data paths and run:
