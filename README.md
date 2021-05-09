@@ -2,7 +2,7 @@
 A deep learning model for predictive archaeology and archaeological community detection.
 
 # Prediction of archaeological period / site. 
-In order to try our pretrained model on your query image, follow the following steps:
+In order to try our pretrained model on your query image, follow the following steps (no further installation is required):
 * Open "antique_pedia.ipynb", and press the following icon to launch it on the colab platform:
 
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/colab.png)
@@ -13,12 +13,35 @@ In order to try our pretrained model on your query image, follow the following s
 
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/query_pred0.png)
 
-
 # Installation
 Create a conda environment based on environment.yaml file:
 
 * conda env create --file environment.yaml
 * conda activate tf-gpu-2
+
+# Data
+Antique images, and their period_site labels were taken from the following website: http://www.antiquities.org.il/t/default_en.aspx
+
+The images were grouped together according to their period_site label.
+For example, all images of artifacts from Me\`arat ha-Gulgolet site that were dated to Middle Palaeolithic
+period were grouped together to a single class.
+
+A thumbnail version of the images, split into classes, can be downloaded from:
+https://drive.google.com/file/d/1V8Zdr6tAdm_QoEk39BcYRupoHYI2PoL2/view?usp=sharing
+
+Each train/valid folder has 200 sub-folders, from '0' to '199', where each sub-folder represent a class.
+Class name can be seen in the data_loader/classes_top200.csv info file.
+
+For example, folder '37' correspond to (\<period>_\<site>): Middle Palaeolithic_Me`arat Tannur, as can be seen in data_loader/classes_top200.csv info file:
+
+![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/data_info.png)
+
+In order to get the original images, for research purpose, please contact us: aviresler@gmail.com 
+
+# Training
+train.json configuration file is placed in configs folder. Update the train/valid data paths and run:
+
+train.py -c configs/train.json
 
 # Community detection
 Run get_communities method in evaluator/communities/community_wrapper.py - example for that can be found in 
@@ -41,27 +64,3 @@ For example, here is a part of the summary for certain parameters:
 
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/community_detection.png)
 
-# Data
-Antique images, and their period_site labels were taken from the following website: http://www.antiquities.org.il/t/default_en.aspx
-
-The images were grouped together according to their period_site label.
-For example, all images of artifacts from Me\`arat ha-Gulgolet site that were dated to Middle Palaeolithic
-period were grouped together to a single class.
-
-A thumbnail version of the images, split into classes, can be downloaded from:
-https://drive.google.com/file/d/1V8Zdr6tAdm_QoEk39BcYRupoHYI2PoL2/view?usp=sharing
-
-Each train/valid folder has 200 sub-folders, from '0' to '199', where each sub-folder represent a class.
-Class name can be seen in the data_loader/classes_top200.csv info file.
-
-For example, folder '37' correspond to (\<period>_\<site>): Middle Palaeolithic_Me`arat Tannur, as can be seen in data_loader/classes_top200.csv info file:
-
-![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/data_info.png)
-
-
-In order to get the original images, for research purpose, please contact us: aviresler@gmail.com 
-
-# Train
-train.json configuration file is placed in configs folder. Update the train/valid data paths and run:
-
-train.py -c configs/train.json
