@@ -43,6 +43,6 @@ For each validation-set image, up to 50 training-set nearest neighbours are take
     
     The function saves community_summary.csv file, and returns a string with the summary.
 
-For example, here is an example of part of the summary for certain parameters:
+For example, here is a part of the summary for certain parameters:
 
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/community_detection.png)
