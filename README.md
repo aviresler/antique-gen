@@ -20,15 +20,9 @@ Create a conda environment based on environment.yaml file:
 * conda env create --file environment.yaml
 * conda activate tf-gpu-2
 
-# Data
-
-# Train
-train.json configuration file is placed in configs folder. Update the train/valid data paths and run:
-
-train.py -c configs/train.json
-
 # Community detection
-Run get_communities method in evaluator/communities/community_wrapper.py.
+Run get_communities method in evaluator/communities/community_wrapper.py - example for that can be found in 
+community_wrapper.py, in the bottom of the script. 
 It will generate communities based on modularity maximization, from model predictions.
 For each validation-set image, up to 50 training-set nearest neighbours are taken into account.
 
@@ -46,3 +40,28 @@ For each validation-set image, up to 50 training-set nearest neighbours are take
 For example, here is a part of the summary for certain parameters:
 
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/community_detection.png)
+
+# Data
+Antique images, and their site-period labels were taken from the following website: http://www.antiquities.org.il/t/default_en.aspx
+
+The images were grouped together according to their period_site label.
+For example, all images of artifacts from Me\`arat ha-Gulgolet site that were dated to Middle Palaeolithic
+period were grouped together to a single class.
+
+A thumbnail version of the images, split into classes, can be downloaded from:
+https://drive.google.com/file/d/1V8Zdr6tAdm_QoEk39BcYRupoHYI2PoL2/view?usp=sharing
+
+Each train/valid folder has 200 sub-folders, from '0' to '199', where each sub-folder represent a class.
+Class name can be seen in the data_loader/classes_top200.csv info file.
+
+For example, folder '37' correspond to (\<period>_\<site>): Middle Palaeolithic_Me`arat Tannur:
+
+![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/data_info.png)
+
+
+In order to get the original images that were used, 
+
+# Train
+train.json configuration file is placed in configs folder. Update the train/valid data paths and run:
+
+train.py -c configs/train.json
