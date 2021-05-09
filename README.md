@@ -42,7 +42,7 @@ For example, here is a part of the summary for certain parameters:
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/community_detection.png)
 
 # Data
-Antique images, and their site-period labels were taken from the following website: http://www.antiquities.org.il/t/default_en.aspx
+Antique images, and their period_site labels were taken from the following website: http://www.antiquities.org.il/t/default_en.aspx
 
 The images were grouped together according to their period_site label.
 For example, all images of artifacts from Me\`arat ha-Gulgolet site that were dated to Middle Palaeolithic
