@@ -33,11 +33,16 @@ It will generate communities based on modularity maximization, from model predic
 For each validation-set image, up to 50 training-set nearest neighbours are taken into account.
 
     Args:
-        num_of_neighbors (int): number of neighbors to be considered, number between 1-50.
+        - num_of_neighbors (int): number of neighbors to be considered, number between 1-50.
         is_self_loops (bool): Whether to form a graph which has edges between nodes to themselves.
-        relevant_period_groups (list of int): period groups that should be considered when forming graph. if -1, all periods
+        - relevant_period_groups (list of int): period groups that should be considered when forming graph. if -1, all periods
         are taken into account. The list of period groups is in classes_csv_file, at priod_group_column.
-        full_confusion_csv (str): path to csv file with the confusion data.
-        classes_csv_file (str): path to csv file with the classes data.
-        priod_group_column (str): relevant column for period_groups in classes_csv_file
+        - full_confusion_csv (str): path to csv file with the confusion data.
+        - classes_csv_file (str): path to csv file with the classes data.
+        - priod_group_column (str): relevant column for period_groups in classes_csv_file
+    
+    The function saves community_summary.csv file, and returns a string with the summary.
 
+For example, here is an example of part of the summary for certain parameters:
+
+![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/community_detection.png)
