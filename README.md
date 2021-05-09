@@ -54,7 +54,7 @@ https://drive.google.com/file/d/1V8Zdr6tAdm_QoEk39BcYRupoHYI2PoL2/view?usp=shari
 Each train/valid folder has 200 sub-folders, from '0' to '199', where each sub-folder represent a class.
 Class name can be seen in the data_loader/classes_top200.csv info file.
 
-For example, folder '37' correspond to (\<period>_\<site>): Middle Palaeolithic_Me`arat Tannur:
+For example, folder '37' correspond to (\<period>_\<site>): Middle Palaeolithic_Me`arat Tannur, as can be seen in data_loader/classes_top200.csv info file:
 
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/data_info.png)
 
