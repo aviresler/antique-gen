@@ -23,7 +23,7 @@
     "class_mode": "sparse",
     "K": 4,
     "P": 5,
-    "batch_size": 2,
+    "batch_size": 20,
     "sampels_per_epcoh": 401,
     "is_sample_each_cls_once": "TRUE"
   },
