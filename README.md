@@ -36,12 +36,20 @@ For example, folder '37' correspond to (\<period>_\<site>): Middle Palaeolithic_
 
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/data_info.png)
 
-In order to get the original images, for research purpose, please contact us: aviresler@gmail.com 
+In order to get the full resolution images (up to about 600 pixels width/height), for research purpose, please contact us: aviresler@gmail.com 
+
 
 # Training
 train.json configuration file is placed in configs folder. Update the train/valid data paths and run:
 
 train.py -c configs/train.json
+
+# Pretrained weights and embeddings
+Pretrained weights can be found in: 
+https://drive.google.com/file/d/1hyxQOjT2-CPcjWx4H8X0mUM6kicoMHYr/view?usp=sharing
+
+In order to get training/validation sets embeddings, run: get_embeddings_config.py -c configs/train.json,
+with the option to start with the pretrained weights in pretraind_model row in configs/train.json.
 
 # Community detection
 Run get_communities method in evaluator/communities/community_wrapper.py - example for that can be found in 
