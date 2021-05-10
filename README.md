@@ -44,12 +44,29 @@ train.json configuration file is placed in configs folder. Update the train/vali
 
 train.py -c configs/train.json
 
-# Pretrained weights and embeddings
+# Pretrained weights
 Pretrained weights can be found in: 
 https://drive.google.com/file/d/1hyxQOjT2-CPcjWx4H8X0mUM6kicoMHYr/view?usp=sharing
 
-In order to get training/validation sets embeddings, run: get_embeddings_config.py -c configs/train.json,
+# Embeddings
+Training/Validation set embeddings (.csv file), labels (.tsv file) and images' file names (.csv file)  can be found in
+the following links:
+
+Single model: https://drive.google.com/drive/folders/1Ri9RY0PrgNGANnBjy6NdZ2OymMXUMFkO?usp=sharing
+
+Ensemble of 5 models: https://drive.google.com/drive/folders/1seuwH-q9zBTfwgKRRj5tHU8VnAlBL2uj?usp=sharing
+
+* Embeddings are in .csv file, where they have shape of (num_of_images x embedding length): 
+  8031x1536 for the training set, 1878x1536 for validation set.
+  
+* Labels correspond to folder names (also class id data_loader/classes_top200.csv info file).
+
+* In order to reproduce the reported accuracy, run get_valid_nearest_neighbor.py, after placing embeddings/labels in:
+'evaluator/embeddings/', 'evaluator/labels/' folders.
+
+* In order to get training/validation sets embeddings, run: get_embeddings_config.py -c configs/train.json,
 with the option to start with the pretrained weights in pretraind_model row in configs/train.json.
+
 
 # Community detection
 Run get_communities method in evaluator/communities/community_wrapper.py - example for that can be found in 
