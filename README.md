@@ -6,6 +6,9 @@ In order to try our pretrained model on your query image, follow the following s
 * Open "antique_pedia.ipynb", and press the following icon to launch it on the colab platform:
 
 ![alt text](https://github.com/aviresler/antique-gen/blob/master/misc/colab.png)
+
+Or click on the following link: 
+https://colab.research.google.com/github/aviresler/antique-gen/blob/master/antique_pedia.ipynb
 * Follow the instructions above each cell, and run them sequentially.
 * On the last cell, you will be requested to upload query image of an artifact, which can be in the following formats: jpg/png/bmp etc.
 * Wait few seconds until the image is uploaded, and until the model performs inference.
