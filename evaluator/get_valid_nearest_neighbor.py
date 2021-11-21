@@ -75,12 +75,8 @@ def eval_model_from_csv_files(train_embeddings_csv, valid_embeddings_csv, train_
         train_labels_id_period[i] = label_dict[tr_label]
 
     accuracy = eval_model_topk(train_embeddings, valid_embeddings, train_labels, valid_labels, experiment + '_site_period',
-                          is_save_files=True, classes_csv_file=classes_csv_file, class_mode='site_period')
+                          is_save_files=False, classes_csv_file=classes_csv_file, class_mode='site_period')
     print('accuracy_site_period top_1_3_5= {0:.3f}, {1:.3f}, {2:.3f}'.format(accuracy[0], accuracy[1], accuracy[2]))
-
-    #accuracy = eval_model_topk(train_embeddings, valid_embeddings, train_labels_id_period, valid_labels__id_period, experiment + '_site_period_id_period',
-    #                      is_save_files=True, classes_csv_file=classes_csv_file, class_mode='site_period')
-    #print('accuracy_site_period top_1_3_5= {0:.3f}, {1:.3f}, {2:.3f}'.format(accuracy[0], accuracy[1], accuracy[2]))
 
 
     accuracy_period = eval_model_topk(train_embeddings, valid_embeddings, train_labels_period, valid_labels_period, experiment + '_period',
@@ -89,14 +85,12 @@ def eval_model_from_csv_files(train_embeddings_csv, valid_embeddings_csv, train_
     print('accuracy_period_top_1_3_5= {0:.3f}, {1:.3f}, {2:.3f}'.format(accuracy_period[0],accuracy_period[1],accuracy_period[2]))
 
     accuracy_site = eval_model_topk(train_embeddings, valid_embeddings, train_labels_site, valid_labels_site, experiment + '_site',
-                          is_save_files=True, classes_csv_file=classes_csv_file, class_mode='site')
+                          is_save_files=False, classes_csv_file=classes_csv_file, class_mode='site')
 
     print('accuracy_site top_1_3_5= {0:.3f}, {1:.3f}, {2:.3f}'.format(accuracy_site[0],accuracy_site[1],accuracy_site[2]))
 
-
-def eval_model_topk(train_embeddings,valid_embeddings,train_labels, valid_labels, experiment, is_save_files = True,
-                    classes_csv_file = '',class_mode = 'site_period', is_save_pair_images = False, is_save_example_images = True,
-                    is_use_exception_list = True ):
+def eval_model_topk(train_embeddings,valid_embeddings,train_labels, valid_labels, experiment, is_save_files = False,
+                    classes_csv_file = '',class_mode = 'site_period', is_save_pair_images = False, is_save_example_images = False):
     cnt = 0
     clasee_names = {}
     rough_period_group_dict = {}
@@ -235,9 +229,6 @@ def eval_model_topk(train_embeddings,valid_embeddings,train_labels, valid_labels
         assert 0 == 1
 
 
-
-
-
     confusion_mat_data = np.zeros((valid_embeddings.shape[0],N_neighbours+1), dtype=np.int)
     confusion_mat_data[:, 0] = np.squeeze(valid_labels)
     confusion_mat_data[:, 1:] = neighbours_mat
@@ -261,12 +252,7 @@ def eval_model_topk(train_embeddings,valid_embeddings,train_labels, valid_labels
             text_file.write(lines)
 
     top_k = [1, 3, 5]
-    if class_mode=='period' and is_use_exception_list:
-        amb_mat = np.genfromtxt("amb_set.csv", delimiter=',')
-        sim_mat = np.genfromtxt("sim_set.csv", delimiter=',')
-        indicator_mat_include_amb = np.zeros((valid_embeddings.shape[0], len(top_k)), dtype=np.int32)
-        indicator_mat_include_sim = np.zeros((valid_embeddings.shape[0], len(top_k)), dtype=np.int32)
-        indicator_mat_include_both = np.zeros((valid_embeddings.shape[0], len(top_k)), dtype=np.int32)
+    if class_mode=='period':
         indicator_mat_rough_periods = np.zeros((valid_embeddings.shape[0], len(top_k)), dtype=np.int32)
         indicator_mat_fine_periods = np.zeros((valid_embeddings.shape[0], len(top_k)), dtype=np.int32)
 
@@ -277,50 +263,24 @@ def eval_model_topk(train_embeddings,valid_embeddings,train_labels, valid_labels
             label = int(valid_labels[m])
             predictions = confusion_mat_data[m, 1:k + 1]
             indicator_mat[m,i] = (label in predictions)
-            if class_mode == 'period' and is_use_exception_list:
+            if class_mode == 'period':
                 lagel_fine_group = fine_period_group_dict[label]
                 lagel_rough_group = rough_period_group_dict[label]
                 prediction_rough_group = [rough_period_group_dict[x] for x in predictions]
                 prediction_fine_group = [fine_period_group_dict[x] for x in predictions]
 
-                indicator_mat_include_amb[m, i] = (label in predictions)
-                indicator_mat_include_sim[m, i] = (label in predictions)
-                indicator_mat_include_both[m, i] = (label in predictions)
                 indicator_mat_rough_periods[m, i] = (lagel_rough_group in prediction_rough_group)
                 indicator_mat_fine_periods[m, i] = (lagel_fine_group in prediction_fine_group)
 
-                if indicator_mat[m, i] == 0:
-                    for pred in predictions:
-                        for bb in range(amb_mat.shape[0]):
-                            if amb_mat[bb,0] == label and amb_mat[bb,1] == pred:
-                                indicator_mat_include_amb[m, i] = 1
-                                indicator_mat_include_both[m, i] = 1
-
-                        for bb in range(sim_mat.shape[0]):
-                            if sim_mat[bb,0] == label and sim_mat[bb,1] == pred:
-                                indicator_mat_include_sim[m, i] = 1
-                                indicator_mat_include_both[m, i] = 1
-
 
     accuracy = 100*np.sum(indicator_mat,axis=0)/valid_embeddings.shape[0]
-    if class_mode == 'period' and is_use_exception_list:
-        accuracy_amb = 100 * np.sum(indicator_mat_include_amb, axis=0) / valid_embeddings.shape[0]
-        accuracy_sim = 100 * np.sum(indicator_mat_include_sim, axis=0) / valid_embeddings.shape[0]
-        accuracy_both = 100 * np.sum(indicator_mat_include_both, axis=0) / valid_embeddings.shape[0]
+    if class_mode == 'period':
         accuracy_fine = 100 * np.sum(indicator_mat_fine_periods, axis=0) / valid_embeddings.shape[0]
         accuracy_rough = 100 * np.sum(indicator_mat_rough_periods, axis=0) / valid_embeddings.shape[0]
-        print('accuracy ambiguous')
-        print(accuracy_amb)
-        print('accuracy similar')
-        print(accuracy_sim)
-        print('accuracy both')
-        print(accuracy_both)
-        print('accuracy rough')
+        print('accuracy rough periods')
         print(accuracy_rough)
-        print('accuracy fine')
+        print('accuracy fine periods')
         print(accuracy_fine)
-
-
 
     return accuracy
 
@@ -835,18 +795,6 @@ if __name__ == '__main__':
     valid_embeddings_csv = 'embeddings/efficientNetB3_softmax_concat_embeddings_10_rp1500_valid.csv'
     train_labesl_tsv = 'labels/efficientNetB3_softmax_averaged_embeddings_train.tsv'
     valid_labesl_tsv = 'labels/efficientNetB3_softmax_averaged_embeddings_valid.tsv'
-
-    #valid_embeddings = np.genfromtxt(valid_embeddings_csv, delimiter=',')
-    #valid_embeddings = np.genfromtxt(valid_embeddings_csv, delimiter=',')
-    #print(valid_embeddings)
-    #valid_labesl_tsv = np.genfromtxt(valid_labesl_tsv, delimiter='\t')
-    #valid_labels = np.genfromtxt(valid_labels_tsv, delimiter='\t')
-    #get_class_centroid_embeddings(valid_embeddings,valid_labesl_tsv)
-
-    #get_similarity_matrix()
-    #get_similarity_summary()
-
-
 
     #random_projection(train_embeddings_csv,valid_embeddings_csv)
 

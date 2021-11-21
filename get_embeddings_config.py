@@ -54,6 +54,9 @@ def main():
                 y_true = [label_map[x] for x in y_true_]
                 y_pred = model.model.predict(x)
 
+                # taking only the embeddings output
+                y_pred = y_pred[0]
+
                 num_of_items = y_pred.shape[0]
 
                 predication[cur_ind: cur_ind+num_of_items,:] = y_pred
